@@ -3,7 +3,7 @@
 import os
 import logging
 from flask import Flask
-from log_utils import set_up_logging
+from log_utils import init_stdout_handler, set_up_logger
 
 
 app = None
@@ -26,7 +26,9 @@ def create_app(_run_mode=None):
         # Get port number from Heroku environment variable.
         app.config['PORT_NR'] = int(os.environ['PORT'])
         app.config["DEBUG"] = False
-        set_up_logging(app)
+
+        init_stdout_handler()
+        set_up_logger(app.logger)
 
     # Unrecognized run mode.
     else:

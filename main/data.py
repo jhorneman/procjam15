@@ -5,7 +5,6 @@ import os
 import re
 import logging
 import xml.etree.ElementTree as ET
-from log_utils import set_up_console_logging
 
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(sys.argv[0])) + os.sep
@@ -138,5 +137,6 @@ def load_data():
 
 
 if __name__ == "__main__":
-    set_up_console_logging(logger)
+    from log_utils import init_logging
+    init_logging()
     load_data()

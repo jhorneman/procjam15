@@ -4,6 +4,10 @@ import sys
 import logging
 
 
+console_handler = None
+stdout_handler = None
+
+
 class StdoutHandler(logging.StreamHandler):
     def __init__(self):
         super(StdoutHandler, self).__init__(sys.stdout)
@@ -13,24 +17,42 @@ class StdoutHandler(logging.StreamHandler):
         super(StdoutHandler, self).flush()
 
 
-handler = StdoutHandler()
+def init_logging():
+    # Log warnings.
+    logging.captureWarnings(True)
+
+    # Set up the console handler.
+    global console_handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(message)s',
+                                                    datefmt="%H:%M:%S"))
+
+    # Set up the root logger.
+    set_up_logger(logging.getLogger())
 
 
-def set_up_logging(_app, _level=logging.INFO):
-    handler.setLevel(_level)
-    handler.setFormatter(logging.Formatter('%(message)s'))
-    _app.logger.setLevel(_level)
-    _app.logger.addHandler(handler)
+def init_stdout_handler():
+    global stdout_handler
+    if stdout_handler:
+        return
+
+    # Set up the stdout handler.
+    stdout_handler = StdoutHandler()
+    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.setFormatter(logging.Formatter('%(message)s'))
+
+    # Set up the root logger.
+    set_up_logger(logging.getLogger())
 
 
-def add_logger(_logger, _level=logging.INFO):
+def set_up_logger(_logger, _level=logging.DEBUG):
     _logger.setLevel(_level)
-    _logger.addHandler(handler)
 
+    global console_handler
+    if console_handler:
+        _logger.addHandler(console_handler)
 
-def set_up_console_logging(_logger):
-    _logger.setLevel(logging.INFO)
-    console = logging.StreamHandler()
-    formatter = logging.Formatter("%(levelname)s: %(message)s")
-    console.setFormatter(formatter)
-    _logger.addHandler(console)
+    global stdout_handler
+    if stdout_handler:
+        _logger.addHandler(stdout_handler)
