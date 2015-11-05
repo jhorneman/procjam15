@@ -45,8 +45,12 @@ class Option(object):
 
 
 class Scene(object):
+    STANDARD = 'STANDARD'
+    types = [STANDARD]
+
     def __init__(self):
         self.id = None
+        self.type = Scene.STANDARD
         self.desc = ""
         self.short_desc = ""
         self.options = []
@@ -79,6 +83,13 @@ def read_scenes_from_text_file(_file):
         new_scene.id = meta_el.get("id")
         if new_scene.id is None:
             logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(scene_index+1))
+            continue
+
+        # Get scene type, if any.
+        new_scene.type = meta_el.get("type", Scene.STANDARD)
+        if new_scene.type not in Scene.types:
+            logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
+                .format(scene_index+1, new_scene.type, ', '.join(Scene.types)))
             continue
 
         # Build scene description from all texts at the root of the scene element.
