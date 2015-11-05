@@ -24,7 +24,7 @@ def create_app(_run_mode=None):
     # Production run mode.
     elif _run_mode == "heroku":
         # Get port number from Heroku environment variable.
-        app.config['PORT_NR'] = int(os.environ['PORT'])
+        app.config["PORT_NR"] = int(os.environ["PORT"])
         app.config["DEBUG"] = False
 
         init_stdout_handler()
@@ -34,6 +34,8 @@ def create_app(_run_mode=None):
     else:
         logging.error("Did not recognize run mode '%s'" % _run_mode)
         return None
+
+    app.debug = app.config["DEBUG"]
 
     # Import the views, to apply the decorators which use the global app object.
     import main.views
