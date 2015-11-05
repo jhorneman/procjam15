@@ -16,9 +16,9 @@ def inject_common_values():
 
 
 @app.route("/")
-@app.route("/<scene_name>")
-def show_scene(scene_name=initial_scene_id):
-    scene = get_scene(scene_name)
+@app.route("/<scene_id>")
+def show_scene(scene_id=initial_scene_id):
+    scene = get_scene(scene_id)
     if scene:
         text = scene.desc
         options = scene.options

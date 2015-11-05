@@ -9,7 +9,7 @@
 
     <ul id="options">
         {% for option in options %}
-        <li><a href="{{ url_for('show_scene', scene_name=option.action) }}">{{option.text}}</a></li>
+        <li><a href="{{ url_for('show_scene', scene_id=option.action) }}">{{option.text}}</a></li>
         {% endfor %}
     </ul>
 
