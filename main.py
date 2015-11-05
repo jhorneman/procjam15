@@ -10,9 +10,9 @@ app = Flask(__name__)
 @app.context_processor
 def inject_common_values():
     return {
-        "page_title"       : "Spaceship of Horror",
+        "page_title"       : "Mainframe",
         "page_description" : "A horror IF game for ProcJam 2015",
-        "page_authors"     : "Liz England &amp; Jurie Horneman"
+        "page_authors"     : "Liz England & Jurie Horneman"
     }
 
 
