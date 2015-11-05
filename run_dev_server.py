@@ -11,3 +11,4 @@ if data_loaded:
     app = create_app("dev")
     if app:
         app.run(debug=True)
+        # app.run(extra_files=scene_files, debug=True)
