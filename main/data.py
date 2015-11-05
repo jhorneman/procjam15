@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import sys
 import os
 import re
 import logging
 import xml.etree.ElementTree as ET
 
 
-SCRIPT_DIR = os.path.abspath(os.path.dirname(sys.argv[0])) + os.sep
+# DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
+# which may be in a different directory.
+SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 
 logger = logging.getLogger(__name__)
 
@@ -110,7 +111,7 @@ def read_scenes_from_text_file(_file):
 
 def load_scene_descriptions():
     # Iterate over all files in the scenes directory.
-    scenes_dir = os.path.join(SCRIPT_DIR, "main", "data", "scenes")
+    scenes_dir = os.path.join(SCRIPT_DIR, "data", "scenes")
     for path, dirs, files in os.walk(scenes_dir):
         for filename in files:
             # Skip hidden files and anything not ending in .txt.
