@@ -1,0 +1,18 @@
+body {
+    background:#333;
+    color: lightgoldenrodyellow;
+}
+
+.scene {
+    margin-top: 25%;
+}
+
+ul#options {
+    margin-top: 1em;
+    list-style: none;
+}
+
+ul#options li a {
+    color: #d09672;
+    text-decoration: none;
+}
