@@ -5,6 +5,7 @@ import os
 import re
 import logging
 import xml.etree.ElementTree as ET
+from log_utils import set_up_console_logging
 
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(sys.argv[0])) + os.sep
@@ -14,6 +15,10 @@ logger = logging.getLogger(__name__)
 scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 
 scenes = {}
+
+
+def get_scene(_scene_id):
+    return scenes.get(_scene_id, None)
 
 
 class Option(object):
@@ -106,7 +111,7 @@ def read_scenes_from_text_file(_file):
 
 def load_scene_descriptions():
     # Iterate over all files in the scenes directory.
-    for path, dirs, files in os.walk(os.path.join(SCRIPT_DIR, "data", "scenes")):
+    for path, dirs, files in os.walk(os.path.join(SCRIPT_DIR, "main", "data", "scenes")):
         for filename in files:
             # Skip hidden files and anything not ending in .txt.
             if filename.startswith("."):
@@ -122,20 +127,16 @@ def load_scene_descriptions():
                 logger.info("Reading file {0}...".format(full_path))
                 read_scenes_from_text_file(f)
 
+    if len(scenes) == 0:
+        logger.error("No scenes were found.")
+        return False
+
+    return True
 
 def load_data():
-    load_scene_descriptions()
-
-
-def set_up_console_logging():
-    global logger
-    logger.setLevel(logging.INFO)
-    console = logging.StreamHandler()
-    formatter = logging.Formatter("%(levelname)s: %(message)s")
-    console.setFormatter(formatter)
-    logger.addHandler(console)
+    return load_scene_descriptions()
 
 
 if __name__ == "__main__":
-    set_up_console_logging()
+    set_up_console_logging(logger)
     load_data()
