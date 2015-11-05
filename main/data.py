@@ -18,7 +18,7 @@ scenes = {}
 data_files_for_live_reloading = []
 
 
-def get_scene(_scene_id):
+def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
