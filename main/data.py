@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 
 scenes = {}
+data_files_for_live_reloading = []
 
 
 def get_scene(_scene_id):
@@ -125,6 +126,7 @@ def load_scene_descriptions():
 
             # Open the file and read the scenes from it.
             with open(full_path, "r") as f:
+                data_files_for_live_reloading.append(full_path)
                 logger.info("Reading file {0}...".format(full_path))
                 read_scenes_from_text_file(f)
 
