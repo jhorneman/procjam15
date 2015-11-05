@@ -23,23 +23,36 @@ def get_scene_description(_scene_id):
 
 
 class Option(object):
+    GOTO = 'GOTO'
+    actions = [GOTO]
+
     def __init__(self):
-        self.action = None
+        self.action = Option.GOTO
         self.text = ""
 
     @staticmethod
     def from_el(_el, _index):
         new_option = Option()
 
-        new_option.action = _el.get("action")
-        if new_option.action is None:
-            logger.error("Option {0} does not contain an action attribute. Skipping.".format(_index))
+        # Get action, if any.
+        new_option.action = _el.get("action", Option.GOTO)
+        if new_option.action not in Option.actions:
+            logger.error("Option {0} has action'{1}' which is not a valid action (those are {2}). Skipping."
+                .format(_index, new_option.action, ', '.join(Option.actions)))
             return None
 
-        new_option.text = _el.text.strip()
-        if new_option.text is None or len(new_option.text) == 0:
-            logger.error("Option {0} does not contain any text. Skipping.".format(_index))
-            return None
+        # If GOTO action, we need a next scene.
+        if new_option.action == Option.GOTO:
+            new_option.next_scene = _el.get("nextScene")
+            if new_option.next_scene is None:
+                logger.error("Option {0} has a GOTO action but no next scene attribute. Skipping.".format(_index))
+                return None
+
+            # Get text.
+            new_option.text = _el.text.strip()
+            if new_option.text is None or len(new_option.text) == 0:
+                logger.error("Option {0} has a GOTO action but does not contain any text. Skipping.".format(_index))
+                return None
 
         return new_option
 
@@ -142,7 +155,7 @@ def load_scene_descriptions():
                 read_scenes_from_text_file(f)
 
     if len(scenes) == 0:
-        logger.error("No scenes were found in {0}.".format(scenes_dir))
+        logger.error("No valid scenes were found in {0}.".format(scenes_dir))
         return False
 
     return True

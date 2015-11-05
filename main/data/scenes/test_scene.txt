@@ -9,6 +9,6 @@ The mould looks appetizing.
 
 <generateChoices nr="3" tags="mess-hall"/>
 
-<option action="back-to-computer">
+<option nextScene="back-to-computer">
 Go back to the computer room.
 </option>
