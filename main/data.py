@@ -110,7 +110,8 @@ def read_scenes_from_text_file(_file):
 
 def load_scene_descriptions():
     # Iterate over all files in the scenes directory.
-    for path, dirs, files in os.walk(os.path.join(SCRIPT_DIR, "main", "data", "scenes")):
+    scenes_dir = os.path.join(SCRIPT_DIR, "main", "data", "scenes")
+    for path, dirs, files in os.walk(scenes_dir):
         for filename in files:
             # Skip hidden files and anything not ending in .txt.
             if filename.startswith("."):
@@ -127,10 +128,11 @@ def load_scene_descriptions():
                 read_scenes_from_text_file(f)
 
     if len(scenes) == 0:
-        logger.error("No scenes were found.")
+        logger.error("No scenes were found in {0}.".format(scenes_dir))
         return False
 
     return True
+
 
 def load_data():
     return load_scene_descriptions()
