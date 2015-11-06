@@ -30,6 +30,12 @@ class Option(object):
         self.action = Option.GOTO
         self.text = ""
 
+    @property
+    def params(self):
+        return {
+            'next_scene': self. next_scene
+        }
+
     @staticmethod
     def from_el(_el, _index):
         new_option = Option()

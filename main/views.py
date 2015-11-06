@@ -1,5 +1,5 @@
 from flask import render_template, abort
-from main.logic import get_initial_scene_id, get_scene_data
+from main.logic import get_scene_data
 from main import app
 
 
@@ -13,11 +13,8 @@ def inject_common_values():
 
 
 @app.route("/")
-@app.route("/<scene_id>")
-def show_scene(scene_id=None):
-    if scene_id is None:
-        scene_id = get_initial_scene_id()
-    scene_data = get_scene_data(scene_id)
+def show_scene():
+    scene_data = get_scene_data()
     if scene_data:
         return render_template('scene.html', **scene_data)
     else:
