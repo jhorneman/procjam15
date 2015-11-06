@@ -20,11 +20,13 @@ def create_app(_run_mode=None):
     # Dev run mode.
     if _run_mode == "dev":
         app.config["DEBUG"] = True
+        app.config["SECRET_KEY"] = "WeDontCareAboutSecretsInDev"
 
     # Production run mode.
     elif _run_mode == "heroku":
-        # Get port number from Heroku environment variable.
+        # Get port number and secret key from Heroku environment variable.
         app.config["PORT_NR"] = int(os.environ["PORT"])
+        app.config["SECRET_KEY"] = os.environ["FLASK_SECRET_KEY"]
         app.config["DEBUG"] = False
 
         init_stdout_handler()
