@@ -15,6 +15,11 @@ default_game_state = {
 }
 
 
+def restart():
+    for k, v in default_game_state.items():
+        session[k] = v
+
+
 def get_standard_scene_data(_next_scene):
     scene = get_scene_description(_next_scene)
     if not scene:
