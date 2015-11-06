@@ -22,9 +22,20 @@ def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
+def get_scene_description_with_tag(_tag):
+    ids_of_eligible_scenes = [k for k in scenes.keys() if _tag in scenes[k].tags]
+    if len(ids_of_eligible_scenes) == 0:
+        logger.error("Couldn't find a scene with tag '{0}'.".format(_tag))
+        return None
+    scene_id = ids_of_eligible_scenes[0]
+    return scenes.get(scene_id)
+
+
 class Option(object):
-    GOTO = 'GOTO'
-    actions = [GOTO]
+    GOTO = 'go-to'
+    COMPUTER = 'computer-room'
+    QUEST = 'quest'
+    actions = [GOTO, COMPUTER, QUEST]
 
     def __init__(self):
         self.action = Option.GOTO
@@ -32,9 +43,11 @@ class Option(object):
 
     @property
     def params(self):
-        return {
-            'next_scene': self. next_scene
-        }
+        if self.action == Option.GOTO:
+            return {
+                'next_scene': self.next_scene
+            }
+        return {}
 
     @staticmethod
     def from_el(_el, _index):
@@ -47,13 +60,22 @@ class Option(object):
                 .format(_index, new_option.action, ', '.join(Option.actions)))
             return None
 
-        # If GOTO action, we need a next scene.
+        # GOTO.
         if new_option.action == Option.GOTO:
+            # Get next scene.
             new_option.next_scene = _el.get("nextScene")
             if new_option.next_scene is None:
                 logger.error("Option {0} has a GOTO action but no next scene attribute. Skipping.".format(_index))
                 return None
 
+            # Get text.
+            new_option.text = _el.text.strip()
+            if new_option.text is None or len(new_option.text) == 0:
+                logger.error("Option {0} has a GOTO action but does not contain any text. Skipping.".format(_index))
+                return None
+
+        # COMPUTER action.
+        elif new_option.action == Option.COMPUTER:
             # Get text.
             new_option.text = _el.text.strip()
             if new_option.text is None or len(new_option.text) == 0:
@@ -70,6 +92,7 @@ class Scene(object):
     def __init__(self):
         self.id = None
         self.type = Scene.STANDARD
+        self.tags = []
         self.desc = ""
         self.short_desc = ""
         self.options = []
@@ -112,6 +135,11 @@ def read_scenes_from_text_file(_file, _scene_name):
                 logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
                     .format(scene_index+1, new_scene.type, ', '.join(Scene.types)))
                 continue
+
+            # Get scene tags, if any.
+            tags = meta_el.get("tags", None)
+            if tags:
+                new_scene.tags = [tag.strip() for tag  in tags.split(",")]
         else:
             if len(scene_els) == 1:
                 new_scene.id = _scene_name
@@ -128,11 +156,9 @@ def read_scenes_from_text_file(_file, _scene_name):
                 new_scene.desc += child.tail
 
         # Get short description, if any.
-        short_desc_el = scene_el.find("repeat")
-        if short_desc_el is not None:
-            new_scene.short_desc = short_desc_el.text
-
-        # new_scene.optionals.append(scene_el.findall("optional"))
+        # short_desc_el = scene_el.find("repeat")
+        # if short_desc_el is not None:
+        #     new_scene.short_desc = short_desc_el.text
 
         # Iterate over all option elements.
         for option_index, option_el in enumerate(scene_el.findall("option")):

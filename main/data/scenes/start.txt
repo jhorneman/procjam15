@@ -1,4 +1,4 @@
 This is the first scene of this game.
-<option nextScene="mess-hall">
-Go to the mess hall.
+<option action="computer-room">
+Go to the computer room.
 </option>
