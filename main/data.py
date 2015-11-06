@@ -35,7 +35,8 @@ class Option(object):
     GOTO = 'go-to'
     COMPUTER = 'computer-room'
     QUEST = 'quest'
-    actions = [GOTO, COMPUTER, QUEST]
+    FOUND_DATA = 'found-data'
+    actions = [GOTO, COMPUTER, QUEST, FOUND_DATA]
 
     def __init__(self):
         self.action = Option.GOTO
