@@ -69,7 +69,7 @@ class Scene(object):
         self.options = []
 
 
-def read_scenes_from_text_file(_file):
+def read_scenes_from_text_file(_file, _scene_name):
     # Read the entire text file.
     data = _file.read()
 
@@ -81,29 +81,38 @@ def read_scenes_from_text_file(_file):
         # No -> Then wrap it in a <data> and a <scene> element.
         data = "<data><scene>" + data + "</scene></data>"
 
-    # Iterate over all scene elements in the text file.
     root = ET.fromstring(data)
-    for scene_index, scene_el in enumerate(root.findall("scene")):
+
+    # Iterate over all scene elements in the text file.
+    scene_els = root.findall("scene")
+    for scene_index, scene_el in enumerate(scene_els):
         new_scene = Scene()
 
         # Find meta element, skip if not found.
         meta_el = scene_el.find("meta")
-        if meta_el is None:
-            logger.error("Scene {0} does not contain a meta element. Skipping.".format(scene_index+1))
-            continue
+        if meta_el is not None:
+            # Get scene ID, use scene name if not found and there's only one scene, otherwise skip.
+            new_scene.id = meta_el.get("id")
+            if new_scene.id is None:
+                if len(scene_els) == 1:
+                    new_scene.id = _scene_name
+                else:
+                    logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(scene_index+1))
+                    continue
 
-        # Get scene ID, skip if not found.
-        new_scene.id = meta_el.get("id")
-        if new_scene.id is None:
-            logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(scene_index+1))
-            continue
-
-        # Get scene type, if any.
-        new_scene.type = meta_el.get("type", Scene.STANDARD)
-        if new_scene.type not in Scene.types:
-            logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
-                .format(scene_index+1, new_scene.type, ', '.join(Scene.types)))
-            continue
+            # Get scene type, if any.
+            new_scene.type = meta_el.get("type", Scene.STANDARD)
+            if new_scene.type not in Scene.types:
+                logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
+                    .format(scene_index+1, new_scene.type, ', '.join(Scene.types)))
+                continue
+        else:
+            if len(scene_els) == 1:
+                new_scene.id = _scene_name
+                new_scene.type = Scene.STANDARD
+            else:
+                logger.error("Scene {0} does not contain a meta element. Skipping.".format(scene_index+1))
+                continue
 
         # Build scene description from all texts at the root of the scene element.
         # This includes the tails of child elements.
@@ -146,13 +155,13 @@ def load_scene_descriptions():
                 continue
 
             full_path = os.path.join(path, filename)
-            # scene_name = os.path.splitext(filename)[0]
+            scene_name = os.path.splitext(filename)[0]
 
             # Open the file and read the scenes from it.
             with open(full_path, "r") as f:
                 data_files_for_live_reloading.append(full_path)
                 logger.info("Reading file {0}...".format(full_path))
-                read_scenes_from_text_file(f)
+                read_scenes_from_text_file(f, scene_name)
 
     if len(scenes) == 0:
         logger.error("No valid scenes were found in {0}.".format(scenes_dir))
