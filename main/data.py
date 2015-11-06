@@ -167,10 +167,10 @@ def read_scenes_from_text_file(_file, _scene_name):
             if new_option:
                 new_scene.options.append(new_option)
 
-        if len(new_scene.options) == 0:
-            # Skip if no option elements were found.
-            logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(scene_index+1))
-            continue
+        # if len(new_scene.options) == 0:
+        #     # Skip if no option elements were found.
+        #     logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(scene_index+1))
+        #     continue
 
         logger.info("Read scene {0}.".format(scene_index+1))
         scenes[new_scene.id] = new_scene
