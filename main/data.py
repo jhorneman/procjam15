@@ -16,6 +16,7 @@ scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 
 scenes = {}
 data_files_for_live_reloading = []
+counter_per_tag = {}
 
 
 def get_scene_description(_scene_id):
@@ -27,7 +28,14 @@ def get_scene_description_with_tag(_tag):
     if len(ids_of_eligible_scenes) == 0:
         logger.error("Couldn't find a scene with tag '{0}'.".format(_tag))
         return None
-    scene_id = ids_of_eligible_scenes[0]
+
+    counter = counter_per_tag.setdefault(_tag, 0)
+    scene_id = ids_of_eligible_scenes[counter]
+    counter += 1
+    if counter >= len(ids_of_eligible_scenes):
+        counter = 0
+    counter_per_tag[_tag] = counter
+
     return scenes.get(scene_id)
 
 
