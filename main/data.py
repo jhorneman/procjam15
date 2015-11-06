@@ -140,7 +140,7 @@ def read_scenes_from_text_file(_file, _scene_name):
             # Get scene tags, if any.
             tags = meta_el.get("tags", None)
             if tags:
-                new_scene.tags = [tag.strip() for tag  in tags.split(",")]
+                new_scene.tags = [tag.strip() for tag in tags.split(",")]
         else:
             if len(scene_els) == 1:
                 new_scene.id = _scene_name
