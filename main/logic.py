@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import string
 import logging
 from flask import request, session
 from main.data import get_scene_description, get_scene_description_with_tag, Option
@@ -13,6 +14,21 @@ default_game_state = {
     "has_mcguffin": False,
     "amount_of_data": 0
 }
+
+
+class CustomFormatter(string.Formatter):
+    def check_unused_args(self, used_args, args, kwargs):
+        #TODO: Write actual check, report error but don't raise an exception
+        pass
+
+formatter = CustomFormatter()
+
+
+def f(_text):
+    substitution_data = {
+        "amount_of_data": session["amount_of_data"]
+    }
+    return formatter.vformat(_text, [], substitution_data)
 
 
 def restart():
@@ -47,7 +63,7 @@ def get_computer_room_data():
             }
         else:
             return {
-                "text": "You're in the computer room. Computer likes data. Computer wants more data!",
+                "text": "You're in the computer room. Computer likes data. Computer wants more data! Current data level: {amount_of_data}.",
                 "options": [{
                     "action": Option.QUEST,
                     "text": "Go on a quest for data."
@@ -55,7 +71,7 @@ def get_computer_room_data():
             }
     else:
         return {
-            "text": "You're in the computer room. Computer wants data!",
+            "text": "You're in the computer room. Computer wants data! Current data level: {amount_of_data}.",
             "options": [{
                 "action": Option.QUEST,
                 "text": "Go on a quest for data."
@@ -128,11 +144,14 @@ def get_scene_data():
     elif action == Option.FOUND_DATA:
         scene_data = get_found_data_data()
 
+    # TODO: Make sure scene_data is converted to pure dumb and mutable! data here
+
     if scene_data:
         for option in scene_data["options"]:
             if type(option) == type(dict()):
                 if "params" not in option:
                     option["params"] = {}
+        scene_data["text"] = f(scene_data["text"])
         return scene_data
 
     else:
