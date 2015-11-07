@@ -283,6 +283,8 @@ class Scene(object):
                     text += text_block[1]
             elif text_block[0] == "inject":
                 text += "[injected text for tags {0}]".format(text_block[1])
+            elif text_block[0] == "br":
+                text += "<br/>"
             else:
                 logger.error("Unknown text block type '{0}'.".format(text_block[0]))
         return text
@@ -374,7 +376,7 @@ def read_scenes_from_text_file(_file, _scene_name):
                     logger.error("Scene {0} contains an injected text block without tags. Skipping.".format(scene_index+1))
 
             elif child_el.tag == 'br':
-                new_scene.text_blocks.append(("raw", "<br/>"))
+                new_scene.text_blocks.append(("br",))
 
             if child_el.tail:
                 new_scene.text_blocks.append(("raw", child_el.tail))
