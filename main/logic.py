@@ -115,7 +115,6 @@ def prepare_session():
         for k, v in default_game_state.items():
             if k not in session:
                 session[k] = v
-    session.permanent = True
 
 
 def get_scene_data():
