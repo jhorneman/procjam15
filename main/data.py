@@ -25,6 +25,10 @@ def get_scene_description(_scene_id):
 
 
 def get_scene_description_with_tag(_tag):
+    # TODO: Deal with lists of tags.
+    if type(_tag) == type(list()):
+        _tag = _tag[0]
+
     ids_of_eligible_scenes = [k for k in scenes.keys() if _tag in scenes[k].tags]
     if len(ids_of_eligible_scenes) == 0:
         logger.error("Couldn't find a scene with tag '{0}'.".format(_tag))
@@ -104,8 +108,9 @@ class Scene(object):
         self.type = Scene.STANDARD
         self.tags = []
         self.desc = ""
-        self.short_desc = ""
         self.options = []
+        self.leadin = None
+        self.injected_options = []
 
 
 def read_scenes_from_text_file(_file, _scene_name):
@@ -174,10 +179,20 @@ def read_scenes_from_text_file(_file, _scene_name):
             if child.tail:
                 new_scene.desc += child.tail
 
-        # Get short description, if any.
-        # short_desc_el = scene_el.find("repeat")
-        # if short_desc_el is not None:
-        #     new_scene.short_desc = short_desc_el.text
+        # Get leadin, if any.
+        leadin_el = scene_el.find("leadin")
+        if leadin_el is not None:
+            new_scene.leadin = leadin_el.text
+
+        # Get injected options, if any.
+        for injected_option_index, injected_option_el in enumerate(scene_el.findall("injectOption")):
+            tags = injected_option_el.get("tags", None)
+            if tags:
+                tags = [tag.strip() for tag in tags.split(",")]
+                new_scene.injected_options.append(tags)
+            else:
+                logger.error("Scene {0} has injected option {1} which has no tags. Skipping.".format(scene_index+1, injected_option_index+1))
+                continue
 
         # Iterate over all option elements.
         for option_index, option_el in enumerate(scene_el.findall("option")):

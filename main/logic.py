@@ -41,8 +41,8 @@ def restart():
 
 
 def get_standard_scene_data(_next_scene):
-    scene = get_scene_description(_next_scene)
-    if not scene:
+    scene_desc = get_scene_description(_next_scene)
+    if not scene_desc:
         logger.error("Couldn't find scene description for scene '{0}'.".format(_next_scene))
         return None
 
@@ -50,15 +50,31 @@ def get_standard_scene_data(_next_scene):
     # session["visited_scenes"].append(_next_scene)
     # session.modified = True
 
-    return {
-        "text": scene.desc,
+    scene_data = {
+        "text": scene_desc.desc,
         "options": [{
             "action": option.action,
             "text": option.text,
             "params": option.params
-            } for option in scene.options
+            } for option in scene_desc.options
         ]
     }
+
+    for injected_option_tags in scene_desc.injected_options:
+        injected_scene_desc = get_scene_description_with_tag(injected_option_tags)
+        if injected_scene_desc:
+            scene_data["options"].append({
+                "action": Option.GOTO,
+                "text": injected_scene_desc.leadin,
+                "params": {
+                    "next_scene": injected_scene_desc.id
+                }
+            })
+        else:
+            logger.warning("Couldn't find a scene with tags '{1}' to inject in scene {0}."
+                           .format(_next_scene, injected_option_tags))
+
+    return scene_data
 
 
 def get_computer_room_data():
@@ -89,12 +105,12 @@ def get_computer_room_data():
 
 
 def get_quest_data():
-    scene = get_scene_description_with_tag('quest')
-    if not scene:
+    scene_desc = get_scene_description_with_tag('quest')
+    if not scene_desc:
         return None
 
     return {
-        "text": scene.desc,
+        "text": scene_desc.desc,
         "options": [{
             "action": Option.FOUND_DATA,
             "text": "Search this place for lovely but potentially gross data."
@@ -130,8 +146,6 @@ def get_scene_data():
     prepare_session()
 
     action = request.args.get('action', None)
-
-    scene_data = None
 
     if action is None:
         scene_data = get_standard_scene_data(first_scene_id)
