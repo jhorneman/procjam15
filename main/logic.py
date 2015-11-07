@@ -32,6 +32,9 @@ formatter = CustomFormatter()
 
 
 def convert_text(_text, _substitution_data):
+    if _text is None:
+        logger.error("Text to be converted is None.")
+        return ''
     return formatter.vformat(_text, [], _substitution_data)
 
 
@@ -61,20 +64,32 @@ def get_standard_scene_data(_next_scene):
     }
 
     for injected_option_tags in scene_desc.injected_options:
-        injected_scene_desc = get_scene_description_with_tag(injected_option_tags)
-        if injected_scene_desc:
-            scene_data["options"].append({
-                "action": Option.GOTO,
-                "text": injected_scene_desc.leadin,
-                "params": {
-                    "next_scene": injected_scene_desc.id
-                }
-            })
+        injected_option = get_tagged_option_to_inject(injected_option_tags)
+        if injected_option:
+            scene_data["options"].append(injected_option)
         else:
-            logger.warning("Couldn't find a scene with tags '{1}' to inject in scene {0}."
+            logger.warning("Couldn't find a valid scene with tags '{1}' to inject into scene {0}."
                            .format(_next_scene, injected_option_tags))
 
     return scene_data
+
+
+def get_tagged_option_to_inject(_tags):
+    injected_scene_desc = get_scene_description_with_tag(_tags)
+    if injected_scene_desc:
+        if injected_scene_desc.leadin is None:
+            logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
+            return None
+
+        return {
+            "action": Option.GOTO,
+            "text": injected_scene_desc.leadin,
+            "params": {
+                "next_scene": injected_scene_desc.id
+            }
+        }
+    else:
+        return None
 
 
 def get_computer_room_data():
@@ -87,25 +102,28 @@ def get_computer_room_data():
                 "options": []
             }
         else:
-            return {
+            scene_data = {
                 "text": "You're in the computer room. Computer likes data. Computer wants more data! Current data level: {amount_of_data}.",
-                "options": [{
-                    "action": Option.QUEST,
-                    "text": "Go on a quest for data."
-                }]
+                "options": []
             }
     else:
-        return {
+        scene_data = {
             "text": "You're in the computer room. Computer wants data! Current data level: {amount_of_data}.",
-            "options": [{
-                "action": Option.QUEST,
-                "text": "Go on a quest for data."
-            }]
+            "options": []
         }
 
+    injected_option = get_tagged_option_to_inject('mission')
+    if injected_option:
+        scene_data["options"].append(injected_option)
+    else:
+        logger.warning("Couldn't find a valid scene with tags '{0}' to inject into the computer room scene."
+                       .format('mission'))
 
-def get_quest_data():
-    scene_desc = get_scene_description_with_tag('quest')
+    return scene_data
+
+
+def get_mission_data():
+    scene_desc = get_scene_description_with_tag('mission')
     if not scene_desc:
         return None
 
@@ -160,8 +178,8 @@ def get_scene_data():
     elif action == Option.COMPUTER:
         scene_data = get_computer_room_data()
 
-    elif action == Option.QUEST:
-        scene_data = get_quest_data()
+    elif action == Option.MISSION:
+        scene_data = get_mission_data()
 
     elif action == Option.FOUND_DATA:
         scene_data = get_found_data_data()

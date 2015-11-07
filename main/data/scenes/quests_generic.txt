@@ -1,50 +1,60 @@
 <scene>
-<meta id='airlock' tags='quest'/>
+<meta id='airlock' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in an airlock.
 </scene>
 
 <scene>
-<meta id='another storage room' tags='quest'/>
+<meta id='another storage room' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in another storage room.
 </scene>
 
 <scene>
-<meta id='cargo storage' tags='quest'/>
+<meta id='cargo storage' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in cargo storage.
 </scene>
 
 <scene>
-<meta id='vents' tags='quest'/>
+<meta id='vents' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the lower vents.
 </scene>
 
 <scene>
-<meta id='maintenance shaft' tags='quest'/>
+<meta id='maintenance shaft' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the maintenance shaft.
 </scene>
 
 <scene>
-<meta id='hallway' tags='quest'/>
+<meta id='hallway' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the hallway.
 </scene>
 
 <scene>
-<meta id='office' tags='quest'/>
+<meta id='office' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the office.
 </scene>
 
 <scene>
-<meta id='laboratory small' tags='quest'/>
+<meta id='laboratory small' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the small laboratory.
 </scene>
 
 <scene>
-<meta id='elevator' tags='quest'/>
+<meta id='elevator' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're at the elevators.
 </scene>
 
 <scene>
-<meta id='server room' tags='quest'/>
+<meta id='server room' tags='mission'/>
+<leadin>Go on a mission.</leadin>
 You're in the server room.
 </scene>
 

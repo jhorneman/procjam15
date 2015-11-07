@@ -47,9 +47,9 @@ def get_scene_description_with_tag(_tag):
 class Option(object):
     GOTO = 'goto'
     COMPUTER = 'computer-room'
-    QUEST = 'quest'
+    MISSION = 'mission'
     FOUND_DATA = 'found-data'
-    actions = [GOTO, COMPUTER, QUEST, FOUND_DATA]
+    actions = [GOTO, COMPUTER, MISSION, FOUND_DATA]
 
     def __init__(self):
         self.action = Option.GOTO

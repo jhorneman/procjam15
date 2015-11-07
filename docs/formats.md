@@ -47,7 +47,7 @@ Scenes can have tags. These are used to select one of a given number of scenes.
 
 Tags are indicated in the <meta> tag, like so:
 
-    <meta tags='quest'/>
+    <meta tags='mission'/>
 
 Tags are separated by commas. Leading and trailing white space is stripped. Currently there are no checks for empty or duplicate tags.
 
@@ -82,7 +82,7 @@ is the shortest way to write a goto action.
 Other action types right now are:
 
 * 'computer-room'. Go to the computer room, which has special logic.
-* 'quest'. Go to a scene tagged with 'quest'.
+* 'mission'. Go to a scene tagged with 'mission'.
 * 'found-data'. Go to the scene where the player found some data.
 
 I am not happy with this way of implementing things, but it was the fastest way to test the architecture. But expect the action types to change.
