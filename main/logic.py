@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 first_scene_id = 'start'
 
 default_game_state = {
+    "flesh_act": "flesh_act1",
     "has_mcguffin": False,
     "amount_of_data": 0
 }
@@ -31,7 +32,7 @@ class CustomFormatter(string.Formatter):
 formatter = CustomFormatter()
 
 
-def convert_text(_text, _substitution_data):
+def substitute_text(_text, _substitution_data):
     if _text is None:
         logger.error("Text to be converted is None.")
         return ''
@@ -76,7 +77,7 @@ def get_standard_scene_data(_next_scene):
 
 
 def get_tagged_option_to_inject(_tags):
-    injected_scene_desc = get_scene_description_with_tag(_tags)
+    injected_scene_desc = get_scene_description_with_tag(_tags, session)
     if injected_scene_desc:
         if injected_scene_desc.leadin is None:
             logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
@@ -124,7 +125,7 @@ def get_computer_room_data():
 
 
 def get_mission_data():
-    scene_desc = get_scene_description_with_tag('mission')
+    scene_desc = get_scene_description_with_tag('mission', session)
     if not scene_desc:
         return None
 
@@ -206,8 +207,8 @@ def get_scene_data():
         "amount_of_data": session["amount_of_data"]
     }
 
-    scene_data["text"] = convert_text(scene_data["text"], substitution_data)
+    scene_data["text"] = substitute_text(scene_data["text"], substitution_data)
     for option in scene_data["options"]:
-        option["text"] = convert_text(option["text"], substitution_data)
+        option["text"] = substitute_text(option["text"], substitution_data)
 
     return scene_data

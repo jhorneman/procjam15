@@ -26,22 +26,46 @@ def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
-def get_scene_description_with_tag(_tag):
-    # TODO: Deal with lists of tags.
-    if type(_tag) == type(list()):
-        _tag = _tag[0]
+def tags_are_matched(_desired_tags, _available_tags):
+    for desired_tag in _desired_tags:
+        if desired_tag not in _available_tags:
+            return False
+    return True
 
-    ids_of_eligible_scenes = [k for k in scenes.keys() if _tag in scenes[k].tags]
+
+def get_scene_description_with_tag(_tags, _state):
+    tags = []
+    for tag in _tags:
+        if tag.startswith("$"):
+            variable_name = tag[1:]
+            if variable_name in _state:
+                tag = _state[variable_name]
+            else:
+                logger.error("Could not find a state variable named '{0}'. Skipping.".format(variable_name))
+                continue
+        tags.append(tag)
+
+    ids_of_eligible_scenes = []
+    for scene_id, scene in scenes.items():
+        if tags_are_matched(tags, scene.tags):
+            ids_of_eligible_scenes.append(scene_id)
+
     if len(ids_of_eligible_scenes) == 0:
-        logger.error("Couldn't find a scene with tag '{0}'.".format(_tag))
+        logger.error("Couldn't find a scene with tags {0}.".format(tags))
         return None
 
-    counter = counter_per_tag.setdefault(_tag, 0)
-    scene_id = ids_of_eligible_scenes[counter]
+    # TODO: Actually cache the list of scene IDs, and then shuffle it as well.
+    cache_key = ".".join(tags)
+    counter = counter_per_tag.setdefault(cache_key, 0)
+    try:
+        scene_id = ids_of_eligible_scenes[counter]
+    except IndexError:
+        logger.error("Index out of range for tags {0}.".format(tags))
+        return None
     counter += 1
     if counter >= len(ids_of_eligible_scenes):
         counter = 0
-    counter_per_tag[_tag] = counter
+    counter_per_tag[cache_key] = counter
 
     return scenes.get(scene_id)
 
