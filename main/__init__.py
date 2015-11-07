@@ -3,6 +3,7 @@
 import os
 import logging
 from flask import Flask
+from jinja_filters import set_up_jinja_filters
 from log_utils import init_stdout_handler, set_up_logger
 
 
@@ -41,5 +42,8 @@ def create_app(_run_mode=None):
 
     # Import the views, to apply the decorators which use the global app object.
     import main.views
+
+    # Set up Jinja 2 filters.
+    set_up_jinja_filters(app)
 
     return app

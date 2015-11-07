@@ -24,11 +24,8 @@ class CustomFormatter(string.Formatter):
 formatter = CustomFormatter()
 
 
-def f(_text):
-    substitution_data = {
-        "amount_of_data": session["amount_of_data"]
-    }
-    return formatter.vformat(_text, [], substitution_data)
+def convert_text(_text, _substitution_data):
+    return formatter.vformat(_text, [], _substitution_data)
 
 
 def restart():
@@ -48,7 +45,12 @@ def get_standard_scene_data(_next_scene):
 
     return {
         "text": scene.desc,
-        "options": scene.options
+        "options": [{
+            "action": option.action,
+            "text": option.text,
+            "params": option.params
+            } for option in scene.options
+        ]
     }
 
 
@@ -143,16 +145,18 @@ def get_scene_data():
     elif action == Option.FOUND_DATA:
         scene_data = get_found_data_data()
 
-    # TODO: Make sure scene_data is converted to pure dumb and mutable! data here
-
-    if scene_data:
-        for option in scene_data["options"]:
-            if type(option) == type(dict()):
-                if "params" not in option:
-                    option["params"] = {}
-        scene_data["text"] = f(scene_data["text"])
-        return scene_data
-
-    else:
+    if not scene_data:
         logger.error("'{0}' is an unknown action type.".format(action))
         return None
+
+    # scene_data must consist of dumb dictionaries here because we're going to mutate the text.
+
+    substitution_data = {
+        "amount_of_data": session["amount_of_data"]
+    }
+
+    scene_data["text"] = convert_text(scene_data["text"], substitution_data)
+    for option in scene_data["options"]:
+        option["text"] = convert_text(option["text"], substitution_data)
+
+    return scene_data
