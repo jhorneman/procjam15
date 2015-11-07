@@ -5,6 +5,7 @@ import re
 import logging
 import xml.etree.ElementTree as ET
 import operator
+import random
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -43,6 +44,38 @@ def get_scene_description_with_tag(_tag):
     counter_per_tag[_tag] = counter
 
     return scenes.get(scene_id)
+
+
+def string_to_tags(_tags_as_string):
+    if _tags_as_string is None:
+        return []
+    return [tag.strip() for tag in _tags_as_string.split(",")]
+
+
+def get_parameter_value(_state, _param):
+    if _param.startswith("$"):
+        variable_name = _param[1:]
+        if variable_name in _state:
+            return _state[variable_name]
+        else:
+            logger.error("Could not find a state variable named '{0}' - using 0 instead.".format(variable_name))
+            return 0
+
+    if _param.lower() == 'random':
+        return random.randint(0, 100)
+
+    if _param.lower() == 'true':
+        return True
+
+    if _param.lower() == 'false':
+        return False
+
+    try:
+        value = int(_param)
+    except ValueError:
+        value = _param
+
+    return value
 
 
 class Condition(object):
@@ -86,35 +119,16 @@ class Condition(object):
             return True
 
         if self.operator == Condition.ISTRUE:
-            return bool(self.get_parameter_value(_state, self.param1))
+            return bool(get_parameter_value(_state, self.param1))
 
         elif self.operator == Condition.NOT:
-            value1 = self.get_parameter_value(_state, self.param1)
+            value1 = get_parameter_value(_state, self.param1)
             return Condition.operators[self.operator](bool(value1))
 
         else:
-            value1 = self.get_parameter_value(_state, self.param1)
-            value2 = self.get_parameter_value(_state, self.param2)
+            value1 = get_parameter_value(_state, self.param1)
+            value2 = get_parameter_value(_state, self.param2)
             return Condition.operators[self.operator](value1, value2)
-
-    @staticmethod
-    def get_parameter_value(_state, _param):
-        if _param in _state:
-            return _state[_param]
-
-        if _param.lower() == 'true':
-            return True
-
-        if _param.lower() == 'false':
-            return False
-
-        try:
-            value = int(_param)
-        except ValueError:
-            logger.error("Could not evaluate condition parameter '{0}' - using 0 instead.".format(_param))
-            value = 0
-
-        return value
 
     @staticmethod
     def parse_string(_string):
@@ -165,12 +179,15 @@ class Option(object):
         self.action = Option.GOTO
         self.text = ""
         self.condition = None
+        self.next_scene = ""
+        self.tags = []
 
     @property
     def params(self):
         if self.action == Option.GOTO:
             return {
-                'next_scene': self.next_scene
+                "next_scene": self.next_scene,
+                "tags": self.tags
             }
         return {}
 
@@ -187,10 +204,12 @@ class Option(object):
 
         # GOTO.
         if new_option.action == Option.GOTO:
-            # Get next scene.
+            # Get next scene and tags.
             new_option.next_scene = _el.get("nextScene")
-            if new_option.next_scene is None:
-                logger.error("Option {0} has a GOTO action but no next scene attribute. Skipping.".format(_index))
+            new_option.tags = string_to_tags(_el.get("tags"))
+
+            if new_option.next_scene is None and new_option.tags is None:
+                logger.error("Option {0} has a GOTO action but neither a next scene nor tag attributes. Skipping.".format(_index))
                 return None
 
             # Get text.
@@ -204,7 +223,7 @@ class Option(object):
             # Get text.
             new_option.text = _el.text.strip()
             if new_option.text is None or len(new_option.text) == 0:
-                logger.error("Option {0} has a GOTO action but does not contain any text. Skipping.".format(_index))
+                logger.error("Option {0} has a COMPUTER action but does not contain any text. Skipping.".format(_index))
                 return None
 
         # Parse condition, if any.
@@ -277,7 +296,7 @@ def read_scenes_from_text_file(_file, _scene_name):
             # Get scene tags, if any.
             tags = meta_el.get("tags", None)
             if tags:
-                new_scene.tags = [tag.strip() for tag in tags.split(",")]
+                new_scene.tags = string_to_tags(tags)
         else:
             if len(scene_els) == 1:
                 new_scene.id = _scene_name
@@ -306,7 +325,7 @@ def read_scenes_from_text_file(_file, _scene_name):
         for injected_option_index, injected_option_el in enumerate(scene_el.findall("injectOption")):
             tags = injected_option_el.get("tags", None)
             if tags:
-                tags = [tag.strip() for tag in tags.split(",")]
+                tags = string_to_tags(tags)
                 new_scene.injected_options.append(tags)
             else:
                 logger.error("Scene {0} has injected option {1} which has no tags. Skipping.".format(scene_index+1, injected_option_index+1))

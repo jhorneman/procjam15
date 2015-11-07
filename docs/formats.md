@@ -91,7 +91,7 @@ I am not happy with this way of implementing things, but it was the fastest way 
 
 You can make options appear or not by adding a condition to the tag, like so:
 
-    <option action="computer-room" cond="amount_of_data lt 3">...</option>
+    <option action="computer-room" cond="$amount_of_data lt 3">...</option>
 
 Conditions can contain the following operators:
 
@@ -103,11 +103,11 @@ Conditions can contain the following operators:
 * 'gteq': greater than or equal.
 * 'lteq': less than or equal.
 
-We cannot use the < and > signs because that would be cumbersome in XML.
+(We cannot use the < and > signs because that is cumbersome in XML.)
 
 If you want to test if a value is true, just write the value without any operators:
 
-    <option action="computer-room" cond="has_mcguffin">...</option>
+    <option action="computer-room" cond="$has_mcguffin">...</option>
 
 The not operator is the only operator that only takes one parameter: all the other ones must be used with the form
 
@@ -115,10 +115,10 @@ The not operator is the only operator that only takes one parameter: all the oth
 
 Parameters are evaluated as follows:
 
-* First we try to find a variable with the same name as the parameter in the persistent game state. So if the game state tracks a variable called 'has_mcguffin', a parameter 'has_mcguffin' will equal the value of that variable. This is what you will usually want to do.
+* If the parameter starts with a $, we try to find a variable with the same name in the persistent game state. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable. This is what you will usually want to use.
+* Then we see if the parameter is 'random', and if so generate a random number between 0 and 100.
 * Then we see if the parameter is 'true' or 'false'.
-* Finally we see if the parameter is a number.
-* If none of that works, we report an error and use the value 0.
+* Finally we treat the parameter as a number or a string.
 
 ## Injected options
 
