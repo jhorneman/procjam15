@@ -258,7 +258,7 @@ class Scene(object):
                 if text_block[2].evaluate(_state):
                     text += text_block[1]
             elif text_block[0] == "inject":
-                text += "<injected text not implemented yet>"
+                text += "<injected text for tags {0}>".format(text_block[1])
             else:
                 logger.error("Unknown text block type '{0}'.".format(text_block[0]))
         return text

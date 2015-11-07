@@ -45,11 +45,36 @@ When you put multiple scenes inside one file, use the <meta> tag to indicate the
 
 Scenes can have tags. These are used to select one of a given number of scenes.
 
-Tags are indicated in the <meta> tag, like so:
+Tags are indicated in the <meta> element, like so:
 
     <meta tags="mission"/>
 
 Tags are separated by commas. Leading and trailing white space is stripped. Currently there are no checks for empty or duplicate tags.
+
+## Scene text
+
+The main scene text is constructed from all the text inside the <scene> tag, as well as special text blocks, as described below.
+
+### Conditional text
+
+Adding a text element like this:
+
+    <text cond="">
+    </text>
+
+means the text inside the element will only be shown if the condition is true. See below for how conditions work.
+
+Everything else inside the text element will be ignored.
+
+### Injected text
+
+By adding this element:
+
+    <injectText tags="" />
+
+you can inject text that has the desired tags.
+
+(Right now that works except there is no system to write tagged texts yet. Before you ask: no, you cannot put injected text inside a text element. Ask me if you _really_ need that.)
 
 ## Lead-ins
 
