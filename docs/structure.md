@@ -1,5 +1,16 @@
 # WARNING: HEAVY SPOILERS
 
+# Player experience
+
+they are in the computer room
+they have ~3 options for places to explore (leadin text from missions)
+they click one to go on a mission
+that mission gives the player a description
+they have ~3 options for things to salvage/explore
+they click one to salvage
+that choice gives the player a description as well as a piece of data
+they get one option - to return to the computer room with the data
+
 # Time and progession
 
 The flesh timeline represents the computer and the station becoming flesh.
