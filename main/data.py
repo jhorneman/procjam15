@@ -13,6 +13,7 @@ SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 logger = logging.getLogger(__name__)
 
 scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
+scene_id_re = re.compile(r"^[a-zA-Z0-9-_ ]*$")
 
 scenes = {}
 data_files_for_live_reloading = []
@@ -126,7 +127,7 @@ def read_scenes_from_text_file(_file, _scene_name):
     for scene_index, scene_el in enumerate(scene_els):
         new_scene = Scene()
 
-        # Find meta element, skip if not found.
+        # Find meta element.
         meta_el = scene_el.find("meta")
         if meta_el is not None:
             # Get scene ID, use scene name if not found and there's only one scene, otherwise skip.
@@ -136,6 +137,11 @@ def read_scenes_from_text_file(_file, _scene_name):
                     new_scene.id = _scene_name
                 else:
                     logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(scene_index+1))
+                    continue
+            else:
+                new_scene.id = new_scene.id.strip()
+                if not scene_id_re.match(new_scene.id):
+                    logger.error("Scene {0} has an invalid id '{1}'. Scene ids must consist of letters, underscores, hyphens, spaces, and numbers. Skipping.".format(scene_index+1, new_scene.id))
                     continue
 
             # Get scene type, if any.
@@ -156,6 +162,10 @@ def read_scenes_from_text_file(_file, _scene_name):
             else:
                 logger.error("Scene {0} does not contain a meta element. Skipping.".format(scene_index+1))
                 continue
+
+        if new_scene.id in scenes:
+            logger.error("Scene {0} has id {1} which already exists. Skipping.".format(scene_index+1, new_scene.id))
+            continue
 
         # Build scene description from all texts at the root of the scene element.
         # This includes the tails of child elements.
