@@ -61,13 +61,13 @@ def get_parameter_value(_state, _param):
             logger.error("Could not find a state variable named '{0}' - using 0 instead.".format(variable_name))
             return 0
 
-    if _param.lower() == 'random':
+    if _param.lower() == "random":
         return random.randint(0, 100)
 
-    if _param.lower() == 'true':
+    if _param.lower() == "true":
         return True
 
-    if _param.lower() == 'false':
+    if _param.lower() == "false":
         return False
 
     try:
@@ -79,15 +79,15 @@ def get_parameter_value(_state, _param):
 
 
 class Condition(object):
-    NOOP = 'noop'
-    ISTRUE = 'istrue'
-    NOT = 'not'
-    EQ = 'eq'
-    NEQ = 'neq'
-    GT = 'gt'
-    LT = 'lt'
-    GTEQ = 'gteq'
-    LTEQ = 'lteq'
+    NOOP = "noop"
+    ISTRUE = "istrue"
+    NOT = "not"
+    EQ = "eq"
+    NEQ = "neq"
+    GT = "gt"
+    LT = "lt"
+    GTEQ = "gteq"
+    LTEQ = "lteq"
 
     operators = {
         NOT: operator.not_,
@@ -99,14 +99,14 @@ class Condition(object):
         LTEQ: operator.le
     }
 
-    not_token = ['not']
+    not_token = ["not"]
     binary_operator_tokens = {
-        EQ: ['is', 'eq', '=='],
-        NEQ: ['neq', '!='],
-        GT: ['gt'],
-        LT: ['lt'],
-        GTEQ: ['gteq'],
-        LTEQ: ['lteq']
+        EQ: ["is", "eq", "=="],
+        NEQ: ["neq", "!="],
+        GT: ["gt"],
+        LT: ["lt"],
+        GTEQ: ["gteq"],
+        LTEQ: ["lteq"]
     }
 
     def __init__(self):
@@ -169,10 +169,10 @@ class Condition(object):
 
 
 class Option(object):
-    GOTO = 'goto'
-    COMPUTER = 'computer-room'
-    MISSION = 'mission'
-    FOUND_DATA = 'found-data'
+    GOTO = "goto"
+    COMPUTER = "computer-room"
+    MISSION = "mission"
+    FOUND_DATA = "found-data"
     actions = [GOTO, COMPUTER, MISSION, FOUND_DATA]
 
     def __init__(self):
@@ -199,7 +199,7 @@ class Option(object):
         new_option.action = _el.get("action", Option.GOTO)
         if new_option.action not in Option.actions:
             logger.error("Option {0} has action'{1}' which is not a valid action (those are {2}). Skipping."
-                .format(_index, new_option.action, ', '.join(Option.actions)))
+                .format(_index, new_option.action, ", ".join(Option.actions)))
             return None
 
         # GOTO.
@@ -237,17 +237,31 @@ class Option(object):
 
 
 class Scene(object):
-    STANDARD = 'STANDARD'
+    STANDARD = "STANDARD"
     types = [STANDARD]
 
     def __init__(self):
         self.id = None
         self.type = Scene.STANDARD
         self.tags = []
-        self.desc = ""
+        self.text_blocks = []
         self.options = []
         self.leadin = None
         self.injected_options = []
+
+    def build_main_text(self, _state):
+        text = ""
+        for text_block in self.text_blocks:
+            if text_block[0] == "raw":
+                text += text_block[1]
+            elif text_block[0] == "text":
+                if text_block[2].evaluate(_state):
+                    text += text_block[1]
+            elif text_block[0] == "inject":
+                text += "<injected text not implemented yet>"
+            else:
+                logger.error("Unknown text block type '{0}'.".format(text_block[0]))
+        return text
 
 
 def read_scenes_from_text_file(_file, _scene_name):
@@ -290,7 +304,7 @@ def read_scenes_from_text_file(_file, _scene_name):
             new_scene.type = meta_el.get("type", Scene.STANDARD)
             if new_scene.type not in Scene.types:
                 logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
-                    .format(scene_index+1, new_scene.type, ', '.join(Scene.types)))
+                    .format(scene_index+1, new_scene.type, ", ".join(Scene.types)))
                 continue
 
             # Get scene tags, if any.
@@ -311,10 +325,32 @@ def read_scenes_from_text_file(_file, _scene_name):
 
         # Build scene description from all texts at the root of the scene element.
         # This includes the tails of child elements.
-        new_scene.desc = scene_el.text if scene_el.text is not None else ""
-        for child in scene_el:
-            if child.tail:
-                new_scene.desc += child.tail
+        if scene_el.text:
+            new_scene.text_blocks.append(("raw", scene_el.text))
+
+        for child_el in scene_el:
+            if child_el.tag == "text":
+                condition_string = child_el.get("cond")
+                if condition_string:
+                    condition = Condition.parse_string(condition_string)
+                    if condition:
+                        new_scene.text_blocks.append(("text", child_el.text, condition))
+                else:
+                    logger.error("Scene {0} contains a conditional text block without a condition. Skipping.".format(scene_index+1))
+
+            elif child_el.tag == "injectText":
+                tags_string = child_el.get("tags")
+                if tags_string:
+                    tags = string_to_tags(tags_string)
+                    if len(tags) > 0:
+                        new_scene.text_blocks.append(("inject", tags))
+                    else:
+                        logger.error("Scene {0} contains an injected text block with empty tags. Skipping.".format(scene_index+1))
+                else:
+                    logger.error("Scene {0} contains an injected text block without tags. Skipping.".format(scene_index+1))
+
+            if child_el.tail:
+                new_scene.text_blocks.append(("raw", child_el.tail))
 
         # Get leadin, if any.
         leadin_el = scene_el.find("leadin")
@@ -323,12 +359,15 @@ def read_scenes_from_text_file(_file, _scene_name):
 
         # Get injected options, if any.
         for injected_option_index, injected_option_el in enumerate(scene_el.findall("injectOption")):
-            tags = injected_option_el.get("tags", None)
-            if tags:
-                tags = string_to_tags(tags)
-                new_scene.injected_options.append(tags)
+            tags_string = injected_option_el.get("tags", None)
+            if tags_string:
+                tags = string_to_tags(tags_string)
+                if len(tags) > 0:
+                    new_scene.injected_options.append(tags)
+                else:
+                    logger.error("Scene {0} contains an injected option {1} with empty tags. Skipping.".format(scene_index+1, injected_option_index+1))
             else:
-                logger.error("Scene {0} has injected option {1} which has no tags. Skipping.".format(scene_index+1, injected_option_index+1))
+                logger.error("Scene {0} contains an injected option {1} without tags. Skipping.".format(scene_index+1, injected_option_index+1))
                 continue
 
         # Iterate over all option elements.

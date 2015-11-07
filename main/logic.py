@@ -54,7 +54,7 @@ def get_standard_scene_data(_next_scene):
     # session.modified = True
 
     scene_data = {
-        "text": scene_desc.desc,
+        "text": scene_desc.build_main_text(session),
         "options": [{
             "action": option.action,
             "text": option.text,
@@ -129,7 +129,7 @@ def get_mission_data():
         return None
 
     return {
-        "text": scene_desc.desc,
+        "text": scene_desc.build_main_text(session),
         "options": [{
             "action": Option.FOUND_DATA,
             "text": "Search this place for lovely but potentially gross data."
