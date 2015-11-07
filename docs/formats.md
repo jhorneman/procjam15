@@ -57,13 +57,13 @@ Scenes have options: things the player can do. In principle every scene has at l
 
 Each option has, at the very least, some text and an action. The text may be generated somehow. The action may require additional parameters.
 
-The most common action is 'go-to', and it requires a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
+The most common action is 'goto', and it requires a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
 
-The go-to action is so common, it is assumed to be an option's action if you don't specify anything else. So this:
+The goto action is so common, it is assumed to be an option's action if you don't specify anything else. So this:
 
     <option nextScene='forest'>Go to the forest.</option>
 
-is the shortest way to write a go-to action.
+is the shortest way to write a goto action.
 
 Other action types right now are:
 

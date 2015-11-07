@@ -40,7 +40,7 @@ def get_scene_description_with_tag(_tag):
 
 
 class Option(object):
-    GOTO = 'go-to'
+    GOTO = 'goto'
     COMPUTER = 'computer-room'
     QUEST = 'quest'
     FOUND_DATA = 'found-data'
