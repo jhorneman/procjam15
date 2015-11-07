@@ -58,7 +58,8 @@ def get_standard_scene_data(_next_scene):
         "options": [{
             "action": option.action,
             "text": option.text,
-            "params": option.params
+            "params": option.params,
+            "condition": option.condition
             } for option in scene_desc.options
         ]
     }
@@ -191,6 +192,13 @@ def get_scene_data():
     if not scene_data:
         logger.error("Couldn't find scene data.")
         return None
+
+    # Evaluate option conditions.
+    for (index, option) in enumerate(scene_data["options"]):
+        condition = option.get("condition", None)
+        if condition:
+            if not condition.evaluate(session):
+                del scene_data["options"][index]
 
     # scene_data must consist of dumb dictionaries here because we're going to mutate the text.
 

@@ -4,6 +4,7 @@ import os
 import re
 import logging
 import xml.etree.ElementTree as ET
+import operator
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -44,6 +45,104 @@ def get_scene_description_with_tag(_tag):
     return scenes.get(scene_id)
 
 
+class Condition(object):
+    NOOP = 'noop'
+    NOT = 'not'
+    EQ = 'eq'
+    NEQ = 'neq'
+    GT = 'gt'
+    LT = 'lt'
+    GTEQ = 'gteq'
+    LTEQ = 'lteq'
+
+    operators = {
+        NOT: operator.not_,
+        EQ: operator.eq,
+        NEQ: operator.ne,
+        GT: operator.gt,
+        LT: operator.lt,
+        GTEQ: operator.ge,
+        LTEQ: operator.le
+    }
+
+    not_token = ['not']
+    binary_operator_tokens = {
+        EQ: ['is', 'eq', '=='],
+        NEQ: ['neq', '!='],
+        GT: ['gt'],
+        LT: ['lt'],
+        GTEQ: ['gteq'],
+        LTEQ: ['lteq']
+    }
+
+    def __init__(self):
+        self.param1 = None
+        self.param2 = None
+        self.operator = Condition.NOOP
+
+    def evaluate(self, _state):
+        if self.operator == Condition.NOOP:
+            return True
+
+        if self.operator == Condition.NOT:
+            value1 = self.get_parameter_value(_state, self.param1)
+            return Condition.operators[self.operator](value1)
+        else:
+            value1 = self.get_parameter_value(_state, self.param1)
+            value2 = self.get_parameter_value(_state, self.param2)
+            return Condition.operators[self.operator](value1, value2)
+
+    @staticmethod
+    def get_parameter_value(_state, _param):
+        if _param == 'true':
+            return True
+
+        if _param == 'false':
+            return False
+
+        if _param in _state:
+            return _state[_param]
+
+        try:
+            value = int(_param)
+        except ValueError:
+            value = 0
+
+        return value
+
+    @staticmethod
+    def parse_string(_string):
+        parsed_tokens = [token.strip() for token in _string.split()]
+
+        new_condition = None
+
+        if len(parsed_tokens) == 2:
+            if parsed_tokens[0].lower() in Condition.not_token:
+                new_condition = Condition()
+                new_condition.param1 = parsed_tokens[1]
+                new_condition.operator = Condition.NOT
+            else:
+                logger.error("Couldn't parse condition '{0}' - it should be a NOT operator but isn't.".format(_string))
+
+        elif len(parsed_tokens) == 3:
+            parsed_operator = parsed_tokens[1].lower()
+            for op, tokens in Condition.binary_operator_tokens.items():
+                if parsed_operator in tokens:
+                    new_condition = Condition()
+                    new_condition.param1 = parsed_tokens[0]
+                    new_condition.param2 = parsed_tokens[2]
+                    new_condition.operator = op
+                    break
+
+            if new_condition is None:
+                logger.error("Couldn't parse condition '{0}' - didn't recognize operator.".format(_string))
+
+        else:
+            logger.error("Couldn't parse condition '{0}'.".format(_string))
+
+        return new_condition
+
+
 class Option(object):
     GOTO = 'goto'
     COMPUTER = 'computer-room'
@@ -54,6 +153,7 @@ class Option(object):
     def __init__(self):
         self.action = Option.GOTO
         self.text = ""
+        self.condition = None
 
     @property
     def params(self):
@@ -95,6 +195,13 @@ class Option(object):
             if new_option.text is None or len(new_option.text) == 0:
                 logger.error("Option {0} has a GOTO action but does not contain any text. Skipping.".format(_index))
                 return None
+
+        # Parse condition, if any.
+        condition_string = _el.get("cond")
+        if condition_string:
+            condition = Condition.parse_string(condition_string)
+            if condition:
+                new_option.condition = condition
 
         return new_option
 
