@@ -152,8 +152,12 @@ def get_scene_data():
     elif action == Option.FOUND_DATA:
         scene_data = get_found_data_data()
 
-    if not scene_data:
+    else:
         logger.error("'{0}' is an unknown action type.".format(action))
+        return None
+
+    if not scene_data:
+        logger.error("Couldn't find scene data.")
         return None
 
     # scene_data must consist of dumb dictionaries here because we're going to mutate the text.
