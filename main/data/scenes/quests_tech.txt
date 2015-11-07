@@ -1,0 +1,78 @@
+<scene>
+<meta id='mess-hall' tags='quest'/>
+You're in the mess hall. Food is still on the table, but it is rotting and mouldy. Plates and cutlery are spread out, as if people left in a hurry. Some of the benches have been thrown over.
+<option nextScene="death airlock">
+Fiddle with the airlock.
+</option>
+</scene>
+
+<scene>
+<meta id='dormitory' tags='quest'/>
+You're in a crew dormitory.
+</scene>
+
+<scene>
+<meta id='engineering' tags='quest'/>
+You're in the engineering space.
+</scene>
+
+<scene>
+<meta id='hangar bay' tags='quest'/>
+You're in the hangar bay.
+</scene>
+
+<scene>
+<meta id='flight deck' tags='quest'/>
+You're on the flight deck.
+</scene>
+
+<scene>
+<meta id='medbay' tags='quest'/>
+You're in the lower medbay.
+</scene>
+
+<scene>
+<meta id='hydroponic gardens' tags='quest'/>
+You're in the hydroponic gardens.
+</scene>
+
+<scene>
+<meta id='crew deck' tags='quest'/>
+You're on the crew deck.
+</scene>
+
+<scene>
+<meta id='life support control' tags='quest'/>
+You're in life support control.
+</scene>
+
+<scene>
+<meta id='the bridge' tags='quest'/>
+You're on the bridge.
+</scene>
+
+<scene>
+<meta id='laboratory big' tags='quest'/>
+You're in the main laboratory.
+</scene>
+
+<scene>
+<meta id='maintenance bay' tags='quest'/>
+You're in the maintenance bay.
+</scene>
+
+<scene>
+<meta id='captains nest' tags='quest'/>
+You're in the captain's nest.
+</scene>
+
+<scene>
+<meta id='communications array' tags='quest'/>
+You're in the communications array.
+</scene>
+
+<scene>
+<meta id='command center' tags='quest'/>
+You're in the command center.
+</scene>
+

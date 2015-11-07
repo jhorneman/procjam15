@@ -1,4 +1,0 @@
-<scene>
-<meta id='mess-hall' tags='quest'/>
-You're in the mess hall. Food is still on the table, but it is rotting and mouldy. Plates and cutlery are spread out, as if people left in a hurry. Some of the benches have been thrown over.
-</scene>

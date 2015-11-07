@@ -1,0 +1,50 @@
+<scene>
+<meta id='airlock' tags='quest'/>
+You're in an airlock.
+</scene>
+
+<scene>
+<meta id='another storage room' tags='quest'/>
+You're in another storage room.
+</scene>
+
+<scene>
+<meta id='cargo storage' tags='quest'/>
+You're in cargo storage.
+</scene>
+
+<scene>
+<meta id='vents' tags='quest'/>
+You're in the lower vents.
+</scene>
+
+<scene>
+<meta id='maintenance shaft' tags='quest'/>
+You're in the maintenance shaft.
+</scene>
+
+<scene>
+<meta id='hallway' tags='quest'/>
+You're in the hallway.
+</scene>
+
+<scene>
+<meta id='office' tags='quest'/>
+You're in the office.
+</scene>
+
+<scene>
+<meta id='laboratory small' tags='quest'/>
+You're in the small laboratory.
+</scene>
+
+<scene>
+<meta id='elevator' tags='quest'/>
+You're at the elevators.
+</scene>
+
+<scene>
+<meta id='server room' tags='quest'/>
+You're in the server room.
+</scene>
+
