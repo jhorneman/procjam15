@@ -1,0 +1,3 @@
+<scene>
+You are at the computer room. It wants data. You have an option to interact with the computer (attempt to communicate), feed it data (if you have data), or search the ship for data to salvage (quest).
+</scene>
