@@ -33,7 +33,7 @@ When you do want to specify the scene type, use the <meta> tag anywhere inside t
 
 ## Scene ID
 
-Each scene must have an ID. An ID consists of letters, underscores, hyphens, and numbers. (I don't know if accented characters work: they may not, because scene IDs are used in URLs.)
+Each scene must have an ID. An ID consists of letters, underscores, hyphens, spaces, and numbers. (I don't know if accented characters work: they may not, because scene IDs are used in URLs.)
 
 When you put one scene in a file, the scene ID is extracted from the filename. So mess_hall.txt gives the ID 'mess_hall'. This is (like many of these things) for convenience.
 
