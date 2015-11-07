@@ -1,5 +1,5 @@
 <scene>
-<meta id='mess-hall' tags='mission'/>
+<meta id='mess-hall' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the mess hall. Food is still on the table, but it is rotting and mouldy. Plates and cutlery are spread out, as if people left in a hurry. Some of the benches have been thrown over.
 <option nextScene="death airlock">
@@ -8,85 +8,85 @@ Fiddle with the airlock.
 </scene>
 
 <scene>
-<meta id='dormitory' tags='mission'/>
+<meta id='dormitory' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in a crew dormitory.
 </scene>
 
 <scene>
-<meta id='engineering' tags='mission'/>
+<meta id='engineering' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the engineering space.
 </scene>
 
 <scene>
-<meta id='hangar bay' tags='mission'/>
+<meta id='hangar bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the hangar bay.
 </scene>
 
 <scene>
-<meta id='flight deck' tags='mission'/>
+<meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're on the flight deck.
 </scene>
 
 <scene>
-<meta id='medbay' tags='mission'/>
+<meta id='medbay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the lower medbay.
 </scene>
 
 <scene>
-<meta id='hydroponic gardens' tags='mission'/>
+<meta id='hydroponic gardens' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the hydroponic gardens.
 </scene>
 
 <scene>
-<meta id='crew deck' tags='mission'/>
+<meta id='crew deck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're on the crew deck.
 </scene>
 
 <scene>
-<meta id='life support control' tags='mission'/>
+<meta id='life support control' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in life support control.
 </scene>
 
 <scene>
-<meta id='the bridge' tags='mission'/>
+<meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're on the bridge.
 </scene>
 
 <scene>
-<meta id='laboratory big' tags='mission'/>
+<meta id='laboratory big' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the main laboratory.
 </scene>
 
 <scene>
-<meta id='maintenance bay' tags='mission'/>
+<meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the maintenance bay.
 </scene>
 
 <scene>
-<meta id='captains nest' tags='mission'/>
+<meta id='captains nest' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the captain's nest.
 </scene>
 
 <scene>
-<meta id='communications array' tags='mission'/>
+<meta id='communications array' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the communications array.
 </scene>
 
 <scene>
-<meta id='command center' tags='mission'/>
+<meta id='command center' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Go on a mission.</leadin>
 You're in the command center.
 </scene>

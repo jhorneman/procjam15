@@ -1,59 +1,59 @@
 <scene>
-<meta id='airlock' tags='mission'/>
+<meta id='airlock' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in an airlock.
 </scene>
 
 <scene>
-<meta id='another storage room' tags='mission'/>
+<meta id='another storage room' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in another storage room.
 </scene>
 
 <scene>
-<meta id='cargo storage' tags='mission'/>
+<meta id='cargo storage' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in cargo storage.
 </scene>
 
 <scene>
-<meta id='vents' tags='mission'/>
+<meta id='vents' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the lower vents.
 </scene>
 
 <scene>
-<meta id='maintenance shaft' tags='mission'/>
+<meta id='maintenance shaft' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the maintenance shaft.
 </scene>
 
 <scene>
-<meta id='hallway' tags='mission'/>
+<meta id='hallway' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the hallway.
 </scene>
 
 <scene>
-<meta id='office' tags='mission'/>
+<meta id='office' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the office.
 </scene>
 
 <scene>
-<meta id='laboratory small' tags='mission'/>
+<meta id='laboratory small' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the small laboratory.
 </scene>
 
 <scene>
-<meta id='elevator' tags='mission'/>
+<meta id='elevator' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're at the elevators.
 </scene>
 
 <scene>
-<meta id='server room' tags='mission'/>
+<meta id='server room' tags='mission, flesh_act1, flesh_act2'/>
 <leadin>Go on a mission.</leadin>
 You're in the server room.
 </scene>

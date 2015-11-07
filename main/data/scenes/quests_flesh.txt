@@ -1,41 +1,41 @@
 <scene>
-<meta id='womb' tags='mission'/>
+<meta id='womb' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in a womb. It is familiar, like a dormitory...
 </scene>
 
 <scene>
-<meta id='umbilical cord' tags='mission'/>
+<meta id='umbilical cord' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in an umbilical cord. It is familiar, like a hallway...
 </scene>
 
 <scene>
-<meta id='stomach' tags='mission'/>
+<meta id='stomach' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in a stomach. It is familiar, like a mess hall...
 </scene>
 
 <scene>
-<meta id='carapace' tags='mission'/>
+<meta id='carapace' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're within a carapace. It is familiar, like an airlock or vent...
 </scene>
 
 <scene>
-<meta id='gland' tags='mission'/>
+<meta id='gland' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in a gland. It is familiar, like a small laboratory...
 </scene>
 
 <scene>
-<meta id='canal' tags='mission'/>
+<meta id='canal' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in a canal lined with hair and wax, like an ear canal. It is familiar, like a vent...
 </scene>
 
 <scene>
-<meta id='nest' tags='mission'/>
+<meta id='nest' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Go on a mission.</leadin>
 You're in a nest. It is familiar, like a storage room...
 </scene>
