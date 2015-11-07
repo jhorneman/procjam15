@@ -47,6 +47,7 @@ def get_scene_description_with_tag(_tag):
 
 class Condition(object):
     NOOP = 'noop'
+    ISTRUE = 'istrue'
     NOT = 'not'
     EQ = 'eq'
     NEQ = 'neq'
@@ -84,9 +85,13 @@ class Condition(object):
         if self.operator == Condition.NOOP:
             return True
 
-        if self.operator == Condition.NOT:
+        if self.operator == Condition.ISTRUE:
+            return bool(self.get_parameter_value(_state, self.param1))
+
+        elif self.operator == Condition.NOT:
             value1 = self.get_parameter_value(_state, self.param1)
-            return Condition.operators[self.operator](value1)
+            return Condition.operators[self.operator](bool(value1))
+
         else:
             value1 = self.get_parameter_value(_state, self.param1)
             value2 = self.get_parameter_value(_state, self.param2)
@@ -94,18 +99,19 @@ class Condition(object):
 
     @staticmethod
     def get_parameter_value(_state, _param):
-        if _param == 'true':
-            return True
-
-        if _param == 'false':
-            return False
-
         if _param in _state:
             return _state[_param]
+
+        if _param.lower() == 'true':
+            return True
+
+        if _param.lower() == 'false':
+            return False
 
         try:
             value = int(_param)
         except ValueError:
+            logger.error("Could not evaluate condition parameter '{0}' - using 0 instead.".format(_param))
             value = 0
 
         return value
@@ -116,7 +122,12 @@ class Condition(object):
 
         new_condition = None
 
-        if len(parsed_tokens) == 2:
+        if len(parsed_tokens) == 1:
+            new_condition = Condition()
+            new_condition.param1 = parsed_tokens[0]
+            new_condition.operator = Condition.ISTRUE
+
+        elif len(parsed_tokens) == 2:
             if parsed_tokens[0].lower() in Condition.not_token:
                 new_condition = Condition()
                 new_condition.param1 = parsed_tokens[1]
