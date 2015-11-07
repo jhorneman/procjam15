@@ -1,93 +1,107 @@
 <scene>
-<meta id='mess-hall' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
-You're in the mess hall. Food is still on the table, but it is rotting and mouldy. Plates and cutlery are spread out, as if people left in a hurry. Some of the benches have been thrown over.
-<option nextScene="death airlock">
-Fiddle with the airlock.
-</option>
-</scene>
-
-<scene>
-<meta id='dormitory' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
-You're in a crew dormitory.
-</scene>
-
-<scene>
 <meta id='engineering' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search engineering.</leadin>
 You're in the engineering space.
 </scene>
 
 <scene>
 <meta id='hangar bay' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the hangar bay.</leadin>
 You're in the hangar bay.
 </scene>
 
 <scene>
 <meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the flight deck.</leadin>
 You're on the flight deck.
 </scene>
 
 <scene>
 <meta id='medbay' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the medbay.</leadin>
 You're in the lower medbay.
 </scene>
 
 <scene>
 <meta id='hydroponic gardens' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the hydroponic gardens.</leadin>
 You're in the hydroponic gardens.
 </scene>
 
 <scene>
 <meta id='crew deck' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the crew deck.</leadin>
 You're on the crew deck.
 </scene>
 
 <scene>
 <meta id='life support control' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the life support control.</leadin>
 You're in life support control.
 </scene>
 
 <scene>
 <meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the bridge.</leadin>
 You're on the bridge.
 </scene>
 
 <scene>
 <meta id='laboratory big' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
 </scene>
 
 <scene>
 <meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
 </scene>
 
 <scene>
-<meta id='captains nest' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
-You're in the captain's nest.
-</scene>
-
-<scene>
-<meta id='communications array' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
-You're in the communications array.
+<meta id='captains quarters' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the captain's quarters.</leadin>
+You're in the captain's quarters.
 </scene>
 
 <scene>
 <meta id='command center' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the command center.</leadin>
 You're in the command center.
 </scene>
 
+<scene>
+<meta id='reactor core' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the reactor core.</leadin>
+You are outside the reactor core.
+</scene>
+
+<scene>
+<meta id='navigation' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search navigation.</leadin>
+You are at the propulsion systems control in navigation.
+</scene>
+
+<scene>
+<meta id='solar arrays' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the solar arrays.</leadin>
+You are at the solar arrays.
+</scene>
+
+<scene>
+<meta id='morgue' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the morgue.</leadin>
+You are in the morgue.
+</scene>
+
+<scene>
+<meta id='radiation shielding' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the radiation shielding control room.</leadin>
+You are in the radiation shielding control room.
+</scene>
+
+<scene>
+<meta id='hydrogen collector' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the hydrogen collectors.</leadin>
+You are at the hydrogen collectors.
+</scene>

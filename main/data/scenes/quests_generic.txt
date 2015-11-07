@@ -1,60 +1,117 @@
 <scene>
 <meta id='airlock' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search main utility airlocks.</leadin>
 You're in an airlock.
 </scene>
 
 <scene>
-<meta id='another storage room' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
-You're in another storage room.
+<meta id='storage room' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search nearby storage room.</leadin>
+You're in a nearby storage room.
 </scene>
 
 <scene>
 <meta id='cargo storage' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search cargo storage.</leadin>
 You're in cargo storage.
 </scene>
 
 <scene>
 <meta id='vents' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the ventilation shafts.</leadin>
 You're in the lower vents.
 </scene>
 
 <scene>
 <meta id='maintenance shaft' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
-You're in the maintenance shaft.
+<leadin>Search the upper maintenance shaft</leadin>
+You're in the upper maintenance shaft.
 </scene>
 
 <scene>
 <meta id='hallway' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the second floor main hallway.</leadin>
 You're in the hallway.
 </scene>
 
 <scene>
 <meta id='office' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the administration office.</leadin>
 You're in the office.
 </scene>
 
 <scene>
 <meta id='laboratory small' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
-You're in the small laboratory.
+<leadin>Search the starboard labs.</leadin>
+You're in the small laboratory on the starboard side.
 </scene>
 
 <scene>
 <meta id='elevator' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the elevators.</leadin>
 You're at the elevators.
 </scene>
 
 <scene>
 <meta id='server room' tags='mission, flesh_act1, flesh_act2'/>
-<leadin>Go on a mission.</leadin>
+<leadin>Search the sector 1 server room.</leadin>
 You're in the server room.
+</scene>
+
+<scene>
+<meta id='shuttle bay' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the shuttle bay.</leadin>
+You're in the shuttle bay.
+</scene>
+
+<scene>
+<meta id='observation room' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search one of the observation rooms.</leadin>
+You're in the minor observation room.
+</scene>
+
+<scene>
+<meta id='tram' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the tram station.</leadin>
+You're in the tram station.
+</scene>
+
+<scene>
+<meta id='commissary' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the commissary.</leadin>
+You're in the commissary.
+</scene>
+
+<scene>
+<meta id='substation' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the substation.</leadin>
+You're in the substation that controls electrical power to the local sector.
+</scene>
+
+<scene>
+<meta id='briefing room' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the briefing room.</leadin>
+You're in the briefing room.
+</scene>
+
+<scene>
+<meta id='restroom' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the restrooms.</leadin>
+You're in the restrooms.
+</scene>
+
+<scene>
+<meta id='mess-hall' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the mess hall.</leadin>
+You're in the mess hall. Food is still on the table, but it is rotting and mouldy. Plates and cutlery are spread out, as if people left in a hurry. Some of the benches have been thrown over.
+<option nextScene="death airlock">
+Fiddle with the airlock.
+</option>
+</scene>
+
+<scene>
+<meta id='dormitory' tags='mission, flesh_act1, flesh_act2'/>
+<leadin>Search the dormitory.</leadin>
+You're in a crew dormitory.
 </scene>
 
