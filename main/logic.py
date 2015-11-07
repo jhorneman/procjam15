@@ -2,7 +2,7 @@
 
 import string
 import logging
-from flask import request, session
+from flask import request, session, escape
 from main.data import get_scene_description, get_scene_description_with_tag, Option
 
 
@@ -17,9 +17,16 @@ default_game_state = {
 
 
 class CustomFormatter(string.Formatter):
-    def check_unused_args(self, used_args, args, kwargs):
-        #TODO: Write actual check, report error but don't raise an exception
-        pass
+    def get_value(self, key, args, kwargs):
+        # Original code from /lib/python2.7/string.py
+        if isinstance(key, (int, long)):
+            return args[key]
+        else:
+            if key in kwargs:
+                return kwargs[key]
+            else:
+                logger.error("Text substitution key '{0}' was not found.".format(key))
+                return escape("<NOT FOUND>")
 
 formatter = CustomFormatter()
 
