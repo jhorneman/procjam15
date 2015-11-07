@@ -75,3 +75,7 @@ If everything went fine so far, ignore this!
 Some Python packages are partially written in C. We want to avoid having to build any C code because it's tricky to set up. So we're going to download pre-built binaries for 64-bit Windows.
 
 Open http://www.lfd.uci.edu/~gohlke/pythonlibs/ and download the latest installers (for amd64 and Python 2.7) for any packages you might need.
+
+## Testing
+
+Liz is adding a line to test out Github.
