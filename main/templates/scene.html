@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    {% autoescape false %}
     {{ text }}
-    {% endautoescape %}
     <ul id="options">
         {% for option in options %}
         <li><a href="{{ url_for('show_scene', action=option.action, **option|params) }}">{{option.text}}</a></li>
