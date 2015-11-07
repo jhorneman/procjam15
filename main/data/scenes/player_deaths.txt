@@ -1,38 +1,43 @@
 <scene>
-<meta id='death airlock' tags='death'/>
+<meta id='death airlock' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<leadin>Fiddle with airlock controls.</leadin>
 You die by being sucked out an airlock.
-<option nextScene="start">
-Restart game.
-</option>
+<option nextScene="start">Restart game.</option>
 </scene>
 
 <scene>
-<meta id='death oxygen' tags='death'/>
+<meta id='death oxygen' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<leadin>Modify oxygen levels.</leadin>
 You die because there is no oxygen in the room.
 </scene>
 
 <scene>
-<meta id='death vacuum' tags='death'/>
+<meta id='death vacuum' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<leadin>Open window.</leadin>
 You die because the room has become a vacuum. Explosive decompression?
 </scene>
 
 <scene>
-<meta id='death sleep' tags='death'/>
+<meta id='death sleep' tags='death_flesh_act2, death_flesh_act3'/>
+<leadin>Investigate spores closer.</leadin>
 You die by inhaling spores from some fungus. They put you to sleep.
 </scene>
 
 <scene>
-<meta id='death claustrophobia' tags='death'/>
+<meta id='death claustrophobia' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<leadin>Squeeze through vent.</leadin>
 You die from falling into a small spot in a vent and do not have the leverage to get out. You are stuck.
 </scene>
 
 <!-- late-game deaths -->
 <scene>
-<meta id='death sticky' tags='death'/>
+<meta id='death sticky' tags='death_flesh_act3, death_flesh_act4'/>
+<leadin>Touch unidentified substance.</leadin>
 You die by touching a sticky substance and find yourself unable to detach yourself from it.
 </scene>
 
 <scene>
-<meta id='death stuck' tags='death'/>
+<meta id='death stuck' tags='death_flesh_act3, death_flesh_act4'/>
+<leadin>Reach inside large undulating sphincter</leadin>
 You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail.
 </scene>
