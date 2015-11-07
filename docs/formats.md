@@ -152,3 +152,7 @@ Injected options allow you to tell the system to inject an option matching a giv
     <injectOption tags="spooky"/>
 
 will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
+
+Instead of literal tags ("spooky, outside") you can also refer to state variables like this:
+
+    <injectOption tags="spooky, $current_act"/>
