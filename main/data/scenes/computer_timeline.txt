@@ -1,0 +1,40 @@
+<scene>
+<meta id='computer1_1a' type='talk' tags='timeline1, act1'/>
+After giving the computer data, you talk with it.(Timeline 1, Act 1)
+</scene>
+<scene>
+<meta id='computer1_1b' type='talk' tags='timeline1, act1'/>
+After giving the computer data, you argue with it.(Timeline 1, Act 1)
+</scene>
+<scene>
+<meta id='computer1_1c' type='talk' tags='timeline1, act1'/>
+After giving the computer data, you chat with it.(Timeline 1, Act 1)
+</scene>
+
+<scene>
+<meta id='computer1_2a' type='talk' tags='timeline1, act2'/>
+After giving the computer data, you talk with it. (Timeline 1, Act 2)
+</scene>
+<scene>
+<meta id='computer1_2b' type='talk' tags='timeline1, act2'/>
+After giving the computer data, you argue with it. (Timeline 1, Act 2)
+</scene>
+<scene>
+<meta id='computer1_2c' type='talk' tags='timeline1, act2'/>
+After giving the computer data, you chat with it. (Timeline 1, Act 2)
+</scene>
+
+<scene>
+<meta id='computer1_3a' type='talk' tags='timeline1, act3'/>
+After giving the computer data, you talk with it. (Timeline 1, Act 3)
+</scene>
+<scene>
+<meta id='computer1_3a' type='talk' tags='timeline1, act3'/>
+After giving the computer data, you argue with it. (Timeline 1, Act 3)
+</scene>
+<scene>
+<meta id='computer1_3a' type='talk' tags='timeline1, act3'/>
+After giving the computer data, you chat with it. (Timeline 1, Act 3)
+</scene>
+
+<!-- just doing one timeline for now -->

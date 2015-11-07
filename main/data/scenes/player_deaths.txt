@@ -1,0 +1,38 @@
+<scene>
+<meta id='death airlock' tags='death'/>
+You die by being sucked out an airlock.
+<option nextScene="start">
+Restart game.
+</option>
+</scene>
+
+<scene>
+<meta id='death oxygen' tags='death'/>
+You die because there is no oxygen in the room.
+</scene>
+
+<scene>
+<meta id='death vacuum' tags='death'/>
+You die because the room has become a vacuum. Explosive decompression?
+</scene>
+
+<scene>
+<meta id='death sleep' tags='death'/>
+You die by inhaling spores from some fungus. They put you to sleep.
+</scene>
+
+<scene>
+<meta id='death claustrophobia' tags='death'/>
+You die from falling into a small spot in a vent and do not have the leverage to get out. You are stuck.
+</scene>
+
+<!-- late-game deaths -->
+<scene>
+<meta id='death sticky' tags='death'/>
+You die by touching a sticky substance and find yourself unable to detach yourself from it.
+</scene>
+
+<scene>
+<meta id='death stuck' tags='death'/>
+You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail.
+</scene>
