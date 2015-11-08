@@ -6,6 +6,8 @@ import logging
 import xml.etree.ElementTree as ET
 import operator
 import random
+import xlrd
+from xlrd.sheet import ctype_text
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -291,7 +293,7 @@ class Scene(object):
         return text
 
 
-def read_scenes_from_text_file(_file, _scene_name):
+def load_scenes_from_text_file(_file, _scene_name):
     # Read the entire text file.
     data = _file.read()
 
@@ -433,13 +435,30 @@ def load_scene_descriptions():
             with open(full_path, "r") as f:
                 data_files_for_live_reloading.append(full_path)
                 logger.info("Reading file {0}...".format(full_path))
-                read_scenes_from_text_file(f, scene_name)
+                load_scenes_from_text_file(f, scene_name)
 
     if len(scenes) == 0:
         logger.error("No valid scenes were found in {0}.".format(scenes_dir))
         return False
 
     return True
+
+
+def load_tagged_texts_from_excel_file(_excel_full_path):
+    # Open the workbook.
+    xl_workbook = xlrd.open_workbook(_excel_full_path)
+
+    for sheet_name in xl_workbook.sheet_names():
+        xl_sheet = xl_workbook.sheet_by_name(sheet_name)
+
+        header_row = xl_sheet.row(0)
+        for index, cell_obj in enumerate(header_row):
+            cell_type_str = ctype_text.get(cell_obj.ctype, 'unknown type')
+            print('(%s) %s %s' % (idx, cell_type_str, cell_obj.value))
+
+
+def load_tagged_text_files():
+    pass
 
 
 def load_data():
