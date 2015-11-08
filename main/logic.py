@@ -40,8 +40,8 @@ def substitute_text(_text, _substitution_data):
 
 
 def restart():
-    for k, v in default_game_state.items():
-        session[k] = v
+    session.clear()
+    session.update(default_game_state)
 
 
 def get_standard_scene_data(_next_scene):
