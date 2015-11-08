@@ -43,23 +43,23 @@ You're in a nest. It is familiar, like a storage room...
 <scene>
 <meta id='cocoon' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the cocoon.</leadin>
-You're in a cocoon. It is familiar, like [x]
+You're in a cocoon. It is familiar, like x
 </scene>
 
 <scene>
 <meta id='ventricle' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the ventricle.</leadin>
-You in the left ventricle. It is familiar, like [x]
+You in the left ventricle. It is familiar, like x
 </scene>
 
 <scene>
 <meta id='gallbladder' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the gallbladder.</leadin>
-You are in the gallbladder. It is familiar, like [x]
+You are in the gallbladder. It is familiar, like x
 </scene>
 
 <scene>
-<meta id='outer membrane.' tags='mission, flesh_act3, flesh_act4'/>
+<meta id='outer membrane' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the outer membrane.</leadin>
 You are in the outer membrane. It is familiar, like the observation stations...
 </scene>
@@ -73,25 +73,25 @@ You are inside the hive.
 <scene>
 <meta id='airways' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the bronchial airways.</leadin>
-You are in the bronchial airways. It is familiar, like [x]
+You are in the bronchial airways. It is familiar, like x
 </scene>
 
 <scene>
 <meta id='nervous system' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the somatic nervous system.</leadin>
-You are in the somatic nervous system. It is familiar, like [x]
+You are in the somatic nervous system. It is familiar, like x
 </scene>
 
 <scene>
 <meta id='waste system' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the waste system.</leadin>
-You are in the waste system. It is familiar, like [x]
+You are in the waste system. It is familiar, like x
 </scene>
 
 <scene>
 <meta id='thorax' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the thorax.</leadin>
-You are in the thorax. It is familiar, like [x]
+You are in the thorax. It is familiar, like x
 </scene>
-
+-->
 
