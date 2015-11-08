@@ -150,3 +150,11 @@ will search for a scene with a 'spooky' tag, and generate a goto option with the
 Instead of literal tags ("spooky, outside") you can also refer to state variables like this:
 
     <injectOption tags="spooky, $current_act"/>
+
+# Text substitution
+
+In scene and option texts, the engine can substitute certain tags for the current value of variables from the persistent game state.
+
+Use {value} to do this. (You can also write {$value}, for consistency with references to variables in other places.)
+
+Use {^value} to automatically capitalize the value.

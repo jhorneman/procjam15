@@ -19,13 +19,40 @@ default_game_state = {
 
 class CustomFormatter(string.Formatter):
     def get_value(self, key, args, kwargs):
-        # Original code from /lib/python2.7/string.py
+        # Original code from /lib/python2.7/string.py.
+        # If the key is a number, it's a positional argument, which we don't actually support,
+        # so just let this fail gracefully.
         if isinstance(key, (int, long)):
             return args[key]
         else:
+            # First determine if we want the value to be capitalized.
+            capitalize = False
+            if key.startswith("^"):
+                capitalize = True
+                key = key[1:]
+
+            # Then remove the optional $ sign.
+            if key.startswith("$"):
+                key = key[1:]
+
+            # Do we have a value with this name?
             if key in kwargs:
-                return kwargs[key]
+                # Yes -> Get it.
+                value = kwargs[key]
+
+                # Convert it to a string if need be.
+                # TODO: Use isintance here
+                if type(value) != type(""):
+                    value = str(value)
+
+                # Capitalize it, if needed.
+                if capitalize:
+                    value = value[0].capitalize() + value[1:]
+
+                return value
+
             else:
+                # No -> Complain.
                 logger.error("Text substitution key '{0}' was not found.".format(key))
                 return escape("<NOT FOUND>")
 
@@ -39,9 +66,21 @@ def substitute_text(_text, _substitution_data):
     return formatter.vformat(_text, [], _substitution_data)
 
 
+def generate_player_character():
+    return {
+        "PC_first": "Mary",
+        "PC_last": "Placeholder",
+        "PC_she": "she",
+        "PC_her": "her",
+        "PC_man": "woman",
+        "PC_male": "female",
+    }
+
+
 def restart():
     session.clear()
     session.update(default_game_state)
+    session.update(generate_player_character())
 
 
 def get_standard_scene_data(_next_scene):
