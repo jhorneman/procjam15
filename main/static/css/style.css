@@ -16,3 +16,11 @@ ul#options li a {
     color: #d09672;
     text-decoration: none;
 }
+
+br {
+	line-height: 2.5;
+}
+
+li {
+	margin-bottom: 0rem;
+}
