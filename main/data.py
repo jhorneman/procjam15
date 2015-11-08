@@ -13,6 +13,7 @@ import random
 SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)
 
 scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 scene_id_re = re.compile(r"^[a-zA-Z0-9-_ ]*$")
@@ -447,5 +448,6 @@ def load_data():
 
 if __name__ == "__main__":
     from log_utils import init_logging
+    logger.setLevel(logging.INFO)
     init_logging()
     load_data()
