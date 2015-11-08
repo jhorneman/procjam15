@@ -40,3 +40,10 @@ You die by touching a sticky substance and find yourself unable to detach yourse
 <leadin>Reach inside large undulating sphincter</leadin>
 You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
 </scene>
+
+<!--- other ways to die
+choke on your own vomit within a space helmet
+agoraphobia
+gravity crush
+radiation
+-->

@@ -6,63 +6,63 @@ You rifle through a pile of clothing and find... {{data}}. xx
 </scene>
 
 <scene>
-<meta id='drawers' tags='option, gen_containers'/>
+<meta id='drawers' tags='option, container'/>
 <leadin>Open drawers.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='container metal' tags='option, gen_containers'/>
+<meta id='container metal' tags='option, container'/>
 <leadin>Open metal container.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='container plastic' tags='option, gen_containers'/>
+<meta id='container plastic' tags='option, container'/>
 <leadin>Open plastic container.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='trash' tags='option, gen_containers, human'/>
+<meta id='trash' tags='option, containers, human'/>
 <leadin>Search the wastebasket.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='cabinet' tags='option, gen_containers'/>
+<meta id='cabinet' tags='option, container'/>
 <leadin>Search inside the large metal cabinet.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='shelves' tags='option, gen_containers'/>
+<meta id='shelves' tags='option, container'/>
 <leadin>Check shelves.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='storage compartment' tags='option, gen_containers'/>
+<meta id='storage compartment' tags='option, container'/>
 <leadin>Check storage compartment.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='storage crate' tags='option, gen_containers'/>
+<meta id='storage crate' tags='option, container'/>
 <leadin>Pry open storage crate.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='toolbox' tags='option, gen_containers'/>
+<meta id='toolbox' tags='option, container'/>
 <leadin>Search through toolbox.</leadin>
 You look and find... {{data}}. xx
 <option nextScene='computer_room'>Return with data.</option>
@@ -83,8 +83,8 @@ You look and find... data. xx
 </scene>
 
 <scene>
-<meta id='security systems' tags='option, computer'/>
-<leadin>Check security logs</leadin>
+<meta id='security systems' tags='option, paper'/>
+<leadin>Check printed security logs.</leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -125,7 +125,7 @@ You look and find... data. xx
 </scene>
 
 <scene>
-<meta id='electrical panel sparking' tags='option, mechanical, electric'/>
+<meta id='electrical panel sparking' tags='option, mechanical'/>
 <leadin>Investigate sparking electrical panel.</leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
@@ -172,3 +172,135 @@ You look and find... data. xx
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
+
+
+<scene>
+<meta id='closet' tags='option, container'/>
+<leadin>Search closet. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='paper tray' tags='option, paper'/>
+<leadin>Search paper trays. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='emergency toolbox' tags='option, mechanical, medical'/>
+<leadin>Search emergency toolbox. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='mechanical toolbox' tags='option, mechanical'/>
+<leadin>Look through mechanical toolbox. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='backpack' tags='option, human'/>
+<leadin>Sift through abandoned backpack. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='water tank' tags='option, mechanical'/>
+<leadin>Evaluate leaking water tank. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='vending machine' tags='option, biological, human'/>
+<leadin>Break open vending machine. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='cart' tags='option, container'/>
+<leadin>Sift through overturned cart. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='first aid kit' tags='option, medical, human'/>
+<leadin>Check first aid kit. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='body' tags='option, human, biological'/>
+<leadin>Check dead body. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+
+<scene>
+<meta id='computer2' tags='option, computer'/>
+<leadin>Attempt to power on computer systems. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+
+<scene>
+<meta id='computer3' tags='option, computer'/>
+<leadin>Use console controls.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<!--
+current count:
+37 - total
+9 - human
+4 - computer
+7 - mechanical
+5 - medical
+4 - biological
+11 - containers
+4 - paper
+7 - flesh
+
+need x more (target: 100 total):
+
+- human
+- computer
+- mechanical
+- medical
+- biological
+- containers
+1 (5)- paper
+- flesh
+
+
+
+DATA (maybe)
+requesition forms
+roll of tobacco
+universal translator
+leaking light fixture
+proximity sensor
+remote signaling device
+infrared emitter
+electronic earpiece
+cable coil
+eye dropper
+dna injector
+healing ointment
+identification card
+leaking battery
+bottle of pills
+wound cauterizer
+
+-->

@@ -1,10 +1,9 @@
 <scene>
 You are at the computer room. It wants data. You have an option to interact with the computer (attempt to communicate), feed it data (if you have data), or search the ship for data to salvage (mission) <br />
 Below tag tests: debug, Act 1 / 2/ 3/ 4 / $flesh_act <br />
-<option nextScene="storage room">(test scene for choices)</option>
 <injectOption tags="flesh_act1" />
 <injectOption tags="flesh_act2" />
 <injectOption tags="flesh_act3" />
 <injectOption tags="flesh_act4" />
-<injectOption tags="$flesh_act" />
+<!-- <injectOption tags="$flesh_act" /> use this later -->
 </scene>

@@ -2,106 +2,219 @@
 <meta id='engineering' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search engineering.</leadin>
 You're in the engineering space.
+
+<injectOption tags='computer' />
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='hangar bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hangar bay.</leadin>
 You're in the hangar bay.
+
+<injectOption tags='mechanical' />
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the flight deck.</leadin>
 You're on the flight deck.
+
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='medbay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the medbay.</leadin>
 You're in the lower medbay.
+
+<injectOption tags='medical' />
+<injectOption tags='medical' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
 <meta id='hydroponic gardens' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hydroponic gardens.</leadin>
 You're in the hydroponic gardens.
+
+<injectOption tags='biological' />
+<injectOption tags='mechanical' />
+<injectOption tags='medical' />
+
 </scene>
 
 <scene>
 <meta id='crew deck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the crew deck.</leadin>
 You're on the crew deck.
+
+<injectOption tags='human' />
+<injectOption tags='human' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
 <meta id='life support control' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the life support control.</leadin>
 You're in life support control.
+
+<injectOption tags='mechanical' />
+<injectOption tags='computer' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the bridge.</leadin>
 You're on the bridge.
+
+<injectOption tags='mechanical' />
+<injectOption tags='human' />
+<injectOption tags='computer' />
+
 </scene>
 
 <scene>
 <meta id='laboratory big' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
+
+<injectOption tags='container' />
+<injectOption tags='medical' />
+<injectOption tags='computer' />
+
 </scene>
 
 <scene>
 <meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
+
+<injectOption tags='mechanical' />
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='captains quarters' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the captain's quarters.</leadin>
 You're in the captain's quarters.
+
+<injectOption tags='computer' />
+<injectOption tags='human' />
+<injectOption tags='human' />
+
 </scene>
 
 <scene>
 <meta id='command center' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the command center.</leadin>
 You're in the command center.
+
+<injectOption tags='computer' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
 <meta id='reactor core' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
+
+<injectOption tags='mechanical' />
+<injectOption tags='computer' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='navigation' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search navigation.</leadin>
 You are at the propulsion systems control in navigation.
+
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+<injectOption tags='computer' />
+
 </scene>
 
 <scene>
 <meta id='solar arrays' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the solar arrays.</leadin>
 You are at the solar arrays.
+
+<injectOption tags='mechanical' />
+<injectOption tags='computer' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
 <meta id='morgue' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the morgue.</leadin>
 You are in the morgue.
+
+<injectOption tags='biological' />
+<injectOption tags='medical' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
 <meta id='radiation shielding' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
+
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
 <meta id='hydrogen collector' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
+
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+
 </scene>
+
+<!--
+
+other places:
+chapel
+Medbay storage
+Recovery Room
+Virology Labs
+Holodeck
+Research Division
+R&D Labs
+Robotics LabsToxins Labs
+Testing Chambers
+Chief Engineer's Office
+Electrical Maintenance
+Thermo-Electric Generator
+Telecommunications
+Armory
+Security Offices
+Security Post
+Recycling Systems
+
+-->

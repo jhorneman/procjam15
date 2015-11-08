@@ -5,9 +5,9 @@ You're in one of the nearby storage rooms. &lt;br&gt;
 You step carefully over the items scattered across the floor, some leaking onto slick or sticky surfaces.&lt;br&gt;
 Objects lie haphazardly sticking out of plastic and metal containers. Unidentified machines lie parked in the corners of the small room. It seems mostly filled with cleaning supplies and tools.
 
-<injectOption tags='gen_containers' />
-<injectOption tags='gen_containers' />
-<injectOption tags='gen_containers' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+<injectOption tags='container' />
 
 </scene>
 
@@ -31,8 +31,8 @@ You're in cargo storage. &lt;br&gt;
 The huge vaulted room stands half empty, with open pallets waiting in perpetuity for the next shipment to arrive. &lt;br&gt;
 The other half of the room is filled with large and small crates, harnessed together with cords and buckles in rows, jagged and uneven. A pile of broken cargo lies scattered across the floor where the straps failed them. xx
 
-<injectOption tags='gen_containers' />
-<injectOption tags='gen_containers' />
+<injectOption tags='container' />
+<injectOption tags='container' />
 <injectOption tags='mechanical' />
 </scene>
 
@@ -43,7 +43,7 @@ You're in the lower access vents. &lt;br&gt;
 You carefully remove the maintenance panel and climb into the lower vents, just large enough for you to crouch within. &lt;br&gt;
 The ventilation shafts cross-cross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship.
 <injectOption tags='mechanical' />
-<injectOption tags='electrical' />
+<injectOption tags='mechanical' />
 <injectOption tags="death_claustrophobia"/>
 </scene>
 
@@ -55,6 +55,11 @@ You're in the upper maintenance shaft. &lt;br&gt;
 The shafts here are wide, but you stoop to prevent your head from grazing the low ceiling.
 Several panels lie on the floor, revealing tangled knots of colorful wires, a clump of neurons sending instructions between the various ship systems. &lt;br&gt;
 The lights flicker as uneven power courses through the ship.
+
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
@@ -63,6 +68,11 @@ The lights flicker as uneven power courses through the ship.
 You're in one of the main hallways. &lt;br&gt;
 Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signalling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.&lt;br&gt;
 Someone has left several doors ajar, their contents spilling out onto the hallway floor from dark offices and storage rooms.
+
+<injectOption tags='human' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
@@ -70,6 +80,11 @@ Someone has left several doors ajar, their contents spilling out onto the hallwa
 <leadin>Search the administration office.</leadin>
 You're in an administration office. &lt;br&gt;
 Papers are scattered everywhere between overturned desks, drawers open and spilling their contents across the floor. Charts and calenders outlining deadlines and projected earnings hang limply on the walls. xx
+
+<injectOption tags='paper' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
@@ -78,6 +93,11 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 You're in the small laboratory on the starboard side. &lt;br&gt;
 The room is full of various lab equipment, both familiar and foreign - centrifuges, microscopes, bioscanners. A set of test tubes contain the chemical analysis for biological compounds brought from the hydroponics gardens. &lt;br&gt;
 Your feet crunch on broken glass leaking mysterious fluids. A single flourescent light swings slowly from the ceiling, animating the shadows.
+
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+<injectOption tags='medical' />
+
 </scene>
 
 <scene>
@@ -86,6 +106,11 @@ Your feet crunch on broken glass leaking mysterious fluids. A single flourescent
 You're at the elevators. &lt;br&gt;
 You apply the manual override and pry apart the elevator doors. The lift has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground. &lt;br&gt;
 The elevator shaft continues down into darkness. xx
+
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+<injectOption tags='human' />
+
 </scene>
 
 <scene>
@@ -93,6 +118,11 @@ The elevator shaft continues down into darkness. xx
 <leadin>Search the sector 1 server room.</leadin>
 You're in the sector 1 server room. &lt;br&gt;
 Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. xx
+
+<injectOption tags='mechanical' />
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
@@ -101,6 +131,11 @@ Power still runs, if unevenly, through the servers. A server stack sparks and hi
 You're in the shuttle bay. &lt;br&gt;
 You peer into the bay from the main control tower. In the dim light you can barely tell the bay doors stand open to the vacuum of space, and any vehicles not tethered have long since ejected from the ship. &lt;br&gt;
 Within the control room, various monitors beep with low power warnings. A coffee cup sits half-empty and cold.
+
+<injectOption tags='container' />
+<injectOption tags='human' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
@@ -109,6 +144,11 @@ Within the control room, various monitors beep with low power warnings. A coffee
 You're in an observation room. &lt;br&gt;
 Large, thick glass separates you from the darkness beyond it. The light from the stars is just enough to make out basic shapes in the room. &lt;br&gt;
 Cold, sterile benches and tables remain upright and bolted to the floor but their contents lay scattered throughout the room - playing cards, drinking glasses, bags, uniforms abandoned by the station's inhabitants.
+
+<injectOption tags='container' />
+<injectOption tags='human' />
+<injectOption tags='human' />
+
 </scene>
 
 <scene>
@@ -117,6 +157,11 @@ Cold, sterile benches and tables remain upright and bolted to the floor but thei
 You're in the commissary. &lt;br&gt;
 Wire shelves stand empty and boxes overturned, their contents spilled across the floor of the ship. A refrigerator leaks blue coolant onto the white tiles. You step among the sticky sodas, processed meat products, digital magazines, souvenirs and other human artifacts as you peer through the commissary for something to salvage.&lt;br&gt;
 You are alone here.
+
+<injectOption tags='container' />
+<injectOption tags='biological' />
+<injectOption tags='human' />
+
 </scene>
 
 <scene>
@@ -125,6 +170,11 @@ You are alone here.
 You're in the sector 2 substation. &lt;br&gt;
 You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the control room. Schematics and blueprints pinned to the walls show the local electrical grid. Mechanical tools, measurement instruments, and family photos lie on control panels beside dimmed monitors.&lt;br&gt;
 Fans and machines whirl as they attempt to route power from the main solar arrays to this sector of the ship.
+
+<injectOption tags='mechanical' />
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+
 </scene>
 
 <scene>
@@ -133,6 +183,11 @@ Fans and machines whirl as they attempt to route power from the main solar array
 You're in the mess hall. &lt;br&gt;
 Trays filled with plates, cutlery, and half-eaten rotten food still lie on tables throughout the hall. Some of the benches have been thrown over and bags abandoned. The trash compactor makes alternating grinding and buzzing noises. &lt;br&gt;
 You peer into the kitchens to find them equally abandoned, and the smell of decaying food overwhelming.
+
+<injectOption tags='biological' />
+<injectOption tags='container' />
+<injectOption tags='human' />
+
 </scene>
 
 <scene>
@@ -141,6 +196,11 @@ You peer into the kitchens to find them equally abandoned, and the smell of deca
 You're in a crew dormitory. &lt;br&gt;
 You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements. xx&lt;br&gt;
 As the power surges, music suddenly interrupts the stillness... only to fade once again with the lights.
+
+<injectOption tags='human' />
+<injectOption tags='human' />
+<injectOption tags='container' />
+
 </scene>
 
 <scene>
@@ -148,6 +208,11 @@ As the power surges, music suddenly interrupts the stillness... only to fade onc
 <leadin>Search the restrooms.</leadin>
 You're in one of the unisex restrooms. &lt;br&gt;
 You step into the flooded room and shine your light among the dark stalls and the large empty shower room. Water trickles unstopped from a single faucet. xx
+
+<injectOption tags='medical' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+
 </scene>
 
 <!--
@@ -162,5 +227,18 @@ You're in the briefing room. &lt;br&gt;
 <leadin>Search the tram station.</leadin>
 You're in the tram station. &lt;br&gt;
 </scene>
+
+other places:
+Auxiliary Tool Storage
+Emergency Storage
+Primary Tool Storage
+Cargo Office
+Quartermaster's Office
+Custodial Closet
+Waste Disposal
+Locker Room
+Technical Storage
+Vacant Office
+Conference Room
 
 -->

@@ -2,96 +2,176 @@
 <meta id='womb' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the womb.</leadin>
 You're in a womb. It is familiar, like a dormitory...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='umbilical cord' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the umbilical cord.</leadin>
 You're in an umbilical cord. It is familiar, like a hallway...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='stomach' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the stomach.</leadin>
 You're in a stomach. It is familiar, like a mess hall...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='carapace' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search within the carapace.</leadin>
 You're within a carapace. It is familiar, like an airlock or vent...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='gland' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the starboard glands</leadin>
 You're in a gland. It is familiar, like a small laboratory...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='canal' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the portside canal.</leadin>
 You're in a canal lined with hair and wax, like an ear canal. It is familiar, like a vent...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='nest' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the nest.</leadin>
 You're in a nest. It is familiar, like a storage room...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='cocoon' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the cocoon.</leadin>
 You're in a cocoon. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='ventricle' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the ventricle.</leadin>
 You in the left ventricle. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='gallbladder' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the gallbladder.</leadin>
 You are in the gallbladder. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='outer membrane' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the outer membrane.</leadin>
 You are in the outer membrane. It is familiar, like the observation stations...
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='hive' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the hive.</leadin>
 You are inside the hive.
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='airways' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the bronchial airways.</leadin>
 You are in the bronchial airways. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='nervous system' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the somatic nervous system.</leadin>
 You are in the somatic nervous system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='waste system' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the waste system.</leadin>
 You are in the waste system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 
 <scene>
 <meta id='thorax' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the thorax.</leadin>
 You are in the thorax. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
 </scene>
 -->
 
