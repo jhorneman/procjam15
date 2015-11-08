@@ -211,4 +211,6 @@ def get_scene_data():
     for option in scene_data["options"]:
         option["text"] = substitute_text(option["text"], substitution_data)
 
+    scene_data["body_classes"] = session["flesh_act"]
+
     return scene_data

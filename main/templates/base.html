@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+{% if body_classes %}
+<body class="{{body_classes}}">
+{% else %}
 <body>
+{% endif %}
     <div class="container">
         <div class="row">
             <div class="one-half column scene">
