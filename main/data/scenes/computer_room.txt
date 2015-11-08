@@ -1,12 +1,52 @@
 <scene>
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.<br />
-The console reads: "INSUFFICIENT DATA"<br />
+<meta id='computer_room' />
+Description of computer. (text based on flesh_act) <br />
+You have or do not have data. (conditional based on has_macguffin)<br />
+The computer has recently eaten data or hungers for data  (conditional based on is_fed)<br />
+<br />
 
-You grab your flashlight and leave the mainframe in search of additional data.
+<option nextScene="feed_computer">(has_macguffin = true) Feed the computer {data}.</option>
+<option nextScene="mission_hub">(has macguffin = false) Prepare to salvage data from the ship.</option>
+<option nextScene ="computer_talk">(been_fed = true) Communicate with the mainframe.</option>
+<option nextScene = "feed_me">(been_fed = false)Communicate with the mainframe.</option>
+
+</scene>
+
+<!-- INSUFFICIENT DATA -->
+<scene>
+<meta id='feed_me' />
+You attempt to communicate with the computer but it requires data<br />
+The console reads: "INSUFFICIENT DATA"<br />
+Some gross description of computer hungry for data (text based on flesh_act)<br />
+<option nextScene="feed_computer">(has_macguffin = true) Feed the computer {data}.</option>
+<option nextScene="mission_hub">(has macguffin = false) Prepare to salvage data from the ship.</option>
+
+</scene>
+
+
+<!--- FEED COMPUTER DATA -->
+<scene>
+<meta id='feed_computer' />
+You feed the computer the data you have. (has_macguffin set to false, been_fed set to true)<br />
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.<br />
+Some gross description of computer eating the data (text based on flesh_act)<br />
+
+<option nextScene="computer_room">Enter commands.</option>
+
+</scene>
+
+
+<!-- FIND PLACES TO SCAVENGE -->
+<scene>
+<meta id='mission_hub' />
+You prepare for the next mission to salvage data from the surrounding ship.
 
 <injectOption tags="flesh_act1" />
 <injectOption tags="flesh_act2" />
 <injectOption tags="flesh_act3" />
 <injectOption tags="flesh_act4" />
+<option nextScene="computer_room">Change your mind.</option>
 <!-- <injectOption tags="$flesh_act" /> use this later -->
+
 </scene>
+
