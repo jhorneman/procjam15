@@ -76,17 +76,6 @@ You're in a nest. It is familiar, like a storage room...
 </scene>
 
 <scene>
-<meta id='cocoon' tags='mission, flesh_act3, flesh_act4'/>
-<leadin>Search the cocoon.</leadin>
-You're in a cocoon. It is familiar, like x
-
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-
-</scene>
-
-<scene>
 <meta id='ventricle' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the ventricle.</leadin>
 You in the left ventricle. It is familiar, like x

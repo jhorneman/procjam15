@@ -1,5 +1,5 @@
 <scene>
-<meta id='end1' type='end' tags='timeline1'/>
+<meta id='end1' tags='timeline1'/>
 This is the end of the game for timeline 1.
 <option action="start">
 Restart game.
@@ -7,7 +7,7 @@ Restart game.
 </scene>
 
 <scene>
-<meta id='end2' type='end' tags='timeline2'/>
+<meta id='end2' tags='timeline2'/>
 This is the end of the game for timeline 2.
 <option action="start">
 Restart game.
@@ -15,7 +15,7 @@ Restart game.
 </scene>
 
 <scene>
-<meta id='end3' type='end' tags='timeline3'/>
+<meta id='end3' tags='timeline3'/>
 This is the end of the game for timeline 3.
 <option action="start">
 Restart game.
@@ -23,7 +23,7 @@ Restart game.
 </scene>
 
 <scene>
-<meta id='end4' type='end' tags='timeline3'/>
+<meta id='end4' tags='timeline3'/>
 This is the end of the game for timeline 4.
 <option action="start">
 Restart game.

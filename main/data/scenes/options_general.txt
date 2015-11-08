@@ -167,7 +167,7 @@ You look and find... data. xx
 </scene>
 
 <scene>
-<meta id='electrical panel sparking' tags='option, electrical'/>
+<meta id='electrical systems' tags='option, electrical'/>
 <leadin>Search electrical systems.</leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
@@ -179,15 +179,6 @@ You look and find... data. xx
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
-
-<scene>
-<meta id='electrical panel sparking' tags='option, electrical'/>
-<leadin>Investigate sparking electrical panel.</leadin>
-You look and find... data. xx
-<option nextScene='computer_room'>Return with data.</option>
-</scene>
-
-
 
 <scene>
 <meta id='fuse box' tags='option, electrical'/>
