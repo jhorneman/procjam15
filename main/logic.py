@@ -136,13 +136,9 @@ def get_scene_data():
 
     # scene_data must consist of dumb dictionaries here because we're going to mutate the text.
 
-    substitution_data = {
-        "amount_of_data": session["amount_of_data"]
-    }
-
-    scene_data["text"] = substitute_text(scene_data["text"], substitution_data)
+    scene_data["text"] = substitute_text(scene_data["text"], session)
     for option in scene_data["options"]:
-        option["text"] = substitute_text(option["text"], substitution_data)
+        option["text"] = substitute_text(option["text"], session)
 
     scene_data["body_classes"] = session["flesh_act"]
 
