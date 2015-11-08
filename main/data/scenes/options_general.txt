@@ -125,14 +125,72 @@ You look and find... data. xx
 </scene>
 
 <scene>
-<meta id='electrical panel sparking' tags='option, mechanical'/>
+<meta id='electrical panel' tags='option, electrical'/>
+<leadin>Pry open electrical panel.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='wires' tags='option, electrical'/>
+<leadin>Search among the wires.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='solar cells' tags='option, electrical'/>
+<leadin>Evaluate the solar cells.</leadin>
+You look and find... data. xx photovoltaics
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='computer terminal' tags='option, computer'/>
+<leadin>Access backup computer terminal.</leadin>
+You look and find... data. xx photovoltaics
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='maintenance panel' tags='option, electrical'/>
+<leadin>Detach maintenance panel.</leadin>
+You look and find... data. xx photovoltaics
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='wire box' tags='option, electrical'/>
+<leadin>Search box of unrolled wire.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='electrical panel sparking' tags='option, electrical'/>
+<leadin>Search electrical systems.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='electrical panel sparking' tags='option, electrical'/>
 <leadin>Investigate sparking electrical panel.</leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
-<meta id='fuse box' tags='option, mechanical'/>
+<meta id='electrical panel sparking' tags='option, electrical'/>
+<leadin>Investigate sparking electrical panel.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+
+
+<scene>
+<meta id='fuse box' tags='option, electrical'/>
 <leadin>Open fuse box. </leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
@@ -155,13 +213,6 @@ You look and find... data. xx
 <scene>
 <meta id='old food' tags='option, human, biological'/>
 <leadin>Investigate half-eaten food. </leadin>
-You look and find... data. xx
-<option nextScene='computer_room'>Return with data.</option>
-</scene>
-
-<scene>
-<meta id='locking mechanism' tags='option, mechanical'/>
-<leadin>Disengage locking mechanism. </leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -271,6 +322,7 @@ current count:
 11 - containers
 4 - paper
 7 - flesh
+0 - electrical (split with mechanical)
 
 need x more (target: 100 total):
 
@@ -282,6 +334,9 @@ need x more (target: 100 total):
 - containers
 1 (5)- paper
 - flesh
+electrical (split with mechanical)
+
+
 
 
 

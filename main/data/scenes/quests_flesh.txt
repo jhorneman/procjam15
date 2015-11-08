@@ -154,7 +154,7 @@ You are in the somatic nervous system. It is familiar, like x
 
 <scene>
 <meta id='waste system' tags='mission, flesh_act3, flesh_act4'/>
-<leadin>Search the waste system.</leadin>
+<leadin>Search the colon.</leadin>
 You are in the waste system. It is familiar, like x
 
 <injectOption tags='flesh' />
@@ -167,6 +167,150 @@ You are in the waste system. It is familiar, like x
 <meta id='thorax' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the thorax.</leadin>
 You are in the thorax. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='intestines' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the small intestines.</leadin>
+You are in the small intestines. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+
+<scene>
+<meta id='esophagus' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the esophagus.</leadin>
+You are in the small intestines. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='placental pouch' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the placental pouch.</leadin>
+You are in the placental pouch. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='ovaries' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the ovaries.</leadin>
+You are in the ovaries. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='pharynx' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the pharynx.</leadin>
+You are in the pharyngeal pouch. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='cavity' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the warm cavity.</leadin>
+You are in a warm cavity. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='gills' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the gills.</leadin>
+You are in the gills. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='cloaca' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the cloaca.</leadin>
+You are in the gills. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='digestive system' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the digestive system.</leadin>
+You are in the digestive system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='endocrine system' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the endocrine system.</leadin>
+You are in the endocrine system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='respiratory system' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the respiratory system.</leadin>
+You are in the respiratory system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='lymphatic system' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the lymphatic system.</leadin>
+You are in the lymphatic system. It is familiar, like x
+
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+<injectOption tags='flesh' />
+
+</scene>
+
+<scene>
+<meta id='fallopian tubes' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search the fallopian tubes.</leadin>
+You are in the fallopian tubes. It is familiar, like x
 
 <injectOption tags='flesh' />
 <injectOption tags='flesh' />

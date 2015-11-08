@@ -5,7 +5,7 @@ You're in the engineering space.
 
 <injectOption tags='computer' />
 <injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 
 </scene>
 
@@ -16,17 +16,6 @@ You're in the hangar bay.
 
 <injectOption tags='mechanical' />
 <injectOption tags='container' />
-<injectOption tags='mechanical' />
-
-</scene>
-
-<scene>
-<meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Search the flight deck.</leadin>
-You're on the flight deck.
-
-<injectOption tags='container' />
-<injectOption tags='mechanical' />
 <injectOption tags='mechanical' />
 
 </scene>
@@ -72,17 +61,6 @@ You're in life support control.
 <injectOption tags='mechanical' />
 <injectOption tags='computer' />
 <injectOption tags='mechanical' />
-
-</scene>
-
-<scene>
-<meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Search the bridge.</leadin>
-You're on the bridge.
-
-<injectOption tags='mechanical' />
-<injectOption tags='human' />
-<injectOption tags='computer' />
 
 </scene>
 
@@ -137,7 +115,7 @@ You are outside the reactor core.
 
 <injectOption tags='mechanical' />
 <injectOption tags='computer' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 
 </scene>
 
@@ -147,7 +125,7 @@ You are outside the reactor core.
 You are at the propulsion systems control in navigation.
 
 <injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='computer' />
 
 </scene>
@@ -159,7 +137,7 @@ You are at the solar arrays.
 
 <injectOption tags='mechanical' />
 <injectOption tags='computer' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 
 </scene>
 
@@ -180,7 +158,7 @@ You are in the morgue.
 You are in the radiation shielding control room.
 
 <injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='container' />
 
 </scene>
@@ -192,7 +170,90 @@ You are at the hydrogen collectors.
 
 <injectOption tags='container' />
 <injectOption tags='mechanical' />
+<injectOption tags='electrical' />
+
+</scene>
+
+<scene>
+<meta id='security office' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the central security office.</leadin>
+You are in the central security office.
+
+<injectOption tags='container' />
+<injectOption tags='paper' />
+<injectOption tags='computer' />
+
+</scene>
+
+<scene>
+<meta id='holodeck' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the recreational holodeck.</leadin>
+You are in the holodeck.
 <injectOption tags='mechanical' />
+<injectOption tags='human' />
+<injectOption tags='computer' />
+
+</scene>
+
+<scene>
+<meta id='research and dev' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search research and development labs.</leadin>
+You are in the research and development labs.
+<injectOption tags='biological' />
+<injectOption tags='medical' />
+<injectOption tags='computer' />
+
+</scene>
+
+<scene>
+<meta id='armory' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the armory.</leadin>
+You are in the armory.
+<injectOption tags='container' />
+<injectOption tags='container' />
+<injectOption tags='container' />
+
+</scene>
+
+<scene>
+<meta id='recycling center' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the recycling center.</leadin>
+You are in the main recycling hub.
+<injectOption tags='computer' />
+<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
+
+</scene>
+
+<scene>
+<meta id='virology' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the virology labs.</leadin>
+You are in the virology labs.
+<injectOption tags='mechanical' />
+<injectOption tags='medical' />
+<injectOption tags='computer' />
+
+</scene>
+
+
+<scene>
+<meta id='chapel' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the chapel.</leadin>
+You are in the chapel.
+<injectOption tags='human' />
+<injectOption tags='human' />
+<injectOption tags='biological' />
+
+</scene>
+
+<scene>
+<meta id='brig' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the brig.</leadin>
+You are in the brig.
+
+<injectOption tags='mechanical' />
+<injectOption tags='human' />
+<injectOption tags='computer' />
 
 </scene>
 
@@ -216,5 +277,28 @@ Armory
 Security Offices
 Security Post
 Recycling Systems
+
+
+<scene>
+<meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the flight deck.</leadin>
+You're on the flight deck.
+
+<injectOption tags='container' />
+<injectOption tags='mechanical' />
+<injectOption tags='mechanical' />
+
+</scene>
+
+<scene>
+<meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
+<leadin>Search the bridge.</leadin>
+You're on the bridge.
+
+<injectOption tags='mechanical' />
+<injectOption tags='human' />
+<injectOption tags='computer' />
+
+</scene>
 
 -->

@@ -1,6 +1,9 @@
 <scene>
-You are at the computer room. It wants data. You have an option to interact with the computer (attempt to communicate), feed it data (if you have data), or search the ship for data to salvage (mission) <br />
-Below tag tests: debug, Act 1 / 2/ 3/ 4 / $flesh_act <br />
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.<br />
+The console reads: "INSUFFICIENT DATA"<br />
+
+You grab your flashlight and leave the mainframe in search of additional data.
+
 <injectOption tags="flesh_act1" />
 <injectOption tags="flesh_act2" />
 <injectOption tags="flesh_act3" />

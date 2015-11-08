@@ -19,7 +19,7 @@ You're in the main utility airlocks. &lt;br&gt;
 You step into the wide, empty metal cavity. Thick metal doors separate you from the vacuum of space.  Emergency lights blink dimly with backup power. &lt;br&gt;
 The airlock control room is filled with human detrius and mechanical instruments.
 
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='human' />
 <injectOption tags="death_airlock"/>
 </scene>
@@ -57,8 +57,8 @@ Several panels lie on the floor, revealing tangled knots of colorful wires, a cl
 The lights flicker as uneven power courses through the ship.
 
 <injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
+<injectOption tags='electrical' />
 
 </scene>
 
@@ -108,7 +108,7 @@ You apply the manual override and pry apart the elevator doors. The lift has sto
 The elevator shaft continues down into darkness. xx
 
 <injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='human' />
 
 </scene>
@@ -119,9 +119,9 @@ The elevator shaft continues down into darkness. xx
 You're in the sector 1 server room. &lt;br&gt;
 Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. xx
 
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='container' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 
 </scene>
 
@@ -171,9 +171,9 @@ You're in the sector 2 substation. &lt;br&gt;
 You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the control room. Schematics and blueprints pinned to the walls show the local electrical grid. Mechanical tools, measurement instruments, and family photos lie on control panels beside dimmed monitors.&lt;br&gt;
 Fans and machines whirl as they attempt to route power from the main solar arrays to this sector of the ship.
 
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 <injectOption tags='container' />
-<injectOption tags='mechanical' />
+<injectOption tags='electrical' />
 
 </scene>
 
