@@ -104,13 +104,7 @@ The goto action is so common, it is assumed to be an option's action if you don'
 
 is the shortest way to write a goto action.
 
-Other action types right now are:
-
-* 'computer-room'. Go to the computer room, which has special logic.
-* 'mission'. Go to a scene tagged with 'mission'.
-* 'found-data'. Go to the scene where the player found some data.
-
-I am not happy with this way of implementing things, but it was the fastest way to test the architecture. But expect the action types to change.
+There are no other action types right now.
 
 ## Conditions
 

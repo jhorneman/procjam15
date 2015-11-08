@@ -195,10 +195,7 @@ class Condition(object):
 
 class Option(object):
     GOTO = "goto"
-    COMPUTER = "computer-room"
-    MISSION = "mission"
-    FOUND_DATA = "found-data"
-    actions = [GOTO, COMPUTER, MISSION, FOUND_DATA]
+    actions = [GOTO]
 
     def __init__(self):
         self.action = Option.GOTO
@@ -382,7 +379,7 @@ def read_scenes_from_text_file(_file, _scene_name):
             if child_el.tail:
                 new_scene.text_blocks.append(("raw", child_el.tail))
 
-        # Get leadin, if any.
+        # Get lead-in, if any.
         leadin_el = scene_el.find("leadin")
         if leadin_el is not None:
             new_scene.leadin = leadin_el.text

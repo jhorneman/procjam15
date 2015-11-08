@@ -94,64 +94,6 @@ def get_tagged_option_to_inject(_tags):
         return None
 
 
-def get_computer_room_data():
-    if session.get("has_mcguffin", False):
-        session["has_mcguffin"] = False
-        session["amount_of_data"] += 1
-        if session["amount_of_data"] >= 3:
-            return {
-                "text": "You're in the computer room. The computer is happy now. The end.",
-                "options": []
-            }
-        else:
-            scene_data = {
-                "text": "You're in the computer room. Computer likes data. Computer wants more data! Current data level: {amount_of_data}.",
-                "options": []
-            }
-    else:
-        scene_data = {
-            "text": "You're in the computer room. Computer wants data! Current data level: {amount_of_data}.",
-            "options": []
-        }
-
-    injected_option = get_tagged_option_to_inject('mission')
-    if injected_option:
-        scene_data["options"].append(injected_option)
-    else:
-        logger.warning("Couldn't find a valid scene with tags '{0}' to inject into the computer room scene."
-                       .format('mission'))
-
-    return scene_data
-
-
-def get_mission_data():
-    scene_desc = get_scene_description_with_tag('mission', session)
-    if not scene_desc:
-        return None
-
-    return {
-        "text": scene_desc.build_main_text(session),
-        "options": [{
-            "action": Option.FOUND_DATA,
-            "text": "Search this place for lovely but potentially gross data."
-        }, {
-            "action": Option.COMPUTER,
-            "text": "Go back to the computer room, empty-handed."
-        }]
-    }
-
-
-def get_found_data_data():
-    session["has_mcguffin"] = True
-    return {
-        "text": "You found... something. Ew. I'm sure the computer will be happy.",
-        "options": [{
-            "action": Option.COMPUTER,
-            "text": "Go back to the computer."
-        }]
-    }
-
-
 def prepare_session():
     if session.new:
         for k, v in default_game_state.items():
@@ -176,15 +118,6 @@ def get_scene_data():
             logger.error("Couldn't find next_scene argument.")
             return None
         scene_data = get_standard_scene_data(next_scene)
-
-    elif action == Option.COMPUTER:
-        scene_data = get_computer_room_data()
-
-    elif action == Option.MISSION:
-        scene_data = get_mission_data()
-
-    elif action == Option.FOUND_DATA:
-        scene_data = get_found_data_data()
 
     else:
         logger.error("'{0}' is an unknown action type.".format(action))
