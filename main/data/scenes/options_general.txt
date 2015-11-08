@@ -1,0 +1,174 @@
+<scene>
+<meta id='pile clothes' tags='option, human'/>
+<leadin>Rifle through pile of clothing.</leadin>
+You rifle through a pile of clothing and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='drawers' tags='option, gen_containers'/>
+<leadin>Open drawers.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='container metal' tags='option, gen_containers'/>
+<leadin>Open metal container.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='container plastic' tags='option, gen_containers'/>
+<leadin>Open plastic container.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='trash' tags='option, gen_containers, human'/>
+<leadin>Search the wastebasket.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='cabinet' tags='option, gen_containers'/>
+<leadin>Search inside the large metal cabinet.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='shelves' tags='option, gen_containers'/>
+<leadin>Check shelves.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='storage compartment' tags='option, gen_containers'/>
+<leadin>Check storage compartment.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='storage crate' tags='option, gen_containers'/>
+<leadin>Pry open storage crate.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='toolbox' tags='option, gen_containers'/>
+<leadin>Search through toolbox.</leadin>
+You look and find... {{data}}. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='computer' tags='option, computer'/>
+<leadin>Boot the computer.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='computer broken' tags='option, computer'/>
+<leadin>Salvage from the broken computer.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='security systems' tags='option, computer'/>
+<leadin>Check security logs</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='documents' tags='option, paper'/>
+<leadin>Read documents.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='papers look' tags='option, paper'/>
+<leadin>Leaf through papers.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='medical equipment' tags='option, medical'/>
+<leadin>Search medical equipment.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='medical equipment broken' tags='option, medical'/>
+<leadin>Search broken medical equipment</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='machinery broken' tags='option, mechanical'/>
+<leadin>Check broken machinery.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='electrical panel sparking' tags='option, mechanical, electric'/>
+<leadin>Investigate sparking electrical panel.</leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='fuse box' tags='option, mechanical'/>
+<leadin>Open fuse box. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='belongings' tags='option, human'/>
+<leadin>Look through the crew's belongings. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='bags' tags='option, human'/>
+<leadin>Look through abandoned bags. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='old food' tags='option, human, biological'/>
+<leadin>Investigate half-eaten food. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='locking mechanism' tags='option, mechanical'/>
+<leadin>Disengage locking mechanism. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>
+
+<scene>
+<meta id='biological samples' tags='option, medical, biological'/>
+<leadin>Scan for biological samples. </leadin>
+You look and find... data. xx
+<option nextScene='computer_room'>Return with data.</option>
+</scene>

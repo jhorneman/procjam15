@@ -1,4 +1,5 @@
 This is the first scene of this game.
-<option action="computer-room">
-Go to the computer room.
+
+<option nextScene="computer_room">
+Go to the computer room. 
 </option>

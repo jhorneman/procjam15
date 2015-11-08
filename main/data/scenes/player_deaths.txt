@@ -1,43 +1,42 @@
 <scene>
-<meta id='death airlock' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<meta id='death airlock' tags='death_airlock, death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
 <leadin>Fiddle with airlock controls.</leadin>
-You die by being sucked out an airlock.
-<option nextScene="start">Restart game.</option>
+You die by being sucked out an airlock.  xx
 </scene>
 
 <scene>
 <meta id='death oxygen' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
 <leadin>Modify oxygen levels.</leadin>
-You die because there is no oxygen in the room.
+You die because there is no oxygen in the room. xx
 </scene>
 
 <scene>
 <meta id='death vacuum' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
 <leadin>Open window.</leadin>
-You die because the room has become a vacuum. Explosive decompression?
+You die because the room has become a vacuum. Explosive decompression? xx
 </scene>
 
 <scene>
 <meta id='death sleep' tags='death_flesh_act2, death_flesh_act3'/>
 <leadin>Investigate spores closer.</leadin>
-You die by inhaling spores from some fungus. They put you to sleep.
+You die by inhaling spores from some fungus. They put you to sleep. xx
 </scene>
 
 <scene>
-<meta id='death claustrophobia' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
-<leadin>Squeeze through vent.</leadin>
-You die from falling into a small spot in a vent and do not have the leverage to get out. You are stuck.
+<meta id='death claustrophobia' tags='death_claustrophobia, death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<leadin>Climb into the upper ventilation system.</leadin>
+You climb into the upper ventilation system. You have to wiggle to fit. Unfortunately, you discover you cannot back up. You die up there in the heat and humidity, the smell of your rot brought throughout the ship. xx
 </scene>
 
 <!-- late-game deaths -->
 <scene>
 <meta id='death sticky' tags='death_flesh_act3, death_flesh_act4'/>
 <leadin>Touch unidentified substance.</leadin>
-You die by touching a sticky substance and find yourself unable to detach yourself from it.
+You die by touching a sticky substance and find yourself unable to detach yourself from it. xx
 </scene>
 
 <scene>
 <meta id='death stuck' tags='death_flesh_act3, death_flesh_act4'/>
 <leadin>Reach inside large undulating sphincter</leadin>
-You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail.
+You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
 </scene>
