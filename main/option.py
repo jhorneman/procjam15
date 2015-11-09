@@ -2,7 +2,6 @@
 
 import logging
 from tags import string_to_tags
-from condition import parse_condition_from_string
 
 
 logger = logging.getLogger(__name__)
@@ -15,7 +14,6 @@ class Option(object):
     def __init__(self):
         self.action = Option.GOTO
         self.text = ""
-        self.condition = None
         self.next_scene = ""
         self.tags = []
 
@@ -29,14 +27,14 @@ class Option(object):
         return {}
 
     @staticmethod
-    def from_el(_el, _index=0):  # TODO: Remove index
+    def from_el(_el):
         new_option = Option()
 
         # Get action, if any.
         new_option.action = _el.get("action", Option.GOTO)
         if new_option.action not in Option.actions:
-            logger.error("Option {0} has action'{1}' which is not a valid action (those are {2}). Skipping."
-                .format(_index, new_option.action, ", ".join(Option.actions)))
+            logger.error("Option has action'{0}' which is not a valid action (those are {1}). Skipping."
+                .format(new_option.action, ", ".join(Option.actions)))
             return None
 
         # GOTO.
@@ -46,20 +44,13 @@ class Option(object):
             new_option.tags = string_to_tags(_el.get("tags"))
 
             if new_option.next_scene is None and new_option.tags is None:
-                logger.error("Option {0} has a GOTO action but neither a next scene nor tag attributes. Skipping.".format(_index))
+                logger.error("Option has a GOTO action but neither a next scene nor tag attributes. Skipping.")
                 return None
 
             # Get text.
             new_option.text = _el.text.strip()
             if new_option.text is None or len(new_option.text) == 0:
-                logger.error("Option {0} has a GOTO action but does not contain any text. Skipping.".format(_index))
+                logger.error("Option has a GOTO action but does not contain any text. Skipping.")
                 return None
-
-        # Parse condition, if any.
-        condition_string = _el.get("cond")
-        if condition_string:
-            condition = parse_condition_from_string(condition_string)
-            if condition:
-                new_option.condition = condition
 
         return new_option

@@ -86,7 +86,18 @@ class OptionContent(Content):
     def __init__(self, _el):
         self.option = Option.from_el(_el)
 
+        self.condition = None
+        condition_string = _el.get("cond")
+        if condition_string:
+            condition = parse_condition_from_string(condition_string)
+            if not condition:
+                return
+            self.condition = condition
+
     def evaluate(self, _state):
+        if self.condition:
+            if not self.condition.evaluate(_state):
+                return None
         e = EvaluatedContent()
         e.options = [ self.option ]
         return e
