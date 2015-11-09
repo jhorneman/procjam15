@@ -59,12 +59,8 @@ def get_scene_description_with_tag(_tags, _state):
 
 
 class Scene(object):
-    STANDARD = "STANDARD"
-    types = [STANDARD]
-
     def __init__(self):
         self.id = None
-        self.type = Scene.STANDARD
         self.tags = []
         self.blocks = []
         self.options = []
@@ -119,13 +115,6 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
                     logger.error("Scene {0} has an invalid id '{1}'. Scene ids must consist of letters, underscores, hyphens, spaces, and numbers. Skipping.".format(_scene_index+1, new_scene.id))
                     return
 
-            # Get scene type, if any.
-            new_scene.type = meta_el.get("type", Scene.STANDARD)
-            if new_scene.type not in Scene.types:
-                logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
-                    .format(_scene_index+1, new_scene.type, ", ".join(Scene.types)))
-                return
-
             # Get scene tags, if any.
             tags = meta_el.get("tags", None)
             if tags:
@@ -133,7 +122,6 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
         else:
             if _scene_name:
                 new_scene.id = _scene_name
-                new_scene.type = Scene.STANDARD
             else:
                 logger.error("Scene {0} does not contain a meta element. Skipping.".format(_scene_index+1))
                 return
