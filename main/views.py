@@ -1,5 +1,6 @@
 from flask import render_template, abort, redirect, url_for
-from main.logic import get_scene_data, restart
+from main.logic import get_scene_data
+from game_state import restart
 from main import app
 
 

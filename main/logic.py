@@ -4,34 +4,12 @@ import logging
 from flask import request, session
 from main.data import get_scene_description, get_scene_description_with_tag, Option
 from text_utils import substitute_text
+from game_state import prepare_game_start
 
 
 logger = logging.getLogger(__name__)
 
 first_scene_id = 'start'
-
-default_game_state = {
-    "flesh_act": "flesh_act1",
-    "has_mcguffin": False,
-    "amount_of_data": 0
-}
-
-
-def generate_player_character():
-    return {
-        "PC_first": "Mary",
-        "PC_last": "Placeholder",
-        "PC_she": "she",
-        "PC_her": "her",
-        "PC_man": "woman",
-        "PC_male": "female",
-    }
-
-
-def restart():
-    session.clear()
-    session.update(default_game_state)
-    session.update(generate_player_character())
 
 
 def get_standard_scene_data(_next_scene):
@@ -84,18 +62,8 @@ def get_tagged_option_to_inject(_tags):
         return None
 
 
-def prepare_session():
-    if session.new:
-        for k, v in default_game_state.items():
-            session[k] = v
-    else:
-        for k, v in default_game_state.items():
-            if k not in session:
-                session[k] = v
-
-
 def get_scene_data():
-    prepare_session()
+    prepare_game_start()
 
     action = request.args.get('action', None)
 
