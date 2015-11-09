@@ -90,6 +90,7 @@ See below for more information about tags.
 The following elements can be made conditional by adding a 'cond' attribute to their tag:
 
 * option.
+* action.
 * injectText.
 * injectOption.
 * leadin.
@@ -151,3 +152,18 @@ In scene and option texts, the engine can substitute certain tags for the curren
 Use {value} to do this. (You can also write {$value}, for consistency with references to variables in other places.)
 
 Use {^value} to automatically capitalize the value.
+
+# Actions
+
+You can affect the game state with the action element:
+
+    <action act="..."/>
+
+The following actions are possible:
+
+* 'kill'. Kill the player.
+* 'inc $varname'. Increase a variable named 'varname'.
+* 'dec $varname'. Decrease a variable named 'varname'.
+* 'set $varname value'. Set a variable named 'varname' to 'value'.
+
+The $ in front of the variable name is important.
