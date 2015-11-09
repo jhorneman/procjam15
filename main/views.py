@@ -1,5 +1,5 @@
 from flask import render_template, abort, redirect, url_for
-from main.logic import get_scene_data
+from main.logic import get_current_scene_data
 from game_state import restart
 from main import app
 
@@ -15,7 +15,7 @@ def inject_common_values():
 
 @app.route("/")
 def show_scene():
-    scene_data = get_scene_data()
+    scene_data = get_current_scene_data()
     if scene_data:
         return render_template("scene.html", **scene_data)
     else:
