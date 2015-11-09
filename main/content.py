@@ -10,12 +10,27 @@ logger = logging.getLogger(__name__)
 
 
 class Content(object):
-    def evaluate(self, _state):
-        pass
+    def __init__(self):
+        self.condition = None
+
+    def check_for_condition(self, _el):
+        condition_string = _el.get("cond")
+        if condition_string:
+            condition = parse_condition_from_string(condition_string)
+            if not condition:
+                return
+            self.condition = condition
+
+    def is_condition_true(self, _state):
+        if self.condition:
+            return self.condition.evaluate(_state)
+        else:
+            return True
 
 
 class Raw(Content):
     def __init__(self, _text):
+        super(Raw, self).__init__()
         self.raw_text = _text
 
     def evaluate(self, _state):
@@ -24,26 +39,22 @@ class Raw(Content):
 
 class If(Content):
     def __init__(self, _el):
-        self.condition = None
-        self.blocks = []
-
-        condition_string = _el.get("cond")
-        if condition_string:
-            condition = parse_condition_from_string(condition_string)
-            if not condition:
-                return
-            self.condition = condition
+        super(If, self).__init__()
+        self.check_for_condition(_el)
         self.blocks = parse_content_from_xml(_el)
 
     def evaluate(self, _state):
-        if self.condition:
-            if not self.condition.evaluate(_state):
-                return ""
-        return evaluate_content_blocks(self.blocks, _state)
+        if self.is_condition_true(_state):
+            return evaluate_content_blocks(self.blocks, _state)
+        else:
+            return None
 
 
 class InjectText(Content):
     def __init__(self, _el):
+        super(InjectText, self).__init__()
+        self.check_for_condition(_el)
+
         self.tags = []
         tags_string = _el.get("tags")
         if tags_string:
@@ -59,12 +70,16 @@ class InjectText(Content):
             logger.error("Encountered an injected text element without a tags attribute. Skipping.")
 
     def evaluate(self, _state):
-        tags = evaluate_tags(self.tags, _state)
-        return "[injected text for tags {0}]".format(tags)
+        if self.is_condition_true(_state):
+            tags = evaluate_tags(self.tags, _state)
+            return "[injected text for tags {0}]".format(tags)
+        else:
+            return None
 
 
 class Br(Content):
     def __init__(self, _el):
+        super(Br, self).__init__()
         pass
 
     def evaluate(self, _state):
@@ -73,17 +88,24 @@ class Br(Content):
 
 class LeadIn(Content):
     def __init__(self, _el):
+        super(LeadIn, self).__init__()
+        self.check_for_condition(_el)
         self.leadin = _el.text
 
     def evaluate(self, _state):
-        return {
-            "leadin": self.leadin
-        }
+        if self.is_condition_true(_state):
+            return {
+                "leadin": self.leadin
+            }
+        else:
+            return None
 
 
-class OptionContent(Content):
+class Option(Content):
     def __init__(self, _el):
-        self.condition = None
+        super(Option, self).__init__()
+        self.check_for_condition(_el)
+
         self.action = None
         self.params = {}
         self.text = None
@@ -105,27 +127,20 @@ class OptionContent(Content):
             return
 
         self.action = action
-        self.params = { "next_scene": next_scene }
+        self.params = {"next_scene": next_scene}
         self.text = text
 
-        condition_string = _el.get("cond")
-        if condition_string:
-            condition = parse_condition_from_string(condition_string)
-            if not condition:
-                return
-            self.condition = condition
-
     def evaluate(self, _state):
-        if self.condition:
-            if not self.condition.evaluate(_state):
-                return None
-        return {
-            "options": {
-                "action": self.action,
-                "params": self.params,
-                "text": self.text
+        if self.is_condition_true(_state):
+            return {
+                "options": {
+                    "action": self.action,
+                    "params": self.params,
+                    "text": self.text
+                }
             }
-        }
+        else:
+            return None
 
 
 def get_tagged_option_to_inject(_tags, _state):
@@ -179,7 +194,7 @@ tags_to_content_classes = {
     "injectText": InjectText,
     "br": Br,
     "leadin": LeadIn,
-    "option": OptionContent,
+    "option": Option,
     "injectOption": InjectOption
 }
 
