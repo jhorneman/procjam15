@@ -3,7 +3,6 @@
 import logging
 from flask import request, session
 from scene import get_scene_description
-from option import Option
 from text_utils import substitute_text
 from game_state import prepare_game_state
 from content import evaluate_content_blocks
@@ -25,7 +24,9 @@ def get_current_scene_data():
     if action is None:
         next_scene_id = first_scene_id
 
-    elif action == Option.GOTO:
+    # TODO: Replace with constant.
+    # elif action == Option.GOTO:
+    elif action == "goto":
         next_scene_id = request.args.get('next_scene', None)
         if next_scene_id is None:
             logger.error("Couldn't find next_scene argument.")
@@ -40,21 +41,15 @@ def get_current_scene_data():
         logger.error("Couldn't find scene description for scene '{0}'.".format(next_scene_id))
         return None
 
-    e = evaluate_content_blocks(scene_desc.blocks, session)
+    evaluated_scene = evaluate_content_blocks(scene_desc.blocks, session)
 
-    scene_data = {
-        "text": substitute_text(e.text, session),
+    return {
+        "text": substitute_text(evaluated_scene["text"], session),
         "options": [{
-            "action": option.action if hasattr(option, "action") else option["action"],
-            "text": option.text if hasattr(option, "text") else option["text"],
-            "params": option.params if hasattr(option, "params") else option["params"]
-            } for option in e.options
-        ]
+            "action": option["action"],
+            "text": substitute_text(option["text"], session),
+            "params": option["params"]
+            } for option in evaluated_scene["options"]
+        ],
+        "body_classes": session["flesh_act"]
     }
-
-    for option in scene_data["options"]:
-        option["text"] = substitute_text(option["text"], session)
-
-    scene_data["body_classes"] = session["flesh_act"]
-
-    return scene_data

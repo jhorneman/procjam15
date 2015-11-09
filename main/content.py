@@ -4,7 +4,6 @@ import types
 import logging
 from condition import parse_condition_from_string
 from tags import string_to_tags, evaluate_tags
-from option import Option
 
 
 logger = logging.getLogger(__name__)
@@ -77,16 +76,38 @@ class LeadIn(Content):
         self.leadin = _el.text
 
     def evaluate(self, _state):
-        e = EvaluatedContent()
-        e.leadin = self.leadin
-        return e
+        return {
+            "leadin": self.leadin
+        }
 
 
 class OptionContent(Content):
     def __init__(self, _el):
-        self.option = Option.from_el(_el)
-
         self.condition = None
+        self.action = None
+        self.params = {}
+        self.text = None
+
+        # Get option parameters.
+        action = _el.get("action", "goto")
+        next_scene = _el.get("nextScene")
+        text = _el.text.strip()
+
+        # Check parameters.
+        if action != "goto":
+            logger.error("Option has action'{0}' which is not a valid action. Skipping.".format(action))
+            return
+        if next_scene is None:
+            logger.error("Option has a GOTO action but neither a next scene nor tag attributes. Skipping.")
+            return
+        if text is None or len(text) == 0:
+            logger.error("Option has a GOTO action but does not contain any text. Skipping.")
+            return
+
+        self.action = action
+        self.params = { "next_scene": next_scene }
+        self.text = text
+
         condition_string = _el.get("cond")
         if condition_string:
             condition = parse_condition_from_string(condition_string)
@@ -98,23 +119,27 @@ class OptionContent(Content):
         if self.condition:
             if not self.condition.evaluate(_state):
                 return None
-        e = EvaluatedContent()
-        e.options = [ self.option ]
-        return e
+        return {
+            "options": {
+                "action": self.action,
+                "params": self.params,
+                "text": self.text
+            }
+        }
 
 
 def get_tagged_option_to_inject(_tags, _state):
     from scene import get_scene_description_with_tag
     injected_scene_desc = get_scene_description_with_tag(_tags, _state)
     if injected_scene_desc:
-        e = evaluate_content_blocks(injected_scene_desc.blocks, _state)
-        if e.leadin is None:
+        evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
+        if evaluated_injected_scene["leadin"] is None:
             logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
             return None
 
         return {
-            "action": Option.GOTO,
-            "text": e.leadin,
+            "action": "goto",
+            "text": evaluated_injected_scene["leadin"],
             "params": {
                 "next_scene": injected_scene_desc.id
             }
@@ -141,9 +166,9 @@ class InjectOption(Content):
             return None
         injected_option = get_tagged_option_to_inject(self.tags, _state)
         if injected_option:
-            e = EvaluatedContent()
-            e.options = [ injected_option ]
-            return e
+            return {
+                "options": injected_option
+            }
         else:
             logger.warning("Couldn't find a valid scene with tags '{0}' to inject."
                            .format(self.tags))
@@ -159,36 +184,37 @@ tags_to_content_classes = {
 }
 
 
-class EvaluatedContent(object):
-    def __init__(self):
-        self.text = ""
-        self.leadin = ""
-        self.options = []
+def merge_in_evaluated_content(_content, _new):
+    if _new is None:
+        return
 
-    def add(self, _content):
-        if not isinstance(_content, EvaluatedContent):
-            return
-        if _content.text:
-            self.text += _content.text
-        if _content.leadin:
-            if self.leadin:
+    if isinstance(_new, types.StringType):
+        _content["text"] += _new
+    else:
+        if _new.get("text", None):
+            _content["text"] += _new["text"]
+
+        if _new.get("leadin", None):
+            if _content["leadin"]:
                 logger.error("Encountered more than one lead-in - ignoring.")
             else:
-                self.leadin = _content.leadin
-        if _content.options:
-            self.options += _content.options
+                _content["leadin"] = _new["leadin"]
+
+        if _new.get("options", None):
+            if isinstance(_new["options"], types.ListType):
+                _content["options"] += _new["options"]
+            else:
+                _content["options"].append(_new["options"])
 
 
 def evaluate_content_blocks(_blocks, _state):
-    content = EvaluatedContent()
+    content = {
+        "text": "",
+        "leadin": None,
+        "options": []
+    }
     for block in _blocks:
-        evaluated = block.evaluate(_state)
-        if not evaluated:
-            continue
-        if isinstance(evaluated, types.StringType):
-            content.text += evaluated
-        else:
-            content.add(evaluated)
+        merge_in_evaluated_content(content, block.evaluate(_state))
     return content
 
 
