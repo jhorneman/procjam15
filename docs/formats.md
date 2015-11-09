@@ -17,20 +17,6 @@ If a file contains more than one scene, each scene must be put inside a scene XM
 
 etc. When a file only contains one scene, you can leave out the <scene>.
 
-## Scene types
-
-Scenes come in types. This allows us to have special behavior for certain types, typically involving some form of procedural generation.
-
-(However, there is a difference between scenes as a data structure inside the game, and scene _descriptions_ as something you can write. Right now, you can only write scene descriptions for one type: the Standard scene. This will change.)
-
-The Standard scene type is like a passage in Twine. It has some text and a number of options.
-
-If you don't specify a type, a scene is assumed to have the Standard type.
-
-When you do want to specify the scene type, use the <meta> tag anywhere inside the scene description, like so:
-
-    <meta type="someType"/>
-
 ## Scene ID
 
 Each scene must have an ID. An ID consists of letters, underscores, hyphens, spaces, and numbers. (I don't know if accented characters work: they may not, because scene IDs are used in URLs.)
@@ -55,28 +41,19 @@ Tags are separated by commas. Leading and trailing white space is stripped. Curr
 
 The main scene text is constructed from all the text inside the <scene> tag, as well as special text blocks, as described below.
 
-### Conditional elements
-
-Adding an element like this:
-
-    <if cond="">
-    </if>
-
-means that whatever is inside the element will only be shown if the condition is true. See below for how conditions work.
-
-if elements can be nested.
-
 ### Injected text
 
 By adding this element:
 
-    <injectText tags="" />
+    <injectText tags="scream" />
 
 you can inject text that has the desired tags.
 
 Everything else inside the text element will be ignored.
 
 (Right now this works except there is no system to write tagged texts yet.)
+
+See below for more information about tags.
 
 ## Lead-ins
 
@@ -92,29 +69,39 @@ To solve this, scenes can define lead-ins, which contain the text to be used for
 
 Lead-ins are combined with injected options, explained further down.
 
-# Options
+## Options
 
 Scenes have options: things the player can do. In principle every scene has at least one option.
 
-Each option has, at the very least, some text and an action. The text may be generated somehow. The action may require additional parameters.
+Each option has some text and a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
 
-The most common action is 'goto', and it requires a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
+## Injected options
 
-The goto action is so common, it is assumed to be an option's action if you don't specify anything else. So this:
+Injected options allow you to tell the system to inject an option matching a given tag. This markup:
 
-    <option nextScene="forest">Go to the forest.</option>
+    <injectOption tags="spooky"/>
 
-is the shortest way to write a goto action.
+will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
 
-There are no other action types right now.
-
-You can make options appear conditionally by adding a 'cond' attribute to the option tag, like so:
-
-    <option action="computer-room" cond="$amount_of_data lt 3">...</option>
-
-See below for how conditions work.
+See below for more information about tags.
 
 # Conditions
+
+The following elements can be made conditional by adding a 'cond' attribute to their tag:
+
+* option.
+* injectText.
+* injectOption.
+* leadin.
+* if.
+ 
+If has no other reason for being than wrapping things in a condition. You can nest ifs.
+
+Elements with a condition are only shown or otherwise processed when the condition is true.
+
+Here is an example of an optional option:
+
+    <option action="computer-room" cond="$amount_of_data lt 3">...</option>
 
 Conditions can contain the following operators:
 
@@ -147,17 +134,15 @@ Parameters on the _right_ of the operator are evaluated as follows:
 
 WARNING: That last line means that if you forget the $ sign on a parameter on the right of the operator, the condition will not behave as you intend, and you won't get a warning!
 
-## Injected options
+# Tags
 
-Injected options allow you to tell the system to inject an option matching a given tag. This markup:
+When you ask for tags (in injectText or injectOption), you can ask for the current value of variable from the persistent game state by preceding it with a $ sign.
 
-    <injectOption tags="spooky"/>
-
-will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
-
-Instead of literal tags ("spooky, outside") you can also refer to state variables like this:
+So this:
 
     <injectOption tags="spooky, $current_act"/>
+
+looks for a scene that has the tag 'spooky' as well as a tag equal to the current value of current_act.
 
 # Text substitution
 
