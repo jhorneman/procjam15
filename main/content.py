@@ -3,6 +3,7 @@
 import types
 import logging
 from condition import parse_condition_from_string
+from action import parse_action_from_string
 from tags import string_to_tags, evaluate_tags
 
 
@@ -17,9 +18,8 @@ class Content(object):
         condition_string = _el.get("cond")
         if condition_string:
             condition = parse_condition_from_string(condition_string)
-            if not condition:
-                return
-            self.condition = condition
+            if condition:
+                self.condition = condition
 
     def is_condition_true(self, _state):
         if self.condition:
@@ -48,23 +48,6 @@ class If(Content):
             return evaluate_content_blocks(self.blocks, _state)
         else:
             return None
-
-
-def read_tags(_el, _el_name):
-    tags = []
-    tags_string = _el.get("tags")
-    if tags_string:
-        tags = string_to_tags(tags_string)
-        if len(tags) == 0:
-            logger.error("Encountered {0} element with empty tags.".format(_el_name))
-        else:
-            if len(list(_el)) > 0:
-                logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
-            if _el.text and len(_el.text) > 0:
-                logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
-    else:
-        logger.error("Encountered {0} element without a tags attribute.")
-    return tags
 
 
 class InjectText(Content):
@@ -147,26 +130,6 @@ class Option(Content):
             return None
 
 
-def get_tagged_option_to_inject(_tags, _state):
-    from scene import get_scene_description_with_tag
-    injected_scene_desc = get_scene_description_with_tag(_tags, _state)
-    if injected_scene_desc:
-        evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
-        if evaluated_injected_scene["leadin"] is None:
-            logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
-            return None
-
-        return {
-            "action": "goto",
-            "params": {
-                "next_scene": injected_scene_desc.id
-            },
-            "text": evaluated_injected_scene["leadin"]
-        }
-    else:
-        return None
-
-
 class InjectOption(Content):
     def __init__(self, _el):
         super(InjectOption, self).__init__()
@@ -187,13 +150,34 @@ class InjectOption(Content):
         return None
 
 
+class Action(Content):
+    def __init__(self, _el):
+        super(Action, self).__init__()
+        self.check_for_condition(_el)
+
+        self.action = None
+        action_string = _el.get("act")
+        if action_string:
+            action = parse_action_from_string(action_string)
+            if action:
+                self.action = action
+
+    def evaluate(self, _state):
+        if self.is_condition_true(_state):
+            return {
+                "actions": self.action
+            }
+        return None
+
+
 tags_to_content_classes = {
     "if": If,
     "injectText": InjectText,
     "br": Br,
     "leadin": LeadIn,
     "option": Option,
-    "injectOption": InjectOption
+    "injectOption": InjectOption,
+    "action": Action
 }
 
 
@@ -219,12 +203,19 @@ def merge_in_evaluated_content(_content, _new):
             else:
                 _content["options"].append(_new["options"])
 
+        if _new.get("actions", None):
+            if isinstance(_new["actions"], types.ListType):
+                _content["actions"] += _new["actions"]
+            else:
+                _content["actions"].append(_new["actions"])
+
 
 def evaluate_content_blocks(_blocks, _state):
     content = {
         "text": "",
         "leadin": None,
-        "options": []
+        "options": [],
+        "actions": []
     }
     for block in _blocks:
         merge_in_evaluated_content(content, block.evaluate(_state))
@@ -248,3 +239,40 @@ def parse_content_from_xml(_parent_el):
             blocks.append(Raw(child_el.tail))
 
     return blocks
+
+
+def read_tags(_el, _el_name):
+    tags = []
+    tags_string = _el.get("tags")
+    if tags_string:
+        tags = string_to_tags(tags_string)
+        if len(tags) == 0:
+            logger.error("Encountered {0} element with empty tags.".format(_el_name))
+        else:
+            if len(list(_el)) > 0:
+                logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
+            if _el.text and len(_el.text) > 0:
+                logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
+    else:
+        logger.error("Encountered {0} element without a tags attribute.")
+    return tags
+
+
+def get_tagged_option_to_inject(_tags, _state):
+    from scene import get_scene_description_with_tag
+    injected_scene_desc = get_scene_description_with_tag(_tags, _state)
+    if injected_scene_desc:
+        evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
+        if evaluated_injected_scene["leadin"] is None:
+            logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
+            return None
+
+        return {
+            "action": "goto",
+            "params": {
+                "next_scene": injected_scene_desc.id
+            },
+            "text": evaluated_injected_scene["leadin"]
+        }
+    else:
+        return None

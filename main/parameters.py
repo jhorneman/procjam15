@@ -7,6 +7,14 @@ import random
 logger = logging.getLogger(__name__)
 
 
+def set_parameter_value(_state, _parameter_name, _value):
+    if _parameter_name.startswith("$"):
+        variable_name = _parameter_name[1:]
+        _state[variable_name] = _value
+    else:
+        logger.error("'{0}' should start with a $.".format(_parameter_name))
+
+
 def get_lhs_parameter_value(_state, _parameter_name):
     if _parameter_name.startswith("$"):
         variable_name = _parameter_name[1:]

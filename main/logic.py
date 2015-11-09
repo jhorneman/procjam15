@@ -43,6 +43,9 @@ def get_current_scene_data():
 
     evaluated_scene = evaluate_content_blocks(scene_desc.blocks, session)
 
+    for action in evaluated_scene["actions"]:
+        action.execute(session)
+
     return {
         "text": substitute_text(evaluated_scene["text"], session),
         "options": [{

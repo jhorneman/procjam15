@@ -45,7 +45,7 @@ class CustomFormatter(string.Formatter):
             else:
                 # No -> Complain.
                 logger.error("Text substitution key '{0}' was not found.".format(key))
-                return escape("<NOT FOUND>")
+                return escape("<'{0}' NOT FOUND>".format(key))
 
 formatter = CustomFormatter()
 
