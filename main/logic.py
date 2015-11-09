@@ -2,7 +2,8 @@
 
 import logging
 from flask import request, session
-from main.data import get_scene_description, get_scene_description_with_tag, Option
+from scene import get_scene_description, get_scene_description_with_tag
+from option import Option
 from text_utils import substitute_text
 from game_state import prepare_game_start
 
