@@ -32,8 +32,8 @@ You're in a stomach. It is familiar, like a mess hall...
 </scene>
 
 <scene>
-<meta id='carapace' tags='mission, flesh_act3, flesh_act4'/>
-<leadin>Search within the carapace.</leadin>
+<meta id='carapace_space' tags='mission, flesh_act3, flesh_act4'/>
+<leadin>Search within the major carapace.</leadin>
 You're within a carapace. It is familiar, like an airlock or vent...
 
 <injectOption tags='flesh' />
@@ -90,17 +90,6 @@ You in the left ventricle. It is familiar, like x
 <meta id='gallbladder' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the gallbladder.</leadin>
 You are in the gallbladder. It is familiar, like x
-
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-
-</scene>
-
-<scene>
-<meta id='outer membrane' tags='mission, flesh_act3, flesh_act4'/>
-<leadin>Search the outer membrane.</leadin>
-You are in the outer membrane. It is familiar, like the observation stations...
 
 <injectOption tags='flesh' />
 <injectOption tags='flesh' />
@@ -212,17 +201,6 @@ You are in the ovaries. It is familiar, like x
 <meta id='pharynx' tags='mission, flesh_act3, flesh_act4'/>
 <leadin>Search the pharynx.</leadin>
 You are in the pharyngeal pouch. It is familiar, like x
-
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-<injectOption tags='flesh' />
-
-</scene>
-
-<scene>
-<meta id='cavity' tags='mission, flesh_act3, flesh_act4'/>
-<leadin>Search the warm cavity.</leadin>
-You are in a warm cavity. It is familiar, like x
 
 <injectOption tags='flesh' />
 <injectOption tags='flesh' />

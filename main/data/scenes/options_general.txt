@@ -280,7 +280,7 @@ You look and find... data. xx
 </scene>
 
 <scene>
-<meta id='body' tags='option, human, biological'/>
+<meta id='body' tags='option, human, biological, must_morgue'/>
 <leadin>Check dead body. </leadin>
 You look and find... data. xx
 <option nextScene='computer_room'>Return with data.</option>
@@ -327,6 +327,38 @@ need x more (target: 100 total):
 - flesh
 electrical (split with mechanical)
 
+break into locked objects
+chest
+packing case
+recepticle
+carton
+package
+parcel
+bundle
+bin
+ajar safe
+container
+depository
+dresser
+case
+locker
+trunk
+cupboard
+repository
+sideboard
+rack
+countertop
+baggage
+canister
+capsule
+covering
+wallet
+
+
+access data replaceable
+access computer's storage device
+access system archives
+
 
 
 
@@ -348,5 +380,8 @@ identification card
 leaking battery
 bottle of pills
 wound cauterizer
+electronic keycard
+security code
+algorithm
 
 -->

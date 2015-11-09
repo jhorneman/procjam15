@@ -123,6 +123,21 @@ END OF LIST<br />
 <option nextScene="computer_room">> esc</option>
 </scene>
 
+<scene>
+<meta id='computer1j' tags='c_flesh_act1, style_terminal'/>
+<leadin>> Query: "explain quarantine protocols"</leadin>
+> Query: "explain quarantine protocols"<br />
+--------------------------------<br />
+QUARANTINE PROTOCOLS IN EFFECT<br />
+ALL SUBSYSTEMS REROUTED TOWARD QUARANTINE RESTRICTIONS<br />
+ALL NON-ESSENTIAL SYSTEMS OFFLINE<br />
+QUARANTINE WILL PERSIST UNTIL INFECTION TERMINATED<br />
+INSUFFICIENT POWER TO IDENTIFY INFECTION<br />
+REBOOT REQUIRED<br />
+--------------------------------
+<option nextScene="computer_room">> esc</option>
+</scene>
+
 <!-- ACT II -->
 
 <scene>
@@ -210,6 +225,17 @@ ATTEMPTING TO REROUTE POWER...<br />
 REROUTE FAILED<br />
 REBOOT REQUIRED<br />
 INSUFFICIENT POWER FOR REBOOT<br />
+--------------------------------
+<option nextScene="computer_room">> esc</option>
+</scene>
+
+<scene>
+<meta id='computer2h' tags='c_flesh_act2, style_terminal'/>
+<leadin>> Terminate infection</leadin>
+> Terminate infection<br />
+--------------------------------<br />
+INSUFFICIENT POWER TO IDENTIFY INFECTION<br />
+QUARANTINE WILL PERSIST UNTIL INFECTION TERMINATED<br />
 --------------------------------
 <option nextScene="computer_room">> esc</option>
 </scene>

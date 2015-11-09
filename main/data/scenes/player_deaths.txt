@@ -1,45 +1,113 @@
 <scene>
-<meta id='death airlock' tags='death_airlock, death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<meta id='death airlock' tags='death_airlock, style_death'/>
 <leadin>Fiddle with airlock controls.</leadin>
 You die by being sucked out an airlock.  xx
 </scene>
 
 <scene>
-<meta id='death oxygen' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
-<leadin>Modify oxygen levels.</leadin>
-You die because there is no oxygen in the room. xx
-</scene>
-
-<scene>
-<meta id='death vacuum' tags='death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
-<leadin>Open window.</leadin>
-You die because the room has become a vacuum. Explosive decompression? xx
-</scene>
-
-<scene>
-<meta id='death sleep' tags='death_flesh_act2, death_flesh_act3'/>
-<leadin>Investigate spores closer.</leadin>
-You die by inhaling spores from some fungus. They put you to sleep. xx
-</scene>
-
-<scene>
-<meta id='death claustrophobia' tags='death_claustrophobia, death_flesh_act1, death_flesh_act2, death_flesh_act3'/>
+<meta id='upper vents' tags='death_claustrophobia, style_death'/>
 <leadin>Climb into the upper ventilation system.</leadin>
 You climb into the upper ventilation system. You have to wiggle to fit. Unfortunately, you discover you cannot back up. You die up there in the heat and humidity, the smell of your rot brought throughout the ship. xx
 </scene>
 
+<scene>
+<meta id='elevator shaft' tags='death_elevator, style_death'/>
+<leadin>Descend elevator shaft.</leadin>
+You lower yourself into the elevator shaft and attempt to climb down, but there is no access ladder. As you climb back up, the power whirls back in in a sudden surge. The elevator drops, severing your arms. You fall to the bottom of the shaft. You die. xx
+</scene>
+
+<scene>
+<meta id='radiation shield' tags='death_reactor, style_death'/>
+<leadin>Lower radiation shielding.</leadin>
+You lower the radiation shielding separating you from the reactor core. It burns. You die. xx
+</scene>
+
+<scene>
+<meta id='radiation shield gen' tags='death_radiation, style_death'/>
+<leadin>Lower radiation shielding.</leadin>
+You lower the radiation shielding separating you from the harmful gamma radiation of space. It burns. You die. xx
+</scene>
+
+<!-- need to find places for these -->
+
+<scene>
+<meta id='hydrogen power' tags='death_hydrogen, style_death'/>
+<leadin>Jumpstart generator to power hydrogen collector.</leadin>
+You jumpstart the generator to power on the hydrogen collector.  It sparks. The explosion is massive and sudden. You die. xx
+</scene>
+
+<!-- GENERIC TAGGED DEATHS -->
+
+<!-- CONTAINER -->
+
+<scene>
+<meta id='oxygen levels' tags='container, style_death'/>
+<leadin>Modify oxygen levels.</leadin>
+You modify oxygen levels and accidentally seal the room. All oxygen leaves. You suffocate. You die. xx
+</scene>
+
+<scene>
+<meta id='locking mechanism' tags='container, style_death'/>
+<leadin>Engage locking mechanism in door.</leadin>
+You engage the locking mechanism. The power then cuts out. It does not return. You are unable to reopen the door. It is your coffin now. You die. xx
+</scene>
+
+<!-- BIO / MEDICAL -->
+
+<scene>
+<meta id='inspect fungus' tags='biological, medical, style_death'/>
+<leadin>Investigate mysterious fungal growth.</leadin>
+You die by inhaling spores from some fungus. They put you to sleep. xx
+</scene>
+
+<!-- ELECTRICAL -->
+
+<scene>
+<meta id='tear wires' tags='electrical, style_death'/>
+<leadin>Cut electrical wiring.</leadin>
+You cut into the electrical wiring, but it has active power currents running through it. You electrocute yourself. You die. xx
+</scene>
+
+<!-- MECHANICAL -->
+
+<!-- HUMAN -->
+
+
+
 <!-- late-game deaths -->
 <scene>
-<meta id='death sticky' tags='death_flesh_act3, death_flesh_act4'/>
+<meta id='unidentified substance' tags='flesh, style_death'/>
 <leadin>Touch unidentified substance.</leadin>
 You die by touching a sticky substance and find yourself unable to detach yourself from it. xx
 </scene>
 
 <scene>
-<meta id='death stuck' tags='death_flesh_act3, death_flesh_act4'/>
-<leadin>Reach inside large undulating sphincter</leadin>
+<meta id='undulating sphincter' tags='flesh, style_death'/>
+<leadin>Reach inside an undulating sphincter.</leadin>
 You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
 </scene>
+
+<scene>
+<meta id='warm yolk' tags='flesh, style_death'/>
+<leadin>Lay down inside the warm yolk.</leadin>
+You lay down in the yolk. It's warm. It feels comfortable. You let the liquid envelope you like a gel. You die. xx
+</scene>
+
+<scene>
+<meta id='taste liquid' tags='flesh, style_death'/>
+<leadin>Taste liquid excretions.</leadin>
+You taste the extretion from the fleshy bits of the environment. It doesn't taste good. Your throat closes up. You die. xx
+</scene>
+
+<scene>
+<meta id='gastic acid' tags='flesh, style_death'/>
+<leadin>Wade into gastric acid.</leadin>
+You wade into the gastic acid. Your clothes and then skin sizzle as the acid digests you. You die. xx
+</scene>
+
+<!-- flesh5 -->
+<!-- flesh6 -->
+<!-- flesh7 -->
 
 <!--- other ways to die
 choke on your own vomit within a space helmet
