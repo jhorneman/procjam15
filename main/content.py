@@ -71,7 +71,7 @@ class Br(Content):
 
 
 tags_to_content_classes = {
-    "text": If,
+    "if": If,
     "injectText": InjectText,
     "br": Br
 }
