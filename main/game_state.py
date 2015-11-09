@@ -27,7 +27,7 @@ def restart():
     session.update(generate_player_character())
 
 
-def prepare_game_start():
+def prepare_game_state():
     if session.new:
         session.update(initial_game_state)
     else:

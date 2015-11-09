@@ -5,7 +5,7 @@ from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
 from option import Option
 from text_utils import substitute_text
-from game_state import prepare_game_start
+from game_state import prepare_game_state
 from content import evaluate_content_blocks
 
 
@@ -36,7 +36,7 @@ def get_standard_scene_data(_next_scene):
 
 
 def get_scene_data():
-    prepare_game_start()
+    prepare_game_state()
 
     action = request.args.get('action', None)
 
