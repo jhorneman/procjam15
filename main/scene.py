@@ -5,7 +5,7 @@ import logging
 import xml.etree.ElementTree as ET
 from tags import string_to_tags, evaluate_tags, tags_are_matched
 from option import Option
-from condition import parse_condition_from_string
+from content import evaluate_content_blocks, parse_content_from_xml
 
 
 logger = logging.getLogger(__name__)
@@ -67,26 +67,13 @@ class Scene(object):
         self.id = None
         self.type = Scene.STANDARD
         self.tags = []
-        self.text_blocks = []
+        self.blocks = []
         self.options = []
         self.leadin = None
         self.injected_options = []
 
     def build_main_text(self, _state):
-        text = ""
-        for text_block in self.text_blocks:
-            if text_block[0] == "raw":
-                text += text_block[1]
-            elif text_block[0] == "text":
-                if text_block[2].evaluate(_state):
-                    text += text_block[1]
-            elif text_block[0] == "inject":
-                text += "[injected text for tags {0}]".format(text_block[1])
-            elif text_block[0] == "br":
-                text += "<br/>"
-            else:
-                logger.error("Unknown text block type '{0}'.".format(text_block[0]))
-        return text
+        return evaluate_content_blocks(self.blocks, _state)
 
 
 def read_scenes_from_text_file(_file, _file_name):
@@ -159,37 +146,7 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
             logger.error("Scene {0} has id {1} which already exists. Skipping.".format(_scene_index+1, new_scene.id))
             return
 
-        # Build scene description from all texts at the root of the scene element.
-        # This includes the tails of child elements.
-        if _scene_el.text:
-            new_scene.text_blocks.append(("raw", _scene_el.text))
-
-        for child_el in _scene_el:
-            if child_el.tag == "text":
-                condition_string = child_el.get("cond")
-                if condition_string:
-                    condition = parse_condition_from_string(condition_string)
-                    if condition:
-                        new_scene.text_blocks.append(("text", child_el.text, condition))
-                else:
-                    logger.error("Scene {0} contains a conditional text block without a condition. Skipping.".format(_scene_index+1))
-
-            elif child_el.tag == "injectText":
-                tags_string = child_el.get("tags")
-                if tags_string:
-                    tags = string_to_tags(tags_string)
-                    if len(tags) > 0:
-                        new_scene.text_blocks.append(("inject", tags))
-                    else:
-                        logger.error("Scene {0} contains an injected text block with empty tags. Skipping.".format(_scene_index+1))
-                else:
-                    logger.error("Scene {0} contains an injected text block without tags. Skipping.".format(_scene_index+1))
-
-            elif child_el.tag == 'br':
-                new_scene.text_blocks.append(("br",))
-
-            if child_el.tail:
-                new_scene.text_blocks.append(("raw", child_el.tail))
+        new_scene.blocks = parse_content_from_xml(_scene_el)
 
         # Get lead-in, if any.
         leadin_el = _scene_el.find("leadin")
