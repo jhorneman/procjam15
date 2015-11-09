@@ -50,24 +50,28 @@ class If(Content):
             return None
 
 
+def read_tags(_el, _el_name):
+    tags = []
+    tags_string = _el.get("tags")
+    if tags_string:
+        tags = string_to_tags(tags_string)
+        if len(tags) == 0:
+            logger.error("Encountered {0} element with empty tags.".format(_el_name))
+        else:
+            if len(list(_el)) > 0:
+                logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
+            if len(_el.text) > 0:
+                logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
+    else:
+        logger.error("Encountered {0} element without a tags attribute.")
+    return tags
+
+
 class InjectText(Content):
     def __init__(self, _el):
         super(InjectText, self).__init__()
         self.check_for_condition(_el)
-
-        self.tags = []
-        tags_string = _el.get("tags")
-        if tags_string:
-            self.tags = string_to_tags(tags_string)
-            if len(self.tags) == 0:
-                logger.error("Encountered an injected text element with empty tags. Skipping.")
-            else:
-                if len(list(_el)) > 0:
-                    logger.warning("Encountered an injected text element with child elements. These will be ignored!")
-                if len(_el.text) > 0:
-                    logger.warning("Encountered an injected text element with text inside. This will be ignored!")
-        else:
-            logger.error("Encountered an injected text element without a tags attribute. Skipping.")
+        self.tags = read_tags(_el, "injected text")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
@@ -154,10 +158,10 @@ def get_tagged_option_to_inject(_tags, _state):
 
         return {
             "action": "goto",
-            "text": evaluated_injected_scene["leadin"],
             "params": {
                 "next_scene": injected_scene_desc.id
-            }
+            },
+            "text": evaluated_injected_scene["leadin"]
         }
     else:
         return None
@@ -165,28 +169,22 @@ def get_tagged_option_to_inject(_tags, _state):
 
 class InjectOption(Content):
     def __init__(self, _el):
-        self.tags = None
-        tags_string = _el.get("tags", None)
-        if tags_string:
-            tags = string_to_tags(tags_string)
-            if len(tags) > 0:
-                self.tags = tags
-            else:
-                logger.error("Encountered an injected option element with empty tags. Skipping.")
-        else:
-            logger.error("Encountered an injected option element without a tags attribute. Skipping.")
+        super(InjectOption, self).__init__()
+        self.check_for_condition(_el)
+        self.tags = read_tags(_el, "injected option")
 
     def evaluate(self, _state):
-        if not self.tags:
-            return None
-        injected_option = get_tagged_option_to_inject(self.tags, _state)
-        if injected_option:
-            return {
-                "options": injected_option
-            }
-        else:
-            logger.warning("Couldn't find a valid scene with tags '{0}' to inject."
-                           .format(self.tags))
+        if self.is_condition_true(_state):
+            tags = evaluate_tags(self.tags, _state)
+            injected_option = get_tagged_option_to_inject(tags, _state)
+            if injected_option:
+                return {
+                    "options": injected_option
+                }
+            else:
+                logger.warning("Couldn't find a valid scene with tags '{0}' to inject."
+                               .format(self.tags))
+        return None
 
 
 tags_to_content_classes = {
