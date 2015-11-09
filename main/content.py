@@ -41,7 +41,7 @@ class If(Content):
         return evaluate_content_blocks(self.blocks, _state)
 
 
-class Inject(Content):
+class InjectText(Content):
     def __init__(self, _el):
         self.tags = []
         tags_string = _el.get("tags")
@@ -71,8 +71,8 @@ class Br(Content):
 
 
 tags_to_content_classes = {
-    "text": Br,
-    "injectText": Br,
+    "text": If,
+    "injectText": InjectText,
     "br": Br
 }
 
