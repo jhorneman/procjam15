@@ -4,8 +4,7 @@ import re
 import logging
 import xml.etree.ElementTree as ET
 from tags import string_to_tags, evaluate_tags, tags_are_matched
-from option import Option
-from content import evaluate_content_blocks, parse_content_from_xml
+from content import parse_content_from_xml
 
 
 logger = logging.getLogger(__name__)
@@ -71,9 +70,6 @@ class Scene(object):
         self.options = []
         self.leadin = None
         self.injected_options = []
-
-    def build_main_text(self, _state):
-        return evaluate_content_blocks(self.blocks, _state)
 
 
 def read_scenes_from_text_file(_file, _file_name):
@@ -147,35 +143,6 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
             return
 
         new_scene.blocks = parse_content_from_xml(_scene_el)
-
-        # Get lead-in, if any.
-        leadin_el = _scene_el.find("leadin")
-        if leadin_el is not None:
-            new_scene.leadin = leadin_el.text
-
-        # Get injected options, if any.
-        for injected_option_index, injected_option_el in enumerate(_scene_el.findall("injectOption")):
-            tags_string = injected_option_el.get("tags", None)
-            if tags_string:
-                tags = string_to_tags(tags_string)
-                if len(tags) > 0:
-                    new_scene.injected_options.append(tags)
-                else:
-                    logger.error("Scene {0} contains an injected option {1} with empty tags. Skipping.".format(_scene_index+1, injected_option_index+1))
-            else:
-                logger.error("Scene {0} contains an injected option {1} without tags. Skipping.".format(_scene_index+1, injected_option_index+1))
-                return
-
-        # Iterate over all option elements.
-        for option_index, option_el in enumerate(_scene_el.findall("option")):
-            new_option = Option.from_el(option_el, option_index + 1)
-            if new_option:
-                new_scene.options.append(new_option)
-
-        # if len(new_scene.options) == 0:
-        #     # Skip if no option elements were found.
-        #     logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(_scene_index+1))
-        #     return
 
         # logger.info("Read scene {0}.".format(_scene_index+1))
         scenes[new_scene.id] = new_scene

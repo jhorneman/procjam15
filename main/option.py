@@ -29,7 +29,7 @@ class Option(object):
         return {}
 
     @staticmethod
-    def from_el(_el, _index):
+    def from_el(_el, _index=0):  # TODO: Remove index
         new_option = Option()
 
         # Get action, if any.

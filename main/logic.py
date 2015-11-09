@@ -6,6 +6,7 @@ from scene import get_scene_description, get_scene_description_with_tag
 from option import Option
 from text_utils import substitute_text
 from game_state import prepare_game_start
+from content import evaluate_content_blocks
 
 
 logger = logging.getLogger(__name__)
@@ -19,48 +20,19 @@ def get_standard_scene_data(_next_scene):
         logger.error("Couldn't find scene description for scene '{0}'.".format(_next_scene))
         return None
 
-    # session["current_scene"] = _next_scene
-    # session["visited_scenes"].append(_next_scene)
-    # session.modified = True
-
+    e = evaluate_content_blocks(scene_desc.blocks, session)
     scene_data = {
-        "text": scene_desc.build_main_text(session),
+        "text": e.text,
         "options": [{
-            "action": option.action,
-            "text": option.text,
-            "params": option.params,
-            "condition": option.condition
-            } for option in scene_desc.options
+            "action": option.action if hasattr(option, "action") else option["action"],
+            "text": option.text if hasattr(option, "text") else option["text"],
+            "params": option.params if hasattr(option, "params") else option["params"],
+            "condition": option.condition if hasattr(option, "condition") else option.get("condition", None)
+            } for option in e.options
         ]
     }
 
-    for injected_option_tags in scene_desc.injected_options:
-        injected_option = get_tagged_option_to_inject(injected_option_tags)
-        if injected_option:
-            scene_data["options"].append(injected_option)
-        else:
-            logger.warning("Couldn't find a valid scene with tags '{1}' to inject into scene {0}."
-                           .format(_next_scene, injected_option_tags))
-
     return scene_data
-
-
-def get_tagged_option_to_inject(_tags):
-    injected_scene_desc = get_scene_description_with_tag(_tags, session)
-    if injected_scene_desc:
-        if injected_scene_desc.leadin is None:
-            logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
-            return None
-
-        return {
-            "action": Option.GOTO,
-            "text": injected_scene_desc.leadin,
-            "params": {
-                "next_scene": injected_scene_desc.id
-            }
-        }
-    else:
-        return None
 
 
 def get_scene_data():
