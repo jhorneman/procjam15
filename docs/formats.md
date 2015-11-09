@@ -55,16 +55,16 @@ Tags are separated by commas. Leading and trailing white space is stripped. Curr
 
 The main scene text is constructed from all the text inside the <scene> tag, as well as special text blocks, as described below.
 
-### Conditional text
+### Conditional elements
 
-Adding a text element like this:
+Adding an element like this:
 
-    <text cond="">
-    </text>
+    <if cond="">
+    </if>
 
-means the text inside the element will only be shown if the condition is true. See below for how conditions work.
+means that whatever is inside the element will only be shown if the condition is true. See below for how conditions work.
 
-Everything else inside the text element will be ignored.
+if elements can be nested.
 
 ### Injected text
 
@@ -74,7 +74,9 @@ By adding this element:
 
 you can inject text that has the desired tags.
 
-(Right now that works except there is no system to write tagged texts yet. Before you ask: no, you cannot put injected text inside a text element. Ask me if you _really_ need that.)
+Everything else inside the text element will be ignored.
+
+(Right now this works except there is no system to write tagged texts yet.)
 
 ## Lead-ins
 
@@ -106,11 +108,13 @@ is the shortest way to write a goto action.
 
 There are no other action types right now.
 
-## Conditions
-
-You can make options appear or not by adding a condition to the tag, like so:
+You can make options appear conditionally by adding a 'cond' attribute to the option tag, like so:
 
     <option action="computer-room" cond="$amount_of_data lt 3">...</option>
+
+See below for how conditions work.
+
+# Conditions
 
 Conditions can contain the following operators:
 
@@ -124,7 +128,7 @@ Conditions can contain the following operators:
 
 (We cannot use the < and > signs because that is cumbersome in XML.)
 
-If you want to test if a value is true, just write the value without any operators:
+If you want to test if a value is true, just write the variable name without any operator:
 
     <option action="computer-room" cond="$has_mcguffin">...</option>
 
@@ -132,12 +136,16 @@ The not operator is the only operator that only takes one parameter: all the oth
 
     parameter1 operator parameter2
 
-Parameters are evaluated as follows:
+Parameters on the _left_ of the operator - this includes no operator or the not operator - _must_ refer to a variable from the persistent game state. The parameter has to start with a $. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable.
 
-* If the parameter starts with a $, we try to find a variable with the same name in the persistent game state. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable. This is what you will usually want to use.
-* Then we see if the parameter is 'random', and if so generate a random number between 0 and 100.
-* Then we see if the parameter is 'true' or 'false'.
-* Finally we treat the parameter as a number or a string.
+Parameters on the _right_ of the operator are evaluated as follows:
+
+* If the parameter starts with a $, we try to find a variable with the same name in the persistent game state.
+* If the parameter is 'random', and we generate a random number between 0 and 100.
+* If the parameter is a number, it's treated as such.
+* Finally we treat it as a string.
+
+WARNING: That last line means that if you forget the $ sign on a parameter on the right of the operator, the condition will not behave as you intend, and you won't get a warning!
 
 ## Injected options
 
