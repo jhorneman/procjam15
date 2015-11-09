@@ -177,5 +177,5 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
         #     logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(_scene_index+1))
         #     return
 
-        logger.info("Read scene {0}.".format(_scene_index+1))
+        # logger.info("Read scene {0}.".format(_scene_index+1))
         scenes[new_scene.id] = new_scene

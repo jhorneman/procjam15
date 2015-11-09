@@ -31,7 +31,7 @@ def load_scene_descriptions():
             # Open the file and read the scenes from it.
             with open(full_path, "r") as f:
                 data_files_for_live_reloading.append(full_path)
-                logger.info("Reading file {0}...".format(full_path))
+                # logger.info("Reading file {0}...".format(full_path))
                 read_scenes_from_text_file(f, scene_name)
 
     if get_nr_scenes() == 0:
