@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import types
 import string
 import logging
 from flask import escape
@@ -32,8 +33,7 @@ class CustomFormatter(string.Formatter):
                 value = kwargs[key]
 
                 # Convert it to a string if need be.
-                # TODO: Use isintance here
-                if type(value) != type(""):
+                if not isinstance(value, types.StringType):
                     value = str(value)
 
                 # Capitalize it, if needed.
