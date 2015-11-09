@@ -60,7 +60,7 @@ def read_tags(_el, _el_name):
         else:
             if len(list(_el)) > 0:
                 logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
-            if len(_el.text) > 0:
+            if _el.text and len(_el.text) > 0:
                 logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
     else:
         logger.error("Encountered {0} element without a tags attribute.")
