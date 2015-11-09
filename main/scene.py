@@ -5,6 +5,7 @@ import logging
 import xml.etree.ElementTree as ET
 from tags import string_to_tags, evaluate_tags, tags_are_matched
 from option import Option
+from condition import parse_condition_from_string
 
 
 logger = logging.getLogger(__name__)
@@ -88,7 +89,7 @@ class Scene(object):
         return text
 
 
-def read_scenes_from_text_file(_file, _scene_name):
+def read_scenes_from_text_file(_file, _file_name):
     # Read the entire text file.
     data = _file.read()
 
@@ -104,63 +105,74 @@ def read_scenes_from_text_file(_file, _scene_name):
 
     # Iterate over all scene elements in the text file.
     scene_els = root.findall("scene")
+
+    if len(scene_els) == 0:
+        logger.error("No scene elements found.")
+        return
+
+    scene_name = _file_name if len(scene_els) == 1 else None
+
     for scene_index, scene_el in enumerate(scene_els):
+        parse_scene_from_xml(scene_el, scene_index, scene_name)
+
+
+def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
         new_scene = Scene()
 
         # Find meta element.
-        meta_el = scene_el.find("meta")
+        meta_el = _scene_el.find("meta")
         if meta_el is not None:
             # Get scene ID, use scene name if not found and there's only one scene, otherwise skip.
             new_scene.id = meta_el.get("id")
             if new_scene.id is None:
-                if len(scene_els) == 1:
+                if _scene_name:
                     new_scene.id = _scene_name
                 else:
-                    logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(scene_index+1))
-                    continue
+                    logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(_scene_index+1))
+                    return
             else:
                 new_scene.id = new_scene.id.strip()
                 if not scene_id_re.match(new_scene.id):
-                    logger.error("Scene {0} has an invalid id '{1}'. Scene ids must consist of letters, underscores, hyphens, spaces, and numbers. Skipping.".format(scene_index+1, new_scene.id))
-                    continue
+                    logger.error("Scene {0} has an invalid id '{1}'. Scene ids must consist of letters, underscores, hyphens, spaces, and numbers. Skipping.".format(_scene_index+1, new_scene.id))
+                    return
 
             # Get scene type, if any.
             new_scene.type = meta_el.get("type", Scene.STANDARD)
             if new_scene.type not in Scene.types:
                 logger.error("Scene {0} has type '{1}' which is not a valid type (those are {2}). Skipping."
-                    .format(scene_index+1, new_scene.type, ", ".join(Scene.types)))
-                continue
+                    .format(_scene_index+1, new_scene.type, ", ".join(Scene.types)))
+                return
 
             # Get scene tags, if any.
             tags = meta_el.get("tags", None)
             if tags:
                 new_scene.tags = string_to_tags(tags)
         else:
-            if len(scene_els) == 1:
+            if _scene_name:
                 new_scene.id = _scene_name
                 new_scene.type = Scene.STANDARD
             else:
-                logger.error("Scene {0} does not contain a meta element. Skipping.".format(scene_index+1))
-                continue
+                logger.error("Scene {0} does not contain a meta element. Skipping.".format(_scene_index+1))
+                return
 
         if new_scene.id in scenes:
-            logger.error("Scene {0} has id {1} which already exists. Skipping.".format(scene_index+1, new_scene.id))
-            continue
+            logger.error("Scene {0} has id {1} which already exists. Skipping.".format(_scene_index+1, new_scene.id))
+            return
 
         # Build scene description from all texts at the root of the scene element.
         # This includes the tails of child elements.
-        if scene_el.text:
-            new_scene.text_blocks.append(("raw", scene_el.text))
+        if _scene_el.text:
+            new_scene.text_blocks.append(("raw", _scene_el.text))
 
-        for child_el in scene_el:
+        for child_el in _scene_el:
             if child_el.tag == "text":
                 condition_string = child_el.get("cond")
                 if condition_string:
-                    condition = Condition.parse_string(condition_string)
+                    condition = parse_condition_from_string(condition_string)
                     if condition:
                         new_scene.text_blocks.append(("text", child_el.text, condition))
                 else:
-                    logger.error("Scene {0} contains a conditional text block without a condition. Skipping.".format(scene_index+1))
+                    logger.error("Scene {0} contains a conditional text block without a condition. Skipping.".format(_scene_index+1))
 
             elif child_el.tag == "injectText":
                 tags_string = child_el.get("tags")
@@ -169,9 +181,9 @@ def read_scenes_from_text_file(_file, _scene_name):
                     if len(tags) > 0:
                         new_scene.text_blocks.append(("inject", tags))
                     else:
-                        logger.error("Scene {0} contains an injected text block with empty tags. Skipping.".format(scene_index+1))
+                        logger.error("Scene {0} contains an injected text block with empty tags. Skipping.".format(_scene_index+1))
                 else:
-                    logger.error("Scene {0} contains an injected text block without tags. Skipping.".format(scene_index+1))
+                    logger.error("Scene {0} contains an injected text block without tags. Skipping.".format(_scene_index+1))
 
             elif child_el.tag == 'br':
                 new_scene.text_blocks.append(("br",))
@@ -180,33 +192,33 @@ def read_scenes_from_text_file(_file, _scene_name):
                 new_scene.text_blocks.append(("raw", child_el.tail))
 
         # Get lead-in, if any.
-        leadin_el = scene_el.find("leadin")
+        leadin_el = _scene_el.find("leadin")
         if leadin_el is not None:
             new_scene.leadin = leadin_el.text
 
         # Get injected options, if any.
-        for injected_option_index, injected_option_el in enumerate(scene_el.findall("injectOption")):
+        for injected_option_index, injected_option_el in enumerate(_scene_el.findall("injectOption")):
             tags_string = injected_option_el.get("tags", None)
             if tags_string:
                 tags = string_to_tags(tags_string)
                 if len(tags) > 0:
                     new_scene.injected_options.append(tags)
                 else:
-                    logger.error("Scene {0} contains an injected option {1} with empty tags. Skipping.".format(scene_index+1, injected_option_index+1))
+                    logger.error("Scene {0} contains an injected option {1} with empty tags. Skipping.".format(_scene_index+1, injected_option_index+1))
             else:
-                logger.error("Scene {0} contains an injected option {1} without tags. Skipping.".format(scene_index+1, injected_option_index+1))
-                continue
+                logger.error("Scene {0} contains an injected option {1} without tags. Skipping.".format(_scene_index+1, injected_option_index+1))
+                return
 
         # Iterate over all option elements.
-        for option_index, option_el in enumerate(scene_el.findall("option")):
+        for option_index, option_el in enumerate(_scene_el.findall("option")):
             new_option = Option.from_el(option_el, option_index + 1)
             if new_option:
                 new_scene.options.append(new_option)
 
         # if len(new_scene.options) == 0:
         #     # Skip if no option elements were found.
-        #     logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(scene_index+1))
-        #     continue
+        #     logger.error("Scene {0} does not contain any valid option elements. Skipping.".format(_scene_index+1))
+        #     return
 
-        logger.info("Read scene {0}.".format(scene_index+1))
+        logger.info("Read scene {0}.".format(_scene_index+1))
         scenes[new_scene.id] = new_scene
