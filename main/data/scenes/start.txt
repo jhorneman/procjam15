@@ -1,5 +1,7 @@
-This is the first scene of this game.
+Please enjoy this game.<br />
+Remember, death is not the end.
 
-<option nextScene="computer_room">
-Go to the computer room. 
-</option>
+<action act="set $flesh_act flesh_act1" />
+<action act="set $data_total 0" />
+
+<injectOption tags='pc_start, $flesh_act' />

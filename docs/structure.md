@@ -46,8 +46,6 @@ The PC timelines have parts.
 * $PC_her : Possessive pronoun corresponding to the PC's gender.
 * $PC_man : 'man' or 'woman' corresponding to the PC's gender.
 * $PC_male : Adjective corresponding to the PC's gender.
-* $PC_shec : Capitalized personal pronoun corresponding to the PC's gender.
-* $PC_herc : Capitalized possessive pronoun corresponding to the PC's gender.
 
 # Tags
 

@@ -107,7 +107,7 @@ You're at the elevators. &lt;br&gt;
 You apply the manual override and pry apart the elevator doors. The lift has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground. &lt;br&gt;
 The elevator shaft continues down into darkness. xx
 
-<injectOption tags='mechanical' />
+<injectOption tags='death_elevator' />
 <injectOption tags='electrical' />
 <injectOption tags='human' />
 

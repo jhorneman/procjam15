@@ -113,7 +113,7 @@ You're in the command center.
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
 
-<injectOption tags='mechanical' />
+<injectOption tags='death_reactor' />
 <injectOption tags='computer' />
 <injectOption tags='electrical' />
 
@@ -148,7 +148,7 @@ You are in the morgue.
 
 <injectOption tags='biological' />
 <injectOption tags='medical' />
-<injectOption tags='container' />
+<injectOption tags='must_morgue' />
 
 </scene>
 
@@ -159,7 +159,7 @@ You are in the radiation shielding control room.
 
 <injectOption tags='mechanical' />
 <injectOption tags='electrical' />
-<injectOption tags='container' />
+<injectOption tags='death_radiation' />
 
 </scene>
 
@@ -168,7 +168,7 @@ You are in the radiation shielding control room.
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
 
-<injectOption tags='container' />
+<injectOption tags='death_hydrogen' />
 <injectOption tags='mechanical' />
 <injectOption tags='electrical' />
 

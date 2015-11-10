@@ -17,20 +17,6 @@ If a file contains more than one scene, each scene must be put inside a scene XM
 
 etc. When a file only contains one scene, you can leave out the <scene>.
 
-## Scene types
-
-Scenes come in types. This allows us to have special behavior for certain types, typically involving some form of procedural generation.
-
-(However, there is a difference between scenes as a data structure inside the game, and scene _descriptions_ as something you can write. Right now, you can only write scene descriptions for one type: the Standard scene. This will change.)
-
-The Standard scene type is like a passage in Twine. It has some text and a number of options.
-
-If you don't specify a type, a scene is assumed to have the Standard type.
-
-When you do want to specify the scene type, use the <meta> tag anywhere inside the scene description, like so:
-
-    <meta type="someType"/>
-
 ## Scene ID
 
 Each scene must have an ID. An ID consists of letters, underscores, hyphens, spaces, and numbers. (I don't know if accented characters work: they may not, because scene IDs are used in URLs.)
@@ -55,26 +41,19 @@ Tags are separated by commas. Leading and trailing white space is stripped. Curr
 
 The main scene text is constructed from all the text inside the <scene> tag, as well as special text blocks, as described below.
 
-### Conditional text
-
-Adding a text element like this:
-
-    <text cond="">
-    </text>
-
-means the text inside the element will only be shown if the condition is true. See below for how conditions work.
-
-Everything else inside the text element will be ignored.
-
 ### Injected text
 
 By adding this element:
 
-    <injectText tags="" />
+    <injectText tags="scream" />
 
 you can inject text that has the desired tags.
 
-(Right now that works except there is no system to write tagged texts yet. Before you ask: no, you cannot put injected text inside a text element. Ask me if you _really_ need that.)
+Everything else inside the text element will be ignored.
+
+(Right now this works except there is no system to write tagged texts yet.)
+
+See below for more information about tags.
 
 ## Lead-ins
 
@@ -90,31 +69,47 @@ To solve this, scenes can define lead-ins, which contain the text to be used for
 
 Lead-ins are combined with injected options, explained further down.
 
-# Options
+## Options
 
 Scenes have options: things the player can do. In principle every scene has at least one option.
 
-Each option has, at the very least, some text and an action. The text may be generated somehow. The action may require additional parameters.
+Options have types. The most common type is 'goto', which just goes to the next scene. It is so common that if you do not specify an action, it will be used by default.
+Goto options require a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option. For example:
 
-The most common action is 'goto', and it requires a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
+    <option nextScene='home'>Go home.</option>
 
-The goto action is so common, it is assumed to be an option's action if you don't specify anything else. So this:
+The other option type is 'respawn'. It allows you to generate a new player character and go to the player start scene. (Internally, it searches for a scene tagged with 'pc_start' and the current value of the 'flesh_act' variable.)
 
-    <option nextScene="forest">Go to the forest.</option>
+    <option action='respawn'>Go to the light.</option>
 
-is the shortest way to write a goto action.
+Each option contains text.
+ 
+## Injected options
 
-Other action types right now are:
+Injected options allow you to tell the system to inject an option matching a given tag. This markup:
 
-* 'computer-room'. Go to the computer room, which has special logic.
-* 'mission'. Go to a scene tagged with 'mission'.
-* 'found-data'. Go to the scene where the player found some data.
+    <injectOption tags="spooky"/>
 
-I am not happy with this way of implementing things, but it was the fastest way to test the architecture. But expect the action types to change.
+will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
 
-## Conditions
+See below for more information about tags.
 
-You can make options appear or not by adding a condition to the tag, like so:
+# Conditions
+
+The following elements can be made conditional by adding a 'cond' attribute to their tag:
+
+* option.
+* action.
+* injectText.
+* injectOption.
+* leadin.
+* if.
+ 
+If has no other reason for being than wrapping things in a condition. You can nest ifs.
+
+Elements with a condition are only shown or otherwise processed when the condition is true.
+
+Here is an example of an optional option:
 
     <option action="computer-room" cond="$amount_of_data lt 3">...</option>
 
@@ -130,7 +125,7 @@ Conditions can contain the following operators:
 
 (We cannot use the < and > signs because that is cumbersome in XML.)
 
-If you want to test if a value is true, just write the value without any operators:
+If you want to test if a value is true, just write the variable name without any operator:
 
     <option action="computer-room" cond="$has_mcguffin">...</option>
 
@@ -138,21 +133,45 @@ The not operator is the only operator that only takes one parameter: all the oth
 
     parameter1 operator parameter2
 
-Parameters are evaluated as follows:
+Parameters on the _left_ of the operator - this includes no operator or the not operator - _must_ refer to a variable from the persistent game state. The parameter has to start with a $. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable.
 
-* If the parameter starts with a $, we try to find a variable with the same name in the persistent game state. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable. This is what you will usually want to use.
-* Then we see if the parameter is 'random', and if so generate a random number between 0 and 100.
-* Then we see if the parameter is 'true' or 'false'.
-* Finally we treat the parameter as a number or a string.
+Parameters on the _right_ of the operator are evaluated as follows:
 
-## Injected options
+* If the parameter starts with a $, we try to find a variable with the same name in the persistent game state.
+* If the parameter is 'random', and we generate a random number between 0 and 100.
+* If the parameter is a number, it's treated as such.
+* Finally we treat it as a string.
 
-Injected options allow you to tell the system to inject an option matching a given tag. This markup:
+WARNING: That last line means that if you forget the $ sign on a parameter on the right of the operator, the condition will not behave as you intend, and you won't get a warning!
 
-    <injectOption tags="spooky"/>
+# Tags
 
-will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
+When you ask for tags (in injectText or injectOption), you can ask for the current value of variable from the persistent game state by preceding it with a $ sign.
 
-Instead of literal tags ("spooky, outside") you can also refer to state variables like this:
+So this:
 
     <injectOption tags="spooky, $current_act"/>
+
+looks for a scene that has the tag 'spooky' as well as a tag equal to the current value of current_act.
+
+# Text substitution
+
+In scene and option texts, the engine can substitute certain tags for the current value of variables from the persistent game state.
+
+Use {value} to do this. (You can also write {$value}, for consistency with references to variables in other places.)
+
+Use {^value} to automatically capitalize the value.
+
+# Actions
+
+You can affect the game state with the action element:
+
+    <action act="..."/>
+
+The following actions are possible:
+
+* 'inc $varname'. Increase a variable named 'varname'.
+* 'dec $varname'. Decrease a variable named 'varname'.
+* 'set $varname value'. Set a variable named 'varname' to 'value'.
+
+The $ in front of the variable name is important.
