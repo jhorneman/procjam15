@@ -62,7 +62,7 @@ class InjectText(Content):
             injected_text_block = get_text_block_with_tag(tags)
             if injected_text_block:
                 return {
-                    "text": injected_text_block[1]
+                    "text": injected_text_block
                 }
             else:
                 logger.warning("Couldn't find a valid text block to inject.")

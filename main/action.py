@@ -2,7 +2,6 @@
 
 import logging
 from parameters import set_parameter_value, get_rhs_parameter_value
-from game_state import generate_player_character
 
 
 logger = logging.getLogger(__name__)

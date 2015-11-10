@@ -3,7 +3,7 @@
 import re
 import logging
 import xml.etree.ElementTree as ET
-from tags import string_to_tags, tags_are_matched
+from tags import string_to_tags, TaggedCollection
 from content import parse_content_from_xml
 
 
@@ -13,7 +13,7 @@ scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 scene_id_re = re.compile(r"^[a-zA-Z0-9-_ ]*$")
 
 scenes = {}
-counter_per_tag = {}
+tagged_scene_ids = TaggedCollection()
 
 
 def get_nr_scenes():
@@ -24,35 +24,9 @@ def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
-# TODO: Make this independent of scenes.
-def get_scene_description_with_tag(_tags):
-    if len(_tags) == 0:
-        logger.error("Can't find a scene with an empty tag list.")
-        return None
-
-    ids_of_eligible_scenes = []
-    for scene_id, scene in scenes.items():
-        if tags_are_matched(_tags, scene.tags):
-            ids_of_eligible_scenes.append(scene_id)
-
-    if len(ids_of_eligible_scenes) == 0:
-        logger.error("Couldn't find a scene with tags {0}.".format(tags))
-        return None
-
-    # TODO: Actually cache the list of scene IDs, and then shuffle it as well.
-    cache_key = ".".join(_tags)
-    counter = counter_per_tag.setdefault(cache_key, 0)
-    try:
-        scene_id = ids_of_eligible_scenes[counter]
-    except IndexError:
-        logger.error("Index out of range for tags {0}.".format(_tags))
-        return None
-    counter += 1
-    if counter >= len(ids_of_eligible_scenes):
-        counter = 0
-    counter_per_tag[cache_key] = counter
-
-    return scenes.get(scene_id)
+def get_scene_description_with_tag(_desired_tags):
+    scene_id = tagged_scene_ids.get_item_by_tags(_desired_tags)
+    return scenes.get(scene_id) if scene_id else None
 
 
 class Scene(object):
@@ -129,5 +103,7 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
 
         new_scene.blocks = parse_content_from_xml(_scene_el)
 
-        # logger.info("Read scene {0}.".format(_scene_index+1))
+        logger.debug("Read scene {0}.".format(_scene_index+1))
+
         scenes[new_scene.id] = new_scene
+        tagged_scene_ids.add_item(new_scene.tags, new_scene.id)

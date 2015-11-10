@@ -5,7 +5,7 @@ import logging
 import xlrd
 from xlrd.sheet import ctype_text
 from scene import get_nr_scenes, read_scenes_from_text_file
-from text_blocks import register_text_blocks
+from text_blocks import register_text_blocks, register_data_names
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -17,10 +17,9 @@ logger = logging.getLogger(__name__)
 data_files_for_live_reloading = []
 
 
-def load_scene_descriptions():
-    # Iterate over all files in the scenes directory.
-    scenes_dir = os.path.join(SCRIPT_DIR, "data", "scenes")
-    for path, dirs, files in os.walk(scenes_dir):
+def load_scene_descriptions(_scenes_dir):
+    # Iterate over all files in the given directory.
+    for path, dirs, files in os.walk(_scenes_dir):
         for filename in files:
             # Skip hidden files and anything not ending in .txt.
             if filename.startswith("."):
@@ -37,12 +36,6 @@ def load_scene_descriptions():
                 logger.debug("Reading file {0}...".format(full_path))
                 read_scenes_from_text_file(f, scene_name)
 
-    if get_nr_scenes() == 0:
-        logger.error("No valid scenes were found in {0}.".format(scenes_dir))
-        return False
-
-    return True
-
 
 def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
     cell_obj = _xl_sheet.cell(_row_index, _column_index)
@@ -55,6 +48,7 @@ def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
 
 def extract_tagged_texts_from_excel_file(_excel_full_path):
     data_files_for_live_reloading.append(_excel_full_path)
+    logger.debug("Reading file {0}...".format(_excel_full_path))
 
     # Open the workbook.
     xl_workbook = xlrd.open_workbook(_excel_full_path)
@@ -107,16 +101,15 @@ def extract_tagged_texts_from_excel_file(_excel_full_path):
 
 
 def load_data():
-    success = load_scene_descriptions()
-    if not success:
+    scenes_dir = os.path.join(SCRIPT_DIR, "data", "scenes")
+    load_scene_descriptions(scenes_dir)
+    if get_nr_scenes() == 0:
+        logger.error("No valid scenes were found in {0}.".format(scenes_dir))
         return False
 
     texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
-
-    text_blocks = []
-    for text_block in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "text_blocks.xls")):
-        text_blocks.append(text_block)
-    register_text_blocks(text_blocks)
+    register_text_blocks([d for d in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "text_blocks.xls"))])
+    register_data_names([d for d in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "data_names.xls"))])
 
     return True
 
