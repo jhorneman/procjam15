@@ -13,7 +13,7 @@ The computer room? Better go see what that is about.<br />
 <!-- reset all values other than main story act & total data -->
 <action act="set $has_mcguffin 0" />
 <action act="set $is_fed 0" />
-<action act="set $data PLACEHOLDER_DATA" /> <!-- temp until we can generate -->
+<action act="gen_data" />
 <action act="set $pc_aware 0" /> <!-- how much pc knows? -->
 <option nextScene="computer_room">Go to the computer room.</option>
 </scene>

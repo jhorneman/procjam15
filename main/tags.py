@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import types
 import logging
 from collections import namedtuple
 
@@ -53,6 +54,9 @@ class TaggedCollection(object):
             self.tagged_items.append(TaggedItem(_tags, _item))
 
     def get_item_by_tags(self, _desired_tags, _repeat=True):
+        if not isinstance(_desired_tags, types.ListType):
+            _desired_tags = [_desired_tags]
+
         if len(_desired_tags) == 0:
             logger.error("List of desired tags may not be empty.")
             return None

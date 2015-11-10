@@ -2,6 +2,7 @@
 
 import logging
 from parameters import set_parameter_value, get_rhs_parameter_value
+from game_state import generate_data_var
 
 
 logger = logging.getLogger(__name__)
@@ -9,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 class Action(object):
     actions = {
+        1: ["gen_data"],
         2: ["inc", "dec"],
         3: ["set"]
     }
@@ -19,7 +21,10 @@ class Action(object):
         self.value = None
 
     def execute(self, _state):
-        if self.action == "inc":
+        if self.action == "gen_data":
+            generate_data_var()
+
+        elif self.action == "inc":
             value = get_rhs_parameter_value(_state, self.variable_name)
             set_parameter_value(_state, self.variable_name, value + 1)
 
