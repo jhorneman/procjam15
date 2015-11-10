@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
+import types
 import os
 import logging
+import xml.etree.ElementTree as ET
 import xlrd
 from xlrd.sheet import ctype_text
 from scene import get_nr_scenes, read_scenes_from_text_file
 from text_blocks import register_text_blocks, register_data_names
+from content import parse_xml_element
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -17,24 +20,53 @@ logger = logging.getLogger(__name__)
 data_files_for_live_reloading = []
 
 
-def load_scene_descriptions(_scenes_dir):
+def traverse_directory(_dir, _extensions=None):
+    # Make sure the extensions have the right format.
+    if not _extensions:
+        _extensions = [".txt"]
+    elif isinstance(_extensions, types.StringType):
+        _extensions = [_extensions]
+
     # Iterate over all files in the given directory.
-    for path, dirs, files in os.walk(_scenes_dir):
+    for path, dirs, files in os.walk(_dir):
         for filename in files:
-            # Skip hidden files and anything not ending in .txt.
+            # Skip hidden files.
             if filename.startswith("."):
                 continue
-            if not filename.endswith(".txt"):
+
+            filename_without_ext, ext = os.path.splitext(filename)
+
+            # Skip files with the wrong extension.
+            if ext not in _extensions:
                 continue
 
             full_path = os.path.join(path, filename)
-            scene_name = os.path.splitext(filename)[0]
 
-            # Open the file and read the scenes from it.
+            # Remember this file's path for live reloading.
+            data_files_for_live_reloading.append(full_path)
+
+            # Open the file.
             with open(full_path, "r") as f:
-                data_files_for_live_reloading.append(full_path)
-                logger.debug("Reading file {0}...".format(full_path))
-                read_scenes_from_text_file(f, scene_name)
+                yield f, full_path, filename_without_ext
+
+
+def read_text_blocks_from_text_file(_file, _file_name):
+    # Read the entire text file.
+    data = _file.read()
+
+    # Wrap it in a <data> element.
+    data = "<data>" + data + "</data>"
+
+    root = ET.fromstring(data)
+
+    # Iterate over all block elements in the text file.
+    block_els = root.findall("block")
+
+    if len(block_els) == 0:
+        logger.error("No block elements found.")
+        return
+
+    register_text_blocks([parse_xml_element(block_el) for block_el in block_els])
 
 
 def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
@@ -102,13 +134,20 @@ def extract_tagged_texts_from_excel_file(_excel_full_path):
 
 def load_data():
     scenes_dir = os.path.join(SCRIPT_DIR, "data", "scenes")
-    load_scene_descriptions(scenes_dir)
+    for f, full_path, scene_name in traverse_directory(scenes_dir):
+        logger.debug("Reading file {0}...".format(full_path))
+        read_scenes_from_text_file(f, scene_name)
+
     if get_nr_scenes() == 0:
         logger.error("No valid scenes were found in {0}.".format(scenes_dir))
         return False
 
     texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
-    register_text_blocks([d for d in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "text_blocks.xls"))])
+
+    for f, full_path, scene_name in traverse_directory(texts_dir):
+        logger.debug("Reading file {0}...".format(full_path))
+        read_text_blocks_from_text_file(f, scene_name)
+
     register_data_names([d for d in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "data_names.xls"))])
 
     return True

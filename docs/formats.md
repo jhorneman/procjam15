@@ -41,17 +41,15 @@ Tags are separated by commas. Leading and trailing white space is stripped. Curr
 
 The main scene text is constructed from all the text inside the <scene> tag, as well as special text blocks, as described below.
 
-### Injected text
+### Injected block
 
 By adding this element:
 
-    <injectText tags="scream" />
+    <injectBlock tags="scream" />
 
-you can inject text that has the desired tags.
+you can inject a block that has the desired tags.
 
-Everything else inside the text element will be ignored.
-
-(Right now this works except there is no system to write tagged texts yet.)
+Everything else inside the injectBlock element will be ignored.
 
 See below for more information about tags.
 
@@ -100,12 +98,15 @@ The following elements can be made conditional by adding a 'cond' attribute to t
 
 * option.
 * action.
-* injectText.
+* injectBlock.
 * injectOption.
 * leadin.
+* block.
 * if.
  
 If has no other reason for being than wrapping things in a condition. You can nest ifs.
+
+Blocks are almost the same as ifs except they have tags.
 
 Elements with a condition are only shown or otherwise processed when the condition is true.
 

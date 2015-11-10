@@ -4,7 +4,7 @@ import re
 import logging
 import xml.etree.ElementTree as ET
 from tags import string_to_tags, TaggedCollection
-from content import parse_content_from_xml
+from content import parse_content_of_xml_element
 
 
 logger = logging.getLogger(__name__)
@@ -101,7 +101,7 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
             logger.error("Scene {0} has id {1} which already exists. Skipping.".format(_scene_index+1, new_scene.id))
             return
 
-        new_scene.blocks = parse_content_from_xml(_scene_el)
+        new_scene.blocks = parse_content_of_xml_element(_scene_el)
 
         logger.debug("Read scene {0}.".format(_scene_index+1))
 

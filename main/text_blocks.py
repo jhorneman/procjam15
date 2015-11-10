@@ -13,7 +13,8 @@ data_names = TaggedCollection()
 def register_text_blocks(_new_blocks):
     global text_blocks
     for d in _new_blocks:
-        text_blocks.add_item(d[0], d[1]["text"])
+        if d:
+            text_blocks.add_item(d.tags, d)
 
 
 def register_data_names(_new_data_names):

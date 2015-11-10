@@ -41,7 +41,7 @@ class If(Content):
     def __init__(self, _el):
         super(If, self).__init__()
         self.check_for_condition(_el)
-        self.blocks = parse_content_from_xml(_el)
+        self.blocks = parse_content_of_xml_element(_el)
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
@@ -50,22 +50,36 @@ class If(Content):
             return None
 
 
-class InjectText(Content):
+class Block(Content):
     def __init__(self, _el):
-        super(InjectText, self).__init__()
+        super(Block, self).__init__()
         self.check_for_condition(_el)
-        self.tags = read_tags(_el, "injected text")
+        self.tags = read_tags(_el, "block")
+        self.blocks = parse_content_of_xml_element(_el)
+
+    def evaluate(self, _state):
+        if self.is_condition_true(_state):
+            return evaluate_content_blocks(self.blocks, _state)
+        else:
+            return None
+
+
+class InjectBlock(Content):
+    def __init__(self, _el):
+        super(InjectBlock, self).__init__()
+        self.check_for_condition(_el)
+        self.tags = read_tags(_el, "injected block")
+        if _el.text and len(_el.text) > 0:
+            logger.warning("Encountered injected block element with text inside. This will be ignored!")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
-            injected_text_block = get_text_block_with_tag(tags)
-            if injected_text_block:
-                return {
-                    "text": injected_text_block
-                }
+            injected_block = get_text_block_with_tag(tags)
+            if injected_block:
+                return evaluate_content_blocks([injected_block], _state)
             else:
-                logger.warning("Couldn't find a valid text block to inject.")
+                logger.warning("Couldn't find a valid block to inject.")
         else:
             return None
 
@@ -139,6 +153,8 @@ class InjectOption(Content):
         super(InjectOption, self).__init__()
         self.check_for_condition(_el)
         self.tags = read_tags(_el, "injected option")
+        if _el.text and len(_el.text) > 0:
+            logger.warning("Encountered injected option element with text inside. This will be ignored!")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
@@ -175,7 +191,8 @@ class Action(Content):
 
 tags_to_content_classes = {
     "if": If,
-    "injectText": InjectText,
+    "block": Block,
+    "injectBlock": InjectBlock,
     "br": Br,
     "leadin": LeadIn,
     "option": Option,
@@ -225,7 +242,7 @@ def evaluate_content_blocks(_blocks, _state):
     return content
 
 
-def parse_content_from_xml(_parent_el):
+def parse_content_of_xml_element(_parent_el):
     blocks = []
 
     # Start with any text appearing in the element itself.
@@ -234,14 +251,22 @@ def parse_content_from_xml(_parent_el):
 
     # Then iterate over the child elements.
     for child_el in _parent_el:
-        content_class = tags_to_content_classes.get(child_el.tag, None)
-        if content_class:
-            blocks.append(content_class(child_el))
+        child_content = parse_xml_element(child_el)
+        if child_content:
+            blocks.append(child_content)
 
         if child_el.tail:
             blocks.append(Raw(child_el.tail))
 
     return blocks
+
+
+def parse_xml_element(_el):
+    content_class = tags_to_content_classes.get(_el.tag, None)
+    if content_class:
+        return content_class(_el)
+    else:
+        return None
 
 
 def read_tags(_el, _el_name):
@@ -254,8 +279,6 @@ def read_tags(_el, _el_name):
         else:
             if len(list(_el)) > 0:
                 logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
-            if _el.text and len(_el.text) > 0:
-                logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
     else:
         logger.error("Encountered {0} element without a tags attribute.")
     return tags

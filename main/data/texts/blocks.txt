@@ -1,0 +1,12 @@
+<block tags="pc_start, flesh_act1">
+Huh.
+</block>
+<block tags="pc_start, flesh_act2">
+Wha?
+</block>
+<block tags="pc_start, flesh_act3">
+Aargh!
+</block>
+<block tags="pc_start, flesh_act4">
+*SLORF*
+</block>
