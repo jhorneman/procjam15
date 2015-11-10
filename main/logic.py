@@ -46,6 +46,8 @@ def get_current_scene_data():
     for action in evaluated_scene["actions"]:
         action.execute(session)
 
+    tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
+
     return {
         "text": substitute_text(evaluated_scene["text"], session),
         "options": [{
@@ -54,5 +56,5 @@ def get_current_scene_data():
             "params": option["params"]
             } for option in evaluated_scene["options"]
         ],
-        "body_classes": session["flesh_act"]
+        "body_classes": " ".join(tags_for_body_classes)
     }
