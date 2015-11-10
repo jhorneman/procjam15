@@ -158,9 +158,13 @@ looks for a scene that has the tag 'spooky' as well as a tag equal to the curren
 
 In scene and option texts, the engine can substitute certain tags for the current value of variables from the persistent game state.
 
-Use {value} to do this. (You can also write {$value}, for consistency with references to variables in other places.)
+Use {thing} to do this. You can also write {$thing}, for consistency with references to variables in other places.
 
-Use {^value} to automatically capitalize the value.
+When you write {^thing} or {^$thing}, the text is capitalized automatically.
+
+When you write {a thing} or {an thing} (or {a $thing} or {an $thing}), the (hopefully) correct indefinite article will be put in front automatically.
+
+These functions can be combined: {a ^$thing} turns into 'a Sword' or 'an Apple', depending on what the variable 'thing' contains.
 
 # Actions
 

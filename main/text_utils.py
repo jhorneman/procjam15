@@ -2,11 +2,15 @@
 
 import types
 import string
+import re
 import logging
 from flask import escape
 
 
 logger = logging.getLogger(__name__)
+
+indefinite_pronoun_re = re.compile(r"^(an? )?(\w*)$")
+words_that_start_with_voiceless_h = ["hour", "honor", "honour", "heir", "honest"]
 
 
 class CustomFormatter(string.Formatter):
@@ -17,13 +21,18 @@ class CustomFormatter(string.Formatter):
         if isinstance(key, (int, long)):
             return args[key]
         else:
-            # First determine if we want the value to be capitalized.
+            # Split into modifiers and the actual variable name.
+            m = indefinite_pronoun_re.match(key)
+            add_indefinite_article = m.group(1) is not None
+            key = m.group(2)
+
+            # Determine if we want the value to be capitalized.
             capitalize = False
             if key.startswith("^"):
                 capitalize = True
                 key = key[1:]
 
-            # Then remove the optional $ sign.
+            # Remove the optional $ sign, if it's there.
             if key.startswith("$"):
                 key = key[1:]
 
@@ -39,6 +48,15 @@ class CustomFormatter(string.Formatter):
                 # Capitalize it, if needed.
                 if capitalize:
                     value = value[0].capitalize() + value[1:]
+
+                # Prepend indefinite article, if needed.
+                if add_indefinite_article:
+                    starts_with_voiceless_h = any([value.lower().startswith(word) for word in words_that_start_with_voiceless_h])
+                    starts_with_vowel = value[0].lower() in "aeiou"
+                    if starts_with_vowel or starts_with_voiceless_h:
+                        value = "an " + value
+                    else:
+                        value = "a " + value
 
                 return value
 

@@ -2,7 +2,7 @@
 <meta id='pile clothes' tags='option, human'/>
 <leadin>Rifle through pile of clothing.</leadin>
 You pick through a pile of clothing, shaking and tossing aside each piece to ensure it's not hiding anything.<br />
-In a pocket you find {data}.
+In a pocket you find {a $data}.
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -11,7 +11,7 @@ In a pocket you find {data}.
 <meta id='drawers' tags='option, container'/>
 <leadin>Open drawers.</leadin>
 You pull open drawers and empty their contents messily on the flood in the search of data.<br />
-In the bottom drawer you find {data}.
+In the bottom drawer you find {a ^$data}.
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -20,7 +20,7 @@ In the bottom drawer you find {data}.
 <meta id='container metal' tags='option, container'/>
 <leadin>Open metal container.</leadin>
 You unlatch and open a medium-sized metal container to find miscellaneous goods.<br />
-At the bottom of the container you find {data}.
+At the bottom of the container you find {a $data}.
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
