@@ -1,154 +1,176 @@
 <scene>
 <meta id='proboscis' tags='option, flesh'/>
 <leadin>Stroke proboscis.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='tumor' tags='option, flesh'/>
 <leadin>Cut open quivering tumor.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='membrane' tags='option, flesh'/>
 <leadin>Peel back floor membrane.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='membrane top' tags='option, flesh'/>
 <leadin>Cut back ceiling membrane.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='sticky web' tags='option, flesh'/>
 <leadin>Reveal items covered in sticky webbing.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='fluid sac' tags='option, flesh'/>
 <leadin>Squeeze fluid sacs.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='skin rug' tags='option, flesh'/>
 <leadin>Lift skin rug.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='wall growth' tags='option, flesh'/>
 <leadin>Investigate growth on the wall.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='cocoon' tags='option, flesh'/>
 <leadin>Tear open coccoon.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='egg cluster' tags='option, flesh'/>
 <leadin>Break egg cluster.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='adrenal gland' tags='option, flesh'/>
 <leadin>Look inside adrenal gland.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='hair growth' tags='option, flesh'/>
 <leadin>Cut back tangle of hair growth.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='gizzard' tags='option, flesh'/>
 <leadin>Open gizzard.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='carapace' tags='option, flesh'/>
 <leadin>Break open carapace.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='placenta' tags='option, flesh'/>
 <leadin>Reach inside placenta.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='amniotic sac' tags='option, flesh'/>
 <leadin>Investigate amniotic sac.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='spongy tissue' tags='option, flesh'/>
 <leadin>Dig through spongy tissue.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='cuticle' tags='option, flesh'/>
 <leadin>Peel back cuticle.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='warm cavity' tags='option, flesh'/>
 <leadin>Search warm cavity.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='lymphatic fluid' tags='option, flesh'/>
 <leadin>Sift through lymphatic fluid.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='vein tapestry' tags='option, flesh'/>
 <leadin>Pull aside tapestry of veins.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='gut flora' tags='option, flesh'/>
 <leadin>Sift through gut flora.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -157,21 +179,24 @@ You look and find... data xx
 <scene>
 <meta id='cabinet mucus' tags='option, flesh, container'/>
 <leadin>Open mucus-covered cabinet.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='shelves growth' tags='option, flesh, container'/>
 <leadin>Search shelves covered in growths.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='cystic box' tags='option, flesh, container'/>
 <leadin>Search cystic box.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -180,14 +205,16 @@ You look and find... data xx
 <scene>
 <meta id='fuse box membrane' tags='option, flesh, electrical'/>
 <leadin>Peel membrane from fuse box.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='sparking capillaries' tags='option, flesh, electrical'/>
 <leadin>Investigate sparking capillaries.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -196,14 +223,16 @@ You look and find... data xx
 <scene>
 <meta id='computer orifice' tags='option, flesh, computer'/>
 <leadin>Reach inside computer's orifice.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
 <scene>
 <meta id='computer olafactory' tags='option, flesh, computer'/>
 <leadin>Stroke computer's olafactory senses.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -215,7 +244,8 @@ You look and find... data xx
 <scene>
 <meta id='second skins' tags='option, flesh, human'/>
 <leadin>Rifle through shedded skins.</leadin>
-You look and find... data xx
+You look and find... {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 

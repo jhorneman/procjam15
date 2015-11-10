@@ -3,6 +3,7 @@
 <leadin>Rifle through pile of clothing.</leadin>
 You pick through a pile of clothing, shaking and tossing aside each piece to ensure it's not hiding anything.<br />
 In a pocket you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -11,6 +12,7 @@ In a pocket you find {data}.
 <leadin>Open drawers.</leadin>
 You pull open drawers and empty their contents messily on the flood in the search of data.<br />
 In the bottom drawer you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -19,6 +21,7 @@ In the bottom drawer you find {data}.
 <leadin>Open metal container.</leadin>
 You unlatch and open a medium-sized metal container to find miscellaneous goods.<br />
 At the bottom of the container you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -27,6 +30,7 @@ At the bottom of the container you find {data}.
 <leadin>Open plastic container.</leadin>
 You flip the top off of a plastic container and sift through it. It is mostly filled with junk.<br />
 At the bottom of the container you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -35,6 +39,7 @@ At the bottom of the container you find {data}.
 <leadin>Search the wastebin.</leadin>
 You reach into the wastebin and toss aside bits of useless rubish.<br />
 At the bottom of the bin you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -43,6 +48,7 @@ At the bottom of the bin you find {data}.
 <leadin>Search inside the large metal cabinet.</leadin>
 You turn the handle and the large metal cabinet doors open, creaking loudly in the quiet station.<br />
 On the top shelf you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -51,6 +57,7 @@ On the top shelf you find {data}.
 <leadin>Check shelves.</leadin>
 You pull various tools, empty cartons, and used supplies off of the shelves the line the walls.<br />
 On the lowest shelve you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -59,6 +66,7 @@ On the lowest shelve you find {data}.
 <leadin>Check storage compartment.</leadin>
 You pull a release latch on the wall and hear a hiss of air as the storage compartment opens up.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -67,6 +75,7 @@ Inside you find {data}.
 <leadin>Pry open storage crate.</leadin>
 You grab a crowbar from beside the crate and use it to pry off the lid.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -75,6 +84,7 @@ Inside you find {data}.
 <leadin>Search through toolbox.</leadin>
 You lift the heavy lid of the toolbox and survey its contents - greasy rags, ratchets, various backup sensors.<br />
 Beneath the tools you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -83,6 +93,7 @@ Beneath the tools you find {data}.
 <leadin>Boot the computer.</leadin>
 You reset the main power switch on the computer. It starts to power on and then sparks and hisses as it overloads. You pull off the outer panel to see what else you can salvage.<br />
 Beneath it you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -91,6 +102,7 @@ Beneath it you find {data}.
 <leadin>Salvage from the broken computer.</leadin>
 You take apart the broken computer console, pulling off the touchscreen and lifting the monitor to reveal its entrails.<br />
 Beneath it you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -99,6 +111,7 @@ Beneath it you find {data}.
 <leadin>Read documents.</leadin>
 You sift through various papers, printed and hand-written, looking for any information as to the current state of the ship and its crew.<br />
 Among the documents you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -107,6 +120,7 @@ Among the documents you find {data}.
 <leadin>Leaf through papers.</leadin>
 You leaf through the scattered papers. You see the words "INFECTION" and "QUARANTINE" and "SECURITY" and "FLESH" but it makes no sense.<br />
 Among the papers you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -115,6 +129,7 @@ Among the papers you find {data}.
 <leadin>Search medical equipment.</leadin>
 You search a countertop covered in various medical equipment you cannot identify, and vials containing substances you can only guess at.<br />
 Among them you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -123,6 +138,7 @@ Among them you find {data}.
 <leadin>Search broken medical equipment</leadin>
 You carefully pick through a pile of broken medical equipment laying in pieces on the floor from the unstable gravity systems. Various vials crack under your feet, their unknown contents oozing onto the tiles.<br />
 Among them you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -131,6 +147,7 @@ Among them you find {data}.
 <leadin>Check broken machinery.</leadin>
 You search the broken machinery looking for working parts, sensors, mechanical bits - anything you can salvage whole.<br />
 You find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -139,6 +156,7 @@ You find {data}.
 <leadin>Pry open electrical panel.</leadin>
 You pry open an electrical panel and shield your eyes from the sparks until they subside.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -147,6 +165,7 @@ Inside you find {data}.
 <leadin>Search among the wires.</leadin>
 You reach between the bundles of wires and pull them to the side, peering at the panel of electrical controls behind them<br />
 You find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -155,6 +174,7 @@ You find {data}.
 <leadin>Evaluate the solar cells.</leadin>
 You shine your flashlight onto the auxillary solar cells but they fail to react. You flip open the maintenance panel to see if you can salvage something.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -163,6 +183,7 @@ Inside you find {data}.
 <leadin>Access backup computer terminal.</leadin>
 You attempt to log into the terminal and access the backup data. The computer whines loudly and ejects its tray.<br />
 In the tray you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -171,6 +192,7 @@ In the tray you find {data}.
 <leadin>Detach maintenance panel.</leadin>
 You detach a large maintenance panel and try to decipher the labyrinth of colorful wires, dials, and sensors.<br />
 Inside you manage to salvage {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -179,6 +201,7 @@ Inside you manage to salvage {data}.
 <leadin>Search box of unrolled wire.</leadin>
 You find a box of thick utility wires, each one heavier than it looks. You pull them out of the box to see what lies beneath.<br />
 Beneath them you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -187,6 +210,7 @@ Beneath them you find {data}.
 <leadin>Search electrical systems.</leadin>
 You open the electric router and shine your light upon its guts.<br />
 Within it you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -195,6 +219,7 @@ Within it you find {data}.
 <leadin>Investigate sparking electrical panel.</leadin>
 You wait for the uneven power surging through the ship to subside before pulling off the cover of the electrical panel.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -203,6 +228,7 @@ Inside you find {data}.
 <leadin>Open fuse box. </leadin>
 You flip the latch and the fuse box swings open on its spring.<br />
 Inside the box you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -211,6 +237,7 @@ Inside the box you find {data}.
 <leadin>Look through the crew's belongings. </leadin>
 You look through the crew's belongings trying to salvage anything that could be useful to the mainframe.<br />
 Among the detrius you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -219,6 +246,7 @@ Among the detrius you find {data}.
 <leadin>Look through abandoned bags. </leadin>
 You go through the bags one by one, opening them up and rifling through their pockets.<br />
 Inside one of them you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -227,6 +255,7 @@ Inside one of them you find {data}.
 <leadin>Investigate half-eaten food. </leadin>
 You look among the half-eaten food for any useful biological specimens, or unusual sources of infection.<br />
 On a table you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -235,6 +264,7 @@ On a table you find {data}.
 <leadin>Scan for biological samples. </leadin>
 You scan the room for biological samples that may have triggered the quarantine, but find nothing of the kind.<br />
 Instead you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -244,6 +274,7 @@ Instead you find {data}.
 <leadin>Search closet. </leadin>
 You turn the heavy handle and swing open the closet door. You shine your light on the overturned boxes and maintenance equipment.<br />
 On the top shelf of the closet you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -252,6 +283,7 @@ On the top shelf of the closet you find {data}.
 <leadin>Search paper trays. </leadin>
 The paper trays largely stand empty, the paper scattered along the ground like detrius.<br />
 In the last tray you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -260,6 +292,7 @@ In the last tray you find {data}.
 <leadin>Search emergency toolbox. </leadin>
 The emergency toolbox looks undisturbed. You open it hoping to find something useful.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -268,6 +301,7 @@ Inside you find {data}.
 <leadin>Look through mechanical toolbox. </leadin>
 You lift the lid of the mechanical toolbox and dump out various tools and sensors whose purpose you can only guess at.<br />
 Underneath you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -276,6 +310,7 @@ Underneath you find {data}.
 <leadin>Sift through abandoned backpack. </leadin>
 You rifle through each of the backpack's pockets thoroughly, making sure not to miss anything.<br />
 In the back pocket you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -284,6 +319,7 @@ In the back pocket you find {data}.
 <leadin>Evaluate leaking water tank. </leadin>
 You turn the valve on the leaking water tank but it does not fix the problem. You pull open the panel cover its main mechanisms to see if you can salvage something from the broken machine.<br />
 Inside the machine you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -292,6 +328,7 @@ Inside the machine you find {data}.
 <leadin>Break open vending machine. </leadin>
 You find a large metal tool and smash the vending machine cover, shattering the glass into a million pieces.<br />
 Inside it you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -300,6 +337,7 @@ Inside it you find {data}.
 <leadin>Sift through overturned cart. </leadin>
 You sift through the contents of the cart that have spilled out all over the floor.<br />
 Among the detrius you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -308,6 +346,7 @@ Among the detrius you find {data}.
 <leadin>Check first aid kit. </leadin>
 You unlock and open the first aid kit, but someone has gotten here before you and already taken the useful equipment.<br />
 Among the leftovers you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -316,6 +355,7 @@ Among the leftovers you find {data}.
 <leadin>Check dead body. </leadin>
 A body lies facedown on the floor. You carefully avoid its face as you search it for anything salveable.<br />
 Beneath the body you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -324,6 +364,7 @@ Beneath the body you find {data}.
 <leadin>Attempt to power on computer systems. </leadin>
 You flip the main power to the computer systems and flitch as the console explodes and hisses smoke. You pull off the burnt, discolored panel to see if there's anything else you can salvage.<br />
 Inside you find {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 
@@ -332,6 +373,7 @@ Inside you find {data}.
 <leadin>Use console controls.</leadin>
 You use the console, but it ignores your commands. You pull off the cover to see some wires melted into the circuitboard.<br />
 You manage to salvage {data}.
+<action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
 

@@ -1,14 +1,27 @@
 <scene>
 <meta id='computer_talk'/>
 <leadin>Communicate with the computer.</leadin>
-(set been_fed to false)<br />
-You communicate with the computer. (text based on flesh_act)<br />
-
-Pick a command (tags based on flesh_act - 1/2/3/4)
-<injectOption tags="c_flesh_act1" />
-<injectOption tags="c_flesh_act2" />
-<injectOption tags="c_flesh_act3" />
-<injectOption tags="c_flesh_act4" />
+<action act="set $is_fed 0" />
+<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
+<if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
+<if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
+<if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
+<if cond="$flesh_act eq flesh_act5">Description of computer for Act 5</if>
+<br />
+Enter command:
+<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
+<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
+<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
+<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
+<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
+<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
+<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
+<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
+<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
+<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
+<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
+<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
+<injectOption cond="$flesh_act eq flesh_act5" tags="c_flesh_act5" />
 
 </scene>
 
@@ -116,7 +129,7 @@ MORE DATA REQUIRED<br />
 <leadin>> Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
-LOCATING LIFE FORMS...
+LOCATING LIFE FORMS...<br />
 {$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 END OF LIST<br />
 --------------------------------
