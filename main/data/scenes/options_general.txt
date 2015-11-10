@@ -11,7 +11,7 @@ In a pocket you find {a $data}.
 <meta id='drawers' tags='option, container'/>
 <leadin>Open drawers.</leadin>
 You pull open drawers and empty their contents messily on the flood in the search of data.<br />
-In the bottom drawer you find {a ^$data}.
+In the bottom drawer you find {a $data}.
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
