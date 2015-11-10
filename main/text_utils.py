@@ -9,7 +9,7 @@ from flask import escape
 
 logger = logging.getLogger(__name__)
 
-indefinite_pronoun_re = re.compile(r"^(an? )?(\w*)$")
+indefinite_pronoun_re = re.compile(r"^(an? )?([\w_^$]*)$")
 words_that_start_with_voiceless_h = ["hour", "honor", "honour", "heir", "honest"]
 
 
@@ -23,6 +23,10 @@ class CustomFormatter(string.Formatter):
         else:
             # Split into modifiers and the actual variable name.
             m = indefinite_pronoun_re.match(key)
+            if not m:
+                logger.error("Could not parse '{0}'.".format(key))
+                return escape("<'{0}' NOT PARSED>".format(key))
+
             add_indefinite_article = m.group(1) is not None
             key = m.group(2)
 
