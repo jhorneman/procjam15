@@ -13,7 +13,7 @@ counter_per_tag = {}
 
 def register_text_blocks(_new_blocks):
     global text_blocks
-    text_blocks += _new_blocks
+    text_blocks += [(d[0], d[1]["text"]) for d in _new_blocks]
 
 
 # TODO: Make this independent of text blocks.

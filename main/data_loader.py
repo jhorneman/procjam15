@@ -53,8 +53,8 @@ def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
         return ""
 
 
-def load_tagged_texts_from_excel_file(_excel_full_path):
-    texts = []
+def extract_tagged_texts_from_excel_file(_excel_full_path):
+    data_files_for_live_reloading.append(_excel_full_path)
 
     # Open the workbook.
     xl_workbook = xlrd.open_workbook(_excel_full_path)
@@ -69,23 +69,21 @@ def load_tagged_texts_from_excel_file(_excel_full_path):
 
         # Determine which columns contain tags and which contain text.
         tag_column_indices = []
-        text_column_index = None
+        text_column_indices = []
 
         for column_index in range(xl_sheet.ncols):
             cell_value = get_string_from_excel_cell(xl_sheet, 0, column_index)
-            if cell_value == "tag":
-                tag_column_indices.append(column_index)
-            elif cell_value == "text":
-                if text_column_index is None:
-                    text_column_index = column_index
+            if len(cell_value) > 0:
+                if cell_value == "tag":
+                    tag_column_indices.append(column_index)
                 else:
-                    logger.error("Found more than one 'text' column in sheet {0} of Excel file {1}.".format(sheet_name, _excel_full_path))
+                    text_column_indices.append((column_index, cell_value))
 
         if len(tag_column_indices) == 0:
             logger.error("Couldn't find any 'tag' columns in sheet {0} of Excel file {1}. Skipping sheet.".format(sheet_name, _excel_full_path))
             continue
-        if text_column_index is None:
-            logger.error("Couldn't find a 'text' column in sheet {0} of Excel file {1}. Skipping sheet.".format(sheet_name, _excel_full_path))
+        if len(text_column_indices) == 0:
+            logger.error("Couldn't find any text columns in sheet {0} of Excel file {1}. Skipping sheet.".format(sheet_name, _excel_full_path))
             continue
 
         # Read texts.
@@ -100,19 +98,12 @@ def load_tagged_texts_from_excel_file(_excel_full_path):
                 logger.error("No tags in row {0} of sheet {1} of Excel file {2}. Skipping row.".format(row_index+1, sheet_name, _excel_full_path))
                 continue
 
-            text = get_string_from_excel_cell(xl_sheet, row_index, text_column_index)
-            if len(text) == 0:
-                logger.error("Tags but no text in row {0} of sheet {1} of Excel file {2}. Skipping row.".format(row_index+1, sheet_name, _excel_full_path))
-                continue
+            texts = {}
+            for text_column_index, text_column_name in text_column_indices:
+                text = get_string_from_excel_cell(xl_sheet, row_index, text_column_index)
+                texts[text_column_name] = text
 
-            texts.append((tags, text))
-
-    return texts
-
-
-def load_tagged_text_files():
-    texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
-    register_text_blocks(load_tagged_texts_from_excel_file(os.path.join(texts_dir, "test.xls")))
+            yield tags, texts
 
 
 def load_data():
@@ -120,7 +111,13 @@ def load_data():
     if not success:
         return False
 
-    load_tagged_text_files()
+    texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
+
+    text_blocks = []
+    for text_block in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "text_blocks.xls")):
+        text_blocks.append(text_block)
+    register_text_blocks(text_blocks)
+
     return True
 
 
