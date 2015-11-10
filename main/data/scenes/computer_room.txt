@@ -8,7 +8,7 @@
 <if cond="$is_fed">The computer has recently fed.</if>
 <if cond="$is_fed eq 0">The computer hungers for data.</if>
 <br />
-<if cond="$has_mcguffin">You have {data}.</if>
+<if cond="$has_mcguffin">You have {a $data}.</if>
 <if cond="$has_mcguffin eq 0">You have no data.</if>
 <br />
 
