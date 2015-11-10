@@ -257,6 +257,7 @@ def read_tags(_el, _el_name):
 
 
 def get_tagged_option_to_inject(_tags, _state):
+    # TODO: Ponder circular import problem
     from scene import get_scene_description_with_tag
     injected_scene_desc = get_scene_description_with_tag(_tags, _state)
     if injected_scene_desc:
