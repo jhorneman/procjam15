@@ -103,14 +103,12 @@ class Option(Content):
         text = _el.text.strip()
 
         # Check parameters.
-        if action != "goto":
-            logger.error("Option has action'{0}' which is not a valid action. Skipping.".format(action))
-            return
-        if next_scene is None:
-            logger.error("Option has a GOTO action but neither a next scene nor tag attributes. Skipping.")
-            return
+        if action == "goto":
+            if next_scene is None:
+                logger.error("Option has a GOTO action but neither a next scene nor tag attributes. Skipping.")
+                return
         if text is None or len(text) == 0:
-            logger.error("Option has a GOTO action but does not contain any text. Skipping.")
+            logger.error("Option does not contain any text. Skipping.")
             return
 
         self.action = action
