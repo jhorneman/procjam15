@@ -2,9 +2,9 @@
 
 import logging
 from flask import request, session
-from scene import get_scene_description
+from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text
-from game_state import prepare_game_state
+from game_state import prepare_game_state, generate_player_character
 from content import evaluate_content_blocks
 
 
@@ -31,6 +31,17 @@ def get_current_scene_data():
         if next_scene_id is None:
             logger.error("Couldn't find next_scene argument.")
             return None
+
+    elif action == "respawn":
+        session.update(generate_player_character())
+
+        wake_up_tags = ["pc_start", session["flesh_act"]]
+        wake_up_scene = get_scene_description_with_tag(wake_up_tags, session)
+        if not wake_up_scene:
+            logger.error("Couldn't find a valid respawn scene.")
+            return None
+
+        next_scene_id = wake_up_scene.id
 
     else:
         logger.error("'{0}' is an unknown action type.".format(action))

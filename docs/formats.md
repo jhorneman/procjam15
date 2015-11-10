@@ -73,8 +73,17 @@ Lead-ins are combined with injected options, explained further down.
 
 Scenes have options: things the player can do. In principle every scene has at least one option.
 
-Each option has some text and a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option.
+Options have types. The most common type is 'goto', which just goes to the next scene. It is so common that if you do not specify an action, it will be used by default.
+Goto options require a nextScene parameter, which contains the ID of the scene the game will go to when the player selects this option. For example:
 
+    <option nextScene='home'>Go home.</option>
+
+The other option type is 'respawn'. It allows you to generate a new player character and go to the player start scene. (Internally, it searches for a scene tagged with 'pc_start' and the current value of the 'flesh_act' variable.)
+
+    <option action='respawn'>Go to the light.</option>
+
+Each option contains text.
+ 
 ## Injected options
 
 Injected options allow you to tell the system to inject an option matching a given tag. This markup:
@@ -161,7 +170,6 @@ You can affect the game state with the action element:
 
 The following actions are possible:
 
-* 'kill'. Kill the player.
 * 'inc $varname'. Increase a variable named 'varname'.
 * 'dec $varname'. Decrease a variable named 'varname'.
 * 'set $varname value'. Set a variable named 'varname' to 'value'.

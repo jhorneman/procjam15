@@ -4,4 +4,4 @@ Remember, death is not the end.
 <action act="set $flesh_act flesh_act1" />
 <action act="set $data_total 0" />
 
-<injectOption tags='pc_start' />
+<injectOption tags='pc_start, $flesh_act' />

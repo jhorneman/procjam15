@@ -10,7 +10,6 @@ logger = logging.getLogger(__name__)
 
 class Action(object):
     actions = {
-        1: ["kill"],
         2: ["inc", "dec"],
         3: ["set"]
     }
@@ -21,10 +20,7 @@ class Action(object):
         self.value = None
 
     def execute(self, _state):
-        if self.action == "kill":
-            _state.update(generate_player_character())
-
-        elif self.action == "inc":
+        if self.action == "inc":
             value = get_rhs_parameter_value(_state, self.variable_name)
             set_parameter_value(_state, self.variable_name, value + 1)
 
