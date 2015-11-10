@@ -19,10 +19,20 @@ def show_scene():
     if scene_data:
         return render_template("scene.html", **scene_data)
     else:
-        abort(404)
+        abort(500)
 
 
 @app.route("/restart")
 def restart_game():
     restart()
     return redirect(url_for("show_scene"))
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template("error.html", error_code=error), 500
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("error.html", error_code=error), 404
