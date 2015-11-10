@@ -5,6 +5,7 @@ import logging
 import xlrd
 from xlrd.sheet import ctype_text
 from scene import get_nr_scenes, read_scenes_from_text_file
+from text_blocks import register_text_blocks
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -101,7 +102,7 @@ def load_tagged_texts_from_excel_file(_excel_full_path):
 
             text = get_string_from_excel_cell(xl_sheet, row_index, text_column_index)
             if len(text) == 0:
-                logger.error("No tags in row {0} of sheet {1} of Excel file {2}. Skipping row.".format(row_index+1, sheet_name, _excel_full_path))
+                logger.error("Tags but no text in row {0} of sheet {1} of Excel file {2}. Skipping row.".format(row_index+1, sheet_name, _excel_full_path))
                 continue
 
             texts.append((tags, text))
@@ -111,13 +112,13 @@ def load_tagged_texts_from_excel_file(_excel_full_path):
 
 def load_tagged_text_files():
     texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
-    print load_tagged_texts_from_excel_file(os.path.join(texts_dir, "test.xls"))
+    register_text_blocks(load_tagged_texts_from_excel_file(os.path.join(texts_dir, "test.xls")))
 
 
 def load_data():
-    # success = load_scene_descriptions()
-    # if not success:
-    #     return False
+    success = load_scene_descriptions()
+    if not success:
+        return False
 
     load_tagged_text_files()
     return True

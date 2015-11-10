@@ -3,7 +3,7 @@
 import re
 import logging
 import xml.etree.ElementTree as ET
-from tags import string_to_tags, evaluate_tags, tags_are_matched
+from tags import string_to_tags, tags_are_matched
 from content import parse_content_from_xml
 
 
@@ -13,6 +13,7 @@ scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 scene_id_re = re.compile(r"^[a-zA-Z0-9-_ ]*$")
 
 scenes = {}
+counter_per_tag = {}
 
 
 def get_nr_scenes():
@@ -23,19 +24,15 @@ def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
-counter_per_tag = {}
-
-
 # TODO: Make this independent of scenes.
-def get_scene_description_with_tag(_tags, _state):
-    tags = evaluate_tags(_tags, _state)
-    if len(tags) == 0:
+def get_scene_description_with_tag(_tags):
+    if len(_tags) == 0:
         logger.error("Can't find a scene with an empty tag list.")
         return None
 
     ids_of_eligible_scenes = []
     for scene_id, scene in scenes.items():
-        if tags_are_matched(tags, scene.tags):
+        if tags_are_matched(_tags, scene.tags):
             ids_of_eligible_scenes.append(scene_id)
 
     if len(ids_of_eligible_scenes) == 0:
@@ -43,12 +40,12 @@ def get_scene_description_with_tag(_tags, _state):
         return None
 
     # TODO: Actually cache the list of scene IDs, and then shuffle it as well.
-    cache_key = ".".join(tags)
+    cache_key = ".".join(_tags)
     counter = counter_per_tag.setdefault(cache_key, 0)
     try:
         scene_id = ids_of_eligible_scenes[counter]
     except IndexError:
-        logger.error("Index out of range for tags {0}.".format(tags))
+        logger.error("Index out of range for tags {0}.".format(_tags))
         return None
     counter += 1
     if counter >= len(ids_of_eligible_scenes):

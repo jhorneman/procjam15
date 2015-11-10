@@ -5,7 +5,7 @@ import logging
 from condition import parse_condition_from_string
 from action import parse_action_from_string
 from tags import string_to_tags, evaluate_tags
-
+from text_blocks import get_text_block_with_tag
 
 logger = logging.getLogger(__name__)
 
@@ -59,7 +59,13 @@ class InjectText(Content):
     def evaluate(self, _state):
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
-            return "[injected text for tags {0}]".format(tags)
+            injected_text_block = get_text_block_with_tag(tags)
+            if injected_text_block:
+                return {
+                    "text": injected_text_block[1]
+                }
+            else:
+                logger.warning("Couldn't find a valid text block to inject.")
         else:
             return None
 
@@ -143,8 +149,7 @@ class InjectOption(Content):
                     "options": injected_option
                 }
             else:
-                logger.warning("Couldn't find a valid scene with tags '{0}' to inject."
-                               .format(self.tags))
+                logger.warning("Couldn't find a valid scene to inject.")
         return None
 
 
@@ -259,7 +264,7 @@ def read_tags(_el, _el_name):
 def get_tagged_option_to_inject(_tags, _state):
     # TODO: Ponder circular import problem
     from scene import get_scene_description_with_tag
-    injected_scene_desc = get_scene_description_with_tag(_tags, _state)
+    injected_scene_desc = get_scene_description_with_tag(_tags)
     if injected_scene_desc:
         evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
         if evaluated_injected_scene["leadin"] is None:
