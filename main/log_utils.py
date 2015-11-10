@@ -17,33 +17,33 @@ class StdoutHandler(logging.StreamHandler):
         super(StdoutHandler, self).flush()
 
 
-def init_logging():
+def init_logging(_level=logging.DEBUG):
     # Log warnings.
     logging.captureWarnings(True)
 
     # Set up the console handler.
     global console_handler
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
+    console_handler.setLevel(_level)
     console_handler.setFormatter(logging.Formatter('%(message)s',
                                                     datefmt="%H:%M:%S"))
 
     # Set up the root logger.
-    set_up_logger(logging.getLogger())
+    set_up_logger(logging.getLogger(), _level)
 
 
-def init_stdout_handler():
+def init_stdout_handler(_level=logging.DEBUG):
     global stdout_handler
     if stdout_handler:
         return
 
     # Set up the stdout handler.
     stdout_handler = StdoutHandler()
-    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.setLevel(_level)
     stdout_handler.setFormatter(logging.Formatter('%(message)s'))
 
     # Set up the root logger.
-    set_up_logger(logging.getLogger())
+    set_up_logger(logging.getLogger(), _level)
 
 
 def set_up_logger(_logger, _level=logging.DEBUG):
