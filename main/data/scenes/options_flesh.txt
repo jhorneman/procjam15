@@ -1,5 +1,5 @@
 <scene>
-<meta id='proboscis' tags='option, flesh'/>
+<meta id='proboscis' tags='option, flesh, style_mission'/>
 <leadin>Stroke proboscis.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -7,7 +7,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='tumor' tags='option, flesh'/>
+<meta id='tumor' tags='option, flesh, style_mission'/>
 <leadin>Cut open quivering tumor.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -15,7 +15,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='membrane' tags='option, flesh'/>
+<meta id='membrane' tags='option, flesh, style_mission'/>
 <leadin>Peel back floor membrane.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -23,7 +23,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='membrane top' tags='option, flesh'/>
+<meta id='membrane top' tags='option, flesh, style_mission'/>
 <leadin>Cut back ceiling membrane.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -31,7 +31,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='sticky web' tags='option, flesh'/>
+<meta id='sticky web' tags='option, flesh, style_mission'/>
 <leadin>Reveal items covered in sticky webbing.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -39,7 +39,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='fluid sac' tags='option, flesh'/>
+<meta id='fluid sac' tags='option, flesh, style_mission'/>
 <leadin>Squeeze fluid sacs.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -47,7 +47,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='skin rug' tags='option, flesh'/>
+<meta id='skin rug' tags='option, flesh, style_mission'/>
 <leadin>Lift skin rug.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -55,7 +55,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='wall growth' tags='option, flesh'/>
+<meta id='wall growth' tags='option, flesh, style_mission'/>
 <leadin>Investigate growth on the wall.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -63,7 +63,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cocoon' tags='option, flesh'/>
+<meta id='cocoon' tags='option, flesh, style_mission'/>
 <leadin>Tear open coccoon.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -71,7 +71,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='egg cluster' tags='option, flesh'/>
+<meta id='egg cluster' tags='option, flesh, style_mission'/>
 <leadin>Break egg cluster.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -79,7 +79,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='adrenal gland' tags='option, flesh'/>
+<meta id='adrenal gland' tags='option, flesh, style_mission'/>
 <leadin>Look inside adrenal gland.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -87,7 +87,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='hair growth' tags='option, flesh'/>
+<meta id='hair growth' tags='option, flesh, style_mission'/>
 <leadin>Cut back tangle of hair growth.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -95,7 +95,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='gizzard' tags='option, flesh'/>
+<meta id='gizzard' tags='option, flesh, style_mission'/>
 <leadin>Open gizzard.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -103,7 +103,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='carapace' tags='option, flesh'/>
+<meta id='carapace' tags='option, flesh, style_mission'/>
 <leadin>Break open carapace.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -111,7 +111,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='placenta' tags='option, flesh'/>
+<meta id='placenta' tags='option, flesh, style_mission'/>
 <leadin>Reach inside placenta.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -119,7 +119,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='amniotic sac' tags='option, flesh'/>
+<meta id='amniotic sac' tags='option, flesh, style_mission'/>
 <leadin>Investigate amniotic sac.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -127,7 +127,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='spongy tissue' tags='option, flesh'/>
+<meta id='spongy tissue' tags='option, flesh, style_mission'/>
 <leadin>Dig through spongy tissue.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -135,7 +135,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cuticle' tags='option, flesh'/>
+<meta id='cuticle' tags='option, flesh, style_mission'/>
 <leadin>Peel back cuticle.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -143,7 +143,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='warm cavity' tags='option, flesh'/>
+<meta id='warm cavity' tags='option, flesh, style_mission'/>
 <leadin>Search warm cavity.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -151,7 +151,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='lymphatic fluid' tags='option, flesh'/>
+<meta id='lymphatic fluid' tags='option, flesh, style_mission'/>
 <leadin>Sift through lymphatic fluid.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -159,7 +159,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='vein tapestry' tags='option, flesh'/>
+<meta id='vein tapestry' tags='option, flesh, style_mission'/>
 <leadin>Pull aside tapestry of veins.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -167,7 +167,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='gut flora' tags='option, flesh'/>
+<meta id='gut flora' tags='option, flesh, style_mission'/>
 <leadin>Sift through gut flora.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -177,7 +177,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- CONTAINER TAGS -->
 
 <scene>
-<meta id='cabinet mucus' tags='option, flesh, container'/>
+<meta id='cabinet mucus' tags='option, flesh, containers, style_mission'/>
 <leadin>Open mucus-covered cabinet.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -185,7 +185,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='shelves growth' tags='option, flesh, container'/>
+<meta id='shelves growth' tags='option, flesh, containers, style_mission'/>
 <leadin>Search shelves covered in growths.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -193,7 +193,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cystic box' tags='option, flesh, container'/>
+<meta id='cystic box' tags='option, flesh, containers, style_mission'/>
 <leadin>Search cystic box.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -203,7 +203,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- ELECTRICAL TAGS -->
 
 <scene>
-<meta id='fuse box membrane' tags='option, flesh, electrical'/>
+<meta id='fuse box membrane' tags='option, flesh, electrical, style_mission'/>
 <leadin>Peel membrane from fuse box.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -211,7 +211,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='sparking capillaries' tags='option, flesh, electrical'/>
+<meta id='sparking capillaries' tags='option, flesh, electrical, style_mission'/>
 <leadin>Investigate sparking capillaries.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -221,7 +221,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- COMPUTER TAGS -->
 
 <scene>
-<meta id='computer orifice' tags='option, flesh, computer'/>
+<meta id='computer orifice' tags='option, flesh, computer, style_mission'/>
 <leadin>Reach inside computer's orifice.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -229,7 +229,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='computer olafactory' tags='option, flesh, computer'/>
+<meta id='computer olafactory' tags='option, flesh, computer, style_mission'/>
 <leadin>Stroke computer's olafactory senses.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
@@ -242,7 +242,7 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <!-- HUMAN TAGS -->
 <scene>
-<meta id='second skins' tags='option, flesh, human'/>
+<meta id='second skins' tags='option, flesh, human, style_mission'/>
 <leadin>Rifle through shedded skins.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />

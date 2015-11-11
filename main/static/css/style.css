@@ -1,21 +1,26 @@
-body {
+html, body {
     background:#333;
     color: lightgoldenrodyellow;
+	text-shadow: 1px 1px 1px #000;
+    height: 100%;
+	
+	background-size: cover;	
+    background-image: linear-gradient(right bottom, rgb(51, 22, 32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -o-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -moz-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -webkit-linear-gradient(right bottom, rgb(87,3,3) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
+    background-image: -ms-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(51, 22, 32)), color-stop(0.63, rgb(35, 30, 33)), color-stop(0.82, rgb(19, 19, 19)) );
+	
 }
 
 .scene {
     margin-top: 5%;
 }
 
-ul#options {
-    margin-top: 1em;
-    list-style: none;
-}
 
-ul#options li a {
-    color: #d09672;
-    text-decoration: none;
-}
+
+
 
 br {
 	line-height: 2.5;
@@ -23,4 +28,70 @@ br {
 
 li {
 	margin-bottom: 0rem;
+}
+
+
+a {
+	color: #616161;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a:hover {
+	color: #AAA;
+
+}
+
+
+ul#options {
+    margin-top: 1em;
+    list-style: disc inside;
+	color: #d09672;
+}
+
+ul#options li a {
+    color: #d09672;
+    text-decoration: none;
+	text-transform: none;
+}
+
+ul#options li a:hover{
+    color: #DEDB65;
+    text-decoration: none;
+	text-transform: none;
+}
+
+body.style_comp_room {
+	background: #111;
+	background-size: cover;
+    background-image: linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -o-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -moz-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -webkit-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
+    background-image: -ms-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+    background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(47, 37, 27)), color-stop(0.63, rgb(35, 30, 33)), color-stop(0.82, rgb(19, 19, 19)) );
+}
+
+
+body.style_terminal {
+	background: #111;
+	background-size: cover;
+    background-image: linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+    background-image: -o-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+    background-image: -moz-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+    background-image: -webkit-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+    background-image: -ms-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+    background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(6, 10, 4)), color-stop(0.63, rgb(17, 31, 14)), color-stop(0.82, rgb(20, 27, 7)) );
+	
+	//font-family: courier, serif;
+	//line-height: 1;
+	//font-size: 2em;
+}
+
+body.style_terminal a {
+	list-style: none;
+}
+
+body.style_terminal br {
+	line-height:1.2;
 }

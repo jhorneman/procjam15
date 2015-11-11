@@ -1,5 +1,5 @@
 <scene>
-<meta id='computer_talk'/>
+<meta id='computer_talk' tags="style_terminal"/>
 <leadin>Communicate with the computer.</leadin>
 <action act="set $is_fed 0" />
 <if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>

@@ -1,5 +1,5 @@
 <scene>
-<meta id='computer_room' />
+<meta id='computer_room' tags="style_comp_room"/>
 <if cond="$flesh_act eq flesh_act1">Description for computer (act 1)</if>
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
@@ -21,7 +21,7 @@
 
 <!-- INSUFFICIENT DATA -->
 <scene>
-<meta id='feed_me' />
+<meta id='feed_me' tags="style_comp_room" />
 You attempt to communicate with the computer but it requires data<br />
 The console reads: "INSUFFICIENT DATA"<br />
 <if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
@@ -37,7 +37,7 @@ The console reads: "INSUFFICIENT DATA"<br />
 
 <!--- FEED COMPUTER DATA -->
 <scene>
-<meta id='feed_computer' />
+<meta id='feed_computer' tags="style_comp_room" />
 
 <action act="set $is_fed 1" />
 <action act="set $has_mcguffin 0" />
@@ -63,7 +63,7 @@ The mainframe consumes the data eagerly. You can feel the room heat up as the co
 
 <!-- FIND PLACES TO SCAVENGE -->
 <scene>
-<meta id='mission_hub' />
+<meta id='mission_hub' tags="style_comp_room" />
 You prepare for the next mission to salvage data from the surrounding ship.
 <injectOption tags='mission, $flesh_act' />
 <injectOption tags='mission, $flesh_act' />

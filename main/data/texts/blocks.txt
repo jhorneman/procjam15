@@ -13,6 +13,7 @@ You hear a clicking sound. Or more like whirring?
 <action act="set $pc_gimmick pc_clicking" />
 </block>
 
+<!-- BLOCKS: PLAYER MUSING -->
 <block tags="muse, flesh_act1">
 You wonder why the computer doesn't know what happened to the ship.
 </block>
@@ -20,7 +21,7 @@ You wonder why the computer doesn't know what happened to the ship.
 You wonder where everybody went.
 </block>
 <block tags="muse, flesh_act1">
-You wonder where everybody went.
+You wonder if you are alone here.
 </block>
 
 <!-- BLOCKS: MISSION DESCRIPTIONS -->
@@ -78,7 +79,7 @@ You wonder where everybody went.
 <block tags="mdesc, flesh_act4"><br />It is beautiful in here.</block>
 <block tags="mdesc, flesh_act4"><br />The beauty of it leaves you speechless.</block>
 
-<!-- DESCRIPTIONS ADDED TO OPTIONS/DATA -->
+<!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
 <block tags="odesc, flesh_act2"> It is covered in mucous.</block>
 <block tags="odesc, flesh_act2"> It is covered in a thick, opaque gel.</block>
 <block tags="odesc, flesh_act2"> It feels warm to the touch.</block>
