@@ -2,10 +2,11 @@
 <meta id='engineering' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search engineering.</leadin>
 You're in the engineering space.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='computer' />
-<injectOption tags='mechanical' />
-<injectOption tags='electrical' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, electrical' />
 
 </scene>
 
@@ -13,10 +14,11 @@ You're in the engineering space.
 <meta id='hangar bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hangar bay.</leadin>
 You're in the hangar bay.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='container' />
-<injectOption tags='mechanical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, container' />
+<injectOption tags='option, mechanical' />
 
 </scene>
 
@@ -24,10 +26,11 @@ You're in the hangar bay.
 <meta id='medbay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the medbay.</leadin>
 You're in the lower medbay.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='medical' />
-<injectOption tags='medical' />
-<injectOption tags='container' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, container' />
 
 </scene>
 
@@ -35,10 +38,11 @@ You're in the lower medbay.
 <meta id='hydroponic gardens' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hydroponic gardens.</leadin>
 You're in the hydroponic gardens.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='biological' />
-<injectOption tags='mechanical' />
-<injectOption tags='medical' />
+<injectOption tags='option, biological' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, medical' />
 
 </scene>
 
@@ -46,10 +50,11 @@ You're in the hydroponic gardens.
 <meta id='crew deck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the crew deck.</leadin>
 You're on the crew deck.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='human' />
-<injectOption tags='human' />
-<injectOption tags='container' />
+<injectOption tags='option, human' />
+<injectOption tags='option, human' />
+<injectOption tags='option, container' />
 
 </scene>
 
@@ -57,10 +62,11 @@ You're on the crew deck.
 <meta id='life support control' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the life support control.</leadin>
 You're in life support control.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='computer' />
-<injectOption tags='mechanical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, mechanical' />
 
 </scene>
 
@@ -68,10 +74,11 @@ You're in life support control.
 <meta id='laboratory big' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='container' />
-<injectOption tags='medical' />
-<injectOption tags='computer' />
+<injectOption tags='option, container' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -79,10 +86,11 @@ You're in the main laboratory.
 <meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='container' />
-<injectOption tags='mechanical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, container' />
+<injectOption tags='option, mechanical' />
 
 </scene>
 
@@ -90,10 +98,11 @@ You're in the maintenance bay.
 <meta id='captains quarters' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the captain's quarters.</leadin>
 You're in the captain's quarters.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='computer' />
-<injectOption tags='human' />
-<injectOption tags='human' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, human' />
+<injectOption tags='option, human' />
 
 </scene>
 
@@ -101,10 +110,11 @@ You're in the captain's quarters.
 <meta id='command center' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the command center.</leadin>
 You're in the command center.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='computer' />
-<injectOption tags='container' />
-<injectOption tags='container' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, container' />
+<injectOption tags='option, container' />
 
 </scene>
 
@@ -112,10 +122,11 @@ You're in the command center.
 <meta id='reactor core' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
+<injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='death_reactor' />
-<injectOption tags='computer' />
-<injectOption tags='electrical' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, electrical' />
 
 </scene>
 
@@ -123,10 +134,11 @@ You are outside the reactor core.
 <meta id='navigation' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search navigation.</leadin>
 You are at the propulsion systems control in navigation.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='electrical' />
-<injectOption tags='computer' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, electrical' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -134,10 +146,11 @@ You are at the propulsion systems control in navigation.
 <meta id='solar arrays' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the solar arrays.</leadin>
 You are at the solar arrays.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='computer' />
-<injectOption tags='electrical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, computer' />
+<injectOption tags='option, electrical' />
 
 </scene>
 
@@ -145,10 +158,11 @@ You are at the solar arrays.
 <meta id='morgue' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the morgue.</leadin>
 You are in the morgue.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='biological' />
-<injectOption tags='medical' />
-<injectOption tags='must_morgue' />
+<injectOption tags='option, biological' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, must_morgue' />
 
 </scene>
 
@@ -156,9 +170,10 @@ You are in the morgue.
 <meta id='radiation shielding' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='electrical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, electrical' />
 <injectOption tags='death_radiation' />
 
 </scene>
@@ -167,10 +182,11 @@ You are in the radiation shielding control room.
 <meta id='hydrogen collector' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
+<injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='death_hydrogen' />
-<injectOption tags='mechanical' />
-<injectOption tags='electrical' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, electrical' />
 
 </scene>
 
@@ -178,10 +194,11 @@ You are at the hydrogen collectors.
 <meta id='security office' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the central security office.</leadin>
 You are in the central security office.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='container' />
-<injectOption tags='paper' />
-<injectOption tags='computer' />
+<injectOption tags='option, container' />
+<injectOption tags='option, paper' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -189,9 +206,11 @@ You are in the central security office.
 <meta id='holodeck' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the recreational holodeck.</leadin>
 You are in the holodeck.
-<injectOption tags='mechanical' />
-<injectOption tags='human' />
-<injectOption tags='computer' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, human' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -199,9 +218,11 @@ You are in the holodeck.
 <meta id='research and dev' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search research and development labs.</leadin>
 You are in the research and development labs.
-<injectOption tags='biological' />
-<injectOption tags='medical' />
-<injectOption tags='computer' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, biological' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -209,9 +230,11 @@ You are in the research and development labs.
 <meta id='armory' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the armory.</leadin>
 You are in the armory.
-<injectOption tags='container' />
-<injectOption tags='container' />
-<injectOption tags='container' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, container' />
+<injectOption tags='option, container' />
+<injectOption tags='option, container' />
 
 </scene>
 
@@ -219,9 +242,11 @@ You are in the armory.
 <meta id='recycling center' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the recycling center.</leadin>
 You are in the main recycling hub.
-<injectOption tags='computer' />
-<injectOption tags='mechanical' />
-<injectOption tags='electrical' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, computer' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, electrical' />
 
 </scene>
 
@@ -229,9 +254,11 @@ You are in the main recycling hub.
 <meta id='virology' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the virology labs.</leadin>
 You are in the virology labs.
-<injectOption tags='mechanical' />
-<injectOption tags='medical' />
-<injectOption tags='computer' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, medical' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -240,9 +267,11 @@ You are in the virology labs.
 <meta id='chapel' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the chapel.</leadin>
 You are in the chapel.
-<injectOption tags='human' />
-<injectOption tags='human' />
-<injectOption tags='biological' />
+<injectBlock tags="mdesc, $flesh_act" />
+
+<injectOption tags='option, human' />
+<injectOption tags='option, human' />
+<injectOption tags='option, biological' />
 
 </scene>
 
@@ -250,10 +279,11 @@ You are in the chapel.
 <meta id='brig' tags='mission, flesh_act2, flesh_act3'/>
 <leadin>Search the brig.</leadin>
 You are in the brig.
+<injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='mechanical' />
-<injectOption tags='human' />
-<injectOption tags='computer' />
+<injectOption tags='option, mechanical' />
+<injectOption tags='option, human' />
+<injectOption tags='option, computer' />
 
 </scene>
 

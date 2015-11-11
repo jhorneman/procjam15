@@ -2,7 +2,7 @@
 <meta id='pile clothes' tags='option, human'/>
 <leadin>Rifle through pile of clothing.</leadin>
 You pick through a pile of clothing, shaking and tossing aside each piece to ensure it's not hiding anything.<br />
-In a pocket you find {a $data}.
+In a pocket you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -11,7 +11,7 @@ In a pocket you find {a $data}.
 <meta id='drawers' tags='option, container'/>
 <leadin>Open drawers.</leadin>
 You pull open drawers and empty their contents messily on the flood in the search of data.<br />
-In the bottom drawer you find {a $data}.
+In the bottom drawer you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with the {$data}.</option>
 </scene>
@@ -20,7 +20,7 @@ In the bottom drawer you find {a $data}.
 <meta id='container metal' tags='option, container'/>
 <leadin>Open metal container.</leadin>
 You unlatch and open a medium-sized metal container to find miscellaneous goods.<br />
-At the bottom of the container you find {a $data}.
+At the bottom of the container you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -29,7 +29,7 @@ At the bottom of the container you find {a $data}.
 <meta id='container plastic' tags='option, container'/>
 <leadin>Open plastic container.</leadin>
 You flip the top off of a plastic container and sift through it. It is mostly filled with junk.<br />
-At the bottom of the container you find {data}.
+At the bottom of the container you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -38,7 +38,7 @@ At the bottom of the container you find {data}.
 <meta id='trash' tags='option, container, human'/>
 <leadin>Search the wastebin.</leadin>
 You reach into the wastebin and toss aside bits of useless rubish.<br />
-At the bottom of the bin you find {data}.
+At the bottom of the bin you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -47,7 +47,7 @@ At the bottom of the bin you find {data}.
 <meta id='cabinet' tags='option, container'/>
 <leadin>Search inside the large metal cabinet.</leadin>
 You turn the handle and the large metal cabinet doors open, creaking loudly in the quiet station.<br />
-On the top shelf you find {data}.
+On the top shelf you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -56,7 +56,7 @@ On the top shelf you find {data}.
 <meta id='shelves' tags='option, container'/>
 <leadin>Check shelves.</leadin>
 You pull various tools, empty cartons, and used supplies off of the shelves the line the walls.<br />
-On the lowest shelve you find {data}.
+On the lowest shelve you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -65,7 +65,7 @@ On the lowest shelve you find {data}.
 <meta id='storage compartment' tags='option, container'/>
 <leadin>Check storage compartment.</leadin>
 You pull a release latch on the wall and hear a hiss of air as the storage compartment opens up.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -74,7 +74,7 @@ Inside you find {data}.
 <meta id='storage crate' tags='option, container'/>
 <leadin>Pry open storage crate.</leadin>
 You grab a crowbar from beside the crate and use it to pry off the lid.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -83,7 +83,7 @@ Inside you find {data}.
 <meta id='toolbox' tags='option, container'/>
 <leadin>Search through toolbox.</leadin>
 You lift the heavy lid of the toolbox and survey its contents - greasy rags, ratchets, various backup sensors.<br />
-Beneath the tools you find {data}.
+Beneath the tools you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -92,7 +92,7 @@ Beneath the tools you find {data}.
 <meta id='computer' tags='option, computer'/>
 <leadin>Boot the computer.</leadin>
 You reset the main power switch on the computer. It starts to power on and then sparks and hisses as it overloads. You pull off the outer panel to see what else you can salvage.<br />
-Beneath it you find {data}.
+Beneath it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -110,7 +110,7 @@ Beneath it you find {data}.
 <meta id='documents' tags='option, paper'/>
 <leadin>Read documents.</leadin>
 You sift through various papers, printed and hand-written, looking for any information as to the current state of the ship and its crew.<br />
-Among the documents you find {data}.
+Among the documents you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -119,7 +119,7 @@ Among the documents you find {data}.
 <meta id='papers look' tags='option, paper'/>
 <leadin>Leaf through papers.</leadin>
 You leaf through the scattered papers. You see the words "INFECTION" and "QUARANTINE" and "SECURITY" and "FLESH" but it makes no sense.<br />
-Among the papers you find {data}.
+Among the papers you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -128,7 +128,7 @@ Among the papers you find {data}.
 <meta id='medical equipment' tags='option, medical'/>
 <leadin>Search medical equipment.</leadin>
 You search a countertop covered in various medical equipment you cannot identify, and vials containing substances you can only guess at.<br />
-Among them you find {data}.
+Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -137,7 +137,7 @@ Among them you find {data}.
 <meta id='medical equipment broken' tags='option, medical'/>
 <leadin>Search broken medical equipment</leadin>
 You carefully pick through a pile of broken medical equipment laying in pieces on the floor from the unstable gravity systems. Various vials crack under your feet, their unknown contents oozing onto the tiles.<br />
-Among them you find {data}.
+Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -146,7 +146,7 @@ Among them you find {data}.
 <meta id='machinery broken' tags='option, mechanical'/>
 <leadin>Check broken machinery.</leadin>
 You search the broken machinery looking for working parts, sensors, mechanical bits - anything you can salvage whole.<br />
-You find {data}.
+You find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -155,7 +155,7 @@ You find {data}.
 <meta id='electrical panel' tags='option, electrical'/>
 <leadin>Pry open electrical panel.</leadin>
 You pry open an electrical panel and shield your eyes from the sparks until they subside.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -164,7 +164,7 @@ Inside you find {data}.
 <meta id='wires' tags='option, electrical'/>
 <leadin>Search among the wires.</leadin>
 You reach between the bundles of wires and pull them to the side, peering at the panel of electrical controls behind them<br />
-You find {data}.
+You find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -173,7 +173,7 @@ You find {data}.
 <meta id='solar cells' tags='option, electrical'/>
 <leadin>Evaluate the solar cells.</leadin>
 You shine your flashlight onto the auxillary solar cells but they fail to react. You flip open the maintenance panel to see if you can salvage something.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -182,7 +182,7 @@ Inside you find {data}.
 <meta id='computer terminal' tags='option, computer'/>
 <leadin>Access backup computer terminal.</leadin>
 You attempt to log into the terminal and access the backup data. The computer whines loudly and ejects its tray.<br />
-In the tray you find {data}.
+In the tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -191,7 +191,7 @@ In the tray you find {data}.
 <meta id='maintenance panel' tags='option, electrical'/>
 <leadin>Detach maintenance panel.</leadin>
 You detach a large maintenance panel and try to decipher the labyrinth of colorful wires, dials, and sensors.<br />
-Inside you manage to salvage {data}.
+Inside you manage to salvage {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -200,7 +200,7 @@ Inside you manage to salvage {data}.
 <meta id='wire box' tags='option, electrical'/>
 <leadin>Search box of unrolled wire.</leadin>
 You find a box of thick utility wires, each one heavier than it looks. You pull them out of the box to see what lies beneath.<br />
-Beneath them you find {data}.
+Beneath them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -209,7 +209,7 @@ Beneath them you find {data}.
 <meta id='electrical systems' tags='option, electrical'/>
 <leadin>Search electrical systems.</leadin>
 You open the electric router and shine your light upon its guts.<br />
-Within it you find {data}.
+Within it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -218,7 +218,7 @@ Within it you find {data}.
 <meta id='electrical panel sparking' tags='option, electrical'/>
 <leadin>Investigate sparking electrical panel.</leadin>
 You wait for the uneven power surging through the ship to subside before pulling off the cover of the electrical panel.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -227,7 +227,7 @@ Inside you find {data}.
 <meta id='fuse box' tags='option, electrical'/>
 <leadin>Open fuse box. </leadin>
 You flip the latch and the fuse box swings open on its spring.<br />
-Inside the box you find {data}.
+Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -236,7 +236,7 @@ Inside the box you find {data}.
 <meta id='belongings' tags='option, human'/>
 <leadin>Look through the crew's belongings. </leadin>
 You look through the crew's belongings trying to salvage anything that could be useful to the mainframe.<br />
-Among the detrius you find {data}.
+Among the detrius you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -245,7 +245,7 @@ Among the detrius you find {data}.
 <meta id='bags' tags='option, human'/>
 <leadin>Look through abandoned bags. </leadin>
 You go through the bags one by one, opening them up and rifling through their pockets.<br />
-Inside one of them you find {data}.
+Inside one of them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -254,7 +254,7 @@ Inside one of them you find {data}.
 <meta id='old food' tags='option, human, biological'/>
 <leadin>Investigate half-eaten food. </leadin>
 You look among the half-eaten food for any useful biological specimens, or unusual sources of infection.<br />
-On a table you find {data}.
+On a table you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -263,7 +263,7 @@ On a table you find {data}.
 <meta id='biological samples' tags='option, medical, biological'/>
 <leadin>Scan for biological samples. </leadin>
 You scan the room for biological samples that may have triggered the quarantine, but find nothing of the kind.<br />
-Instead you find {data}.
+Instead you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -273,7 +273,7 @@ Instead you find {data}.
 <meta id='closet' tags='option, container'/>
 <leadin>Search closet. </leadin>
 You turn the heavy handle and swing open the closet door. You shine your light on the overturned boxes and maintenance equipment.<br />
-On the top shelf of the closet you find {data}.
+On the top shelf of the closet you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -282,7 +282,7 @@ On the top shelf of the closet you find {data}.
 <meta id='paper tray' tags='option, paper'/>
 <leadin>Search paper trays. </leadin>
 The paper trays largely stand empty, the paper scattered along the ground like detrius.<br />
-In the last tray you find {data}.
+In the last tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -291,7 +291,7 @@ In the last tray you find {data}.
 <meta id='emergency toolbox' tags='option, mechanical, medical'/>
 <leadin>Search emergency toolbox. </leadin>
 The emergency toolbox looks undisturbed. You open it hoping to find something useful.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -300,7 +300,7 @@ Inside you find {data}.
 <meta id='mechanical toolbox' tags='option, mechanical'/>
 <leadin>Look through mechanical toolbox. </leadin>
 You lift the lid of the mechanical toolbox and dump out various tools and sensors whose purpose you can only guess at.<br />
-Underneath you find {data}.
+Underneath you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -309,7 +309,7 @@ Underneath you find {data}.
 <meta id='backpack' tags='option, human'/>
 <leadin>Sift through abandoned backpack. </leadin>
 You rifle through each of the backpack's pockets thoroughly, making sure not to miss anything.<br />
-In the back pocket you find {data}.
+In the back pocket you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -318,7 +318,7 @@ In the back pocket you find {data}.
 <meta id='water tank' tags='option, mechanical'/>
 <leadin>Evaluate leaking water tank. </leadin>
 You turn the valve on the leaking water tank but it does not fix the problem. You pull open the panel cover its main mechanisms to see if you can salvage something from the broken machine.<br />
-Inside the machine you find {data}.
+Inside the machine you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -327,7 +327,7 @@ Inside the machine you find {data}.
 <meta id='vending machine' tags='option, biological, human'/>
 <leadin>Break open vending machine. </leadin>
 You find a large metal tool and smash the vending machine cover, shattering the glass into a million pieces.<br />
-Inside it you find {data}.
+Inside it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -336,7 +336,7 @@ Inside it you find {data}.
 <meta id='cart' tags='option, container'/>
 <leadin>Sift through overturned cart. </leadin>
 You sift through the contents of the cart that have spilled out all over the floor.<br />
-Among the detrius you find {data}.
+Among the detrius you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -345,7 +345,7 @@ Among the detrius you find {data}.
 <meta id='first aid kit' tags='option, medical, human'/>
 <leadin>Check first aid kit. </leadin>
 You unlock and open the first aid kit, but someone has gotten here before you and already taken the useful equipment.<br />
-Among the leftovers you find {data}.
+Among the leftovers you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -354,7 +354,7 @@ Among the leftovers you find {data}.
 <meta id='body' tags='option, human, biological, must_morgue'/>
 <leadin>Check dead body. </leadin>
 A body lies facedown on the floor. You carefully avoid its face as you search it for anything salveable.<br />
-Beneath the body you find {data}.
+Beneath the body you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -363,7 +363,7 @@ Beneath the body you find {data}.
 <meta id='computer2' tags='option, computer'/>
 <leadin>Attempt to power on computer systems. </leadin>
 You flip the main power to the computer systems and flitch as the console explodes and hisses smoke. You pull off the burnt, discolored panel to see if there's anything else you can salvage.<br />
-Inside you find {data}.
+Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -372,7 +372,7 @@ Inside you find {data}.
 <meta id='computer3' tags='option, computer'/>
 <leadin>Use console controls.</leadin>
 You use the console, but it ignores your commands. You pull off the cover to see some wires melted into the circuitboard.<br />
-You manage to salvage {data}.
+You manage to salvage {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>

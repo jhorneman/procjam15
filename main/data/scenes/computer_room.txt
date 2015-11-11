@@ -8,11 +8,11 @@
 <if cond="$is_fed">The computer has recently fed.</if>
 <if cond="$is_fed eq 0">The computer hungers for data.</if>
 <br />
-<if cond="$has_mcguffin">You have {a $data}.</if>
+<if cond="$has_mcguffin">You have {$data}.</if>
 <if cond="$has_mcguffin eq 0">You have no data.</if>
 <br />
 
-<option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer the {$data}.</option>
+<option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Prepare to salvage data from the ship.</option>
 <option nextScene ="computer_talk" cond="$is_fed">Communicate with the mainframe.</option>
 <option nextScene = "feed_me" cond="$is_fed eq 0">Communicate with the mainframe.</option>
@@ -29,7 +29,7 @@ The console reads: "INSUFFICIENT DATA"<br />
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
 <if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
 
-<option nextScene="feed_computer" cond="$has_mcguffin">Feed the computer the {$data}.</option>
+<option nextScene="feed_computer" cond="$has_mcguffin">Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Prepare to salvage data from the ship.</option>
 
 </scene>
@@ -65,19 +65,9 @@ The mainframe consumes the data eagerly. You can feel the room heat up as the co
 <scene>
 <meta id='mission_hub' />
 You prepare for the next mission to salvage data from the surrounding ship.
-
-<injectOption tags='flesh_act1' cond="$flesh_act eq flesh_act1"/>
-<injectOption tags='flesh_act1' cond="$flesh_act eq flesh_act1"/>
-<injectOption tags='flesh_act1' cond="$flesh_act eq flesh_act1"/>
-<injectOption tags='flesh_act2' cond="$flesh_act eq flesh_act2"/>
-<injectOption tags='flesh_act2' cond="$flesh_act eq flesh_act2"/>
-<injectOption tags='flesh_act2' cond="$flesh_act eq flesh_act2"/>
-<injectOption tags='flesh_act3' cond="$flesh_act eq flesh_act3"/>
-<injectOption tags='flesh_act3' cond="$flesh_act eq flesh_act3"/>
-<injectOption tags='flesh_act3' cond="$flesh_act eq flesh_act3"/>
-<injectOption tags='flesh_act4' cond="$flesh_act eq flesh_act4"/>
-<injectOption tags='flesh_act4' cond="$flesh_act eq flesh_act4"/>
-<injectOption tags='flesh_act4' cond="$flesh_act eq flesh_act4"/>
+<injectOption tags='mission, $flesh_act' />
+<injectOption tags='mission, $flesh_act' />
+<injectOption tags='mission, $flesh_act' />
 <option nextScene="computer_room">Change your mind.</option>
 <!-- <injectOption tags="$flesh_act" /> use this later -->
 

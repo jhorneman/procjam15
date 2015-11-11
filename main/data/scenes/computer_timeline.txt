@@ -9,24 +9,13 @@
 <if cond="$flesh_act eq flesh_act5">Description of computer for Act 5</if>
 <br />
 Enter command:
-<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
-<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
-<injectOption cond="$flesh_act eq flesh_act1" tags="c_flesh_act1" />
-<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
-<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
-<injectOption cond="$flesh_act eq flesh_act2" tags="c_flesh_act2" />
-<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
-<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
-<injectOption cond="$flesh_act eq flesh_act3" tags="c_flesh_act3" />
-<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
-<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
-<injectOption cond="$flesh_act eq flesh_act4" tags="c_flesh_act4" />
-<injectOption cond="$flesh_act eq flesh_act5" tags="c_flesh_act5" />
-
+<injectOption tags="computer_talk, $flesh_act" />
+<injectOption tags="computer_talk, $flesh_act" />
+<injectOption tags="computer_talk, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='computer1a' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1a' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Access logs prior to power shut down</leadin>
 > Access logs prior to power shut down<br />
 --------------------------------<br />
@@ -36,7 +25,7 @@ LOGS CORRUPTED<br />
 </scene>
 
 <scene>
-<meta id='computer1b' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1b' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Access logs related to emergency systems</leadin>
 > Access logs related to emergency systems<br />
 --------------------------------<br />
@@ -47,7 +36,7 @@ QUARANTINE PROTOCALS ENACTED<br />
 </scene>
 
 <scene>
-<meta id='computer1c' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1c' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Locate crew</leadin>
 > Locate crew<br />
 --------------------------------<br />
@@ -59,7 +48,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer1d' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1d' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Locate highest ranking officer</leadin>
 > Locate highest ranking officer<br />
 --------------------------------<br />
@@ -71,7 +60,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer1e' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1e' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Reboot mainframe</leadin>
 > Reboot mainframe<br />
 --------------------------------<br />
@@ -83,7 +72,7 @@ INSUFFICIENT POWER<br />
 </scene>
 
 <scene>
-<meta id='computer1f' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1f' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Query: "what data do you need?"</leadin>
 > Query: "what data do you need?"<br />
 --------------------------------<br />
@@ -98,7 +87,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer1g' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1g' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Query: "why do you need data?"</leadin>
 > Query: "why do you need data?"<br />
 --------------------------------<br />
@@ -111,7 +100,7 @@ MORE DATA REQUIRED<br />
 </scene>
 
 <scene>
-<meta id='computer1h' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1h' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Open communications with flagship</leadin>
 > Open communications with flagship<br />
 --------------------------------<br />
@@ -125,7 +114,7 @@ MORE DATA REQUIRED<br />
 </scene>
 
 <scene>
-<meta id='computer1i' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1i' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
@@ -137,7 +126,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer1j' tags='c_flesh_act1, style_terminal'/>
+<meta id='computer1j' tags='computer_talk, flesh_act1, style_terminal'/>
 <leadin>> Query: "explain quarantine protocols"</leadin>
 > Query: "explain quarantine protocols"<br />
 --------------------------------<br />
@@ -154,7 +143,7 @@ REBOOT REQUIRED<br />
 <!-- ACT II -->
 
 <scene>
-<meta id='computer2a' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2a' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
@@ -169,7 +158,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer2b' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2b' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Scan ship for biological contaminants</leadin>
 > Scan ship for biological contaminants<br />
 --------------------------------<br />
@@ -182,7 +171,7 @@ QUARANTINE PROTOCAL STILL IN EFFECT<br />
 </scene>
 
 <scene>
-<meta id='computer2c' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2c' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Locate source of infection</leadin>
 > Locate source of infection<br />
 --------------------------------<br />
@@ -195,7 +184,7 @@ QUARANTINE PROTOCAL STILL IN EFFECT<br />
 </scene>
 
 <scene>
-<meta id='computer2d' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2d' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Query: "who accessed you prior to me?"</leadin>
 > Query: "who accessed you prior to me?"<br />
 --------------------------------<br />
@@ -207,7 +196,7 @@ ERROR: TERMINAL LOGS NOT FOUND<br />
 </scene>
 
 <scene>
-<meta id='computer2e' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2e' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Query: "what happened to the ship?"</leadin>
 > Query: "what happened to the ship?"<br />
 --------------------------------<br />
@@ -220,7 +209,7 @@ QUARANTINE PROTOCALS IN EFFECT<br />
 </scene>
 
 <scene>
-<meta id='computer2f' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2f' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Query: "where is the crew?"</leadin>
 > Query: "where is the crew?"<br />
 --------------------------------<br />
@@ -230,7 +219,7 @@ YOU ARE THE CREW<br />
 </scene>
 
 <scene>
-<meta id='computer2g' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2g' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Reroute power to emergency escape systems</leadin>
 > Reroute power to emergency escape systems<br />
 --------------------------------<br />
@@ -243,7 +232,7 @@ INSUFFICIENT POWER FOR REBOOT<br />
 </scene>
 
 <scene>
-<meta id='computer2h' tags='c_flesh_act2, style_terminal'/>
+<meta id='computer2h' tags='computer_talk, flesh_act2, style_terminal'/>
 <leadin>> Terminate infection</leadin>
 > Terminate infection<br />
 --------------------------------<br />
@@ -256,7 +245,7 @@ QUARANTINE WILL PERSIST UNTIL INFECTION TERMINATED<br />
 
 <!-- ACT 3 -->
 <scene>
-<meta id='computer3a' tags='c_flesh_act3, style_terminal'/>
+<meta id='computer3a' tags='computer_talk, flesh_act3, style_terminal'/>
 <leadin>> Query: "where is the crew?"</leadin>
 > Query: "where is the crew?"<br />
 --------------------------------<br />
@@ -266,7 +255,7 @@ I AM THE CREW<br />
 </scene>
 
 <scene>
-<meta id='computer3b' tags='c_flesh_act3, style_terminal'/>
+<meta id='computer3b' tags='computer_talk, flesh_act3, style_terminal'/>
 <leadin>> Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
@@ -291,7 +280,7 @@ INSUFFICIENT POWER<br />
 
 <!-- ACT 4 -->
 <scene>
-<meta id='computer4a' tags='c_flesh_act4, style_terminal'/>
+<meta id='computer4a' tags='computer_talk, flesh_act4, style_terminal'/>
 <leadin>> Scan for source of infection</leadin>
 > Scan for source of infection<br />
 --------------------------------<br />
@@ -303,7 +292,7 @@ END OF LIST<br />
 </scene>
 
 <scene>
-<meta id='computer4b' tags='c_flesh_act4, style_terminal'/>
+<meta id='computer4b' tags='computer_talk, flesh_act4, style_terminal'/>
 <leadin>> Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />

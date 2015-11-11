@@ -1,5 +1,5 @@
 <scene>
-<meta id='end_starts' tags='c_flesh_act5, style_terminal'/>
+<meta id='end_starts' tags='computer_talk, flesh_act5, style_terminal'/>
 This is the end of the game.
 <option action="start">
 Restart game.
