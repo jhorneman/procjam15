@@ -45,13 +45,17 @@ class TaggedItemCache(object):
 
 
 class TaggedCollection(object):
+    collections = {}
+
     def __init__(self, _name):
         self.name = _name
         self.tagged_items = []
         self.cache = {}
 
-    def reset(self):
-        self.cache = {}
+        if self.name in TaggedCollection.collections:
+            logger.error("A tagged collection named '{0}' already exists!".format(self.name))
+        else:
+            TaggedCollection.collections[self.name] = self
 
     def add_item(self, _tags, _item):
         if len(_tags) > 0:
