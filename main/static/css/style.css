@@ -20,12 +20,6 @@ html, body {
 
 
 
-
-
-br {
-	line-height: 2.5;
-}
-
 li {
 	margin-bottom: 0rem;
 }
@@ -98,6 +92,6 @@ body.style_terminal ul#options li a:before {
 	content: '> ';
 }
 
-body.style_terminal br {
-	line-height:1.2;
+body.style_terminal {
+	line-height: 1.2;
 }

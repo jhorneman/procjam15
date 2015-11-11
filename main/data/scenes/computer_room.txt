@@ -22,8 +22,10 @@
 <!-- INSUFFICIENT DATA -->
 <scene>
 <meta id='feed_me' tags="style_comp_room" />
-You attempt to communicate with the computer but it requires data<br />
-The console reads: "INSUFFICIENT DATA"<br />
+You attempt to communicate with the computer but it requires data.
+
+The console reads: "INSUFFICIENT DATA"
+
 <if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
@@ -48,8 +50,9 @@ The console reads: "INSUFFICIENT DATA"<br />
 <action act="set $flesh_act flesh_act4" cond="$data_count eq 9" />
 <action act="set $flesh_act flesh_act5" cond="$data_count eq 12" />
 
-You feed the computer the data you have.<br />
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.<br />
+You feed the computer the data you have.
+
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
 
 <if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>

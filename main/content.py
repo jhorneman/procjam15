@@ -272,7 +272,7 @@ def parse_content_of_xml_element(_parent_el):
 
         if child_el.tail:
             if child_el.tail.strip():
-                blocks.append(Raw(child_el.tail.lstrip()))
+                blocks.append(Raw(child_el.tail))
 
     return blocks
 

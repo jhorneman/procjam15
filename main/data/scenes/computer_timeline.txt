@@ -30,7 +30,7 @@ LOGS CORRUPTED<br />
 > Access logs related to emergency systems<br />
 --------------------------------<br />
 INFECTION DETECTED<br />
-QUARANTINE PROTOCALS ENACTED<br />
+QUARANTINE PROTOCOLS ENACTED<br />
 --------------------------------
 <option nextScene="computer_room">esc</option>
 </scene>
@@ -165,7 +165,7 @@ END OF LIST<br />
 SCANNING FOR BIOLOGICAL CONTAMINANTS...<br />
 SCAN FAILED<br />
 INSUFFICIENT POWER<br />
-QUARANTINE PROTOCAL STILL IN EFFECT<br />
+QUARANTINE PROTOCOL STILL IN EFFECT<br />
 --------------------------------
 <option nextScene="computer_room">esc</option>
 </scene>
@@ -178,7 +178,7 @@ QUARANTINE PROTOCAL STILL IN EFFECT<br />
 SCANNING FOR SOURCE OF INFECTION...
 SCAN FAILED<br />
 INSUFFICIENT POWER<br />
-QUARANTINE PROTOCAL STILL IN EFFECT<br />
+QUARANTINE PROTOCOL STILL IN EFFECT<br />
 --------------------------------
 <option nextScene="computer_room">esc</option>
 </scene>
@@ -203,7 +203,7 @@ ERROR: TERMINAL LOGS NOT FOUND<br />
 SHIP INTEGRITY INTACT<br />
 EMERGENCY SYSTEMS ONLINE<br />
 INFECTION DETECTED<br />
-QUARANTINE PROTOCALS IN EFFECT<br />
+QUARANTINE PROTOCOLS IN EFFECT<br />
 --------------------------------
 <option nextScene="computer_room">esc</option>
 </scene>
