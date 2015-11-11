@@ -27,6 +27,13 @@ class Content(object):
         else:
             return True
 
+    @staticmethod
+    def check_element_is_empty(_el, _el_name):
+        if len(list(_el)) > 0:
+            logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
+        if _el.text and len(_el.text) > 0:
+            logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
+
 
 class Raw(Content):
     def __init__(self, _text):
@@ -69,8 +76,7 @@ class InjectBlock(Content):
         super(InjectBlock, self).__init__()
         self.check_for_condition(_el)
         self.tags = read_tags(_el, "injected block")
-        if _el.text and len(_el.text) > 0:
-            logger.warning("Encountered injected block element with text inside. This will be ignored!")
+        self.check_element_is_empty(_el, "injected block")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
@@ -153,8 +159,7 @@ class InjectOption(Content):
         super(InjectOption, self).__init__()
         self.check_for_condition(_el)
         self.tags = read_tags(_el, "injected option")
-        if _el.text and len(_el.text) > 0:
-            logger.warning("Encountered injected option element with text inside. This will be ignored!")
+        self.check_element_is_empty(_el, "injected option")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
@@ -276,11 +281,8 @@ def read_tags(_el, _el_name):
         tags = string_to_tags(tags_string)
         if len(tags) == 0:
             logger.error("Encountered {0} element with empty tags.".format(_el_name))
-        else:
-            if len(list(_el)) > 0:
-                logger.warning("Encountered {0} element with child elements. These will be ignored!".format(_el_name))
     else:
-        logger.error("Encountered {0} element without a tags attribute.")
+        logger.error("Encountered {0} element without a tags attribute.".format(_el_name))
     return tags
 
 
