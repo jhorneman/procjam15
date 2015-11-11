@@ -85,8 +85,6 @@ class InjectBlock(Content):
             injected_block = get_text_block_with_tag(tags, self.repeat)
             if injected_block:
                 return evaluate_content_blocks([injected_block], _state)
-            else:
-                print "ARGH"
         else:
             return None
 
