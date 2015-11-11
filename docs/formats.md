@@ -175,6 +175,7 @@ You can affect the game state with the action element:
 
 The following actions are possible:
 
+* 'gen_data'. Generate a new 'data' variable.
 * 'inc $varname'. Increase a variable named 'varname'.
 * 'dec $varname'. Decrease a variable named 'varname'.
 * 'set $varname value'. Set a variable named 'varname' to 'value'.
