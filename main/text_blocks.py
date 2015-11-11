@@ -10,11 +10,6 @@ text_blocks = TaggedCollection("block")
 data_names = TaggedCollection("data_name")
 
 
-def reset_block_collections():
-    text_blocks.reset()
-    data_names.reset()
-
-
 def register_text_blocks(_new_blocks):
     global text_blocks
     for d in _new_blocks:

@@ -33,13 +33,9 @@ def generate_data_var():
 
 
 def restart():
-    # Reset tag caches or non-repeating queries will stop returning items.
-    from text_blocks import reset_block_collections
-    from scene import reset_scene_collection
-    reset_scene_collection()
-    reset_block_collections()
-
     # Reset the session.
+    # (This will also automatically reset the tag caches, which is important, or else
+    # non-repeating queries will stop returning items.)
     session.clear()
     session.update(initial_game_state)
     session.update(generate_player_character())

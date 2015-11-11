@@ -21,10 +21,6 @@ def get_nr_scenes():
     return len(scenes)
 
 
-def reset_scene_collection():
-    tagged_scene_ids.reset()
-
-
 def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
