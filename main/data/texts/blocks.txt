@@ -45,7 +45,7 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act2">Announcement, "UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED".xx</block>
 <block tags="mdesc, flesh_act2">Announcement, "PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL."xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "UNIDENTIFIED INFECTION DETECTED"xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "DELETING LOGS…"xx</block>
+<block tags="mdesc, flesh_act2">Terminal read-out, "DELETING LOGS..."xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "SECURITY CLEARANCE REQUIRED".xx</block>
 <block tags="mdesc, flesh_act2">A viscous fluid leaks from a vent in the ceiling.</block>
 <block tags="mdesc, flesh_act2">A monitor salivates, the liquid pooling onto the keyboard and dropping onto the floor.</block>

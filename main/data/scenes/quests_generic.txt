@@ -8,6 +8,7 @@ You step carefully over the items scattered across the floor, some leaking onto 
 Objects lie haphazardly sticking out of plastic and metal containers. Unidentified machines lie parked in the corners of the small room. It seems mostly filled with cleaning supplies and tools.
 
 <injectBlock tags="mdesc, $flesh_act" />
+
 <injectOption tags='option, containers' />
 <injectOption tags='option, containers' />
 <injectOption tags='option, containers' />
@@ -22,6 +23,7 @@ You're in the main utility airlocks.
 You step into the wide, empty metal cavity. Thick metal doors separate you from the vacuum of space.  Emergency lights blink dimly with backup power.
 
 The airlock control room is filled with human detritus and mechanical instruments.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, electrical' />

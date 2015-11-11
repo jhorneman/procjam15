@@ -194,6 +194,7 @@ You are at the hydrogen collectors.
 <meta id='security office' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the central security office.</leadin>
 You are in the central security office.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />
@@ -206,6 +207,7 @@ You are in the central security office.
 <meta id='holodeck' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the recreational holodeck.</leadin>
 You are in the holodeck.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -218,6 +220,7 @@ You are in the holodeck.
 <meta id='research and dev' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search research and development labs.</leadin>
 You are in the research and development labs.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, biological' />
@@ -230,6 +233,7 @@ You are in the research and development labs.
 <meta id='armory' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the armory.</leadin>
 You are in the armory.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />
@@ -242,6 +246,7 @@ You are in the armory.
 <meta id='recycling center' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the recycling center.</leadin>
 You are in the main recycling hub.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
@@ -254,6 +259,7 @@ You are in the main recycling hub.
 <meta id='virology' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the virology labs.</leadin>
 You are in the virology labs.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -267,6 +273,7 @@ You are in the virology labs.
 <meta id='chapel' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the chapel.</leadin>
 You are in the chapel.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, human' />
@@ -279,6 +286,7 @@ You are in the chapel.
 <meta id='brig' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the brig.</leadin>
 You are in the brig.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
