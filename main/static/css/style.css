@@ -95,7 +95,7 @@ body.style_terminal ul#options {
 }
 
 body.style_terminal ul#options li a:before {
-	content: '>';
+	content: '> ';
 }
 
 body.style_terminal br {
