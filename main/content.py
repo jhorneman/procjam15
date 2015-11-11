@@ -252,7 +252,8 @@ def parse_content_of_xml_element(_parent_el):
 
     # Start with any text appearing in the element itself.
     if _parent_el.text:
-        blocks.append(Raw(_parent_el.text))
+        if _parent_el.text.strip():
+            blocks.append(Raw(_parent_el.text))
 
     # Then iterate over the child elements.
     for child_el in _parent_el:
@@ -261,7 +262,8 @@ def parse_content_of_xml_element(_parent_el):
             blocks.append(child_content)
 
         if child_el.tail:
-            blocks.append(Raw(child_el.tail))
+            if child_el.tail.strip():
+                blocks.append(Raw(child_el.tail.lstrip()))
 
     return blocks
 

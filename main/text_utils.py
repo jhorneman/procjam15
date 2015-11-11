@@ -76,4 +76,5 @@ def substitute_text(_text, _substitution_data):
     if _text is None:
         logger.error("Text to be converted is None.")
         return ''
-    return formatter.vformat(_text, [], _substitution_data)
+    text = formatter.vformat(_text, [], _substitution_data)
+    return text.replace("\n", "<br/>")
