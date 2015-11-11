@@ -4,7 +4,7 @@
 
 from flask import session
 from text_blocks import get_data_name_with_tag
-
+from pc_names import first_names, last_names, job_titles
 
 # Remember that the Flask session does not pick up modifications on mutable structures automatically.
 # In that situation we have to explicitly set the modified attribute to True ourselves.
@@ -17,15 +17,33 @@ initial_game_state = {
     "data": "data"
 }
 
+
 def generate_player_character():
-    return {
-        "PC_first": "Mary",
-        "PC_last": "Placeholder",
-        "PC_she": "she",
-        "PC_her": "her",
-        "PC_man": "woman",
-        "PC_male": "female",
+    first_name_index = session.setdefault("first_name_index", 0)
+    last_name_index = session.setdefault("last_name_index", 0)
+    flesh_act = session.get("flesh_act", initial_game_state["flesh_act"])
+    job_title_index = session.setdefault("job_title_index:" + flesh_act, 0)
+
+    if first_name_index >= len(first_names):
+        first_name_index = 0
+
+    if last_name_index >= len(last_names):
+        last_name_index = 0
+
+    if job_title_index >= len(job_titles[flesh_act]):
+        job_title_index = 0
+
+    PC_data = {
+        "PC_first": first_names[first_name_index],
+        "PC_last": last_names[last_name_index],
+        "PC_job": job_titles[flesh_act][job_title_index]
     }
+
+    session["first_name_index"] = first_name_index + 1
+    session["last_name_index"] = last_name_index + 1
+    session["job_title_index:" + flesh_act] = job_title_index + 1
+
+    return PC_data
 
 
 def generate_data_var():

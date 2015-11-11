@@ -171,6 +171,14 @@ When you write {a thing} or {an thing} (or {a $thing} or {an $thing}), the (hope
 
 These functions can be combined: {a ^$thing} turns into 'a Sword' or 'an Apple', depending on what the variable 'thing' contains.
 
+## Player character variables
+
+The following variables related to the player character.
+
+* $PC_first : The PC's first name. Capitalized.
+* $PC_last : The PC's last name. Capitalized.
+* $PC_job : The PC's job title. Not capitalized.
+
 # Actions
 
 You can affect the game state with the action element:

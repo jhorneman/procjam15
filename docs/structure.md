@@ -39,13 +39,8 @@ The PC timelines have parts.
 # Variables
 
 * $flesh_act: a string that is flesh_act<n>, where n is a number from 1 to 3.
-* $PC_name: the full name of the PC.
-* $PC_first : The PC's first name.
-* $PC_last : The PC's last name.
-* $PC_she : Personal pronoun corresponding to the PC's gender.
-* $PC_her : Possessive pronoun corresponding to the PC's gender.
-* $PC_man : 'man' or 'woman' corresponding to the PC's gender.
-* $PC_male : Adjective corresponding to the PC's gender.
+
+See formats.md for more variables useful for text substitution.
 
 # Tags
 
