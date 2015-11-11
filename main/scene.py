@@ -14,7 +14,7 @@ scene_tag_re = re.compile(r"^\s*<scene", re.IGNORECASE)
 scene_id_re = re.compile(r"^[a-zA-Z0-9-_ ]*$")
 
 scenes = {}
-tagged_scene_ids = TaggedCollection()
+tagged_scene_ids = TaggedCollection("scene")
 
 
 def get_nr_scenes():

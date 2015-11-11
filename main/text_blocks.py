@@ -6,8 +6,8 @@ from tags import TaggedCollection
 
 logger = logging.getLogger(__name__)
 
-text_blocks = TaggedCollection()
-data_names = TaggedCollection()
+text_blocks = TaggedCollection("block")
+data_names = TaggedCollection("data_name")
 
 
 def reset_block_collections():

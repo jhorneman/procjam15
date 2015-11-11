@@ -45,7 +45,8 @@ class TaggedItemCache(object):
 
 
 class TaggedCollection(object):
-    def __init__(self):
+    def __init__(self, _name):
+        self.name = _name
         self.tagged_items = []
         self.cache = {}
 
@@ -85,10 +86,13 @@ class TaggedCollection(object):
             if _repeat:
                 index_in_list_of_eligible_items = 0
             else:
+                # logger.debug("{1} tagged {0}: exhausted".format(cache_key, self.name))
                 return None
 
         item_index = indices_of_eligible_items[index_in_list_of_eligible_items]
         index_in_list_of_eligible_items += 1
         self.cache[cache_key].index = index_in_list_of_eligible_items
+
+        # logger.debug("{3} tagged {0}: {1}/{2}".format(cache_key, index_in_list_of_eligible_items, len(indices_of_eligible_items), self.name))
 
         return self.tagged_items[item_index].item
