@@ -47,14 +47,14 @@ You jumpstart the generator to power on the hydrogen collector.  It sparks. The 
 <!-- CONTAINER -->
 
 <scene>
-<meta id='oxygen levels' tags='container, style_death'/>
+<meta id='oxygen levels' tags='option, containers, style_death'/>
 <leadin>Modify oxygen levels.</leadin>
 You modify oxygen levels and accidentally seal the room. All oxygen leaves. You suffocate. You die. xx
 <option action="respawn">...</option>
 </scene>
 
 <scene>
-<meta id='locking mechanism' tags='container, style_death'/>
+<meta id='locking mechanism' tags='option, containers, style_death'/>
 <leadin>Engage locking mechanism in door.</leadin>
 You engage the locking mechanism. The power then cuts out. It does not return. You are unable to reopen the door. It is your coffin now. You die. xx
 <option action="respawn">...</option>
@@ -63,7 +63,7 @@ You engage the locking mechanism. The power then cuts out. It does not return. Y
 <!-- BIO / MEDICAL -->
 
 <scene>
-<meta id='inspect fungus' tags='biological, medical, style_death'/>
+<meta id='inspect fungus' tags='option, biological, medical, style_death'/>
 <leadin>Investigate mysterious fungal growth.</leadin>
 You die by inhaling spores from some fungus. They put you to sleep. xx
 <option action="respawn">...</option>
@@ -72,7 +72,7 @@ You die by inhaling spores from some fungus. They put you to sleep. xx
 <!-- ELECTRICAL -->
 
 <scene>
-<meta id='tear wires' tags='electrical, style_death'/>
+<meta id='tear wires' tags='option, electrical, style_death'/>
 <leadin>Cut electrical wiring.</leadin>
 You cut into the electrical wiring, but it has active power currents running through it. You electrocute yourself. You die. xx
 <option action="respawn">...</option>
@@ -86,35 +86,35 @@ You cut into the electrical wiring, but it has active power currents running thr
 
 <!-- late-game deaths -->
 <scene>
-<meta id='unidentified substance' tags='flesh, style_death'/>
+<meta id='unidentified substance' tags='option, flesh, style_death'/>
 <leadin>Touch unidentified substance.</leadin>
 You die by touching a sticky substance and find yourself unable to detach yourself from it. xx
 <option action="respawn">...</option>
 </scene>
 
 <scene>
-<meta id='undulating sphincter' tags='flesh, style_death'/>
+<meta id='undulating sphincter' tags='option, flesh, style_death'/>
 <leadin>Reach inside an undulating sphincter.</leadin>
 You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
 <option action="respawn">...</option>
 </scene>
 
 <scene>
-<meta id='warm yolk' tags='flesh, style_death'/>
+<meta id='warm yolk' tags='option, flesh, style_death'/>
 <leadin>Lay down inside the warm yolk.</leadin>
 You lay down in the yolk. It's warm. It feels comfortable. You let the liquid envelope you like a gel. You die. xx
 <option action="respawn">...</option>
 </scene>
 
 <scene>
-<meta id='taste liquid' tags='flesh, style_death'/>
+<meta id='taste liquid' tags='option, flesh, style_death'/>
 <leadin>Taste liquid excretions.</leadin>
 You taste the extretion from the fleshy bits of the environment. It doesn't taste good. Your throat closes up. You die. xx
 <option action="respawn">...</option>
 </scene>
 
 <scene>
-<meta id='gastric acid' tags='flesh, style_death'/>
+<meta id='gastric acid' tags='option, flesh, style_death'/>
 <leadin>Wade into gastric acid.</leadin>
 You wade into the gastic acid. Your clothes and then skin sizzle as the acid digests you. You die. xx
 <option action="respawn">...</option>
