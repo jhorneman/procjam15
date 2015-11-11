@@ -208,7 +208,7 @@ def merge_in_evaluated_content(_content, _new):
     if _new is None:
         return
 
-    if isinstance(_new, types.StringType):
+    if isinstance(_new, types.StringTypes):
         _content["text"] += _new
     else:
         if _new.get("text", None):
@@ -291,6 +291,7 @@ def get_tagged_option_to_inject(_tags, _state, _repeat=True):
     from scene import get_scene_description_with_tag
     injected_scene_desc = get_scene_description_with_tag(_tags, _repeat)
     if injected_scene_desc:
+        # THIS IS THE LINE THAT CAUSES TROUBLE
         evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
         if evaluated_injected_scene["leadin"] is None:
             logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
