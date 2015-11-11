@@ -40,7 +40,9 @@ class Raw(Content):
         super(Raw, self).__init__()
         self.raw_text = _text
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         return self.raw_text
 
 
@@ -50,7 +52,7 @@ class If(Content):
         self.check_for_condition(_el)
         self.blocks = parse_content_of_xml_element(_el)
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
             return evaluate_content_blocks(self.blocks, _state)
         else:
@@ -64,7 +66,7 @@ class Block(Content):
         self.tags = read_tags(_el, "block")
         self.blocks = parse_content_of_xml_element(_el)
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
             return evaluate_content_blocks(self.blocks, _state)
         else:
@@ -79,7 +81,9 @@ class InjectBlock(Content):
         self.tags = read_tags(_el, "injected block")
         self.check_element_is_empty(_el, "injected block")
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
             injected_block = get_text_block_with_tag(tags, self.repeat)
@@ -92,9 +96,10 @@ class InjectBlock(Content):
 class Br(Content):
     def __init__(self, _el):
         super(Br, self).__init__()
-        pass
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         return "<br/>"
 
 
@@ -104,7 +109,7 @@ class LeadIn(Content):
         self.check_for_condition(_el)
         self.leadin = _el.text
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
             return {
                 "leadin": self.leadin
@@ -140,7 +145,9 @@ class Option(Content):
         self.params = {"next_scene": next_scene}
         self.text = text
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         if self.is_condition_true(_state):
             return {
                 "options": {
@@ -161,7 +168,9 @@ class InjectOption(Content):
         self.tags = read_tags(_el, "injected option")
         self.check_element_is_empty(_el, "injected option")
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
             injected_option = get_tagged_option_to_inject(tags, _state, self.repeat)
@@ -184,7 +193,9 @@ class Action(Content):
             if action:
                 self.action = action
 
-    def evaluate(self, _state):
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
         if self.is_condition_true(_state):
             return {
                 "actions": self.action
@@ -233,7 +244,7 @@ def merge_in_evaluated_content(_content, _new):
                 _content["actions"].append(_new["actions"])
 
 
-def evaluate_content_blocks(_blocks, _state):
+def evaluate_content_blocks(_blocks, _state, _deep=True):
     content = {
         "text": "",
         "leadin": None,
@@ -241,7 +252,7 @@ def evaluate_content_blocks(_blocks, _state):
         "actions": []
     }
     for block in _blocks:
-        merge_in_evaluated_content(content, block.evaluate(_state))
+        merge_in_evaluated_content(content, block.evaluate(_state, _deep))
     return content
 
 
@@ -291,8 +302,8 @@ def get_tagged_option_to_inject(_tags, _state, _repeat=True):
     from scene import get_scene_description_with_tag
     injected_scene_desc = get_scene_description_with_tag(_tags, _repeat)
     if injected_scene_desc:
-        # THIS IS THE LINE THAT CAUSES TROUBLE
-        evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
+        # DON'T evaluate this scene deeply - we only care about the lead-in.
+        evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state, _deep=False)
         if evaluated_injected_scene["leadin"] is None:
             logger.error("Injected scene '{0}' has no lead-in.".format(injected_scene_desc.id))
             return None
