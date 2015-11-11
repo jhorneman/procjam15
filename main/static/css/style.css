@@ -82,14 +82,20 @@ body.style_terminal {
     background-image: -webkit-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
     background-image: -ms-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
     background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(6, 10, 4)), color-stop(0.63, rgb(17, 31, 14)), color-stop(0.82, rgb(20, 27, 7)) );
-	
-	//font-family: courier, serif;
-	//line-height: 1;
-	//font-size: 2em;
 }
 
-body.style_terminal a {
-	list-style: none;
+body.style_terminal #options {
+    font-family: 'Cutive Mono', monospace;
+	line-height: 1em;
+	font-size: larger;
+}
+
+body.style_terminal ul#options {
+	list-style-type: None;
+}
+
+body.style_terminal ul#options li a:before {
+	content: '>';
 }
 
 body.style_terminal br {

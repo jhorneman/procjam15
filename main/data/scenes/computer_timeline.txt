@@ -16,64 +16,64 @@ Enter command:
 
 <scene>
 <meta id='computer1a' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Access logs prior to power shut down</leadin>
+<leadin>Access logs prior to power shut down</leadin>
 > Access logs prior to power shut down<br />
 --------------------------------<br />
 LOGS CORRUPTED<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1b' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Access logs related to emergency systems</leadin>
+<leadin>Access logs related to emergency systems</leadin>
 > Access logs related to emergency systems<br />
 --------------------------------<br />
 INFECTION DETECTED<br />
 QUARANTINE PROTOCALS ENACTED<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1c' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Locate crew</leadin>
+<leadin>Locate crew</leadin>
 > Locate crew<br />
 --------------------------------<br />
 LOCATING CREW...<br />
 {$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1d' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Locate highest ranking officer</leadin>
+<leadin>Locate highest ranking officer</leadin>
 > Locate highest ranking officer<br />
 --------------------------------<br />
 LOCATING HIGHEST RANKING OFFICER...<br />
 {$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1e' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Reboot mainframe</leadin>
+<leadin>Reboot mainframe</leadin>
 > Reboot mainframe<br />
 --------------------------------<br />
 REBOOT FAILED<br />
 POWER CURRENTLY AT ...{data_count}% <br />
 INSUFFICIENT POWER<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1f' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Query: "what data do you need?"</leadin>
+<leadin>Query: "what data do you need?"</leadin>
 > Query: "what data do you need?"<br />
 --------------------------------<br />
 ELIGIBLE DATA...<br />
@@ -83,12 +83,12 @@ BIOLOGICAL SAMPLES<br />
 HUMAN ARTIFACTS<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1g' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Query: "why do you need data?"</leadin>
+<leadin>Query: "why do you need data?"</leadin>
 > Query: "why do you need data?"<br />
 --------------------------------<br />
 INSUFFICIENT POWER FOR FULL SYSTEM REBOOT<br />
@@ -96,12 +96,12 @@ REQUIRE DATA TO REROUTE POWER<br />
 INSUFFICIENT DATA<br />
 MORE DATA REQUIRED<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1h' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Open communications with flagship</leadin>
+<leadin>Open communications with flagship</leadin>
 > Open communications with flagship<br />
 --------------------------------<br />
 COMMUNICATIONS OFFLINE<br />
@@ -110,24 +110,24 @@ INSUFFICIENT POWER FOR REBOOT<br />
 MORE DATA REQUIRED<br />
 --------------------------------
 
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1i' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Locate life forms on ship</leadin>
+<leadin>Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
 LOCATING LIFE FORMS...<br />
 {$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer1j' tags='computer_talk, flesh_act1, style_terminal'/>
-<leadin>> Query: "explain quarantine protocols"</leadin>
+<leadin>Query: "explain quarantine protocols"</leadin>
 > Query: "explain quarantine protocols"<br />
 --------------------------------<br />
 QUARANTINE PROTOCOLS IN EFFECT<br />
@@ -137,14 +137,14 @@ QUARANTINE WILL PERSIST UNTIL INFECTION TERMINATED<br />
 INSUFFICIENT POWER TO IDENTIFY INFECTION<br />
 REBOOT REQUIRED<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <!-- ACT II -->
 
 <scene>
 <meta id='computer2a' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Locate life forms on ship</leadin>
+<leadin>Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
 LOCATING LIFE FORMS...<br />
@@ -154,12 +154,12 @@ UNIDENTIFIED located at REACTOR SUBSYSTEM 2<br />
 UNIDENTIFIED located at LOWER MAINTENANCE VENTS<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2b' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Scan ship for biological contaminants</leadin>
+<leadin>Scan ship for biological contaminants</leadin>
 > Scan ship for biological contaminants<br />
 --------------------------------<br />
 SCANNING FOR BIOLOGICAL CONTAMINANTS...<br />
@@ -167,12 +167,12 @@ SCAN FAILED<br />
 INSUFFICIENT POWER<br />
 QUARANTINE PROTOCAL STILL IN EFFECT<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2c' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Locate source of infection</leadin>
+<leadin>Locate source of infection</leadin>
 > Locate source of infection<br />
 --------------------------------<br />
 SCANNING FOR SOURCE OF INFECTION...
@@ -180,24 +180,24 @@ SCAN FAILED<br />
 INSUFFICIENT POWER<br />
 QUARANTINE PROTOCAL STILL IN EFFECT<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2d' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Query: "who accessed you prior to me?"</leadin>
+<leadin>Query: "who accessed you prior to me?"</leadin>
 > Query: "who accessed you prior to me?"<br />
 --------------------------------<br />
 ACCESSING TERMINAL LOGS...<br />
 DELETING TERMINAL LOGS...<br />
 ERROR: TERMINAL LOGS NOT FOUND<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2e' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Query: "what happened to the ship?"</leadin>
+<leadin>Query: "what happened to the ship?"</leadin>
 > Query: "what happened to the ship?"<br />
 --------------------------------<br />
 SHIP INTEGRITY INTACT<br />
@@ -205,22 +205,22 @@ EMERGENCY SYSTEMS ONLINE<br />
 INFECTION DETECTED<br />
 QUARANTINE PROTOCALS IN EFFECT<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2f' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Query: "where is the crew?"</leadin>
+<leadin>Query: "where is the crew?"</leadin>
 > Query: "where is the crew?"<br />
 --------------------------------<br />
 YOU ARE THE CREW<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2g' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Reroute power to emergency escape systems</leadin>
+<leadin>Reroute power to emergency escape systems</leadin>
 > Reroute power to emergency escape systems<br />
 --------------------------------<br />
 ATTEMPTING TO REROUTE POWER...<br />
@@ -228,35 +228,35 @@ REROUTE FAILED<br />
 REBOOT REQUIRED<br />
 INSUFFICIENT POWER FOR REBOOT<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer2h' tags='computer_talk, flesh_act2, style_terminal'/>
-<leadin>> Terminate infection</leadin>
+<leadin>Terminate infection</leadin>
 > Terminate infection<br />
 --------------------------------<br />
 INSUFFICIENT POWER TO IDENTIFY INFECTION<br />
 QUARANTINE WILL PERSIST UNTIL INFECTION TERMINATED<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 
 <!-- ACT 3 -->
 <scene>
 <meta id='computer3a' tags='computer_talk, flesh_act3, style_terminal'/>
-<leadin>> Query: "where is the crew?"</leadin>
+<leadin>Query: "where is the crew?"</leadin>
 > Query: "where is the crew?"<br />
 --------------------------------<br />
 I AM THE CREW<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer3b' tags='computer_talk, flesh_act3, style_terminal'/>
-<leadin>> Locate life forms on ship</leadin>
+<leadin>Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
 LOCATING LIFE FORMS...<br />
@@ -275,30 +275,30 @@ UNIDENTIFIED locat-<br />
 ...OUT OF MEMORY<br />
 INSUFFICIENT POWER<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <!-- ACT 4 -->
 <scene>
 <meta id='computer4a' tags='computer_talk, flesh_act4, style_terminal'/>
-<leadin>> Scan for source of infection</leadin>
+<leadin>Scan for source of infection</leadin>
 > Scan for source of infection<br />
 --------------------------------<br />
 LOCATING SOURCE OF INFECTION...<br />
 {$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 END OF LIST<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 <scene>
 <meta id='computer4b' tags='computer_talk, flesh_act4, style_terminal'/>
-<leadin>> Locate life forms on ship</leadin>
+<leadin>Locate life forms on ship</leadin>
 > Locate life forms on ship<br />
 --------------------------------<br />
 WE ARE EVERYWHERE<br />
 --------------------------------
-<option nextScene="computer_room">> esc</option>
+<option nextScene="computer_room">esc</option>
 </scene>
 
 
