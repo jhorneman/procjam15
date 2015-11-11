@@ -4,7 +4,7 @@ import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text
-from game_state import prepare_game_state, generate_player_character
+from game_state import prepare_game_state, generate_player_character, restart
 from content import evaluate_content_blocks
 
 
@@ -22,6 +22,7 @@ def get_current_scene_data():
     action = request.args.get('action', None)
 
     if action is None:
+        restart()
         next_scene_id = first_scene_id
 
     # TODO: Replace with constant.
