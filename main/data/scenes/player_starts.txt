@@ -4,7 +4,7 @@
 You wake up with a start. How long have you been asleep? What has happened?
 
 Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Everything seems fine. No blinking lights. No sirens.
-<injectBlock tags="pc_start, flesh_act1" /><br/>
+<injectBlock tags="pc_start, flesh_act1" norepeat="1" /><br/>
 
 A message awaits you. "Private {$PC_last}, {$PC_first}. Please report to the computer room."
 
@@ -19,6 +19,7 @@ The computer room? Better go see what that is about.
 You wake up with a start. How long have you been asleep? What has happened?
 
 Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Of course you're on the ship. Why aren't any of the lights blinking?
+<injectBlock tags="pc_start, flesh_act1" norepeat="1" /><br/>
 
 A message awaits you. "Engineer {$PC_last}, {$PC_first}. Please report to the computer room."
 
