@@ -51,6 +51,8 @@ you can inject a block that has the desired tags.
 
 Everything else inside the injectBlock element will be ignored.
 
+Add norepeat="1" (or any value) to stop the injection from looping. Internally, the system picks an item from a list of options. When it has used all items, it can either go back to the beginning (the default behavior), or not.
+
 See below for more information about tags.
 
 ## Lead-ins
@@ -91,6 +93,8 @@ Injected options allow you to tell the system to inject an option matching a giv
 will search for a scene with a 'spooky' tag, and generate a goto option with the lead-in text from that scene (see above under lead-ins) that takes the player to that scene.
 
 See below for more information about tags.
+
+Add norepeat="1" (or any value) to stop the injection from looping. Internally, the system picks an item from a list of options. When it has used all items, it can either go back to the beginning (the default behavior), or not.
 
 # Conditions
 
