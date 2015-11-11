@@ -1,12 +1,24 @@
+<!-- Used to init variables when the player respawns. -->
+<block tags="pc_init">
+<!-- reset all values other than main story act & total data -->
+<action act="set $has_mcguffin 0" />
+<action act="set $is_fed 0" />
+<action act="gen_data" />
+<action act="set $pc_aware 0" /> <!-- how much pc knows? -->
+<action act="set $pc_gimmick none" />
+</block>
+
 <block tags="pc_start, flesh_act1">
-Huh.
+You hear a clicking sound. Or more like whirring?
+<action act="set $pc_gimmick pc_clicking" />
 </block>
-<block tags="pc_start, flesh_act2">
-Wha?
+
+<block tags="muse, flesh_act1">
+You wonder why the computer doesn't know what happened to the ship.
 </block>
-<block tags="pc_start, flesh_act3">
-Aargh!
+<block tags="muse, flesh_act1">
+You wonder where everybody went.
 </block>
-<block tags="pc_start, flesh_act4">
-*SLORF*
+<block tags="muse, flesh_act1">
+You wonder where everybody went.
 </block>

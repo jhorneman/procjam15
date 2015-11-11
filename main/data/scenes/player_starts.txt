@@ -1,19 +1,60 @@
 <scene>
-<meta id="pc_start_a" tags="pc_start, flesh_act1, flesh_act2, flesh_act3, flesh_act4" />
+<meta id="pc_start_a" tags="pc_start, flesh_act1" />
 <leadin>Wake up...</leadin>
-(custom)<br />
-You wake up with a start. How long have you been asleep? What has happened? <br />
-Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship.<br />
-Everything seems fine. No blinking lights. No sirens. <br />
-A message awaits you. <br />
-"Private {$PC_last}, {$PC_first}. Please report to the computer room." <br />
+You wake up with a start. How long have you been asleep? What has happened?
 
-The computer room? Better go see what that is about.<br />
+Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Everything seems fine. No blinking lights. No sirens.
+<injectBlock tags="pc_start, flesh_act1" /><br/>
 
-<!-- reset all values other than main story act & total data -->
-<action act="set $has_mcguffin 0" />
-<action act="set $is_fed 0" />
-<action act="gen_data" />
-<action act="set $pc_aware 0" /> <!-- how much pc knows? -->
+A message awaits you. "Private {$PC_last}, {$PC_first}. Please report to the computer room."
+
+The computer room? Better go see what that is about.
+<injectBlock tags="pc_init" />
+<option nextScene="computer_room">Go to the computer room.</option>
+</scene>
+
+<scene>
+<meta id="pc_start_b" tags="pc_start, flesh_act1" />
+<leadin>Wake up...</leadin>
+You wake up with a start. How long have you been asleep? What has happened?
+
+Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Of course you're on the ship. Why aren't any of the lights blinking?
+
+A message awaits you. "Engineer {$PC_last}, {$PC_first}. Please report to the computer room."
+
+The computer room? Better go see what that is about.
+<injectBlock tags="pc_init" />
+<option nextScene="computer_room">Go to the computer room.</option>
+</scene>
+
+<scene>
+<meta id="pc_start_c" tags="pc_start, flesh_act2" />
+<leadin>Wake up...</leadin>
+You slowly come back to consciousness. You're lying on a cot. Why aren't you in your bed? 
+
+Why is your shirt covered in blood?
+
+A message awaits you. "{$PC_first} {$PC_last}, please report to the computer room."
+
+The computer room.
+<injectBlock tags="pc_init" />
+<option nextScene="computer_room">Go there.</option>
+</scene>
+
+<scene>
+<meta id="pc_start_d" tags="pc_start, flesh_act3" />
+<leadin>Wake up...</leadin>
+How long have you been curled in this corner? What happened to your hands?
+
+Out of a hole in the wall, a voice sings: "{$PC_first}! Please come to the computer room!" Like a herald, inviting you to your judgment.
+<injectBlock tags="pc_init" />
+<option nextScene="computer_room">Meet your fate.</option>
+</scene>
+
+<scene>
+<meta id="pc_start_e" tags="pc_start, flesh_act4" />
+<leadin>Wake up...</leadin>
+Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
+<injectBlock tags="pc_init" />
 <option nextScene="computer_room">Go to the computer room.</option>
 </scene>
