@@ -34,39 +34,33 @@ def traverse_directory(_dir, _extensions=None):
             if filename.startswith("."):
                 continue
 
-            filename_without_ext, ext = os.path.splitext(filename)
-
             # Skip files with the wrong extension.
-            if ext not in _extensions:
+            if os.path.splitext(filename)[1] not in _extensions:
                 continue
 
-            full_path = os.path.join(path, filename)
-
-            # Remember this file's path for live reloading.
-            data_files_for_live_reloading.append(full_path)
-
-            # Open the file.
-            with open(full_path, "r") as f:
-                yield f, full_path, filename_without_ext
+            yield os.path.join(path, filename)
 
 
-def read_text_blocks_from_text_file(_file, _file_name):
-    # Read the entire text file.
-    data = _file.read()
+def read_text_blocks_from_text_file(_full_path):
+    with open(_full_path, "r") as f:
+        # Read the entire text file.
+        data = f.read()
 
-    # Wrap it in a <data> element.
-    data = "<data>" + data + "</data>"
+        # Wrap it in a <data> element.
+        data = "<data>" + data + "</data>"
 
-    root = ET.fromstring(data)
+        try:
+            root = ET.fromstring(data)
+        except ET.ParseError as e:
+            logger.error("Couldn't parse the XML inside {0}. Error message: {1}".format(_full_path, str(e)))
+            return
 
-    # Iterate over all block elements in the text file.
-    block_els = root.findall("block")
-
-    if len(block_els) == 0:
-        logger.error("No block elements found.")
-        return
-
-    register_text_blocks([parse_xml_element(block_el) for block_el in block_els])
+        # Iterate over all block elements in the text file.
+        block_els = root.findall("block")
+        if len(block_els) == 0:
+            logger.error("No block elements found.")
+            return
+        register_text_blocks([parse_xml_element(block_el) for block_el in block_els])
 
 
 def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
@@ -79,9 +73,6 @@ def get_string_from_excel_cell(_xl_sheet, _row_index, _column_index):
 
 
 def extract_tagged_texts_from_excel_file(_excel_full_path):
-    data_files_for_live_reloading.append(_excel_full_path)
-    logger.debug("Reading file {0}...".format(_excel_full_path))
-
     # Open the workbook.
     xl_workbook = xlrd.open_workbook(_excel_full_path)
 
@@ -134,9 +125,10 @@ def extract_tagged_texts_from_excel_file(_excel_full_path):
 
 def load_data():
     scenes_dir = os.path.join(SCRIPT_DIR, "data", "scenes")
-    for f, full_path, scene_name in traverse_directory(scenes_dir):
+    for full_path in traverse_directory(scenes_dir):
+        data_files_for_live_reloading.append(full_path)
         logger.debug("Reading file {0}...".format(full_path))
-        read_scenes_from_text_file(f, scene_name)
+        read_scenes_from_text_file(full_path)
 
     if get_nr_scenes() == 0:
         logger.error("No valid scenes were found in {0}.".format(scenes_dir))
@@ -144,11 +136,15 @@ def load_data():
 
     texts_dir = os.path.join(SCRIPT_DIR, "data", "texts")
 
-    for f, full_path, scene_name in traverse_directory(texts_dir):
+    for full_path in traverse_directory(texts_dir):
+        data_files_for_live_reloading.append(full_path)
         logger.debug("Reading file {0}...".format(full_path))
-        read_text_blocks_from_text_file(f, scene_name)
+        read_text_blocks_from_text_file(full_path)
 
-    register_data_names([d for d in extract_tagged_texts_from_excel_file(os.path.join(texts_dir, "data_names.xls"))])
+    full_path = os.path.join(texts_dir, "data_names.xls")
+    data_files_for_live_reloading.append(full_path)
+    logger.debug("Reading file {0}...".format(full_path))
+    register_data_names([d for d in extract_tagged_texts_from_excel_file(full_path)])
 
     return True
 

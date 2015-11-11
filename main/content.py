@@ -75,17 +75,18 @@ class InjectBlock(Content):
     def __init__(self, _el):
         super(InjectBlock, self).__init__()
         self.check_for_condition(_el)
+        self.repeat = _el.get("norepeat", None) is None
         self.tags = read_tags(_el, "injected block")
         self.check_element_is_empty(_el, "injected block")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
-            injected_block = get_text_block_with_tag(tags)
+            injected_block = get_text_block_with_tag(tags, self.repeat)
             if injected_block:
                 return evaluate_content_blocks([injected_block], _state)
             else:
-                logger.warning("Couldn't find a valid block to inject.")
+                print "ARGH"
         else:
             return None
 
@@ -158,19 +159,18 @@ class InjectOption(Content):
     def __init__(self, _el):
         super(InjectOption, self).__init__()
         self.check_for_condition(_el)
+        self.repeat = _el.get("norepeat", None) is None
         self.tags = read_tags(_el, "injected option")
         self.check_element_is_empty(_el, "injected option")
 
     def evaluate(self, _state):
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
-            injected_option = get_tagged_option_to_inject(tags, _state)
+            injected_option = get_tagged_option_to_inject(tags, _state, self.repeat)
             if injected_option:
                 return {
                     "options": injected_option
                 }
-            else:
-                logger.warning("Couldn't find a valid scene to inject.")
         return None
 
 
@@ -288,10 +288,10 @@ def read_tags(_el, _el_name):
     return tags
 
 
-def get_tagged_option_to_inject(_tags, _state):
+def get_tagged_option_to_inject(_tags, _state, _repeat=True):
     # TODO: Ponder circular import problem
     from scene import get_scene_description_with_tag
-    injected_scene_desc = get_scene_description_with_tag(_tags)
+    injected_scene_desc = get_scene_description_with_tag(_tags, _repeat)
     if injected_scene_desc:
         evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state)
         if evaluated_injected_scene["leadin"] is None:

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os.path
 import re
 import logging
 import xml.etree.ElementTree as ET
@@ -20,12 +21,16 @@ def get_nr_scenes():
     return len(scenes)
 
 
+def reset_scene_collection():
+    tagged_scene_ids.reset()
+
+
 def get_scene_description(_scene_id):
     return scenes.get(_scene_id, None)
 
 
-def get_scene_description_with_tag(_desired_tags):
-    scene_id = tagged_scene_ids.get_item_by_tags(_desired_tags)
+def get_scene_description_with_tag(_desired_tags, _repeat=True):
+    scene_id = tagged_scene_ids.get_item_by_tags(_desired_tags, _repeat)
     return scenes.get(scene_id) if scene_id else None
 
 
@@ -39,31 +44,35 @@ class Scene(object):
         self.injected_options = []
 
 
-def read_scenes_from_text_file(_file, _file_name):
-    # Read the entire text file.
-    data = _file.read()
+def read_scenes_from_text_file(_full_path):
+    with open(_full_path, "r") as f:
+        # Read the entire text file.
+        data = f.read()
 
-    # Does this file start with a <scene> element?
-    if scene_tag_re.match(data):
-        # Yes -> Then wrap it in a <data> element.
-        data = "<data>" + data + "</data>"
-    else:
-        # No -> Then wrap it in a <data> and a <scene> element.
-        data = "<data><scene>" + data + "</scene></data>"
+        # Does this file start with a <scene> element?
+        if scene_tag_re.match(data):
+            # Yes -> Then wrap it in a <data> element.
+            data = "<data>" + data + "</data>"
+        else:
+            # No -> Then wrap it in a <data> and a <scene> element.
+            data = "<data><scene>" + data + "</scene></data>"
 
-    root = ET.fromstring(data)
+        try:
+            root = ET.fromstring(data)
+        except ET.ParseError as e:
+            logger.error("Couldn't parse the XML inside {0}. Error message: {1}".format(_full_path, str(e)))
+            return
 
-    # Iterate over all scene elements in the text file.
-    scene_els = root.findall("scene")
+        # Iterate over all scene elements in the text file.
+        scene_els = root.findall("scene")
+        if len(scene_els) == 0:
+            logger.error("No scene elements found.")
+            return
 
-    if len(scene_els) == 0:
-        logger.error("No scene elements found.")
-        return
+        scene_name = os.path.splitext(os.path.basename(_full_path))[0] if len(scene_els) == 1 else None
 
-    scene_name = _file_name if len(scene_els) == 1 else None
-
-    for scene_index, scene_el in enumerate(scene_els):
-        parse_scene_from_xml(scene_el, scene_index, scene_name)
+        for scene_index, scene_el in enumerate(scene_els):
+            parse_scene_from_xml(scene_el, scene_index, scene_name)
 
 
 def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):

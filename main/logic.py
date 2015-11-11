@@ -36,7 +36,7 @@ def get_current_scene_data():
         session.update(generate_player_character())
 
         wake_up_tags = ["pc_start", session["flesh_act"]]
-        wake_up_scene = get_scene_description_with_tag(wake_up_tags, session)
+        wake_up_scene = get_scene_description_with_tag(wake_up_tags)
         if not wake_up_scene:
             logger.error("Couldn't find a valid respawn scene.")
             return None

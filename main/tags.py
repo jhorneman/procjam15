@@ -49,6 +49,9 @@ class TaggedCollection(object):
         self.tagged_items = []
         self.cache = {}
 
+    def reset(self):
+        self.cache = {}
+
     def add_item(self, _tags, _item):
         if len(_tags) > 0:
             self.tagged_items.append(TaggedItem(_tags, _item))
@@ -76,15 +79,16 @@ class TaggedCollection(object):
 
         indices_of_eligible_items = self.cache[cache_key].item_indices
         index_in_list_of_eligible_items = self.cache[cache_key].index
-        item_index = indices_of_eligible_items[index_in_list_of_eligible_items]
 
-        index_in_list_of_eligible_items += 1
+        # Check, then increase, or we'll never pick anything from collections with only one element.
         if index_in_list_of_eligible_items >= len(indices_of_eligible_items):
             if _repeat:
                 index_in_list_of_eligible_items = 0
             else:
                 return None
 
+        item_index = indices_of_eligible_items[index_in_list_of_eligible_items]
+        index_in_list_of_eligible_items += 1
         self.cache[cache_key].index = index_in_list_of_eligible_items
 
         return self.tagged_items[item_index].item
