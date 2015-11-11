@@ -39,7 +39,7 @@ def get_rhs_parameter_value(_state, _parameter_name):
             return 0
 
     if _parameter_name.lower() == "random":
-        return random.randint(0, 100)
+        return random.randint(1, 100)
 
     try:
         value = int(_parameter_name)

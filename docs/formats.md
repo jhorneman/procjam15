@@ -139,7 +139,7 @@ Parameters on the _left_ of the operator - this includes no operator or the not 
 Parameters on the _right_ of the operator are evaluated as follows:
 
 * If the parameter starts with a $, we try to find a variable with the same name in the persistent game state.
-* If the parameter is 'random', and we generate a random number between 0 and 100.
+* If the parameter is 'random', and we generate a random number between 1 and 100.
 * If the parameter is a number, it's treated as such.
 * Finally we treat it as a string.
 
