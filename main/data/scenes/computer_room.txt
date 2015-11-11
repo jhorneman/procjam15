@@ -42,7 +42,7 @@ The console reads: "INSUFFICIENT DATA"<br />
 <action act="set $is_fed 1" />
 <action act="set $has_mcguffin 0" />
 <action act="inc $data_count" />
-
+<action act="gen_data" />
 <action act="set $flesh_act flesh_act2" cond="$data_count eq 3" />
 <action act="set $flesh_act flesh_act3" cond="$data_count eq 6" />
 <action act="set $flesh_act flesh_act4" cond="$data_count eq 9" />
