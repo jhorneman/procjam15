@@ -129,10 +129,8 @@ The access terminal for the mainframe writhes in the center of the room. It appe
 <if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth.</if>
 <br />
 </if>
-<br />
 <if cond="$has_mcguffin">You have {$data}.</if>
 <if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
-<br />
 <option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship.</option>
 <option nextScene ="computer_talk" cond="$is_fed">Communicate with the mainframe.</option>
