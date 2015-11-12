@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import random
 import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
@@ -13,11 +14,26 @@ logger = logging.getLogger(__name__)
 first_scene_id = 'start'
 
 
+# From http://stackoverflow.com/a/28186447/1057708
+def generate_nonce(length=8):
+    return ''.join([str(random.randint(0, 9)) for i in range(length)])
+
+
 def get_current_scene_data():
     """Takes the request and the session and returns a dictionary with all the variables needed
        to render the current scene."""
 
     prepare_game_state()
+
+    session_nonce = session.get("__nonce", generate_nonce())
+    url_nonce = request.args.get('nonce', session_nonce)
+
+    # if url_nonce != session_nonce:
+    #     return {
+    #         "text": "Reloading the page, naughty naughty!",
+    #         "options": [],
+    #         "body_classes": "",
+    #     }
 
     action = request.args.get('action', None)
 
@@ -72,6 +88,12 @@ def get_current_scene_data():
         ],
         "body_classes": " ".join(tags_for_body_classes)
     }
+
+    # Add a nonce so we can deal with page reloads.
+    new_nonce = generate_nonce()
+    for option in scene_data["options"]:
+        option["params"]["nonce"] = new_nonce
+    session["__nonce"] = new_nonce
 
     # Set this for next time we evaluate.
     session["previous_scene"] = current_scene_id
