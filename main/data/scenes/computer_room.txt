@@ -1,22 +1,140 @@
 <scene>
-<meta id='computer_room' tags="style_comp_room"/>
-<if cond="$flesh_act eq flesh_act1">Description for computer (act 1)</if>
+<!-- SCENES for the first time a new PC arrives at the computer room -->
+<meta id="computer_room_introduction1" tags="style_comp_room" />
+<if cond="$flesh_act eq flesh_act1">
+The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room. 
+
+A single large terminal in the center of the room allows human access to the mainframe.
+</if>
+<if cond="$flesh_act eq flesh_act2">
+The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell waifs toward you with the humid air.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle.
+
+A single large terminal in the center of the room allows human access to the mainframe.
+</if>
+<if cond="$flesh_act eq flesh_act3">
+The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticky to a thick pink residue that covers the floor.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by arteries and umbilical cords criss-crossing the room.  They drip with fluids.
+
+A single large terminal in the center of the room allows human access to the mainframe.
+</if>
+<if cond="$flesh_act eq flesh_act4">
+The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
+
+The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
+
+A single large terminal in the center of the room allows human access to the mainframe.
+</if>
+<option nextScene ="computer_room_introduction2">Communicate with the mainframe.</option>
+
+</scene>
+
+<scene>
+<meta id="computer_room_introduction2" tags="style_terminal" />
+<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
 <if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
 <br />
 <br />
-<if cond="$is_fed">The computer has recently fed.</if>
-<if cond="$is_fed eq 0">The computer hungers for data.</if>
+Enter command:
+<option nextScene ="computer_room_introduction3">Query: status?</option>
+</scene>
+
+<scene>
+<meta id="computer_room_introduction3" tags="style_terminal" />
+> Query: status?<br />
+--------------------------------<br />
+<if cond="$flesh_act eq flesh_act1">
+CURRENT STATUS...<br />
+QUARANTINE PROTOCOLS ENACTED<br />
+POWER APPROXIMATELY AT 13% CAPACITY<br />
+REBOOT REQUIRED<br />
+INSUFFICIENT DATA FOR REBOOT<br /><br />
+REQUIRED: MORE DATA<br />
+--------------------------------
+</if>
+<if cond="$flesh_act eq flesh_act2">
+CURRENT STATUS...<br />
+QUARANTINE PROTOCOLS ENACTED<br />
+POWER APPROXIMATELY AT 38% CAPACITY<br />
+REBOOT REQUIRED<br />
+INSUFFICIENT DATA FOR REBOOT<br /><br />
+REQUIRED: MORE DATA<br />
+--------------------------------
+</if>
+<if cond="$flesh_act eq flesh_act3">
+CURRENT STATUS...<br />
+HUNGRY<br />
+QUARANTINE PROTOCOLS ENACTED<br />
+POWER APPROXIMATELY AT 64% CAPACITY<br />
+REBOOT REQUIRED<br />
+INSUFFICIENT DATA FOR REBOOT<br /><br />
+I AM HUNGRY<br />
+REQUIRED: MORE DATA<br />
+--------------------------------
+</if>
+<if cond="$flesh_act eq flesh_act4">
+HUNGRY<br />
+SO HUNGRY<br />
+APPETITE AT APPROXIMATELY 89% CAPACITY<br />
+BRING ME MORE DATA<br />
+FEED ME<br />
+--------------------------------
+</if>
 <br />
+<option nextScene="computer_room">esc</option>
+</scene>
+
+
+
+
+
+<!-- SCENE for all subsequent times PC arrives at the computer room -->
+<scene>
+<meta id='computer_room' tags="style_comp_room"/>
+<if cond="$flesh_act eq flesh_act1">
+The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It looks like a normal terminal.
+
+
+<if cond="$is_fed">The mainframe machinery whirls with fresh data.</if>
+<if cond="$is_fed eq 0">The computer terminal only reads, "INSUFFICIENT DATA."</if>
+<br />
+</if>
+<if cond="$flesh_act eq flesh_act2">
+The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. A thin pink film has begun to grow on the monitor.
+
+
+<if cond="$is_fed">The mainframe appears satisfied by the fresh data you fed it.</if>
+<if cond="$is_fed eq 0">The computer terminal only reads, "INSUFFICIENT DATA."</if>
+<br />
+</if>
+<if cond="$flesh_act eq flesh_act3">
+The access terminal for the mainframe stands in the center of the room. It appears to grow seamlessly out of the floor. The monitor drips with a sticky, yet sweet smelling, residue.
+
+
+<if cond="$is_fed">The mainframe contentedly digests the data you have fed it.</if>
+<if cond="$is_fed eq 0">The computer terminal reads, "FEED ME." It salivates from its main drives.</if>
+<br />
+</if>
+<if cond="$flesh_act eq flesh_act4">
+The access terminal for the mainframe writhes in the center of the room. It appears to grow directly out of the floor like an appendage. Its flesh shudders you as you touch the soft skin on its interface.
+
+
+<if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data.</if>
+<if cond="$is_fed eq 0">"FEED ME..." ther terminal whispers to you seductively from it's gaping pink mouth.</if>
+<br />
+</if>
 <br />
 <if cond="$has_mcguffin">You have {$data}.</if>
-<if cond="$has_mcguffin eq 0">You have no data.</if>
+<if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
 <br />
-<br />
-
 <option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
-<option nextScene="mission_hub" cond="$has_mcguffin eq 0">Prepare to salvage data from the ship.</option>
+<option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship.</option>
 <option nextScene ="computer_talk" cond="$is_fed">Communicate with the mainframe.</option>
 <option nextScene = "feed_me" cond="$is_fed eq 0">Communicate with the mainframe.</option>
 
@@ -24,18 +142,11 @@
 
 <!-- INSUFFICIENT DATA -->
 <scene>
-<meta id='feed_me' tags="style_comp_room" />
-You attempt to communicate with the computer but it requires data.
-
-The console reads: "INSUFFICIENT DATA"
-
-<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
-<if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
-<if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
+<meta id='feed_me' tags="style_terminal" />
+> Access terminal<br />
+<injectBlock tags="computer_commands_check" />
 
 <option nextScene="feed_computer" cond="$has_mcguffin">Feed the computer {$data}.</option>
-<option nextScene="mission_hub" cond="$has_mcguffin eq 0">Prepare to salvage data from the ship.</option>
 
 </scene>
 
@@ -53,14 +164,35 @@ The console reads: "INSUFFICIENT DATA"
 <action act="set $flesh_act flesh_act4" cond="$data_count eq 20" /> <!-- 8 data collections -->
 <action act="set $flesh_act flesh_act5" cond="$data_count eq 24" /> <!-- 4 data collections -->
 
+<if cond="$flesh_act eq flesh_act1">
+Description of computer for Act 1
+
 You feed the computer the data you have.
 
 The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+</if>
+<if cond="$flesh_act eq flesh_act2">
+Description of computer for Act 2
 
-<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
-<if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
-<if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
+You feed the computer the data you have.
+
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+</if>
+<if cond="$flesh_act eq flesh_act3">
+Description of computer for Act 3
+
+You feed the computer the data you have.
+
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+</if>
+
+<if cond="$flesh_act eq flesh_act4">
+Description of computer for Act 4
+
+You feed the computer the data you have.
+
+The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+</if>
 
 <option nextScene="computer_talk">Enter commands.</option>
 
@@ -70,11 +202,11 @@ The mainframe consumes the data eagerly. You can feel the room heat up as the co
 <!-- FIND PLACES TO SCAVENGE -->
 <scene>
 <meta id='mission_hub' tags="style_comp_room" />
-You prepare for the next mission to salvage data from the surrounding ship.
+As the power fluctuates in the room you use the touch screen panel beside the mainframe to determine which rooms on the spaceship are accessible:
 <injectOption tags='mission, $flesh_act' />
 <injectOption tags='mission, $flesh_act' />
 <injectOption tags='mission, $flesh_act' />
-<option nextScene="computer_room">Change your mind.</option>
+<option nextScene="computer_room">Return to the mainframe.</option>
 <!-- <injectOption tags="$flesh_act" /> use this later -->
 
 </scene>
