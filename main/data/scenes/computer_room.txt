@@ -39,8 +39,8 @@ A single large terminal in the center of the room allows human access to the mai
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
 <if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
-<br />
-<br />
+
+<br/>
 Enter command:
 <option nextScene ="computer_room_introduction3">Query: status?</option>
 </scene>
