@@ -22,7 +22,7 @@ You're in the main utility airlocks.
 
 You step into the wide, empty metal cavity. Thick metal doors separate you from the vacuum of space.  Emergency lights blink dimly with backup power.
 
-The airlock control room is filled with human detritus and mechanical instruments.
+The airlock control room is filled with human detritus and mechanical instruments. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It smells fresh.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -69,6 +69,8 @@ The ventilation shafts criss-cross the entire ship like a respiratory system. Pi
 You're in the upper maintenance shaft.
 
 The shafts here are wide, but you stoop to prevent your head from grazing the low ceiling. Several panels lie on the floor, revealing tangled knots of colorful wires, a clump of neurons sending instructions between the various ship systems.
+
+<if cond="$wire_death_scene == $current_scene">A charred body lies in the corner.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -129,7 +131,7 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 <leadin>Search the elevators.</leadin>
 You're at the elevators.
 
-You apply the manual override and pry apart the elevator doors. The cabin has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground.
+You apply the manual override and pry apart the elevator doors. The cabin has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It is still smoldering.<br/><br/></if>
 
 The elevator shaft continues down into darkness.
 
@@ -146,7 +148,7 @@ The elevator shaft continues down into darkness.
 <leadin>Search the sector 1 server room.</leadin>
 You're in the sector 1 server room.
 
-Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload.
+Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. <if cond="$wire_death_scene == $current_scene">A charred body lies in a corner. It looks like this person recently got electrocuted.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -212,7 +214,8 @@ Wire shelves stand empty and boxes overturned, their contents spilled across the
 <leadin>Search the substation.</leadin>
 You're in the sector 2 substation.
 
-You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the control room. Schematics and blueprints pinned to the walls show the local electrical grid. Mechanical tools, measurement instruments, and family photos lie on control panels beside dimmed monitors.&lt;br&gt;
+You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the control room. Schematics and blueprints pinned to the walls show the local electrical grid. Mechanical tools, measurement instruments, and family photos lie on control panels beside dimmed monitors. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member It is still smoldering.<br/><br/></if>
+
 Fans and machines whirl as they attempt to route power from the main solar arrays to this sector of the ship.
 
 <injectBlock tags="mdesc, $flesh_act" />
@@ -247,7 +250,8 @@ You peer into the kitchens to find them equally abandoned, and the smell of deca
 <leadin>Search the dormitory.</leadin>
 You're in a crew dormitory.
 
-You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements. xx&lt;br&gt;
+You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements. xx
+
 As the power surges, music suddenly interrupts the stillness... only to fade once again with the lights.
 
 <injectBlock tags="mdesc, $flesh_act" />

@@ -92,8 +92,10 @@ As you move in close to observe one of the growths, it vibrates, then is suddenl
 <scene>
 <meta id='tear wires' tags='option, electrical, style_death'/>
 <leadin>Cut electrical wiring.</leadin>
-You cut into the electrical wiring, but it has active power currents running through it. You electrocute yourself. You die. xx
-<option action="respawn">...</option>
+You pry off the covering and yank out the heavy electrical cables. You laboriously cut through the thick protective shielding. Finally, you reach the live core. Sparks fly, and the last thing you sense is the smell of burning flesh.
+
+<action act="set $wire_death_scene $previous_scene" />
+<option action="respawn">Your charred body falls to the ground.</option>
 </scene>
 
 <!-- MECHANICAL -->
