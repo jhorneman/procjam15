@@ -79,11 +79,12 @@ You engage the locking mechanism. The power then cuts out. It does not return. Y
 <leadin>Investigate mysterious fungal mass.</leadin>
 The "body" of the fungal mass looks soft and powdery, with little hairs. You're not on expert but it seems a strange thing to find in a place like this.
 
-Here and there, bulbous growths have erupted from the mass, stretching outwards eagerly on thin stalks. The bulbs have the strangest patterns you have ever seen in nature. Fractal mazesm alternating between the artificial and the natural.
+Here and there, bulbous growths have erupted from the mass, stretching outwards eagerly on thin stalks. The bulbs have the strangest patterns you have ever seen in nature. Fractal mazes, alternating between the artificial and the natural.
 
 As you move in close to observe one of the growths, it vibrates, then is suddenly gone in a puff of dark grey spores. You pull away but you cannot avoid inhaling some. You immediately feel an extreme allergic reaction setting in and fall back on the floor. Your airways close, asthma makes breathing harder and harder. You cough, ejecting pus, but your air intake slows inexorably until you can no longer breathe in or out.
 
-<option action="respawn">You lose consciousness before the fungus absorbs you.</option>
+<action act="set $spore_death_scene $previous_scene" />
+<option action="respawn">You lose consciousness as the fungus absorbs you.</option>
 </scene>
 
 <!-- ELECTRICAL -->

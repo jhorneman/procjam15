@@ -197,6 +197,8 @@ You're in the commissary.
 
 Wire shelves stand empty and boxes overturned, their contents spilled across the floor of the ship. A refrigerator leaks blue coolant onto the white tiles. You step among the sticky sodas, processed meat products, digital magazines, souvenirs and other human artifacts as you peer through the commissary for something to salvage.
 
+<if cond="$spore_death_scene == $current_scene">On the floor, you see medium-sized, soft, organic mass, vaguely shaped like a human being. Bulbous growths, covered with intriguing patterns, stretch up on thin stalks.<br/><br/></if>
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, containers' />
@@ -229,6 +231,8 @@ You're in the mess hall.
 Trays filled with plates, cutlery, and half-eaten rotten food still lie on tables throughout the hall. Some of the benches have been thrown over and bags abandoned. The trash compactor makes alternating grinding and buzzing noises.
 
 You peer into the kitchens to find them equally abandoned, and the smell of decaying food overwhelming.
+
+<if cond="$spore_death_scene == $current_scene">On the floor, you see medium-sized, soft, organic mass, vaguely shaped like a human being. Bulbous growths, covered with intriguing patterns, stretch up on thin stalks.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
