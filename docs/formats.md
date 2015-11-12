@@ -138,12 +138,15 @@ The not operator is the only operator that only takes one parameter: all the oth
 
     parameter1 operator parameter2
 
-Parameters on the _left_ of the operator - this includes no operator or the not operator - _must_ refer to a variable from the persistent game state. The parameter has to start with a $. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable.
+Parameters on the _left_ of the operator - this includes no operator or the not operator - _must_ refer to a variable from the persistent game state (it can be a variable that doesn't exist yet).
+
+The parameter has to start with a $. So if the game state tracks a variable called 'has_mcguffin', a parameter '$has_mcguffin' will equal the value of that variable.
 
 Parameters on the _right_ of the operator are evaluated as follows:
 
 * If the parameter starts with a $, we try to find a variable with the same name in the persistent game state.
 * If the parameter is 'random', and we generate a random number between 1 and 100.
+* If the parameter is 'true' or 'false', we treat it as a boolean with the corresponding value.
 * If the parameter is a number, it's treated as such.
 * Finally we treat it as a string.
 
