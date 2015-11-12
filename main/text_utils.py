@@ -103,13 +103,24 @@ def break_text_into_paragraphs(_text):
     combined_text = ""
     accumulated_part = ""
     for part_index, part in enumerate(parts):
-        # Skip the current part if empty.
+        # The parts with odd indices are text inside style tags.
+        is_styled = part_index % 2 == 1
+
+        # Is the current part empty?
         if len(part) == 0:
+            # Yes -> Is it styled?
+            if not is_styled:
+                # No -> An empty, unstyled part means there are two consecutive styled parts.
+                # So we're going to flush the text we've accumulated (the previous styled part).
+                # This means each styled part will be in its own paragraph, which is usually what we want.
+                if len(accumulated_part) > 0:
+                    combined_text += generate_p_tags(accumulated_part)
+                    accumulated_part = ""
             continue
 
         # Is the current part styled?
         # (Is it a part with an odd index?)
-        if part_index % 2 == 1:
+        if is_styled:
             # Yes -> Does it contain blank lines?
             if blank_line in part:
                 # Yes -> Then we have flush the text we've accumulated so far, if any.
@@ -117,10 +128,10 @@ def break_text_into_paragraphs(_text):
                     combined_text += generate_p_tags(accumulated_part)
                     accumulated_part = ""
 
-                # Break it into paragraphs, wrap it in style tags, and add it to the combined text.
+                # Break it into paragraphs, wrap it in HTML style tags, and add it to the combined text.
                 combined_text += generate_style_tags(generate_p_tags(part))
             else:
-                # No -> Wrap it in style tags and add it to the text we're accumulating.
+                # No -> Wrap it in HTML style tags and add it to the text we're accumulating.
                 accumulated_part += generate_style_tags(part)
         else:
                 # No -> Add it to the text we're accumulating.
