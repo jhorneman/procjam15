@@ -23,11 +23,12 @@ def get_current_scene_data():
 
     if action is None:
         restart()
-        next_scene_id = first_scene_id
+        current_scene_id = first_scene_id
+        session["previous_scene"] = ""
 
     elif action == goto_action:
-        next_scene_id = request.args.get('next_scene', None)
-        if next_scene_id is None:
+        current_scene_id = request.args.get('next_scene', None)
+        if current_scene_id is None:
             logger.error("Couldn't find next_scene argument.")
             return None
 
@@ -40,16 +41,19 @@ def get_current_scene_data():
             logger.error("Couldn't find a valid respawn scene.")
             return None
 
-        next_scene_id = wake_up_scene.id
+        current_scene_id = wake_up_scene.id
+        session["previous_scene"] = ""
 
     else:
         logger.error("'{0}' is an unknown action type.".format(action))
         return None
 
-    scene_desc = get_scene_description(next_scene_id)
+    scene_desc = get_scene_description(current_scene_id)
     if not scene_desc:
-        logger.error("Couldn't find scene description for scene '{0}'.".format(next_scene_id))
+        logger.error("Couldn't find scene description for scene '{0}'.".format(current_scene_id))
         return None
+
+    session["current_scene"] = current_scene_id
 
     evaluated_scene = evaluate_content_blocks(scene_desc.blocks, session)
 
@@ -58,7 +62,7 @@ def get_current_scene_data():
 
     tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
 
-    return {
+    scene_data = {
         "text": break_text_into_paragraphs(substitute_text_variables(evaluated_scene["text"], session)),
         "options": [{
             "action": option["action"],
@@ -68,3 +72,8 @@ def get_current_scene_data():
         ],
         "body_classes": " ".join(tags_for_body_classes)
     }
+
+    # Set this for next time we evaluate.
+    session["previous_scene"] = current_scene_id
+
+    return scene_data
