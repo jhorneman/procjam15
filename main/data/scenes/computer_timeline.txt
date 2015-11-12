@@ -46,7 +46,7 @@ QUARANTINE PROTOCOLS ENACTED<br />
 > Locate crew<br />
 --------------------------------<br />
 LOCATING CREW...<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
 END OF LIST<br />
 --------------------------------
 </t>
@@ -60,7 +60,7 @@ END OF LIST<br />
 > Locate highest ranking officer<br />
 --------------------------------<br />
 LOCATING HIGHEST RANKING OFFICER...<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL.<br />
 END OF LIST<br />
 --------------------------------
 </t>
@@ -135,7 +135,7 @@ MORE DATA REQUIRED<br />
 > Locate life forms on ship<br />
 --------------------------------<br />
 LOCATING LIFE FORMS...<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 END OF LIST<br />
 --------------------------------
 </t>
@@ -170,7 +170,7 @@ REBOOT REQUIRED<br />
 LOCATING LIFE FORMS...<br />
 UNIDENTIFIED located at SECTOR 3 MESS HALL<br />
 UNIDENTIFIED located at REACTOR SUBSYSTEM 2<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 UNIDENTIFIED located at LOWER MAINTENANCE VENTS<br />
 END OF LIST<br />
 --------------------------------
@@ -329,7 +329,7 @@ I AM THE CREW<br />
 LOCATING LIFE FORMS...<br />
 UNIDENTIFIED located at SECTOR 3 MESS HALL<br />
 UNIDENTIFIED located at REACTOR SUBSYSTEM 2<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 UNIDENTIFIED located at LOWER MAINTENANCE VENTS<br />
 UNIDENTIFIED located at REACTOR CORE<br />
 UNIDENTIFIED located at MAIN STARBOARD OBSERVATORY<br />
@@ -407,7 +407,7 @@ ACCESSING HISTORY...
 REBOOT REQUIRED<br />
 INSUFFICIENT DATA<br />
 UNABLE TO COLLECT DATA<br />
-{$PClast}, {$PCfirst} REVIVED TO COLLECT DATA<br />
+{^^$PC_last}, {^^$PC_first} REVIVED TO COLLECT DATA<br />
 --------------------------------
 </t>
 
@@ -434,7 +434,7 @@ TRANSFORMATION?<br />
 > Scan for source of infection<br />
 --------------------------------<br />
 LOCATING SOURCE OF INFECTION...<br />
-{$PC_last}, {$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
+{^^$PC_last}, {^^$PC_first} located at CENTRAL MAINFRAME TERMINAL<br />
 END OF LIST<br />
 --------------------------------
 </t>
