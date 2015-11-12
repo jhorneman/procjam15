@@ -1,7 +1,11 @@
 <scene>
 <meta id='engineering' tags='mission, flesh_act2, flesh_act3, style_mission'/>
-<leadin>Search engineering.</leadin>
-You're in the engineering space.
+<leadin>Search the engineering deck.</leadin>
+You're on the engineering deck.
+
+Scattered equipment and personal effects of the engineering crew lie littered around row after row of consoles. Scanners powered by an unknown backup generator still print out readouts from various parts of the ship, confirming structural integrity.
+
+Another door leads to the maintenance bay. A plasma torch left deep scars in the metal where it was sealed shut manually from inside.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
@@ -14,6 +18,10 @@ You're in the engineering space.
 <meta id='hangar bay' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the hangar bay.</leadin>
 You're in the hangar bay.
+
+The huge structure curves with the hull of the ship. Shuttles stand silent, parked meticulously within their lines. Escape pod doors remain closed, undisturbed, all accounted for. Between the shuttles stand various mechanical equipment for vehicle repairs and servicing.
+
+No one has left the ship, but if they had there is nowhere they could go. Only empty space.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -26,6 +34,8 @@ You're in the hangar bay.
 <meta id='medbay' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the medbay.</leadin>
 You're in the lower medbay.
+
+Rows of hospital beds stand undisturbed among a collection of machinery. Centrifuges and blood analysis and urine analysis. UV lines hooked up to monitoring stations and robotic diagnostic stations but no one else nearby. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, medical' />
@@ -38,6 +48,10 @@ You're in the lower medbay.
 <meta id='hydroponic gardens' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the hydroponic gardens.</leadin>
 You're in the hydroponic gardens.
+
+Gray and brown plants like dried and desiccated in tubs that had once been full of nutrient-rich water. As the uneven power surges through the room and into the machinery, tubes light up with blue florescent chemicals and spray a fine mist from ceiling showerheads. 
+
+Any food left behind in the unattended gardens is inedible, now contaminated with the thick musk of mildew.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, biological' />
@@ -50,6 +64,8 @@ You're in the hydroponic gardens.
 <meta id='crew deck' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the crew deck.</leadin>
 You're on the crew deck.
+
+Tables overturned, half-eaten food, games, darts, long tables, benches, liquor, large screens normally displaying sports from back home on multi-month delay. You fiddle with the radio but only hear static. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, human' />
@@ -62,6 +78,10 @@ You're on the crew deck.
 <meta id='life support control' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the life support control.</leadin>
 You're in life support control.
+
+The only place where power seems to not fluctuate, except for the lights. It runs on an emergency generator, but you cannot dissemble it to use for the mainframe without sacrificing life support. Oxygen, carbon dioxide, nitrogen. Pressure. Thermal shows abnormally warm levels in various hotspots around the ship.
+
+You hesitate shortly before entering the room for salvage. You must tread lightly or risk the systems keeping you alive. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -74,6 +94,8 @@ You're in life support control.
 <meta id='laboratory big' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
+
+zero-g experiments, high gravity experiments, pressurized chamber experiments, all on organic tissue. Next to the hydroponics garden, but the main source of lab tests were the mice. Mice are now all dead. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />
@@ -86,6 +108,8 @@ You're in the main laboratory.
 <meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
+
+Large machinery, requiring their own operators to run. Fabrication of new parts, now idle. Major maintenence work to keep the ship running. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -98,6 +122,8 @@ You're in the maintenance bay.
 <meta id='captains quarters' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the captain's quarters.</leadin>
 You're in the captain's quarters.
+
+Personal effects. Undisturbed. Captain's logs inaccessible. Sterile, minimal, but the drawers and cabinent all opened and emptied. Someone else has already searched through their stuff. Did they find what they were looking for? xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
@@ -110,6 +136,8 @@ You're in the captain's quarters.
 <meta id='command center' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the command center.</leadin>
 You're in the command center.
+
+Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last? xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
@@ -122,6 +150,8 @@ You're in the command center.
 <meta id='reactor core' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
+
+The large door allows manual access, but has warnings posted over it. Hazard. Radiation warnings. No human access beyond this point. You can see through the layers of pipes and wire meshes steam coming off of a main metal cylinder. The reactor core has not overheated with the lack of power. The monitor shows it is nearing the danger zone. The ship will not survive much longer without a reboot to its systems. The access room/monitoring station has machinery to monitor its status. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='death_reactor' />
@@ -134,6 +164,8 @@ You are outside the reactor core.
 <meta id='navigation' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search navigation.</leadin>
 You are at the propulsion systems control in navigation.
+
+Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of space is the only thing that has kept this unmanned ship from breaking into debris. No sign of pilot. Dust has begun to settle on the flightsticks. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -146,6 +178,10 @@ You are at the propulsion systems control in navigation.
 <meta id='solar arrays' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the solar arrays.</leadin>
 You are at the solar arrays.
+
+You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. xx
+
+The solar arrays are inoperational, but there's no sun to feed them anyway. They will not help direct power to the mainframe.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -158,6 +194,8 @@ You are at the solar arrays.
 <meta id='morgue' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the morgue.</leadin>
 You are in the morgue.
+
+Hospital beds, cold and clinical. Medical equipment left unused. Metal drawers with thick handles mostly closed, though a few remain ajar. The room is warm when it should be cold. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, biological' />
@@ -170,6 +208,8 @@ You are in the morgue.
 <meta id='radiation shielding' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
+
+The wall is unusually warm to the touch. Scanners offline. System online, auxillary power only. You cannot cut off power to feed the mainframe without subjecting yourself to lethal radiation exposure from space. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -182,6 +222,8 @@ You are in the radiation shielding control room.
 <meta id='hydrogen collector' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
+
+Offline. Large metal cylinders. Room is dry but should be moist. Separating hydrogen from oxygen. Various valves and mechanical readings. Terminals unresponsive. Liz doesn't actually know what hydrogen collectors are. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='death_hydrogen' />
@@ -195,6 +237,7 @@ You are at the hydrogen collectors.
 <leadin>Search the central security office.</leadin>
 You are in the central security office.
 
+Rows of monitors offline and unresponsive. Chairs overturned. A pile of furniture next to the door, as though it had been barricaded. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />
@@ -207,6 +250,8 @@ You are in the central security office.
 <meta id='holodeck' tags='mission, flesh_act2, flesh_act3, style_mission'/>
 <leadin>Search the recreational holodeck.</leadin>
 You are in the holodeck.
+
+Emergency lights bathe the empty room with soft red and white lights. A panel on the wall glitches into static, then white, then black nothingness that seems to go on forever. Outside the holodeck, lockers lay half-opened with their contents sprawled across the floor.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -221,6 +266,9 @@ You are in the holodeck.
 <leadin>Search research and development labs.</leadin>
 You are in the research and development labs.
 
+You've never been allowed in here before. The door sputters on broken hinges, and a voice repeats, "ACCESS RESTRICTED". You walk into it anyway.
+
+The labs are lined with busy rows and shelves of vials and containers with various biological specimens floating in unidentified murky liquid.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, biological' />
@@ -234,6 +282,7 @@ You are in the research and development labs.
 <leadin>Search the armory.</leadin>
 You are in the armory.
 
+The armory stands empty of weapons or clothing, looted hastily that the gate was left open. Nothing particularly useful looks left, but there are various boxes and containers still on the shelves among other debris left behind. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />
@@ -247,6 +296,7 @@ You are in the armory.
 <leadin>Search the recycling center.</leadin>
 You are in the main recycling hub.
 
+A conveyor belt grinds loudly back and forth on broken gears, shortened by the electrical surges. Trash lines the belt and various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" and so on. Trash chutes lay open, their trash sitting in unmoving, unfiltered piles of the floor where they overflowed.xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
@@ -260,6 +310,9 @@ You are in the main recycling hub.
 <leadin>Search the virology labs.</leadin>
 You are in the virology labs.
 
+Medical equipment might make it look like the medlab except for the ebola suits. You walk among a series of patient rooms with glass walls, peering into them from the safe area outside of them. 
+
+One of the glass walls is broken, shattered. Dried blood on the glass shards on the ground. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -274,6 +327,7 @@ You are in the virology labs.
 <leadin>Search the chapel.</leadin>
 You are in the chapel.
 
+One of the few places not in disrepair. Offerings to various religions piled high at the front of the chapel, and clothes and bags lines the pews, left behind by the congregation. Instead of stained glass, it's a large glass window into space. Stars twinkle. Ceiling is high with lights on long cables swinging in the room. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, human' />
@@ -287,6 +341,7 @@ You are in the chapel.
 <leadin>Search the brig.</leadin>
 You are in the brig.
 
+Metal mesh gates rather than bars. One of the cells gates has been dented, and another the metal is twisted and shredded by something unknown. Tufts of hair stuck on the sharp metal. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
@@ -297,46 +352,7 @@ You are in the brig.
 
 <!--
 
-other places:
-chapel
-Medbay storage
-Recovery Room
-Virology Labs
-Holodeck
-Research Division
-R&D Labs
-Robotics LabsToxins Labs
-Testing Chambers
-Chief Engineer's Office
-Electrical Maintenance
-Thermo-Electric Generator
-Telecommunications
-Armory
-Security Offices
-Security Post
-Recycling Systems
-
-
-<scene>
-<meta id='flight deck' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Search the flight deck.</leadin>
-You're on the flight deck.
-
-<injectOption tags='container' />
-<injectOption tags='mechanical' />
-<injectOption tags='mechanical' />
-
-</scene>
-
-<scene>
-<meta id='the bridge' tags='mission, flesh_act2, flesh_act3'/>
-<leadin>Search the bridge.</leadin>
-You're on the bridge.
-
-<injectOption tags='mechanical' />
-<injectOption tags='human' />
-<injectOption tags='computer' />
-
-</scene>
+TO DO
+Rewrite rough drafts
 
 -->
