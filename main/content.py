@@ -50,12 +50,12 @@ class StyledText(Content):
     def __init__(self, _el):
         super(StyledText, self).__init__()
         # Can check _el.tag here to select different styles, if need be.
-        self.style_class = "style_terminal"
+        # self.style_class = "style_terminal"
         self.blocks = parse_content_of_xml_element(_el)
 
     def evaluate(self, _state, _deep=True):
         content = evaluate_content_blocks(self.blocks, _state)
-        content["text"] = "<span class=\"{0}\">{1}</span>".format(self.style_class, content["text"])
+        content["text"] = "<t>{0}</t>".format(content["text"])
         return content
 
 
