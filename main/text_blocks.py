@@ -20,7 +20,7 @@ def register_text_blocks(_new_blocks):
 def register_data_names(_new_data_names):
     global data_names
     for d in _new_data_names:
-        data_names.add_item(d[0], d[1]["name"])
+        data_names.add_item(d[0], "<span class=\"data-name\">{0}</span>".format(d[1]["name"]))
 
 
 def get_text_block_with_tag(_desired_tags, _repeat=True):
