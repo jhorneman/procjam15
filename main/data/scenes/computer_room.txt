@@ -5,11 +5,14 @@
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
 <if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
 <br />
+<br />
 <if cond="$is_fed">The computer has recently fed.</if>
 <if cond="$is_fed eq 0">The computer hungers for data.</if>
 <br />
+<br />
 <if cond="$has_mcguffin">You have {$data}.</if>
 <if cond="$has_mcguffin eq 0">You have no data.</if>
+<br />
 <br />
 
 <option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
@@ -44,11 +47,11 @@ The console reads: "INSUFFICIENT DATA"
 <action act="set $is_fed 1" />
 <action act="set $has_mcguffin 0" />
 <action act="inc $data_count" />
-<action act="gen_data" />
-<action act="set $flesh_act flesh_act2" cond="$data_count eq 3" />
-<action act="set $flesh_act flesh_act3" cond="$data_count eq 6" />
-<action act="set $flesh_act flesh_act4" cond="$data_count eq 9" />
-<action act="set $flesh_act flesh_act5" cond="$data_count eq 12" />
+<action act="gen_data" tags="$flesh_act, electric"/>
+<action act="set $flesh_act flesh_act2" cond="$data_count eq 4" /> <!-- 4 data collection -->
+<action act="set $flesh_act flesh_act3" cond="$data_count eq 12" /> <!-- 8 data collections -->
+<action act="set $flesh_act flesh_act4" cond="$data_count eq 20" /> <!-- 8 data collections -->
+<action act="set $flesh_act flesh_act5" cond="$data_count eq 24" /> <!-- 4 data collections -->
 
 You feed the computer the data you have.
 

@@ -6,7 +6,27 @@
 <action act="gen_data" />
 <action act="set $pc_aware 0" /> <!-- how much pc knows? -->
 <action act="set $pc_gimmick none" />
+<action act="set $commands 0" /> <!-- used for PC to use computer 3x before needing more data -->
 </block>
+
+<!-- BLOCKS: COMPUTER COMMANDS -->
+
+<block tags="computer_commands_check">
+<action act="dec $commands" />
+<if cond="$commands eq 0">
+OUT OF MEMORY
+INSUFFICIENT DATA
+<option nextScene="computer_room">esc</option>
+</if>
+<if cond="$commands gt 0">
+Enter command:
+<injectOption tags="computer_talk, $flesh_act" />
+<injectOption tags="computer_talk, $flesh_act" />
+<injectOption tags="computer_talk, $flesh_act" />
+</if>
+</block>
+
+<!-- BLOCKS: PLAYER GIMMICK -->
 
 <block tags="pc_start, flesh_act1">
 You hear a clicking sound. Or more like whirring?
