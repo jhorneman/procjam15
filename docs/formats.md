@@ -168,7 +168,9 @@ In scene and option texts, the engine can substitute certain tags for the curren
 
 Use {thing} to do this. You can also write {$thing}, for consistency with references to variables in other places.
 
-When you write {^thing} or {^$thing}, the text is capitalized automatically.
+When you write {^thing} or {^$thing}, the first character of the text is capitalized automatically.
+
+When you write {^^thing} or {^^$thing}, the entire text is capitalized automatically.
 
 When you write {a thing} or {an thing} (or {a $thing} or {an $thing}), the (hopefully) correct indefinite article will be put in front automatically.
 

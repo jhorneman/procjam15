@@ -36,8 +36,12 @@ class CustomFormatter(string.Formatter):
             key = m.group(2)
 
             # Determine if we want the value to be capitalized.
+            all_caps = False
             capitalize = False
-            if key.startswith("^"):
+            if key.startswith("^^"):
+                all_caps = True
+                key = key[2:]
+            elif key.startswith("^"):
                 capitalize = True
                 key = key[1:]
 
@@ -55,7 +59,9 @@ class CustomFormatter(string.Formatter):
                     value = str(value)
 
                 # Capitalize it, if needed.
-                if capitalize:
+                if all_caps:
+                    value = u"".join((c.capitalize() for c in value))
+                elif capitalize:
                     value = value[0].capitalize() + value[1:]
 
                 # Prepend indefinite article, if needed.
