@@ -68,7 +68,8 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act2">Announcement, "UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED".xx</block>
 <block tags="mdesc, flesh_act2">Announcement, "PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL."xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "UNIDENTIFIED INFECTION DETECTED"xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "<t>DELETING LOGS...</t>t>"xx</block>
+<block tags="mdesc, flesh_act2">Terminal read-out, "<t>DELETING LOGS...</t>"xx</block>
+<block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
 <block tags="mdesc, flesh_act2">A viscous fluid leaks from a vent in the ceiling.</block>
 <block tags="mdesc, flesh_act2">A monitor salivates, the liquid pooling onto the keyboard and dropping onto the floor.</block>
@@ -82,7 +83,7 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act2">The ceiling exhales warm, moist air into the room as you enter.</block>
 
 <block tags="mdesc, flesh_act3">The announcement over the speakers repeats the calming phrase, "MOTHER IS HERE. EVERYTHING WILL BE FINE. MOTHER IS HERE."</block>
-<block tags="mdesc, flesh_act3">A robotic voice repeats over the cracking intercoms, "PLEASE REPORT TO THE MAINFRAME {$PCfirst} {$PClast} WITH SUFFICIENT DATA."</block>
+<block tags="mdesc, flesh_act3">A robotic voice repeats over the cracking intercoms, "PLEASE REPORT TO THE MAINFRAME {$PC_first} {$PC_last} WITH SUFFICIENT DATA."</block>
 <block tags="mdesc, flesh_act3">All the monitors display the same message - "WE ARE."</block>
 <block tags="mdesc, flesh_act3">A console reads out, "<t>YES PLEASE YES MORE DATA YESSSSS</t>"</block>
 <block tags="mdesc, flesh_act3">A terminal contains a single message, "FEED US."</block>

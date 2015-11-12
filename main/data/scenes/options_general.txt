@@ -236,7 +236,7 @@ Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='belongings' tags='option, human, style_mission'/>
 <leadin>Look through the crew's belongings. </leadin>
 You look through the crew's belongings trying to salvage anything that could be useful to the mainframe.<br />
-Among the detrius you find {data}.<injectBlock tags="odesc, $flesh_act" />
+Among the detritus you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -281,7 +281,7 @@ On the top shelf of the closet you find {data}.<injectBlock tags="odesc, $flesh_
 <scene>
 <meta id='paper tray' tags='option, paper, style_mission'/>
 <leadin>Search paper trays. </leadin>
-The paper trays largely stand empty, the paper scattered along the ground like detrius.<br />
+The paper trays largely stand empty, the paper scattered along the ground like detritus.<br />
 In the last tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
@@ -336,7 +336,7 @@ Inside it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='cart' tags='option, containers, style_mission'/>
 <leadin>Sift through overturned cart. </leadin>
 You sift through the contents of the cart that have spilled out all over the floor.<br />
-Among the detrius you find {data}.<injectBlock tags="odesc, $flesh_act" />
+Among the detritus you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>

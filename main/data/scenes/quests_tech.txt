@@ -95,7 +95,7 @@ You hesitate shortly before entering the room for salvage. You must tread lightl
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
 
-zero-g experiments, high gravity experiments, pressurized chamber experiments, all on organic tissue. Next to the hydroponics garden, but the main source of lab tests were the mice. Mice are now all dead. xx
+Zero-g experiments, high gravity experiments, pressurized chamber experiments, all on organic tissue. Next to the hydroponics garden, but the main source of lab tests were the mice. Mice are now all dead. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, container' />

@@ -229,8 +229,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='computer olafactory' tags='option, flesh, computer, style_mission'/>
-<leadin>Stroke computer's olafactory senses.</leadin>
+<meta id='computer olfactory' tags='option, flesh, computer, style_mission'/>
+<leadin>Stroke computer's olfactory senses.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
