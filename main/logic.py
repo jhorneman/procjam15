@@ -3,7 +3,7 @@
 import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
-from text_utils import substitute_text
+from text_utils import process_text
 from game_state import prepare_game_state, generate_player_character, restart
 from content import evaluate_content_blocks
 
@@ -61,10 +61,10 @@ def get_current_scene_data():
     tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
 
     return {
-        "text": substitute_text(evaluated_scene["text"], session, True),
+        "text": process_text(evaluated_scene["text"], session, True),
         "options": [{
             "action": option["action"],
-            "text": substitute_text(option["text"], session, False),
+            "text": process_text(option["text"], session, False),
             "params": option["params"]
             } for option in evaluated_scene["options"]
         ],

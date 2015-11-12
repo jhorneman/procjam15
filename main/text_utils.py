@@ -72,7 +72,7 @@ class CustomFormatter(string.Formatter):
 formatter = CustomFormatter()
 
 
-def substitute_text(_text, _substitution_data, _break_into_paragraphs):
+def process_text(_text, _substitution_data, _break_into_paragraphs):
     if _text is None:
         logger.error("Text to be converted is None.")
         return ''
@@ -83,5 +83,4 @@ def substitute_text(_text, _substitution_data, _break_into_paragraphs):
         paragraphs = text.split("\n\n")
         return u"".join([u"<p>{0}</p>".format(paragraph) for paragraph in paragraphs])
     else:
-        # return text.replace("\n", "<br/>")
         return text
