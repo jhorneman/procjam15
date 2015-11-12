@@ -46,6 +46,19 @@ class Raw(Content):
         return self.raw_text
 
 
+class StyledText(Content):
+    def __init__(self, _el):
+        super(StyledText, self).__init__()
+        # Can check _el.tag here to select different styles, if need be.
+        self.style_class = "style_terminal"
+        self.blocks = parse_content_of_xml_element(_el)
+
+    def evaluate(self, _state, _deep=True):
+        content = evaluate_content_blocks(self.blocks, _state)
+        content["text"] = "<span class=\"{0}\">{1}</span>".format(self.style_class, content["text"])
+        return content
+
+
 class If(Content):
     def __init__(self, _el):
         super(If, self).__init__()
@@ -204,6 +217,7 @@ class Action(Content):
 
 
 tags_to_content_classes = {
+    "t": StyledText,
     "if": If,
     "block": Block,
     "injectBlock": InjectBlock,

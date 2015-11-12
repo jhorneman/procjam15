@@ -193,3 +193,11 @@ The following actions are possible:
 * 'set $varname value'. Set a variable named 'varname' to 'value'.
 
 The $ in front of the variable name is important.
+
+# Style text
+
+All text (not the options, not the lead-in) enclosed in a <t> tag, like this:
+
+    <t>INSUFFICIENT DATA</t>
+
+will be put inside a span with class style_terminal.
