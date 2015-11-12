@@ -9,7 +9,7 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act2">
-The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell waifs toward you with the humid air.
+The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell wafts toward you with the humid air.
 
 The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle.
 

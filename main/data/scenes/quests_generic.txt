@@ -54,8 +54,7 @@ You're in the lower access vents.
 
 You carefully remove the maintenance panel and climb into the lower vents, just large enough for you to crouch within.
 
-The ventilation shafts cross-cross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship.
-
+The ventilation shafts criss-cross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship. <if cond="$player_died_upper_ventilation == 1">The air smells of rot, as if something died in those shafts.</if>
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />

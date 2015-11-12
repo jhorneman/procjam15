@@ -1,15 +1,20 @@
 <scene>
 <meta id='death airlock' tags='death_airlock, style_death'/>
-<leadin>Fiddle with airlock controls.</leadin>
-You die by being sucked out an airlock. 
-<option action="respawn">...</option>
+<leadin>Use the airlock controls.</leadin>
+Servo motors whine and gears grind as you manipulate the airlock controls. The mechanism seems stuck. You jiggle the levers and smash the button until finally something gives.
+
+Panic hits you as you feel the air being sucked away. The airlock was open on both sides! That is supposed to be impossible. You try to grab onto something, but it is too late. The ship expels you into space.
+<option action="respawn">You die, alone, in space.</option>
 </scene>
 
 <scene>
 <meta id='upper vents' tags='death_claustrophobia, style_death'/>
 <leadin>Climb into the upper ventilation system.</leadin>
-You climb into the upper ventilation system. You have to wiggle to fit. Unfortunately, you discover you cannot back up. You die up there in the heat and humidity, the smell of your rot brought throughout the ship.
-<option action="respawn">...</option>
+You pull yourself up into the shafts of the upper ventilation system. At first you can squeeze through. Then you have to wiggle to fit.
+
+Then you discover you can go neither forward nor backwards. No amount of compressing your body helps. Your hand and feet can't get enough grip on the edges of the ventilation canal to move. Your sweat doesn't help. You call, but there is no response. Your attempts to dislocate something fail. Your blood doesn't help.
+<action act="set $player_died_upper_ventilation 1" />
+<option action="respawn">After a long time, you die.</option>
 </scene>
 
 <scene>
