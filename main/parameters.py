@@ -19,11 +19,7 @@ def set_parameter_value(_state, _parameter_name, _value):
 def get_lhs_parameter_value(_state, _parameter_name):
     if _parameter_name.startswith("$"):
         variable_name = _parameter_name[1:]
-        if variable_name in _state:
-            return _state[variable_name]
-        else:
-            logger.error("Could not find a state variable named '{0}'. A parameter on the left hand of an operator MUST refer to a state variable.".format(variable_name))
-            return None
+        return _state.setdefault(variable_name, 0)
     else:
         logger.error("A parameter on the left hand of an operator MUST refer to a state variable. '{0}' is invalid.".format(_parameter_name))
         return None
@@ -32,14 +28,16 @@ def get_lhs_parameter_value(_state, _parameter_name):
 def get_rhs_parameter_value(_state, _parameter_name):
     if _parameter_name.startswith("$"):
         variable_name = _parameter_name[1:]
-        if variable_name in _state:
-            return _state[variable_name]
-        else:
-            logger.debug("Could not find a state variable named '{0}'.".format(variable_name))
-            return 0
+        return _state.setdefault(variable_name, 0)
 
     if _parameter_name.lower() == "random":
         return random.randint(1, 100)
+
+    if _parameter_name.lower() == "true":
+        return True
+
+    if _parameter_name.lower() == "false":
+        return False
 
     try:
         value = int(_parameter_name)
