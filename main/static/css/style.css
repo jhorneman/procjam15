@@ -87,6 +87,12 @@ body.style_terminal #options {
 	font-size: larger;
 }
 
+span.style_terminal {
+    font-family: 'Cutive Mono', monospace;
+	line-height: 1em;
+	font-size: larger;
+}
+
 body.style_terminal ul#options {
 	list-style-type: None;
 }

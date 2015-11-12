@@ -46,7 +46,7 @@ Enter command:
 </scene>
 
 <scene>
-<meta id="computer_room_introduction3" tags="style_terminal" />
+<meta id="computer_room_introduction3" tags="style_terminal" /><t>
 > Query: status?<br />
 --------------------------------<br />
 <if cond="$flesh_act eq flesh_act1">
@@ -86,7 +86,7 @@ BRING ME MORE DATA<br />
 FEED ME<br />
 --------------------------------
 </if>
-<br />
+</t><br />
 <option nextScene="computer_room">esc</option>
 </scene>
 
@@ -102,7 +102,7 @@ The access terminal for the mainframe stands in the center of the room. Its meta
 
 
 <if cond="$is_fed">The mainframe machinery whirls with fresh data.</if>
-<if cond="$is_fed eq 0">The computer terminal only reads, "INSUFFICIENT DATA."</if>
+<if cond="$is_fed eq 0">The computer terminal only reads, <t>"INSUFFICIENT DATA."</t></if>
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act2">
@@ -110,7 +110,7 @@ The access terminal for the mainframe stands in the center of the room. Its meta
 
 
 <if cond="$is_fed">The mainframe appears satisfied by the fresh data you fed it.</if>
-<if cond="$is_fed eq 0">The computer terminal only reads, "INSUFFICIENT DATA."</if>
+<if cond="$is_fed eq 0">The computer terminal only reads, <t>"INSUFFICIENT DATA."</t></if>
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act3">
@@ -118,7 +118,7 @@ The access terminal for the mainframe stands in the center of the room. It appea
 
 
 <if cond="$is_fed">The mainframe contentedly digests the data you have fed it.</if>
-<if cond="$is_fed eq 0">The computer terminal reads, "FEED ME." It salivates from its main drives.</if>
+<if cond="$is_fed eq 0">The computer terminal reads, <t>"FEED ME."</t> It salivates from its main drives.</if>
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act4">
@@ -126,7 +126,7 @@ The access terminal for the mainframe writhes in the center of the room. It appe
 
 
 <if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data.</if>
-<if cond="$is_fed eq 0">"FEED ME..." ther terminal whispers to you seductively from it's gaping pink mouth.</if>
+<if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth.</if>
 <br />
 </if>
 <br />
