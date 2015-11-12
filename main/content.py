@@ -7,7 +7,10 @@ from action import parse_action_from_string
 from tags import string_to_tags, evaluate_tags
 from text_blocks import get_text_block_with_tag
 
+
 logger = logging.getLogger(__name__)
+
+goto_action = "goto"
 
 
 class Content(object):
@@ -141,12 +144,12 @@ class Option(Content):
         self.text = None
 
         # Get option parameters.
-        action = _el.get("action", "goto")
+        action = _el.get("action", goto_action)
         next_scene = _el.get("nextScene")
         text = _el.text.strip()
 
         # Check parameters.
-        if action == "goto":
+        if action == goto_action:
             if next_scene is None:
                 logger.error("Option has a GOTO action but neither a next scene nor tag attributes. Skipping.")
                 return
@@ -323,7 +326,7 @@ def get_tagged_option_to_inject(_tags, _state, _repeat=True):
             return None
 
         return {
-            "action": "goto",
+            "action": goto_action,
             "params": {
                 "next_scene": injected_scene_desc.id
             },
