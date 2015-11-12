@@ -2,7 +2,7 @@
 <meta id='computer_talk' tags="style_terminal"/>
 <leadin>Communicate with the mainframe.</leadin>
 <action act="set $is_fed 0" />
-<action act="set $commands 3" />
+<action act="set $commands 1" />
 <if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
