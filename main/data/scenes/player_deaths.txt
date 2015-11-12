@@ -24,7 +24,7 @@ You slide into the gap under the cabin, lower your legs into the elevator shaft,
 
 The power surges back on with a loud snap. The elevator cabin drops, severing your arms. Helplessly, you fall to the bottom of the shaft.
 <action act="set $player_died_elevators 1" />
-<option action="respawn">You bleed out.</option>
+<option action="respawn">You bleed out and die.</option>
 </scene>
 
 <scene>
