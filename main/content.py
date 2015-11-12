@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import types
+import random
 import logging
 from condition import parse_condition_from_string
 from action import parse_action_from_string
@@ -71,6 +72,20 @@ class If(Content):
     def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
             return evaluate_content_blocks(self.blocks, _state)
+        else:
+            return None
+
+
+class OneOf(Content):
+    def __init__(self, _el):
+        super(OneOf, self).__init__()
+        self.check_for_condition(_el)
+        self.blocks = parse_content_of_xml_element(_el)
+
+    def evaluate(self, _state, _deep=True):
+        if self.is_condition_true(_state):
+            index = random.randint(0, len(self.blocks)-1)
+            return evaluate_content_blocks([self.blocks[index]], _state)
         else:
             return None
 
@@ -222,6 +237,7 @@ class Action(Content):
 tags_to_content_classes = {
     "t": StyledText,
     "if": If,
+    "oneOf": OneOf,
     "block": Block,
     "injectBlock": InjectBlock,
     "br": Br,

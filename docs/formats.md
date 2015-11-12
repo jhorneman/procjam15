@@ -96,6 +96,10 @@ See below for more information about tags.
 
 Add norepeat="1" (or any value) to stop the injection from looping. Internally, the system picks an item from a list of options. When it has used all items, it can either go back to the beginning (the default behavior), or not.
 
+## "One of several" content
+
+The engine picks one thing from inside an <oneOf> element at random. oneOf is most useful together with blocks or injections of some kind.
+
 # Conditions
 
 The following elements can be made conditional by adding a 'cond' attribute to their tag:
@@ -106,6 +110,7 @@ The following elements can be made conditional by adding a 'cond' attribute to t
 * injectOption.
 * leadin.
 * block.
+* oneOf.
 * if.
  
 If has no other reason for being than wrapping things in a condition. You can nest ifs.
