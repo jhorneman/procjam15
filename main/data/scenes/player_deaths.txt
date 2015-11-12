@@ -20,8 +20,10 @@ Then you discover you can go neither forward nor backwards. No amount of compres
 <scene>
 <meta id='elevator shaft' tags='death_elevator, style_death'/>
 <leadin>Descend elevator shaft.</leadin>
-You lower yourself into the elevator shaft and attempt to climb down, but there is no access ladder. As you climb back up, the power whirls back in in a sudden surge. The elevator drops, severing your arms. You fall to the bottom of the shaft. You die. xx
-<option action="respawn">...</option>
+You slide into the gap under the cabin, lower your legs into the elevator shaft, and feel around with your feet. You can't find any kind of steps or service ladder. You slide down further, reaching down as far as you can. Your feel an opening with your toes, and you try to place your foot inside to see if it is big enough. 
+
+The power surges back on with a loud snap. The elevator cabin drops, severing your arms. Helplessly, you fall to the bottom of the shaft.
+<option action="respawn">You bleed out.</option>
 </scene>
 
 <scene>
@@ -34,8 +36,13 @@ You lower the radiation shielding separating you from the reactor core. It burns
 <scene>
 <meta id='radiation shield gen' tags='death_radiation, style_death'/>
 <leadin>Lower radiation shielding.</leadin>
-You lower the radiation shielding separating you from the harmful gamma radiation of space. It burns. You die. xx
-<option action="respawn">...</option>
+You go over your training. Gamma radiation can be harmful, but only in strong doses.
+
+You activate several override mechanisms to lower the radiation shielding separating you from the radiation of space. As the shield lowers, you are briefly reminded of a trip to the beach you took as a child. The shield slowly descends further. How your mother yelled at you to put on your sunblock.
+
+It occurs to you that you do not know where in space the ship is. Fear hits you in the pit of your stomach. Then you feel sick all over. Your skin begins to hurt. You try to close the shielding again, but it has to open all the way before it can be closed again. Your fumbling movements leave blood and skin on the controls. Your vision is going blurry. Your eyes feel... soft. You turn around, fall on your knees, cry out in pain. Your voice is hoarse, barely a whisper.
+
+<option action="respawn">Your organs dissolve as you try to crawl away.</option>
 </scene>
 
 <!-- need to find places for these -->
@@ -69,9 +76,14 @@ You engage the locking mechanism. The power then cuts out. It does not return. Y
 
 <scene>
 <meta id='inspect fungus' tags='option, biological, medical, style_death'/>
-<leadin>Investigate mysterious fungal growth.</leadin>
-You die by inhaling spores from some fungus. They put you to sleep. xx
-<option action="respawn">...</option>
+<leadin>Investigate mysterious fungal mass.</leadin>
+The "body" of the fungal mass looks soft and powdery, with little hairs. You're not on expert but it seems a strange thing to find in a place like this.
+
+Here and there, bulbous growths have erupted from the mass, stretching outwards eagerly on thin stalks. The bulbs have the strangest patterns you have ever seen in nature. Fractal mazesm alternating between the artificial and the natural.
+
+As you move in close to observe one of the growths, it vibrates, then is suddenly gone in a puff of dark grey spores. You pull away but you cannot avoid inhaling some. You immediately feel an extreme allergic reaction setting in and fall back on the floor. Your airways close, asthma makes breathing harder and harder. You cough, ejecting pus, but your air intake slows inexorably until you can no longer breathe in or out.
+
+<option action="respawn">You lose consciousness before the fungus absorbs you.</option>
 </scene>
 
 <!-- ELECTRICAL -->

@@ -209,7 +209,7 @@ Hospital beds, cold and clinical. Medical equipment left unused. Metal drawers w
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
 
-The wall is unusually warm to the touch. Scanners offline. System online, auxillary power only. You cannot cut off power to feed the mainframe without subjecting yourself to lethal radiation exposure from space. xx
+The wall is unusually warm to the touch. Scanners offline. System online, auxillary power only. You cannot cut off power to feed the mainframe without subjecting yourself to potentially lethal radiation exposure from space. xx
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />

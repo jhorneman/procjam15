@@ -129,7 +129,7 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 <leadin>Search the elevators.</leadin>
 You're at the elevators.
 
-You apply the manual override and pry apart the elevator doors. The lift has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground.
+You apply the manual override and pry apart the elevator doors. The cabin has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground.
 
 The elevator shaft continues down into darkness.
 
