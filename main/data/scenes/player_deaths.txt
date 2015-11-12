@@ -3,7 +3,7 @@
 <leadin>Use the airlock controls.</leadin>
 Servo motors whine and gears grind as you manipulate the airlock controls. The mechanism seems stuck. You jiggle the levers and smash the button until finally something gives.
 
-Panic hits you as you feel the air being sucked away. The airlock was open on both sides! That is supposed to be impossible. You try to grab onto something, but it is too late. The ship expels you into space.
+Panic hits you as you feel the air being sucked away. The airlock is open on both sides! That is supposed to be impossible. You try to grab onto something, but it is too late. The ship expels you into space.
 <option action="respawn">You die, alone, in space.</option>
 </scene>
 
@@ -23,6 +23,7 @@ Then you discover you can go neither forward nor backwards. No amount of compres
 You slide into the gap under the cabin, lower your legs into the elevator shaft, and feel around with your feet. You can't find any kind of steps or service ladder. You slide down further, reaching down as far as you can. Your feel an opening with your toes, and you try to place your foot inside to see if it is big enough. 
 
 The power surges back on with a loud snap. The elevator cabin drops, severing your arms. Helplessly, you fall to the bottom of the shaft.
+<action act="set $player_died_elevators 1" />
 <option action="respawn">You bleed out.</option>
 </scene>
 

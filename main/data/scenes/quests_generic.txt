@@ -131,13 +131,19 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 <leadin>Search the elevators.</leadin>
 You're at the elevators.
 
-You apply the manual override and pry apart the elevator doors. The cabin has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It is still smoldering.<br/><br/></if>
+<if cond="$player_died_elevator == 0"></if>
+You apply the manual override and pry apart the elevator doors. The cabin has stopped a meter above the floor. No one is inside it, but abandoned clothes and equipment cover the ground.
+<if cond="$player_died_elevator == 1">The elevator doors are open. No one is inside it, but abandoned clothes and equipment cover the ground.
+
+In front of the elevator, you see two severed arms.</if>
+
+<if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It is still smoldering.<br/><br/></if>
 
 The elevator shaft continues down into darkness.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='death_elevator' />
+<injectOption tags='death_elevator' cond="$player_died_elevator == 0" />
 <injectOption tags='option, electrical' />
 <injectOption tags='option, human' />
 
