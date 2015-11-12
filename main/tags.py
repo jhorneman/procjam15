@@ -2,6 +2,7 @@
 
 import types
 import logging
+import random
 from collections import namedtuple
 # TODO: Make it so we don't directly access the Flask session here perhaps.
 from flask import session
@@ -41,8 +42,9 @@ TaggedItem = namedtuple('TaggedItem', ['tags', 'item'])
 
 
 class TaggedCollection(object):
-    def __init__(self, _name):
+    def __init__(self, _name, _randomize=False):
         self.name = _name
+        self.randomize = _randomize
         self.tagged_items = []
         self.cache = {}
 
@@ -73,6 +75,10 @@ class TaggedCollection(object):
             if len(indices_of_eligible_items) == 0:
                 logger.error("Couldn't find an item with tags {0}.".format(_desired_tags))
                 return None
+
+            # Shuffle, if needed.
+            if self.randomize:
+                random.shuffle(indices_of_eligible_items)
 
             # Store indices of items in the cache.
             self.cache[local_cache_key] = indices_of_eligible_items
