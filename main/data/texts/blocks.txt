@@ -5,7 +5,7 @@
 <action act="set $is_fed 0" />
 <action act="gen_data" />
 <action act="set $pc_aware 0" /> <!-- how much pc knows? -->
-<action act="set $pc_gimmick none" />
+<action act="set $PC_gimmick none" />
 <action act="set $commands 0" /> <!-- used for PC to use computer 3x before needing more data -->
 </block>
 
@@ -33,7 +33,7 @@ INSUFFICIENT DATA<br />
 
 <block tags="pc_start, flesh_act1">
 You hear a clicking sound. Or more like whirring?
-<action act="set $pc_gimmick pc_clicking" />
+<action act="set $PC_gimmick pc_clicking" />
 </block>
 
 <!-- BLOCKS: PLAYER MUSING -->
