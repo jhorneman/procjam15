@@ -13,11 +13,14 @@
 
 <block tags="computer_commands_check">
 <action act="dec $commands" />
-<if cond="$commands eq 0">
-OUT OF MEMORY
-INSUFFICIENT DATA
+<if cond="$commands lteq 0">
+--------------------------------<br />
+OUT OF MEMORY<br />
+INSUFFICIENT DATA<br />
+--------------------------------
 <option nextScene="computer_room">esc</option>
 </if>
+
 <if cond="$commands gt 0">
 Enter command:
 <injectOption tags="computer_talk, $flesh_act" />

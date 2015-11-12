@@ -1,5 +1,5 @@
 <scene>
-<meta id='womb' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='womb' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the womb.</leadin>
 You're in a womb. It is familiar, like a dormitory...xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -11,7 +11,7 @@ You're in a womb. It is familiar, like a dormitory...xx
 </scene>
 
 <scene>
-<meta id='umbilical cord' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='umbilical cord' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the umbilical cord.</leadin>
 You're in an umbilical cord. It is familiar, like a hallway...xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -23,7 +23,7 @@ You're in an umbilical cord. It is familiar, like a hallway...xx
 </scene>
 
 <scene>
-<meta id='stomach' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='stomach' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the stomach.</leadin>
 You're in a stomach. It is familiar, like a mess hall...xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -71,7 +71,7 @@ You're in a canal lined with hair and wax, like an ear canal. It is familiar, li
 </scene>
 
 <scene>
-<meta id='nest' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='nest' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the nest.</leadin>
 You're in a nest. It is familiar, like a storage room...xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -95,7 +95,7 @@ You in the left ventricle. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='gallbladder' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='gallbladder' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the gallbladder.</leadin>
 You are in the gallbladder. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -107,7 +107,7 @@ You are in the gallbladder. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='hive' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='hive' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the hive.</leadin>
 You are inside the hive.xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -167,7 +167,7 @@ You are in the thorax. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='intestines' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='intestines' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the small intestines.</leadin>
 You are in the small intestines. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -180,7 +180,7 @@ You are in the small intestines. It is familiar, like xx
 
 
 <scene>
-<meta id='esophagus' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='esophagus' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the esophagus.</leadin>
 You are in the small intestines. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -192,7 +192,7 @@ You are in the small intestines. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='placental pouch' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='placental pouch' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the placental pouch.</leadin>
 You are in the placental pouch. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -204,7 +204,7 @@ You are in the placental pouch. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='ovaries' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='ovaries' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the ovaries.</leadin>
 You are in the ovaries. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -228,7 +228,7 @@ You are in the pharyngeal pouch. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='gills' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='gills' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the gills.</leadin>
 You are in the gills. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -240,7 +240,7 @@ You are in the gills. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='cloaca' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='cloaca' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the cloaca.</leadin>
 You are in the gills. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />
@@ -300,7 +300,7 @@ You are in the lymphatic system. It is familiar, like xx
 </scene>
 
 <scene>
-<meta id='fallopian tubes' tags='mission, flesh_act3, flesh_act4, style_mission'/>
+<meta id='fallopian tubes' tags='mission, flesh_act4, style_mission'/>
 <leadin>Search the fallopian tubes.</leadin>
 You are in the fallopian tubes. It is familiar, like xx
 <injectBlock tags="mdesc, $flesh_act" />

@@ -9,7 +9,7 @@ A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the 
 
 The computer room? Better go see what that is about.
 <injectBlock tags="pc_init" />
-<option nextScene="computer_room">Go to the computer room.</option>
+<option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
 
 <scene>
@@ -24,7 +24,7 @@ A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the 
 
 The computer room? Better go see what that is about.
 <injectBlock tags="pc_init" />
-<option nextScene="computer_room">Go to the computer room.</option>
+<option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
 
 <scene>
@@ -38,7 +38,7 @@ A message awaits you. "{$PC_first} {$PC_last}, please report to the computer roo
 
 The computer room.
 <injectBlock tags="pc_init" />
-<option nextScene="computer_room">Go there.</option>
+<option nextScene="computer_room_introduction1">Go there.</option>
 </scene>
 
 <scene>
@@ -48,7 +48,7 @@ How long have you been curled in this corner? What happened to your hands?
 
 Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the computer room!" Like a herald, inviting you to your judgment.
 <injectBlock tags="pc_init" />
-<option nextScene="computer_room">Meet your fate.</option>
+<option nextScene="computer_room_introduction1">Meet your fate.</option>
 </scene>
 
 <scene>
@@ -56,5 +56,5 @@ Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the comput
 <leadin>Wake up...</leadin>
 Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
 <injectBlock tags="pc_init" />
-<option nextScene="computer_room">Go to the computer room.</option>
+<option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
