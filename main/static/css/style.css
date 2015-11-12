@@ -28,13 +28,13 @@ li {
 }
 
 
-a {
+footer a {
 	color: #616161;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
-a:hover {
+footer a:hover {
 	color: #AAA;
 
 }
@@ -103,4 +103,29 @@ body.style_terminal ul#options li a:before {
 
 body.style_terminal {
 	line-height: 1.2;
+}
+
+
+/* Debugging view */
+#debug-view {
+    padding-top: 1em;
+}
+
+#hidden-debug-view {
+    padding-top: 1em;
+    display: none;
+}
+
+table#game-state caption {
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+table#game-state th {
+    padding: 0 15px;
+}
+
+table#game-state td {
+    padding: 0 15px;
+    border-bottom: none;
 }

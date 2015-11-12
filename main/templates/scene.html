@@ -9,5 +9,30 @@
         <li><a href="{{ url_for('show_scene', action=option.action, **option|params) }}">{{option.text}}</a></li>
         {% endfor %}
     </ul>
+    <footer id="">
+        <a href="{{ url_for('restart_game') }}">Start over</a>
+    </footer>
+    {% if debug %}
+    <div id="debug-view">
+        <table id="game-state">
+            <caption>Current game state</caption>
+            <thead>
+                <tr><th>Name</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                {% for key, value in game_state|dictsort %}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="javascript:hideDebugView();">Hide debug view</a>
+    </div>
+    <div id="hidden-debug-view">
+    <a href="javascript:showDebugView();">Show debug view</a>
+    </div>
+    {% endif %}
 </section>
 {% endblock %}

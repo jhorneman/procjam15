@@ -1,15 +1,14 @@
-from flask import render_template, abort, redirect, url_for
+from flask import render_template, abort, redirect, url_for, session
 from main.logic import get_current_scene_data
-from game_state import restart
+from game_state import restart, get_game_state_vars
 from main import app
 
 
 @app.context_processor
 def inject_common_values():
     return {
-        "page_title"       : "Mainframe",
-        "page_description" : "A horror IF game for ProcJam 2015",
-        "page_authors"     : "Liz England & Jurie Horneman"
+        "game_state": get_game_state_vars(),
+        "debug": app.config["DEBUG"]
     }
 
 
