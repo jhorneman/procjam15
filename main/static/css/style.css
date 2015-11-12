@@ -1,44 +1,25 @@
+/* Background */
+
 html, body {
-    background:#333;
     color: lightgoldenrodyellow;
 	text-shadow: 1px 1px 1px #000;
-    height: 100%;
-	
-	
-	background-size: cover;	
-    background-image: url('/static/img/wires1.png'), linear-gradient(right bottom, rgb(51, 22, 32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires1.png'), -o-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires1.png'), -moz-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires1.png'), -webkit-linear-gradient(right bottom, rgb(87,3,3) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
-    background-image: url('/static/img/wires1.png'), -ms-linear-gradient(right bottom, rgb(51,22,32) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires1.png'), -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(51, 22, 32)), color-stop(0.63, rgb(35, 30, 33)), color-stop(0.82, rgb(19, 19, 19)) );
-	
 
-	
+    height: 100%;
+    background: #4c090c;
+	background-size: cover;
+    background-image: url('/static/img/wires1.png');
+    background-image: url('/static/img/wires1.png'), linear-gradient(to right bottom, rgb(76, 9, 12) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
 }
+
+/* Scene */
 
 .scene {
     margin-top: 5%;
 }
 
-
-
 li {
-	margin-bottom: 0rem;
+	margin-bottom: 0;
 }
-
-
-footer a {
-	color: #616161;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-footer a:hover {
-	color: #AAA;
-
-}
-
 
 ul#options {
     margin-top: 1em;
@@ -58,28 +39,35 @@ ul#options li a:hover{
 	text-transform: none;
 }
 
-body.style_comp_room {
-	background: #111;
-	background-size: cover;
-    background-image: url('/static/img/wires2.png'), linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires2.png'), -o-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: -moz-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires2.png'), -webkit-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
-    background-image: url('/static/img/wires2.png'), -ms-linear-gradient(right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
-    background-image: url('/static/img/wires2.png'), -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(47, 37, 27)), color-stop(0.63, rgb(35, 30, 33)), color-stop(0.82, rgb(19, 19, 19)) );
+/* Footer */
+
+footer a {
+	color: #616161;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
+footer a:hover {
+	color: #AAA;
+}
+
+/* Backgrounds for different scene types */
+
+body.style_comp_room {
+	background: #26211e;
+	background-size: cover;
+    background-image: url('/static/img/wires2.png');
+    background-image: url('/static/img/wires2.png'), linear-gradient(to right bottom, rgb(47, 37, 27) 25%, rgb(35,30,33) 63%, rgb(19,19,19) 82%);
+}
 
 body.style_terminal {
-	background: #111;
+	background: #161f12;
 	background-size: cover;
-    background-image: url('/static/img/wires3.png'), linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
-    background-image: url('/static/img/wires3.png'), -o-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
-    background-image: url('/static/img/wires3.png'), -moz-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
-    background-image: -webkit-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
-    background-image: url('/static/img/wires3.png'), -ms-linear-gradient(right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
-    background-image: url('/static/img/wires3.png'), -webkit-gradient( linear, right bottom, left top, color-stop(0.25, rgb(6, 10, 4)), color-stop(0.63, rgb(17, 31, 14)), color-stop(0.82, rgb(20, 27, 7)) );
+    background-image: url('/static/img/wires3.png');
+    background-image: url('/static/img/wires3.png'), linear-gradient(to right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
 }
+
+/* Terminal text */
 
 body.style_terminal #options {
     font-family: 'Cutive Mono', monospace;
@@ -105,8 +93,8 @@ body.style_terminal {
 	line-height: 1.2;
 }
 
-
 /* Debugging view */
+
 #debug-view {
     padding-top: 1em;
 }
