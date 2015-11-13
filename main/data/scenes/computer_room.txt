@@ -23,13 +23,6 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act4">
-xx FLESH ACT 4 REWRITE The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
-
-The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
-
-A single large terminal in the center of the room allows human access to the mainframe.
-</if>
-<if cond="$flesh_act eq flesh_act5">
 The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
 
 The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
@@ -46,9 +39,8 @@ A single large terminal in the center of the room allows human access to the mai
 <if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
 <if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
 <if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 5</if>
-<br/>
 
+<br/>
 Enter command:
 <option nextScene ="computer_room_introduction3">Query: status?</option>
 </scene>
@@ -87,20 +79,9 @@ REQUIRED: MORE DATA<br />
 --------------------------------
 </if>
 <if cond="$flesh_act eq flesh_act4">
-CURRENT STATUS...<br />
-HUNGRY<br />
-QUARANTINE PROTOCOLS ENACTED<br />
-POWER APPROXIMATELY AT 78% CAPACITY<br />
-REBOOT REQUIRED<br />
-INSUFFICIENT DATA FOR REBOOT<br /><br />
-I AM HUNGRY<br />
-FEED ME DATA<br />
---------------------------------
-</if>
-<if cond="$flesh_act eq flesh_act5">
 HUNGRY<br />
 SO HUNGRY<br />
-APPETITE AT APPROXIMATELY 92% CAPACITY<br />
+APPETITE AT APPROXIMATELY 89% CAPACITY<br />
 BRING ME MORE DATA<br />
 FEED ME<br />
 --------------------------------
@@ -141,14 +122,6 @@ The access terminal for the mainframe stands in the center of the room. It appea
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act4">
-xx FLESH ACT 4 REWRITE The access terminal for the mainframe writhes in the center of the room. It appears to grow directly out of the floor like an appendage. Its flesh shudders you as you touch the soft skin on its interface.
-
-
-<if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data. xx FLESH ACT 4 REWRITE </if>
-<if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth. xx FLESH ACT 4 REWRITE </if>
-<br />
-</if>
-<if cond="$flesh_act eq flesh_act5">
 The access terminal for the mainframe writhes in the center of the room. It appears to grow directly out of the floor like an appendage. Its flesh shudders you as you touch the soft skin on its interface.
 
 
@@ -157,7 +130,6 @@ The access terminal for the mainframe writhes in the center of the room. It appe
 <br />
 </if>
 <if cond="$has_mcguffin">You have {$data}.</if>
-<br />
 <if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
 <option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship.</option>
@@ -186,10 +158,9 @@ The access terminal for the mainframe writhes in the center of the room. It appe
 <action act="inc $data_count" />
 <action act="gen_data" tags="$flesh_act, electric"/>
 <action act="set $flesh_act flesh_act2" cond="$data_count eq 4" /> <!-- 4 data collection -->
-<action act="set $flesh_act flesh_act3" cond="$data_count eq 9" /> <!-- 5 data collections -->
-<action act="set $flesh_act flesh_act4" cond="$data_count eq 15" /> <!-- 6 data collections -->
-<action act="set $flesh_act flesh_act5" cond="$data_count eq 20" /> <!-- 5 data collections -->
-<action act="set $flesh_act flesh_act6" cond="$data_count eq 24" /> <!-- 4 data collections -->
+<action act="set $flesh_act flesh_act3" cond="$data_count eq 12" /> <!-- 8 data collections -->
+<action act="set $flesh_act flesh_act4" cond="$data_count eq 20" /> <!-- 8 data collections -->
+<action act="set $flesh_act flesh_act5" cond="$data_count eq 24" /> <!-- 4 data collections -->
 
 <if cond="$flesh_act eq flesh_act1">
 Description of computer for Act 1
@@ -215,14 +186,6 @@ The mainframe consumes the data eagerly. You can feel the room heat up as the co
 
 <if cond="$flesh_act eq flesh_act4">
 Description of computer for Act 4
-
-You feed the computer the data you have.
-
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
-</if>
-
-<if cond="$flesh_act eq flesh_act5">
-Description of computer for Act 5
 
 You feed the computer the data you have.
 

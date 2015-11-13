@@ -3,17 +3,12 @@
 html, body {
     color: lightgoldenrodyellow;
 	text-shadow: 1px 1px 1px #000;
-	font-size: 1.1em;
-	line-height: 1.35em;
+
     height: 100%;
     background: #4c090c;
 	background-size: cover;
     background-image: url('/static/img/wires1.png');
     background-image: url('/static/img/wires1.png'), linear-gradient(to right bottom, rgb(76, 9, 12) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
-}
-
-p {
-	margin-bottom: 1.5em;
 }
 
 /* Scene */

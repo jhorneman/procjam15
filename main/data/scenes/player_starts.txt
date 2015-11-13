@@ -1,5 +1,5 @@
 <scene>
-<meta id="pc_start_1_1" tags="pc_start, flesh_act1" />
+<meta id="pc_start_a" tags="pc_start, flesh_act1" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
 You wake up with a start. How long have you been asleep? What has happened?
@@ -13,7 +13,7 @@ The computer room? Better go see what that is about.
 </scene>
 
 <scene>
-<meta id="pc_start_1_2" tags="pc_start, flesh_act1" />
+<meta id="pc_start_b" tags="pc_start, flesh_act1" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
 You wake up with a start. How long have you been asleep? What has happened?
@@ -28,7 +28,7 @@ The computer room? Better go see what that is about.
 </scene>
 
 <scene>
-<meta id="pc_start_2_1" tags="pc_start, flesh_act2" />
+<meta id="pc_start_c" tags="pc_start, flesh_act2" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
 You slowly come back to consciousness. You're lying on a cot. Why aren't you in your bed?
@@ -42,7 +42,7 @@ The computer room.
 </scene>
 
 <scene>
-<meta id="pc_start_3_1" tags="pc_start, flesh_act3" />
+<meta id="pc_start_d" tags="pc_start, flesh_act3" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
 How long have you been curled in this corner? What happened to your hands?
@@ -52,17 +52,9 @@ Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the comput
 </scene>
 
 <scene>
-<meta id="pc_start_4_1" tags="pc_start, flesh_act4" />
+<meta id="pc_start_e" tags="pc_start, flesh_act4" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
 Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
-<option nextScene="computer_room_introduction1">Go to the computer room.</option>
-</scene>
-
-<scene>
-<meta id="pc_start_5_1" tags="pc_start, flesh_act5" />
-<leadin>You wake up.</leadin>
-<injectBlock tags="pc_init" />
-xx FLESH ACT 5 REWRITE Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
 <option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
