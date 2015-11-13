@@ -46,7 +46,6 @@ class TaggedCollection(object):
         self.name = _name
         self.randomize = _randomize
         self.tagged_items = []
-        self.cache = {}
 
     def add_item(self, _tags, _item):
         if len(_tags) > 0:
@@ -62,9 +61,9 @@ class TaggedCollection(object):
             logger.error("List of desired tags may not be empty.")
             return None
 
-        # Do we already have this in the cache?
-        local_cache_key = ".".join(_desired_tags)
-        if local_cache_key not in self.cache:
+        # Do we already have this stored in the session?
+        game_state_key = self.name + ":" + ".".join(_desired_tags)
+        if game_state_key not in session:
             # No -> Find all items with the right tags.
             indices_of_eligible_items = []
             for item_index, tagged_item in enumerate(self.tagged_items):
@@ -77,18 +76,18 @@ class TaggedCollection(object):
                 return None
 
             # Shuffle, if needed.
-            if self.randomize:
+            if self.randomize or _repeat:
                 random.shuffle(indices_of_eligible_items)
 
-            # Store indices of items in the cache.
-            self.cache[local_cache_key] = indices_of_eligible_items
+            # Store indices of items in the session.
+            session[game_state_key] = indices_of_eligible_items
 
         else:
-            # Yes -> Retrieve indices of items from the cache.
-            indices_of_eligible_items = self.cache[local_cache_key]
+            # Yes -> Retrieve indices of items from the session.
+            indices_of_eligible_items = session[game_state_key]
 
         # Get current index for these tags from the persistent game state.
-        game_state_key = self.name + ":" + local_cache_key
+        game_state_key += "_index"
         index_in_list_of_eligible_items = session.setdefault(game_state_key, 0)
 
         # (First check, then increase, or we'll never pick anything from collections with only one element.)
