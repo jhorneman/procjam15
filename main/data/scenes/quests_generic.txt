@@ -22,8 +22,8 @@ You're in the main utility airlocks.
 
 You step into the wide, empty metal cavity. Thick metal doors separate you from the vacuum of space.  Emergency lights blink dimly with backup power.
 
-The airlock control room is filled with human detritus and mechanical instruments. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It smells fresh.<br/><br/></if>
-
+The airlock control room is filled with human detritus and mechanical instruments. <if cond="$wire_death_scene == $current_scene">You see the charred remains of an electrocuted crew member. It smells fresh.</if>
+<br/><br/>
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, electrical' />
@@ -87,6 +87,7 @@ The shafts here are wide, but you stoop to prevent your head from grazing the lo
 You're in one of the main hallways.
 
 Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signalling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.&lt;br&gt;
+
 Someone has left several doors ajar, their contents spilling out onto the hallway floor from dark offices and storage rooms.
 
 <injectBlock tags="mdesc, $flesh_act" />
@@ -257,7 +258,7 @@ You peer into the kitchens to find them equally abandoned, and the smell of deca
 <leadin>Search the dormitory.</leadin>
 You're in a crew dormitory.
 
-You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements. xx
+You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements.
 
 As the power surges, music suddenly interrupts the stillness... only to fade once again with the lights.
 
@@ -274,7 +275,7 @@ As the power surges, music suddenly interrupts the stillness... only to fade onc
 <leadin>Search the restrooms.</leadin>
 You're in one of the unisex restrooms.
 
-You step into the flooded room and shine your light among the dark stalls and the large empty shower room. Water trickles unstopped from a single faucet. xx
+You step into the flooded room and shine your light among the dark stalls and the large empty shower room. Water trickles unstopped from a single faucet.
 
 <injectBlock tags="mdesc, $flesh_act" />
 

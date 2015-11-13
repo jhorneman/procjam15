@@ -48,26 +48,26 @@ You wonder if you are alone here.
 </block>
 
 <!-- BLOCKS: MISSION DESCRIPTIONS -->
-<block tags="mdesc, flesh_act1">"QUARANTINE LEVEL ALPHA," the intercom repeats in a calming voice.</block>
-<block tags="mdesc, flesh_act1">A robotic voice repeats over the crackling loudspeakers, "PLEASE REPORT TO THE MEDBAY IF YOU DISPLAY ANY OF THE PRIOR SYMPT..."</block>
-<block tags="mdesc, flesh_act1">The local computer console reads, "ACCESS DENIED".</block>
-<block tags="mdesc, flesh_act1">A terminal blinks with the message, "WARNING: LOW POWER".</block>
-<block tags="mdesc, flesh_act1">The monitors say, "SYSTEMS OFFLINE. PLEASE REBOOT"</block>
+<block tags="mdesc, flesh_act1">"<t>QUARANTINE LEVEL ALPHA</t>," the intercom repeats in a calming voice.</block>
+<block tags="mdesc, flesh_act1">A robotic voice repeats over the crackling loudspeakers, "<t>PLEASE REPORT TO THE MEDBAY IF YOU DISPLAY ANY OF THE PRIOR SYMPT...</t>"</block>
+<block tags="mdesc, flesh_act1">The local computer console reads, "<t>ACCESS DENIED</t>".</block>
+<block tags="mdesc, flesh_act1">A terminal blinks with the message, "<t>WARNING: LOW POWER</t>".</block>
+<block tags="mdesc, flesh_act1">The monitors say, "<t>SYSTEMS OFFLINE. PLEASE REBOOT</t>"</block>
 <block tags="mdesc, flesh_act1">Caution tape sits limply on the floor.</block>
 <block tags="mdesc, flesh_act1">Biohazard tape hangs limply from the ceiling.</block>
 <block tags="mdesc, flesh_act1">One of the doors has been barred manually from the other side.</block>
 <block tags="mdesc, flesh_act1">You call out for survivors but hear nothing but the emergency alarms and your echo.</block>
 <block tags="mdesc, flesh_act1">Someone else has been here before.</block>
-<block tags="mdesc, flesh_act1">Red emergency lights blink and the phrase "QUARANTINE IN EFFECT" scrolls over the main doorway.</block>
+<block tags="mdesc, flesh_act1">Red emergency lights blink and the phrase "<t>QUARANTINE IN EFFECT</t>" scrolls over the main doorway.</block>
 <block tags="mdesc, flesh_act1">Items appear to be abandoned suddenly.</block>
 <block tags="mdesc, flesh_act1">Despite the quarantine protocols, the doors on the ship do not appear sealed.</block>
 <block tags="mdesc, flesh_act1">A holographic projector repeats the last few seconds of film credits on a distant wall.</block>
 <block tags="mdesc, flesh_act1">Even the backup computer systems appear to be offline.</block>
 <block tags="mdesc, flesh_act1">The station is eerily silent except for the hum of its machinery.</block>
 
-<block tags="mdesc, flesh_act2">Announcement, "UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED".xx</block>
-<block tags="mdesc, flesh_act2">Announcement, "PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL."xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "UNIDENTIFIED INFECTION DETECTED"xx</block>
+<block tags="mdesc, flesh_act2">Announcement, "<t>UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED</t>".xx</block>
+<block tags="mdesc, flesh_act2">Announcement, "<t>PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL</t>."xx</block>
+<block tags="mdesc, flesh_act2">Terminal read-out, "<t>UNIDENTIFIED INFECTION DETECTED</t>."xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "<t>DELETING LOGS...</t>"xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
 <block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
@@ -82,11 +82,10 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act2">You can hear an odd suckling sound but cannot find the source.</block>
 <block tags="mdesc, flesh_act2">The ceiling exhales warm, moist air into the room as you enter.</block>
 
-<block tags="mdesc, flesh_act3">The announcement over the speakers repeats the calming phrase, "MOTHER IS HERE. EVERYTHING WILL BE FINE. MOTHER IS HERE."</block>
 <block tags="mdesc, flesh_act3">A robotic voice repeats over the cracking intercoms, "PLEASE REPORT TO THE MAINFRAME {$PC_first} {$PC_last} WITH SUFFICIENT DATA."</block>
-<block tags="mdesc, flesh_act3">All the monitors display the same message - "WE ARE."</block>
+<block tags="mdesc, flesh_act3">All the monitors display the same message - "<t>WE ARE.</t>"</block>
 <block tags="mdesc, flesh_act3">A console reads out, "<t>YES PLEASE YES MORE DATA YESSSSS</t>"</block>
-<block tags="mdesc, flesh_act3">A terminal contains a single message, "FEED US."</block>
+<block tags="mdesc, flesh_act3">A terminal contains a single message, "<t>FEED US.</t>"</block>
 <block tags="mdesc, flesh_act3">A message blinks on the nearby console, "<t>WE WILL BE WHOLE.</t>"</block>
 <block tags="mdesc, flesh_act3">A monitor reads, "<t>WE HUNGER.</t>"</block>
 <block tags="mdesc, flesh_act3">A vent in the ceiling salivates onto the floor.</block>
@@ -95,13 +94,13 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act3">You can hear an odd suckling sound but cannot find the source.</block>
 <block tags="mdesc, flesh_act3">The red emergency lights look pink underneath a new growth of skin.</block>
 
-<block tags="mdesc, flesh_act4">It looks familiar.</block>
-<block tags="mdesc, flesh_act4">It is warm and comforting in here.</block>
-<block tags="mdesc, flesh_act4">You wish you could just stay here forever.</block>
-<block tags="mdesc, flesh_act4">This room feels so familiar to you.</block>
-<block tags="mdesc, flesh_act4">You don't want to leave.</block>
-<block tags="mdesc, flesh_act4">It is beautiful in here.</block>
-<block tags="mdesc, flesh_act4">The beauty of it leaves you speechless.</block>
+<block tags="mdesc, flesh_act5">It looks familiar.</block>
+<block tags="mdesc, flesh_act5">It is warm and comforting in here.</block>
+<block tags="mdesc, flesh_act5">You wish you could just stay here forever.</block>
+<block tags="mdesc, flesh_act5">This room feels so familiar to you.</block>
+<block tags="mdesc, flesh_act5">You don't want to leave.</block>
+<block tags="mdesc, flesh_act5">It is beautiful in here.</block>
+<block tags="mdesc, flesh_act5">The beauty of it leaves you speechless.</block>
 
 <!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
 <block tags="odesc, flesh_act2"> It is covered in mucous.</block>
@@ -115,16 +114,16 @@ You wonder if you are alone here.
 <block tags="odesc, flesh_act2"> You wipe the slime off of it and place it in your pack.</block>
 <block tags="odesc, flesh_act2"> You shake it to reduce the saliva covering it and pack it away.</block>
 
-<block tags="odesc, flesh_act3"> As you pick it up, it attempts fasten itself to you with tiny suckers.</block>
-<block tags="odesc, flesh_act3"> As you pick it up, fine silica hairs tickly your skin.</block>
-<block tags="odesc, flesh_act3"> It is covered in skin filaments.</block>
-<block tags="odesc, flesh_act3"> It seeks out the warmth of your hands.</block>
-<block tags="odesc, flesh_act3"> It purrs softly as you pick it up.</block>
-<block tags="odesc, flesh_act3"> It nuzzles your hand.</block>
-<block tags="odesc, flesh_act3"> It coos with contentment as you place it in your pack.</block>
-<block tags="odesc, flesh_act3"> As you pick it up it hungrily sinks its teeth into your finger, drawing a single drop of blood.</block>
-<block tags="odesc, flesh_act3"> You smile at it. It smiles back.</block>
-<block tags="odesc, flesh_act3"> As you look at it, it looks back at you.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, it attempts fasten itself to you with tiny suckers.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, fine silica hairs tickly your skin.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> It is covered in skin filaments.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> It seeks out the warmth of your hands.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> It purrs softly as you pick it up.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> It nuzzles your hand.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> It coos with contentment as you place it in your pack.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up it hungrily sinks its teeth into your finger, drawing a single drop of blood.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> You smile at it. It smiles back.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you look at it, it looks back at you.</block>
 
 
 
