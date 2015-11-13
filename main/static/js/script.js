@@ -1,29 +1,19 @@
 "use strict";
 
-function showDebugView() {
+function setDebugView(_show) {
     var el = document.getElementById("debug-view");
-    el.style.display = "block";
+    el.style.display = _show ? "block" : "none";
 
-    el = document.getElementById("hidden-debug-view");
-    el.style.display = "none";
-
-    localStorage.setItem("showDebugView", "on")
+    localStorage.setItem("showDebugView", _show ? "on" : "off")
 }
 
-function hideDebugView() {
-    var el = document.getElementById("debug-view");
-    el.style.display = "none";
-
-    el = document.getElementById("hidden-debug-view");
-    el.style.display = "block";
-
-    localStorage.setItem("showDebugView", "off")
+function getDebugViewState() {
+    var show = localStorage.getItem("showDebugView");
+    return (show === "on");     // Includes null for when there is no entry in local storage.
 }
 
-var showFlag = localStorage.getItem("showDebugView");
-if (showFlag === null) { showFlag = false; }
-if (showFlag === "on") {
-    showDebugView();
-} else {
-    hideDebugView();
+function toggleDebugView() {
+    setDebugView(!getDebugViewState());
 }
+
+setDebugView(getDebugViewState());

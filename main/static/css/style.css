@@ -28,6 +28,7 @@ li {
 
 ul#options {
     margin-top: 1em;
+    margin-bottom: 3em; /* This creates space between options and footer. */
     list-style: disc inside;
 	color: #d09672;
 }
@@ -49,6 +50,28 @@ ul#options li a:hover{
 }
 
 /* Footer */
+
+footer {
+    margin-top: 1em;
+	color: #616161;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+
+footer li {
+    list-style-type: none;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+    border-right: 1px solid #616161;
+    display: inline;
+}
+
+footer li:last-child {
+    border-right: none;
+}
 
 footer a {
 	color: #616161;
@@ -103,15 +126,6 @@ body.style_terminal {
 }
 
 /* Debugging view */
-
-#debug-view {
-    padding-top: 1em;
-}
-
-#hidden-debug-view {
-    padding-top: 1em;
-    display: none;
-}
 
 table#game-state caption {
     text-transform: uppercase;
