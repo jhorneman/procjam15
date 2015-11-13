@@ -11,12 +11,12 @@ from content import evaluate_content_blocks, goto_action
 
 logger = logging.getLogger(__name__)
 
-first_scene_id = 'start'
+first_scene_id = "start"
 
 
 # From http://stackoverflow.com/a/28186447/1057708
 def generate_nonce(length=8):
-    return ''.join([str(random.randint(0, 9)) for i in range(length)])
+    return "".join([str(random.randint(0, 9)) for i in range(length)])
 
 
 def get_current_scene_data():
@@ -25,17 +25,18 @@ def get_current_scene_data():
 
     prepare_game_state()
 
+    # Get the nonce from the session and the one from the request parameter.
     session_nonce = session.get("__nonce", generate_nonce())
-    url_nonce = request.args.get('nonce', session_nonce)
+    url_nonce = request.args.get("nonce", session_nonce)
 
-    # if url_nonce != session_nonce:
-    #     return {
-    #         "text": "Reloading the page, naughty naughty!",
-    #         "options": [],
-    #         "body_classes": "",
-    #     }
+    # If they are not the same, the player reloaded the page.
+    # EXCEPT WITH A CLEAN URL. So this doesn't work in the first scene. I don't see a way around this.
+    session["__canUpdateState"] = (session_nonce == url_nonce)
 
-    action = request.args.get('action', None)
+    # Provide a random number generator that produces the same numbers if the player reloaded the page.
+    session["__rng"] = random.WichmannHill(url_nonce)
+
+    action = request.args.get("action", None)
 
     if action is None:
         restart()
@@ -43,7 +44,7 @@ def get_current_scene_data():
         session["previous_scene"] = ""
 
     elif action == goto_action:
-        current_scene_id = request.args.get('next_scene', None)
+        current_scene_id = request.args.get("next_scene", None)
         if current_scene_id is None:
             logger.error("Couldn't find next_scene argument.")
             return None
@@ -94,6 +95,10 @@ def get_current_scene_data():
     for option in scene_data["options"]:
         option["params"]["nonce"] = new_nonce
     session["__nonce"] = new_nonce
+
+    # We don't need these anymore.
+    del session["__canUpdateState"]
+    del session["__rng"]
 
     # Set this for next time we evaluate.
     session["previous_scene"] = current_scene_id

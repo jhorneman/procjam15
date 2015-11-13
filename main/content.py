@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import types
-import random
 import logging
 from condition import parse_condition_from_string
 from action import parse_action_from_string
@@ -84,7 +83,7 @@ class OneOf(Content):
 
     def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
-            index = random.randint(0, len(self.blocks)-1)
+            index = _state["__rng"].randint(0, len(self.blocks)-1)
             return evaluate_content_blocks([self.blocks[index]], _state)
         else:
             return None
@@ -323,10 +322,6 @@ def read_tags(_el, _el_name):
     tags_string = _el.get("tags")
     if tags_string:
         tags = string_to_tags(tags_string)
-        if len(tags) == 0:
-            logger.error("Encountered {0} element with empty tags.".format(_el_name))
-    else:
-        logger.error("Encountered {0} element without a tags attribute.".format(_el_name))
     return tags
 
 

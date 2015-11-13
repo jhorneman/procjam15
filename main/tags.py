@@ -76,6 +76,8 @@ class TaggedCollection(object):
                 return None
 
             # Shuffle, if needed.
+            # (This use of random is fine even if the player reloads the page. It gets stored in the session,
+            #  so it won't get executed twice.)
             if self.randomize or _repeat:
                 random.shuffle(indices_of_eligible_items)
 
@@ -89,6 +91,13 @@ class TaggedCollection(object):
         # Get current index for these tags from the persistent game state.
         game_state_key += "_index"
         index_in_list_of_eligible_items = session.setdefault(game_state_key, 0)
+
+        # Are we NOT allowed to update state or did the player reload the page?
+        if not session["__canUpdateState"]:
+            # Yes -> Then we need to get the previous index, because we've already updated it.
+            index_in_list_of_eligible_items -= 1
+            if index_in_list_of_eligible_items < 0:
+                index_in_list_of_eligible_items = len(indices_of_eligible_items)-1
 
         # (First check, then increase, or we'll never pick anything from collections with only one element.)
         if index_in_list_of_eligible_items >= len(indices_of_eligible_items):
@@ -104,10 +113,11 @@ class TaggedCollection(object):
         # Get the index of the tagged item.
         item_index = indices_of_eligible_items[index_in_list_of_eligible_items]
 
-        # Increase the index into the list of eligible items, and store it in the persistent game state.
-        index_in_list_of_eligible_items += 1
-        session[game_state_key] = index_in_list_of_eligible_items
+        # Are we allowed to update state or did the player reload the page?
+        if session["__canUpdateState"]:
+            # Increase the index into the list of eligible items, and store it in the persistent game state.
+            index_in_list_of_eligible_items += 1
+            session[game_state_key] = index_in_list_of_eligible_items
 
         # Return the tagged item.
-        # logger.debug("{3} tagged {0}: {1}/{2}".format(cache_key, index_in_list_of_eligible_items, len(indices_of_eligible_items), self.name))
         return self.tagged_items[item_index].item

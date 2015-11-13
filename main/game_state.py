@@ -24,6 +24,8 @@ def extract_non_game_state_from_session():
 
 
 def generate_player_character():
+    # (These uses of random are fine even if the player reloads the page. The results get stored in the session,
+    #  so the calls won't get executed twice.)
     first_name_index = session.setdefault("first_name_index", random.randint(0, len(first_names)-1))
     last_name_index = session.setdefault("last_name_index", random.randint(0, len(last_names)-1))
     flesh_act = session.get("flesh_act", initial_game_state["flesh_act"])

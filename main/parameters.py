@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import random
 
 
 logger = logging.getLogger(__name__)
@@ -31,7 +30,7 @@ def get_rhs_parameter_value(_state, _parameter_name):
         return _state.setdefault(variable_name, 0)
 
     if _parameter_name.lower() == "random":
-        return random.randint(1, 100)
+        return _state["__rng"].randint(1, 100)
 
     if _parameter_name.lower() == "true":
         return True

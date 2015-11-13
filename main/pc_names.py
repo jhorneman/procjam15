@@ -646,5 +646,7 @@ job_titles = {
 }
 
 # Shuffle lists of first and last names.
+# (These uses of random are fine because they're global for all users. It's just to avoid having any
+#  predictable patterns.)
 random.shuffle(first_names)
 random.shuffle(last_names)
