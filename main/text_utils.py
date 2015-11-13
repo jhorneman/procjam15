@@ -73,6 +73,10 @@ class CustomFormatter(string.Formatter):
                     else:
                         value = "a " + value
 
+                # Format it.
+                if key == "data":
+                    value = "<span class=\"data-name\">{0}</span>".format(value)
+
                 return value
 
             else:
