@@ -8,6 +8,7 @@ html, body {
     height: 100%;
     background: #4c090c;
 	background-size: cover;
+    background-repeat: no-repeat;
     background-image: url('/static/img/wires1.png');
     background-image: url('/static/img/wires1.png'), linear-gradient(to right bottom, rgb(76, 9, 12) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
 }
@@ -19,11 +20,11 @@ p {
 /* Scene */
 
 .scene {
-    margin-top: 5%;
+    margin-top: 2em;
 }
 
 li {
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
 }
 
 ul#options {
