@@ -2,6 +2,7 @@
 
 # TODO: Consider implementing this: http://flask.pocoo.org/snippets/51/
 
+import random
 from flask import session
 from text_blocks import get_data_name_with_tag
 from pc_names import first_names, last_names, job_titles
@@ -23,10 +24,20 @@ def extract_non_game_state_from_session():
 
 
 def generate_player_character():
-    first_name_index = session.setdefault("first_name_index", 0)
-    last_name_index = session.setdefault("last_name_index", 0)
+    first_name_index = session.setdefault("first_name_index", random.randint(0, len(first_names)-1))
+    last_name_index = session.setdefault("last_name_index", random.randint(0, len(last_names)-1))
     flesh_act = session.get("flesh_act", initial_game_state["flesh_act"])
-    job_title_index = session.setdefault("job_title_index:" + flesh_act, 0)
+    job_title_index = session.setdefault("job_title_index:" + flesh_act, random.randint(0, len(job_titles[flesh_act])-1))
+
+    PC_data = {
+        "PC_first": first_names[first_name_index],
+        "PC_last": last_names[last_name_index],
+        "PC_job": job_titles[flesh_act][job_title_index]
+    }
+
+    first_name_index += 1
+    last_name_index += 1
+    job_title_index += 1
 
     if first_name_index >= len(first_names):
         first_name_index = 0
@@ -37,15 +48,9 @@ def generate_player_character():
     if job_title_index >= len(job_titles[flesh_act]):
         job_title_index = 0
 
-    PC_data = {
-        "PC_first": first_names[first_name_index],
-        "PC_last": last_names[last_name_index],
-        "PC_job": job_titles[flesh_act][job_title_index]
-    }
-
-    session["first_name_index"] = first_name_index + 1
-    session["last_name_index"] = last_name_index + 1
-    session["job_title_index:" + flesh_act] = job_title_index + 1
+    session["first_name_index"] = first_name_index
+    session["last_name_index"] = last_name_index
+    session["job_title_index:" + flesh_act] = job_title_index
 
     return PC_data
 
