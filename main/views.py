@@ -27,6 +27,11 @@ def restart_game():
     return redirect(url_for("show_scene"))
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.errorhandler(500)
 def server_error(error):
     return render_template("error.html", error_code=error), 500
