@@ -91,7 +91,7 @@ body.style_terminal {
 }
 
 .divLine:before {
-    content: '----------------------';
+    content: '--------------------';
 }
 
 @media (min-width: 550px) {
