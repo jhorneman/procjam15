@@ -108,6 +108,10 @@ def break_text_into_paragraphs(_text):
         logger.error("Text to be broken up is None.")
         return ""
 
+    # TODO: This has nothing to do with breaking text into paragraphs, rename or refactor accordingly.
+    # Replace terminal lines with spans so they can be styled in CSS.
+    _text = string.replace(_text, "--------------------------------", "<span class=\"divLine\"></span>")
+
     # Split into parts alternating between not inside style tags and inside style tags.
     parts = t_re.split(_text)
     combined_text = ""
