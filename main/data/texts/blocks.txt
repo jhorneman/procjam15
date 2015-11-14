@@ -89,6 +89,8 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act4, flesh_act5">The beauty of it leaves you speechless.</block>
 
 <!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
+<block tags="odesc, flesh_act1"></block>
+
 <block tags="odesc, flesh_act2, flesh_act3"> It is covered in mucous.</block>
 <block tags="odesc, flesh_act2"> It is covered in a thick, opaque gel.</block>
 <block tags="odesc, flesh_act2"> It feels warm to the touch.</block>
@@ -115,7 +117,12 @@ INSUFFICIENT DATA<br />
 <block tags="odesc, flesh_act5"> You look at it hungrily.</block>
 <block tags="odesc, flesh_act5"> Your stomach growls in anticipation.</block>
 
-
+<!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS re injuries -->
+<block tags="injury, none"></block>
+<!-- <block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
+<block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
+<block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
+ -->
 <!-- trying out self-mutilation side goal -->
 <!-- work like injuries, called inside options after collecting data  -->
 <block tags="sacrifice1"><br /><br />(Player has sacrificed hair)</block>

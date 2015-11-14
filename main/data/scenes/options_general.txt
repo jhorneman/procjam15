@@ -5,7 +5,7 @@ You pick through a pile of clothing, shaking and tossing aside each piece to ens
 
 In a pocket you find {$data}.<injectBlock tags="odesc, $flesh_act, style_mission" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -17,7 +17,7 @@ You pull open drawers and empty their contents messily on the flood in the searc
 
 In the bottom drawer you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -29,7 +29,7 @@ You unlatch and open a medium-sized metal container to find miscellaneous goods.
 
 At the bottom of the container you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -41,7 +41,7 @@ You flip the top off of a plastic container and sift through it. It is mostly fi
 
 At the bottom of the container you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -53,7 +53,7 @@ You reach into the wastebin and toss aside bits of useless rubish.<br />
 
 At the bottom of the bin you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -65,7 +65,7 @@ You turn the handle and the large metal cabinet doors open, creaking loudly in t
 
 On the top shelf you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -77,7 +77,7 @@ You pull various tools, empty cartons, and used supplies off of the shelves the 
 
 On the lowest shelve you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -89,7 +89,7 @@ You pull a release latch on the wall and hear a hiss of air as the storage compa
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -101,7 +101,7 @@ You grab a crowbar from beside the crate and use it to pry off the lid.<br />
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -113,7 +113,7 @@ You lift the heavy lid of the toolbox and survey its contents - greasy rags, rat
 
 Beneath the tools you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -125,7 +125,7 @@ You reset the main power switch on the computer. It starts to power on and then 
 
 Beneath it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -137,7 +137,7 @@ You take apart the broken computer console, pulling off the touchscreen and lift
 
 Beneath it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -159,7 +159,7 @@ You leaf through the scattered papers. You see the words "INFECTION" and "QUARAN
 
 Among the papers you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -171,7 +171,7 @@ You search a countertop covered in various medical equipment you cannot identify
 
 Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -183,7 +183,7 @@ You carefully pick through a pile of broken medical equipment laying in pieces o
 
 Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -195,7 +195,7 @@ You search the broken machinery looking for working parts, sensors, mechanical b
 
 You find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -207,7 +207,7 @@ You pry open an electrical panel and shield your eyes from the sparks until they
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -219,7 +219,7 @@ You reach between the bundles of wires and pull them to the side, peering at the
 
 You find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -231,7 +231,7 @@ You shine your flashlight onto the auxillary solar cells but they fail to react.
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -243,7 +243,7 @@ You attempt to log into the terminal and access the backup data. The computer wh
 
 In the tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -255,7 +255,7 @@ You detach a large maintenance panel and try to decipher the labyrinth of colorf
 
 Inside you manage to salvage {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -267,7 +267,7 @@ You find a box of thick utility wires, each one heavier than it looks. You pull 
 
 Beneath them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -279,7 +279,7 @@ You open the electric router and shine your light upon its guts.<br />
 
 Within it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -291,7 +291,7 @@ You wait for the uneven power surging through the ship to subside before pulling
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -303,7 +303,7 @@ You flip the latch and the fuse box swings open on its spring.<br />
 
 Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -315,7 +315,7 @@ You look through the crew's belongings trying to salvage anything that could be 
 
 Among the detritus you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -327,7 +327,7 @@ You go through the bags one by one, opening them up and rifling through their po
 
 Inside one of them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -339,7 +339,7 @@ You look among the half-eaten food for any useful biological specimens, or unusu
 
 On a table you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -351,7 +351,7 @@ You scan the room for biological samples that may have triggered the quarantine,
 
 Instead you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -364,7 +364,7 @@ You turn the heavy handle and swing open the closet door. You shine your light o
 
 On the top shelf of the closet you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -376,7 +376,7 @@ The paper trays largely stand empty, the paper scattered along the ground like d
 
 In the last tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -388,7 +388,7 @@ The emergency toolbox looks undisturbed. You open it hoping to find something us
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -400,7 +400,7 @@ You lift the lid of the mechanical toolbox and dump out various tools and sensor
 
 Underneath you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -412,7 +412,7 @@ You rifle through each of the backpack's pockets thoroughly, making sure not to 
 
 In the back pocket you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -424,7 +424,7 @@ You turn the valve on the leaking water tank but it does not fix the problem. Yo
 
 Inside the machine you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -436,7 +436,7 @@ You find a large metal tool and smash the vending machine cover, shattering the 
 
 Inside it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -448,7 +448,7 @@ You sift through the contents of the cart that have spilled out all over the flo
 
 Among the detritus you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -460,7 +460,7 @@ You unlock and open the first aid kit, but someone has gotten here before you an
 
 Among the leftovers you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -472,7 +472,7 @@ A body lies facedown on the floor. You carefully avoid its face as you search it
 
 Beneath the body you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -484,7 +484,7 @@ You flip the main power to the computer systems and flitch as the console explod
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>
@@ -496,7 +496,7 @@ You use the console, but it ignores your commands. You pull off the cover to see
 
 You manage to salvage {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
 </scene>

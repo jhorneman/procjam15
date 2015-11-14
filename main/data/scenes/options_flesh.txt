@@ -5,7 +5,7 @@ You stroke a yellow proboscis growing from a computer terminal. It secretes a pu
 
 The fleshy petals at its base open up to reveal {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -17,7 +17,7 @@ You slice into a quivering tumor. It appears to recoil from your utility knife.
 
 Among the gunk and foul fluids, you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -29,7 +29,7 @@ You climb up onto a shelf of thick cartilage and cut back the ceiling membrane. 
 
 Behind it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -41,7 +41,7 @@ You pull apart the sticky webbing. It glues itself to your skin and clothes as y
 
 In one of the webs you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -53,7 +53,7 @@ You carefully squeeze the small fluid sacs growing onto a shelf of cartilege. Mo
 
 Inside one of the sacs you discover {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -65,7 +65,7 @@ You lift the skin rug and check its massive, warm folds for anything you might b
 
 In one of the folds you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -77,7 +77,7 @@ You shine your light on a bulbous flesh-colored growth covering a sizeable porti
 
 The flesh opens up to reveal {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -89,7 +89,7 @@ You rip open a coccoon, its pink sinewy webbing snapping as you pull it apart wi
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -101,7 +101,7 @@ You stomp on a cluster of eggs. Yellow and opaque yolk leaks out from the cracke
 
 Inside the yold you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -113,7 +113,7 @@ You pull apart the folds of the adrenal gland, its plasma covering your hands an
 
 Inside the gland you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -125,7 +125,7 @@ You pull out a utility knife and cut back thick tangles of gnarled hair growth.
 
 Within the tangle you discover {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -137,7 +137,7 @@ You rip the thick, mottled gizzard from the floor and squeeze it to expel its co
 
 Inside the gizzard you find{data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -149,7 +149,7 @@ You stomp on a small, round carapace and the chitinous shell breaks into sharp f
 
 Beneath the carapace you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -161,7 +161,7 @@ You reach inside a sputtering, deflated placenta. It squirts a foul, brown liqui
 
 Inside the placenta you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -173,7 +173,7 @@ You investigate an amniotic sac, the fluid just barely contained within a thin m
 
 You pop the sac and inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -185,7 +185,7 @@ You dig through some spongy pink tissues, soft and pliable with new growth.
 
 In between the folds you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -197,7 +197,7 @@ You dig your fingers into the semi-transparent cuticle skin and peel it back fro
 
 In the nail bed, you uncover {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -209,7 +209,7 @@ You get onto your knees and reach into a small warm cavity in the wall.
 
 In between the sweat and hair, you grasp ahold of {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -221,7 +221,7 @@ You dip your fingers into the opaque lymphatic fluid and sift through the floati
 
 At the bottom of the fluid you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -233,7 +233,7 @@ You pull aside the thick tapestry of blue and red veins to reveal more metal and
 
 Hidden behind them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -245,7 +245,7 @@ You sift through the gut flora, pushing aside patches of semisolid foul-smelling
 
 Beneath the flora you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -259,7 +259,7 @@ You strip the dried gunk off the cabinet handle and open it, separating the door
 
 Inside the cabinet you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -271,7 +271,7 @@ You sift through the items on the shelves in search of something to salvage, bei
 
 On the lowest shelf you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -283,7 +283,7 @@ You lift open the lid of the box, being careful not to rupture the dark purple c
 
 Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -297,7 +297,7 @@ You peel the pink and veiny membrance off of the fuse box and let it drop to the
 
 Inside the fuse box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -309,7 +309,7 @@ You investigate the sparking capillaries dripping a slick clear fluid.
 
 Behind the wires you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -323,7 +323,7 @@ You reach inside the computer's dark, warm orifice. Your fingers catch on someth
 
 Inside the computer you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -335,7 +335,7 @@ You stroke the computer's olfactory senses. The console's data tray ejects.
 
 In the tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -352,7 +352,7 @@ You rifle through a pile of discarded shedded skins, checking each one thoroughl
 
 Beneath the skins you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
-<injectBlock tags="$injury" />
+<injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>

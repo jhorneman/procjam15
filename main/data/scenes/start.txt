@@ -10,5 +10,3 @@ Remember, death is not the end.
 <action act="set $flesh_act flesh_act1" />
 <action act="set $data_count 0" />
 </scene>
-
-
