@@ -156,7 +156,7 @@ The elevator shaft continues down into darkness.
 <leadin>Search the sector 1 server room.</leadin>
 You're in the sector 1 server room.
 
-Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. <if cond="$wire_death_scene == $current_scene">A charred body lies in a corner. It looks like this person recently got electrocuted.<br/><br/></if>
+Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. xx<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner. It looks like this person recently got electrocuted.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
