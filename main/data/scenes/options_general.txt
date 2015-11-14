@@ -111,6 +111,11 @@ Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <leadin>Search through toolbox.</leadin>
 You lift the heavy lid of the toolbox and survey its contents - greasy rags, ratchets, various backup sensors.<br />
 
+<if cond="$injury == none"><if cond="30 gt random">
+You cut your hand on a razor-sharp cutting tool.
+<action act="set $injury bleeding_hand" />
+</if></if>
+
 Beneath the tools you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
@@ -147,6 +152,11 @@ Beneath it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <leadin>Read documents.</leadin>
 You sift through various papers, printed and hand-written, looking for any information as to the current state of the ship and its crew.<br />
 
+<if cond="$injury == none"><if cond="30 gt random">
+You cut your hand on the razor-sharp edge of a piece of paper.
+<action act="set $injury bleeding_hand" />
+</if></if>
+
 Among the documents you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with {$data}.</option>
@@ -180,6 +190,11 @@ Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='medical equipment broken' tags='option, medical, style_mission'/>
 <leadin>Search broken medical equipment</leadin>
 You carefully pick through a pile of broken medical equipment laying in pieces on the floor from the unstable gravity systems. Various vials crack under your feet, their unknown contents oozing onto the tiles.<br />
+
+<if cond="$injury == none"><if cond="30 gt random">
+Despite being careful, you cut your hand on a sliver of thin glass.
+<action act="set $injury bleeding_hand" />
+</if></if>
 
 Among them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 

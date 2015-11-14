@@ -1,0 +1,6 @@
+<!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS re injuries -->
+<block tags="injury, none"></block>
+
+<block tags="injury, bleeding_hand"><br/><br/>Your injured hand throbs.</block>
+<block tags="injury, bleeding_hand"><br/><br/>Blood drips from your injured hand.</block>
+<block tags="injury, bleeding_hand"><br/><br/>Your hand is slick with blood.</block>
