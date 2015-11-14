@@ -3,12 +3,18 @@
 <leadin>Communicate with the mainframe.</leadin>
 <action act="set $is_fed 0" />
 <action act="set $commands 1" />
-<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
-<if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
-<if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
-<if cond="$flesh_act eq flesh_act5">Description of computer for Act 5</if>
-<if cond="$flesh_act eq flesh_act6">Description of computer for Act 6 (THE END)</if>
+<if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
+
+You touch the cold screen and type in your commands.</if>
+<if cond="$flesh_act eq flesh_act2">The computer terminal is covered in a thick, sticky mucous. You use your sleeve to wipe off the liquid from the terminal's face before you touch the cold, tacky screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act3">The computer terminal appears to be covered in pink growths, like strange fungus. You carefully avoid touching them as you reach for the cold screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act4">The computer terminal is covered in red webbing and pink growths secreting a yellow, rancid fluid. You wipe the screen clear of the liquid before typing in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act5">The computer terminal writhes and appears to reach out as you approach it. It is covered in pink skin and sinewy muscle. It trembles as you type your commands into its warm interface.
+</if>
+<if cond="$flesh_act eq flesh_act6">The mainframe watches you as you reach out to stroke the soft skin of its interface.</if>
 <br /><br />
 Enter command:
 <injectOption tags="computer_talk, $flesh_act" />

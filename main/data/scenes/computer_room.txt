@@ -16,16 +16,16 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act3">
-The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticky to a thick pink residue that covers the floor.
+The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticking to a thick pink residue that covers the floor.
 
 The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by arteries and umbilical cords criss-crossing the room.  They drip with fluids.
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act4">
-xx FLESH ACT 4 REWRITE The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
+The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm, humid center.
 
-The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
+The entire room is the mainframe, with machines sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
@@ -34,7 +34,7 @@ The door to the central mainframe unfolds before you, anticipating your approach
 
 The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
 
-A single large terminal in the center of the room allows human access to the mainframe.
+A single large appendage in the center of the room allows human access to the mainframe.
 </if>
 <option nextScene ="computer_room_introduction2">Communicate with the mainframe.</option>
 
@@ -42,13 +42,19 @@ A single large terminal in the center of the room allows human access to the mai
 
 <scene>
 <meta id="computer_room_introduction2" tags="style_terminal" />
-<if cond="$flesh_act eq flesh_act1">Description of computer for Act 1</if>
-<if cond="$flesh_act eq flesh_act2">Description of computer for Act 2</if>
-<if cond="$flesh_act eq flesh_act3">Description of computer for Act 3</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 4</if>
-<if cond="$flesh_act eq flesh_act4">Description of computer for Act 5</if>
-<br/>
+<if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
 
+You touch the cold screen and type in your commands.</if>
+<if cond="$flesh_act eq flesh_act2">The computer terminal is covered in a thick, sticky mucous. You use your sleeve to wipe off the liquid from the terminal's face before you touch the cold, tacky screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act3">The computer terminal appears to be covered in pink growths, like strange fungus. You carefully avoid touching them as you reach for the cold screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act4">The computer terminal is covered in red webbing and pink growths secreting a yellow, rancid fluid. You wipe the screen clear of the liquid before typing in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act5">The computer terminal writhes and appears to reach out as you approach it. It is covered in pink skin and sinewy muscle. It trembles as you type your commands into its warm interface.
+</if>
+<if cond="$flesh_act eq flesh_act6">The mainframe watches you as you reach out to stroke the soft skin of its interface.</if>
+<br /><br />
 Enter command:
 <option nextScene ="computer_room_introduction3">Query: status?</option>
 </scene>
@@ -117,15 +123,18 @@ FEED ME<br />
 <scene>
 <meta id='computer_room' tags="style_comp_room"/>
 <if cond="$flesh_act eq flesh_act1">
-The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It looks like a normal terminal.
+The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe machinery whirls with fresh data.</if>
 <if cond="$is_fed eq 0">The computer terminal only reads, <t>"INSUFFICIENT DATA."</t></if>
-<br />
 </if>
 <if cond="$flesh_act eq flesh_act2">
-The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. A thin pink film has begun to grow on the monitor.
+The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell wafts toward you with the humid air.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe appears satisfied by the fresh data you fed it.</if>
@@ -133,7 +142,9 @@ The access terminal for the mainframe stands in the center of the room. Its meta
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act3">
-The access terminal for the mainframe stands in the center of the room. It appears to grow seamlessly out of the floor. The monitor drips with a sticky, yet sweet smelling, residue.
+The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticking to a thick pink residue that covers the floor.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by arteries and umbilical cords criss-crossing the room.  They drip with fluids. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe contentedly digests the data you have fed it.</if>
@@ -141,7 +152,10 @@ The access terminal for the mainframe stands in the center of the room. It appea
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act4">
-xx FLESH ACT 4 REWRITE The access terminal for the mainframe writhes in the center of the room. It appears to grow directly out of the floor like an appendage. Its flesh shudders you as you touch the soft skin on its interface.
+The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm, humid center.
+
+The entire room is the mainframe, with machines sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones. A single large terminal in the center of the room allows human access to the mainframe.
+
 
 
 <if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data. xx FLESH ACT 4 REWRITE </if>
@@ -149,17 +163,17 @@ xx FLESH ACT 4 REWRITE The access terminal for the mainframe writhes in the cent
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act5">
-The access terminal for the mainframe writhes in the center of the room. It appears to grow directly out of the floor like an appendage. Its flesh shudders you as you touch the soft skin on its interface.
+The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
+
+The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones. A single large appendage in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data.</if>
 <if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth.</if>
 <br />
 </if>
-
 <br />
-<if cond="$has_mcguffin">You have {$data}.</if>
-<if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
+<if cond="$has_mcguffin">You have {$data}.</if><if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
 <option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship.</option>
 <option nextScene ="computer_talk" cond="$is_fed">Communicate with the mainframe.</option>
