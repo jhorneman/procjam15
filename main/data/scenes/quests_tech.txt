@@ -304,9 +304,9 @@ The armory stands empty of weapons or clothing, looted hastily that the gate was
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='option, container' />
-<injectOption tags='option, container' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
+<injectOption tags='option, containers' />
+<injectOption tags='option, containers' />
 
 </scene>
 
