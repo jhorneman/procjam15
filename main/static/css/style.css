@@ -94,21 +94,21 @@ body.style_terminal {
     body {
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('/static/img/wires1.png'), linear-gradient(to right bottom, rgb(76, 9, 12) 25%, rgb(51,9,37) 63%, rgb(36,1,27) 82%);
+        background-image: url('/static/img/wires1.png'), linear-gradient(to right bottom, rgb(68, 13, 15) 25%, rgb(31,6,14) 50%, rgb(16,9,2) 82%);
     }
 
     body.style_comp_room {
         background: #26211e;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('/static/img/wires2.png'), linear-gradient(to right bottom, rgb(47, 37, 27) 25%, rgb(35, 30, 33) 63%, rgb(19, 19, 19) 82%);
+        background-image: url('/static/img/wires2.png'), linear-gradient(to right bottom, rgb(47, 37, 27) 25%, rgb(35, 30, 33) 50%, rgb(10, 10, 10) 82%);
     }
 
     body.style_terminal {
         background: #161f12;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url('/static/img/wires3.png'), linear-gradient(to right bottom, rgb(6, 10, 4) 25%, rgb(17, 31, 14) 63%, rgb(20, 27, 7) 82%);
+        background-image: url('/static/img/wires3.png'), linear-gradient(to right bottom, rgb(20, 27, 7) 25%, rgb(7, 21, 4) 50%, rgb(1, 2, 0) 82%);
     }
 }
 
