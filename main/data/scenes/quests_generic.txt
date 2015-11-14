@@ -153,10 +153,10 @@ The elevator shaft continues down into darkness.
 
 <scene>
 <meta id='server room' tags='mission, flesh_act1, flesh_act2, style_mission'/>
-<leadin>Search the sector 1 server room.</leadin>
-You're in the sector 1 server room.
+<leadin>Search the Sector 1 server room.</leadin>
+You're in the Sector 1 server room.
 
-Power still runs, if unevenly, through the servers. A server stack sparks and hisses from overload. xx<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner. It looks like this person recently got electrocuted.<br/><br/></if>
+Power still runs, if unevenly, through the servers. A web of colorful wires connect the rows of machines on metal racks. Red and yellow lights lining the shelves blink in unrecognizable patterns. A server stack sparks and hisses from overload.<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner, their hand still craddling a sparking wire in its death grip.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
