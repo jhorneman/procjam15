@@ -619,32 +619,27 @@ job_titles = {
     "flesh_act2": [
         "prisoner",
         "junior manager",
-        "security officer",
         "passenger",
+        "doctor"
     ],
 
     "flesh_act3": [
         "guard",
-        "general",
+        "nurse",
+        "security officer",
         "sergeant",
         "vice-president"
     ],
 
     "flesh_act4": [
-        "human",
+        "patient",
+        "general",
         "president",
         "subject",
         "organism"
     ],
 
     "flesh_act5": [
-        "bio-mass",
-        "receptacle",
-        "creature",
-        "infection"
-    ],
-
-    "flesh_act6": [
         "bio-mass",
         "receptacle",
         "creature",
