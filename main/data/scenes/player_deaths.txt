@@ -28,13 +28,6 @@ The power surges back on with a loud snap. The elevator cabin drops, severing yo
 </scene>
 
 <scene>
-<meta id='radiation shield' tags='death_reactor, style_death'/>
-<leadin>Lower radiation shielding.</leadin>
-You lower the radiation shielding separating you from the reactor core. It burns. You die. xx
-<option action="respawn">...</option>
-</scene>
-
-<scene>
 <meta id='radiation shield gen' tags='death_radiation, style_death'/>
 <leadin>Lower radiation shielding.</leadin>
 You go over your training. Gamma radiation can be harmful, but only in strong doses.
@@ -117,13 +110,6 @@ You die by touching a sticky substance and find yourself unable to detach yourse
 <meta id='undulating sphincter' tags='option, flesh, style_death'/>
 <leadin>Reach inside an undulating sphincter.</leadin>
 You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
-<option action="respawn">...</option>
-</scene>
-
-<scene>
-<meta id='warm yolk' tags='option, flesh, style_death'/>
-<leadin>Lay down inside the warm yolk.</leadin>
-You lay down in the yolk. It's warm. It feels comfortable. You let the liquid envelope you like a gel. You die. xx
 <option action="respawn">...</option>
 </scene>
 

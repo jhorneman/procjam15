@@ -165,7 +165,7 @@ The large door allows manual access, but has warnings posted over it. Hazard. Ra
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='death_reactor' />
+<injectOption tags='death_radiation' />
 <injectOption tags='option, computer' />
 <injectOption tags='option, electrical' />
 
