@@ -4,22 +4,7 @@
 <injectBlock tags="pc_init" />
 You wake up with a start. How long have you been asleep? What has happened?
 
-Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Everything seems fine. No blinking lights. No sirens.<injectBlock tags="pc_start, flesh_act1" norepeat="1" />
-
-A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the computer room."
-
-The computer room? Better go see what that is about. xx
-<option nextScene="computer_room_introduction1">Go to the computer room.</option>
-</scene>
-
-<scene>
-<meta id="pc_start_1_2" tags="pc_start, flesh_act1" />
-<leadin>You wake up.</leadin>
-<injectBlock tags="pc_init" />
-You wake up with a start. How long have you been asleep? What has happened?
-
-Your training kicks in and you take stock of the situation. You're lying on a cot. You're on the ship. Of course you're on the ship. Why aren't any of the lights blinking?
-<injectBlock tags="pc_start, flesh_act1" norepeat="1" />
+Your training kicks in and you take stock of the situation. You're on the ship. Everything seems fine. No blinking lights. No sirens.
 
 A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the computer room."
 
