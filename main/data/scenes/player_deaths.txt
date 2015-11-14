@@ -93,9 +93,15 @@ You pry off the covering and yank out the heavy electrical cables. You laborious
 </scene>
 
 <!-- MECHANICAL -->
+<!--- other ways to die
+put your hand inside machinery, and it pulls you in
+investigate something that's flammable AND sparking, i.e. fuel tanks
+-->
 
 <!-- HUMAN -->
-
+<!--- other ways to die
+investigate a weapon lying on the ground, but it backfires?
+-->
 
 
 <!-- late-game deaths -->
@@ -132,10 +138,7 @@ You wade into the gastic acid. Your clothes and then skin sizzle as the acid dig
 <!-- flesh7 -->
 
 <!--- other ways to die
-choke on your own vomit within a space helmet
-agoraphobia
-gravity crush
-radiation
+put your hand inside machinery, and it pulls you in
 -->
 
 
@@ -144,7 +147,7 @@ radiation
 <scene>
 <meta id="feed_sacrifice_hub" />
 You contemplate using your body as data to feed to the mainframe. It would save time.
-<option nextScene="feed_sacrifice_yes1" cond="$sacrifice eq 0">Harvest data from your body.</option> (does not work)
+<option nextScene="feed_sacrifice_yes1" cond="$sacrifice eq 0">Harvest data from your body.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship instead.</option>
 </scene>
 

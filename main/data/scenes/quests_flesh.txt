@@ -71,7 +71,7 @@ Cold sterile metal sheets lay in patchwork as exoskeletons for the fleshy globul
 <leadin>Search the starboard glands</leadin>
 You're in a gland. It is familiar, like the solar arrays xx
 
-You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. xx
+You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. 
 
 The solar arrays are inoperational, but there's no sun to feed them anyway. They will not help direct power to the mainframe.
 
@@ -103,7 +103,7 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 <leadin>Search the nest.</leadin>
 You're in a nest. It is familiar, like the maintenance bay. xx
 
-Large machinery, requiring their own operators to run. Fabrication of new parts, now idle. Major maintenence work to keep the ship running. xx
+Large machinery, requiring their own operators to run. Fabrication of new parts, now idle. Major maintenence work to keep the ship running.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -148,7 +148,7 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 <leadin>Search the hive.</leadin>
 You are inside the hive. It is familiar, like the command center. xx
 
-Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last? xx
+Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last?
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -197,7 +197,7 @@ Fans and machines whirl as they attempt to route power from the main solar array
 <leadin>Search the thorax.</leadin>
 You are in the thorax. It is familiar, like the propulsion systems control in navigation. xx
 
-Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of space is the only thing that has kept this unmanned ship from breaking into debris. No sign of pilot. Dust has begun to settle on the flightsticks. xx
+Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of space is the only thing that has kept this unmanned ship from breaking into debris. No sign of pilot. Dust has begun to settle on the flightsticks. 
 
 
 <injectBlock tags="mdesc, $flesh_act" />
@@ -213,7 +213,7 @@ Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of spa
 <leadin>Search the small intestines.</leadin>
 You are in the small intestines. It is familiar, like the main recycling hub. xx
 
-A conveyor belt grinds loudly back and forth on broken gears, shortened by the electrical surges. Trash lines the belt and various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" and so on. Trash chutes lay open, their trash sitting in unmoving, unfiltered piles of the floor where they overflowed.xx
+A conveyor belt grinds loudly back and forth on broken gears, shortened by the electrical surges. Trash lines the belt and various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" and so on. Trash chutes lay open, their trash sitting in unmoving, unfiltered piles of the floor where they overflowed.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -278,7 +278,7 @@ No one has left the ship, but if they had there is nowhere they could go. Only e
 <leadin>Search the pharynx.</leadin>
 You are in the pharyngeal pouch. It is familiar, like the central security office. xx
 
-Rows of monitors offline and unresponsive. Chairs overturned. A pile of furniture next to the door, as though it had been barricaded. xx
+Rows of monitors offline and unresponsive. Chairs overturned. A pile of furniture next to the door, as though it had been barricaded.
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, flesh' />
@@ -343,7 +343,7 @@ You are in the endocrine system. It is familiar, like life support control. xx
 
 The only place where power seems to not fluctuate, except for the lights. It runs on an emergency generator, but you cannot dissemble it to use for the mainframe without sacrificing life support. Oxygen, carbon dioxide, nitrogen. Pressure. Thermal shows abnormally warm levels in various hotspots around the ship.
 
-You hesitate shortly before entering the room for salvage. You must tread lightly or risk the systems keeping you alive. xx
+You hesitate shortly before entering the room for salvage. You must tread lightly or risk the systems keeping you alive.
 
 <injectBlock tags="mdesc, $flesh_act" />
 

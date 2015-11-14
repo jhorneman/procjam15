@@ -8,7 +8,7 @@ Your training kicks in and you take stock of the situation. You're lying on a co
 
 A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the computer room."
 
-The computer room? Better go see what that is about.
+The computer room? Better go see what that is about. xx
 <option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
 
@@ -23,7 +23,7 @@ Your training kicks in and you take stock of the situation. You're lying on a co
 
 A message awaits you. "{^$PC_job} {$PC_last}, {$PC_first}. Please report to the computer room."
 
-The computer room? Better go see what that is about.
+The computer room? Better go see what that is about. xx
 <option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
 
@@ -37,7 +37,7 @@ Why is your shirt covered in blood?
 
 A message awaits you. "{$PC_first} {$PC_last}, please report to the computer room."
 
-The computer room.
+The computer room. xx
 <option nextScene="computer_room_introduction1">Go there.</option>
 </scene>
 
@@ -47,7 +47,7 @@ The computer room.
 <injectBlock tags="pc_init" />
 How long have you been curled in this corner? What happened to your hands?
 
-Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the computer room!" Like a herald, inviting you to your judgment.
+Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the computer room!" Like a herald, inviting you to your judgment. xx
 <option nextScene="computer_room_introduction1">Meet your fate.</option>
 </scene>
 
@@ -55,7 +55,7 @@ Out of a hole in the wall, a voice sings: "{^$PC_job}! Please come to the comput
 <meta id="pc_start_4_1" tags="pc_start, flesh_act4" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
-Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
+Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go. xx
 <option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
 
@@ -63,6 +63,6 @@ Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpo
 <meta id="pc_start_5_1" tags="pc_start, flesh_act5" />
 <leadin>You wake up.</leadin>
 <injectBlock tags="pc_init" />
-xx FLESH ACT 5 REWRITE Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go.
+xx FLESH ACT 5 REWRITE Adrenaline hits your bloodstream and you instantly snap awake. Filled with purpose, you tear yourself loose from the tubes, the sinews, the nourishing liquid. Your DNA sings to you, and you know where to go. xx
 <option nextScene="computer_room_introduction1">Go to the computer room.</option>
 </scene>
