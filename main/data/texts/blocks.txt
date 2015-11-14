@@ -6,6 +6,8 @@
 <action act="gen_data" />
 <action act="set $pc_aware 0" /> <!-- how much pc knows? -->
 <action act="set $PC_gimmick none" />
+<action act="set $sacrifice 0" /> <!-- player has not sacrificed body parts for data -->
+<action act="set $injury none" /> <!-- player's current injury, in case we do others -->
 <action act="set $commands 0" /> <!-- used for PC to use computer 3x before needing more data -->
 </block>
 
@@ -127,6 +129,14 @@ You wonder if you are alone here.
 <block tags="odesc, flesh_act5"> You are excited to bring this back to the mainframe.</block>
 <block tags="odesc, flesh_act5"> You look at it hungrily.</block>
 <block tags="odesc, flesh_act5"> Your stomach growls in anticipation.</block>
+
+
+<!-- trying out self-mutilation side goal -->
+<!-- work like injuries, called inside options after collecting data  -->
+<block tags="sacrifice1"><br /><br />(Player has sacrificed hair)</block>
+<block tags="sacrifice2"><br /><br />(Player has sacrificed a fingernail)</block>
+<block tags="sacrifice3"><br /><br />(Player has sacrificed fingers)</block>
+<block tags="sacrifice4"><br /><br />(Player has sacrificed a hand / dead?)</block>
 
 
 

@@ -151,3 +151,23 @@ agoraphobia
 gravity crush
 radiation
 -->
+
+
+<!-- player mutilates themselves by using themself as data -->
+<!-- currently not implemented / couldn't get it to work -->
+<scene>
+<meta id="feed_sacrifice_hub" />
+You contemplate using your body as data to feed to the mainframe. It would save time.
+<option nextScene="feed_sacrifice_yes1" cond="$sacrifice eq 0">Harvest data from your body.</option> (does not work)
+<option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship instead.</option>
+</scene>
+
+<scene>
+<meta id="feed_sacrifice_yes1" />
+You harvest data from your hair.
+<action act="set $sacrifice 1" />
+<action act="set $injury sacrifice1" />
+<action act="set $data aclumpofyourhair" />
+<option nextScene="feed_computer">Feed the computer {$data}.</option>
+
+</scene>

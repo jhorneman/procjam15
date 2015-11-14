@@ -2,6 +2,8 @@
 <meta id='proboscis' tags='option, flesh, style_mission'/>
 <leadin>Stroke proboscis.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -10,6 +12,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='tumor' tags='option, flesh, style_mission'/>
 <leadin>Cut open quivering tumor.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -18,6 +22,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='membrane' tags='option, flesh, style_mission'/>
 <leadin>Peel back floor membrane.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -26,6 +32,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='membrane top' tags='option, flesh, style_mission'/>
 <leadin>Cut back ceiling membrane.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -34,6 +42,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='sticky web' tags='option, flesh, style_mission'/>
 <leadin>Reveal items covered in sticky webbing.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -42,6 +52,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='fluid sac' tags='option, flesh, style_mission'/>
 <leadin>Squeeze fluid sacs.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -50,6 +62,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='skin rug' tags='option, flesh, style_mission'/>
 <leadin>Lift skin rug.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -58,6 +72,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='wall growth' tags='option, flesh, style_mission'/>
 <leadin>Investigate growth on the wall.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -66,6 +82,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='cocoon' tags='option, flesh, style_mission'/>
 <leadin>Tear open coccoon.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -74,6 +92,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='egg cluster' tags='option, flesh, style_mission'/>
 <leadin>Break egg cluster.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -82,6 +102,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='adrenal gland' tags='option, flesh, style_mission'/>
 <leadin>Look inside adrenal gland.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -90,6 +112,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='hair growth' tags='option, flesh, style_mission'/>
 <leadin>Cut back tangle of hair growth.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -98,6 +122,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='gizzard' tags='option, flesh, style_mission'/>
 <leadin>Open gizzard.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -106,6 +132,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='carapace' tags='option, flesh, style_mission'/>
 <leadin>Break open carapace.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -114,6 +142,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='placenta' tags='option, flesh, style_mission'/>
 <leadin>Reach inside placenta.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -122,6 +152,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='amniotic sac' tags='option, flesh, style_mission'/>
 <leadin>Investigate amniotic sac.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -130,6 +162,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='spongy tissue' tags='option, flesh, style_mission'/>
 <leadin>Dig through spongy tissue.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -138,6 +172,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='cuticle' tags='option, flesh, style_mission'/>
 <leadin>Peel back cuticle.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -146,6 +182,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='warm cavity' tags='option, flesh, style_mission'/>
 <leadin>Search warm cavity.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -154,6 +192,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='lymphatic fluid' tags='option, flesh, style_mission'/>
 <leadin>Sift through lymphatic fluid.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -162,6 +202,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='vein tapestry' tags='option, flesh, style_mission'/>
 <leadin>Pull aside tapestry of veins.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -170,6 +212,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='gut flora' tags='option, flesh, style_mission'/>
 <leadin>Sift through gut flora.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -180,6 +224,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='cabinet mucus' tags='option, flesh, containers, style_mission'/>
 <leadin>Open mucus-covered cabinet.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -188,6 +234,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='shelves growth' tags='option, flesh, containers, style_mission'/>
 <leadin>Search shelves covered in growths.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -196,6 +244,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='cystic box' tags='option, flesh, containers, style_mission'/>
 <leadin>Search cystic box.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -206,6 +256,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='fuse box membrane' tags='option, flesh, electrical, style_mission'/>
 <leadin>Peel membrane from fuse box.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -214,6 +266,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='sparking capillaries' tags='option, flesh, electrical, style_mission'/>
 <leadin>Investigate sparking capillaries.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -224,6 +278,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='computer orifice' tags='option, flesh, computer, style_mission'/>
 <leadin>Reach inside computer's orifice.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -232,6 +288,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='computer olfactory' tags='option, flesh, computer, style_mission'/>
 <leadin>Stroke computer's olfactory senses.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
@@ -245,6 +303,8 @@ You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
 <meta id='second skins' tags='option, flesh, human, style_mission'/>
 <leadin>Rifle through shedded skins.</leadin>
 You look and find... {data}.<injectBlock tags="odesc, $flesh_act" />
+
+<injectBlock tags="$injury" />
 <action act="set $has_mcguffin 1" />
 <option nextScene='computer_room'>Return with data.</option>
 </scene>
