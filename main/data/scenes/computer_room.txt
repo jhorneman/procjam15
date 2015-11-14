@@ -158,8 +158,8 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 
 
 
-<if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data. xx FLESH ACT 4 REWRITE </if>
-<if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth. xx FLESH ACT 4 REWRITE </if>
+<if cond="$is_fed">The mainframe contentedly digests the data you have fed it.</if>
+<if cond="$is_fed eq 0"><t>"The computer terminal reads, <t>"FEED ME."</t> It salivates from its main drives.</if>
 <br />
 </if>
 <if cond="$flesh_act eq flesh_act5">
@@ -184,7 +184,21 @@ The entire room is the mainframe, a collection of nerves sorting and transfering
 <!-- INSUFFICIENT DATA -->
 <scene>
 <meta id='feed_me' tags="style_terminal" />
-> Access terminal<br />
+<if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
+
+You touch the cold screen and type in your commands.</if>
+<if cond="$flesh_act eq flesh_act2">The computer terminal is covered in a thick, sticky mucous. You use your sleeve to wipe off the liquid from the terminal's face before you touch the cold, tacky screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act3">The computer terminal appears to be covered in pink growths, like strange fungus. You carefully avoid touching them as you reach for the cold screen and type in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act4">The computer terminal is covered in red webbing and pink growths secreting a yellow, rancid fluid. You wipe the screen clear of the liquid before typing in your commands.
+</if>
+<if cond="$flesh_act eq flesh_act5">The computer terminal writhes and appears to reach out as you approach it. It is covered in pink skin and sinewy muscle. It trembles as you type your commands into its warm interface.
+</if>
+<if cond="$flesh_act eq flesh_act6">The mainframe watches you as you reach out to stroke the soft skin of its interface.</if>
+<br />
+<br />
+<t> > Access terminal</t><br />
 <injectBlock tags="computer_commands_check" />
 
 <option nextScene="feed_computer" cond="$has_mcguffin">Feed the computer {$data}.</option>
@@ -207,41 +221,49 @@ The entire room is the mainframe, a collection of nerves sorting and transfering
 <action act="set $flesh_act flesh_act6" cond="$data_count eq 24" /> <!-- 4 data collections -->
 
 <if cond="$flesh_act eq flesh_act1">
-Description of computer for Act 1.xx
+You press a button on the console and an empty tube extends from beneath the monitor. The terminal reads, "<t>INSERT DATA</t>."
 
-You feed the computer the data you have.
+You place {data} in the tube and insert it into the console.
 
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+The mainframe processes the data readily. You can feel the room heat up and hear the cooling tanks kick in.
+
+The terminal reads, "<t>DATA PROCESSED SUCCESSFULLY</t>."
 </if>
 <if cond="$flesh_act eq flesh_act2">
-Description of computer for Act 2.xx
+You press a button on the console and an empty tube extends from beneath the monitor. Stray threads of saliva drip from it. The terminal reads, "<t>INSERT DATA</t>."
 
-You feed the computer the data you have.
+You place {data} in the mucosal tube and insert it back into the console.
 
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+The mainframe consumes the data eagerly. You can feel the room heat up and hear the cooling tanks kick in.
+
+The terminal reads, "<t>DATA CONSUMED SUCCESSFULLY</t>."
 </if>
 <if cond="$flesh_act eq flesh_act3">
-Description of computer for Act 3.xx
+You stroke the console and a vacant hole opens up on the surface of the terminal. Stray threads of saliva drip from the ring around the hole. The terminal reads, "<t>INSERT DATA</t>."
 
-You feed the computer the data you have.
+You place {data} into the orifice and watch it close behind it.
 
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+The mainframe consumes the data eagerly. You can feel the room heat up and hear the cooling tanks kick in.
+
+The terminal reads, "<t>DATA CONSUMED SUCCESSFULLY</t>."
 </if>
-
 <if cond="$flesh_act eq flesh_act4">
-Description of computer for Act 4.xx
+You stroke the console and a vacant hole opens up on the surface of the terminal. Stray threads of saliva drip from the ring around the hole. The terminal reads, "<t>FEED ME DATA</t>."
 
-You feed the computer the data you have.
+You place {data} into the orifice and watch it close behind it.
 
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+The mainframe feeds on the data eagerly. You hear a loud crunch as the machine consumes and digests it.
+
+A robotic voice whispers from the terminal, "<t>DATA CONSUMED SUCCESSFULLY</t>."
 </if>
-
 <if cond="$flesh_act eq flesh_act5">
-Description of computer for Act 5
+You stroke the console's lips and they open, revealing a large, purple-veined tongue. Great strings of saliva spill out of the computer's mouth and drip onto the floor. "<t>FEED ME</t>," it whispers to you.
 
-You feed the computer the data you have.
+You place {data} onto the tongue and watch it retract behind it's wet lips.
 
-The mainframe consumes the data eagerly. You can feel the room heat up as the cooling tanks kick in.
+The mainframe feeds on the data eagerly. You hear a loud crunch as the machine masticates and digests it.
+
+It whispers, "<t>DELICIOUS</t>."
 </if>
 
 <option nextScene="computer_talk">Enter commands.</option>
