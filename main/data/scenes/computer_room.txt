@@ -214,7 +214,7 @@ You touch the cold screen and type in your commands.</if>
 <action act="set $is_fed 1" />
 <action act="set $has_mcguffin 0" />
 <action act="inc $data_count" />
-<action act="gen_data" tags="$flesh_act"/>
+
 <action act="set $flesh_act flesh_act2" cond="$data_count eq 4" /> <!-- 4 data collection -->
 <action act="set $flesh_act flesh_act3" cond="$data_count eq 9" /> <!-- 5 data collections -->
 <action act="set $flesh_act flesh_act4" cond="$data_count eq 15" /> <!-- 6 data collections -->

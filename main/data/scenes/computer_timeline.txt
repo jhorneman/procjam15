@@ -3,6 +3,7 @@
 <leadin>Communicate with the mainframe.</leadin>
 <action act="set $is_fed 0" />
 <action act="set $commands 1" />
+<action act="gen_data" tags="$flesh_act"/>
 <if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
 
 You touch the cold screen and type in your commands.</if>
