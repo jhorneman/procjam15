@@ -135,7 +135,7 @@ body.style_terminal ul#options li a:before {
 }
 
 body.style_terminal {
-	line-height: 1.2;
+	//line-height: 1.2;
 }
 
 /* Debugging view */
