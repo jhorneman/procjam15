@@ -642,8 +642,24 @@ job_titles = {
         "receptacle",
         "creature",
         "infection"
+    ],
+
+    "flesh_act6": [
+        "bio-mass",
+        "receptacle",
+        "creature",
+        "infection"
     ]
 }
+
+
+def get_job_title(_flesh_act, _index):
+    return job_titles[_flesh_act][_index] if _flesh_act in job_titles else "passenger"
+
+
+def get_nr_job_titles(_flesh_act):
+    return len(job_titles[_flesh_act]) if _flesh_act in job_titles else 1
+
 
 # Shuffle lists of first and last names.
 # (These uses of random are fine because they're global for all users. It's just to avoid having any

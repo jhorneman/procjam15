@@ -5,7 +5,7 @@
 import random
 from flask import session
 from text_blocks import get_data_name_with_tag
-from pc_names import first_names, last_names, job_titles
+from pc_names import first_names, last_names, job_titles, get_job_title, get_nr_job_titles
 
 # Remember that the Flask session does not pick up modifications on mutable structures automatically.
 # In that situation we have to explicitly set the modified attribute to True ourselves.
@@ -29,12 +29,12 @@ def generate_player_character():
     first_name_index = session.setdefault("first_name_index", random.randint(0, len(first_names)-1))
     last_name_index = session.setdefault("last_name_index", random.randint(0, len(last_names)-1))
     flesh_act = session.get("flesh_act", initial_game_state["flesh_act"])
-    job_title_index = session.setdefault("job_title_index:" + flesh_act, random.randint(0, len(job_titles[flesh_act])-1))
+    job_title_index = session.setdefault("job_title_index:" + flesh_act, random.randint(0, get_nr_job_titles(flesh_act)-1))
 
     PC_data = {
         "PC_first": first_names[first_name_index],
         "PC_last": last_names[last_name_index],
-        "PC_job": job_titles[flesh_act][job_title_index]
+        "PC_job": get_job_title(flesh_act, job_title_index)
     }
 
     first_name_index += 1
@@ -47,7 +47,7 @@ def generate_player_character():
     if last_name_index >= len(last_names):
         last_name_index = 0
 
-    if job_title_index >= len(job_titles[flesh_act]):
+    if job_title_index >= get_nr_job_titles(flesh_act):
         job_title_index = 0
 
     session["first_name_index"] = first_name_index
