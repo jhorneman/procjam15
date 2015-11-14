@@ -156,7 +156,7 @@ The elevator shaft continues down into darkness.
 <leadin>Search the Sector 1 server room.</leadin>
 You're in the Sector 1 server room.
 
-Power still runs, if unevenly, through the servers. A web of colorful wires connect the rows of machines on metal racks. Red and yellow lights lining the shelves blink in unrecognizable patterns. A server stack sparks and hisses from overload.<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner, their hand still craddling a sparking wire in its death grip.<br/><br/></if>
+Power still runs, if unevenly, through the servers. A web of colorful wires connect the rows of machines on metal racks. Red and yellow lights lining the shelves blink in unrecognizable patterns. A server stack sparks and hisses from overload.<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner, their hand still craddling a sparking wire in its death grip.</if><br/><br/>
 
 <injectBlock tags="mdesc, $flesh_act" />
 

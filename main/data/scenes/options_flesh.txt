@@ -99,7 +99,7 @@ Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <leadin>Break egg cluster.</leadin>
 You stomp on a cluster of eggs. Yellow and opaque yolk leaks out from the cracked mottled shell.
 
-Inside the yold you find {data}.<injectBlock tags="odesc, $flesh_act" />
+Inside the yolk you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
@@ -135,7 +135,7 @@ Within the tangle you discover {data}.<injectBlock tags="odesc, $flesh_act" />
 <leadin>Open gizzard.</leadin>
 You rip the thick, mottled gizzard from the floor and squeeze it to expel its contents. 
 
-Inside the gizzard you find{data}.<injectBlock tags="odesc, $flesh_act" />
+Inside the gizzard you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />

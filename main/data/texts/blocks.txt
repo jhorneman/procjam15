@@ -103,7 +103,7 @@ INSUFFICIENT DATA<br />
 <block tags="odesc, flesh_act2, flesh_act3"> You wipe off the saliva covering it and pack it away.</block>
 
 <block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, it attempts fasten itself to you with tiny suckers.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, fine silica hairs tickly your skin.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, fine silica hairs tickle your skin.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> As you pick it up it hungrily sinks its teeth into your finger, drawing a single drop of blood.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> It is covered in skin filaments.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> It seeks out the warmth of your hands.</block>
@@ -117,12 +117,6 @@ INSUFFICIENT DATA<br />
 <block tags="odesc, flesh_act5"> You look at it hungrily.</block>
 <block tags="odesc, flesh_act5"> Your stomach growls in anticipation.</block>
 
-<!-- trying out self-mutilation side goal -->
-<!-- work like injuries, called inside options after collecting data  -->
-<block tags="sacrifice1"><br /><br />(Player has sacrificed hair)</block>
-<block tags="sacrifice2"><br /><br />(Player has sacrificed a fingernail)</block>
-<block tags="sacrifice3"><br /><br />(Player has sacrificed fingers)</block>
-<block tags="sacrifice4"><br /><br />(Player has sacrificed a hand / dead?)</block>
 
 
 
