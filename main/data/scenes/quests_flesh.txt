@@ -99,21 +99,6 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 </scene>
 
 <scene>
-<meta id='nest' tags='mission, flesh_act5, style_mission'/>
-<leadin>Search the nest.</leadin>
-You're in a nest. It is familiar, like the maintenance bay. xx
-
-Large machinery, requiring their own operators to run. Fabrication of new parts, now idle. Major maintenence work to keep the ship running.
-
-<injectBlock tags="mdesc, $flesh_act" />
-
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-
-</scene>
-
-<scene>
 <meta id='ventricle' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the ventricle.</leadin>
 You in the left ventricle. It is familiar, like the upper maintenance shaft. xx
@@ -145,8 +130,8 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 
 <scene>
 <meta id='hive' tags='mission, flesh_act5, style_mission'/>
-<leadin>Search the hive.</leadin>
-You are inside the hive. It is familiar, like the command center. xx
+<leadin>Search the liver.</leadin>
+You are inside the liver. It is familiar, like the command center. xx
 
 Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last?
 
@@ -161,11 +146,11 @@ Rows of consoles, large screens left static or dark, computers useless with so l
 <scene>
 <meta id='airways' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the bronchial airways.</leadin>
-You are in the bronchial airways. It is familiar, like the lower access vents. xx
+You are in the bronchial airways.
 
-You carefully remove the maintenance panel and climb into the lower vents, just large enough for you to crouch within.
+You carefully remove the maintenance panel and climb into the lower airways, just large enough for you to crouch within. As you lift your hand over the opening of an alveolar duct, you feel hot, humid air flowing through the ship.
 
-The ventilation shafts criss-cross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship.
+The bronchi shafts criss-cross the entire ship like a respiratory system, feeding the port and starboard lungs fresh oxygen to be filtered throughout the rest of the ship's body. The walls are lined with flexible cartilage barely concealing various valves and and nobules.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -178,11 +163,9 @@ The ventilation shafts criss-cross the entire ship like a respiratory system. Pi
 <scene>
 <meta id='nervous system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the somatic nervous system.</leadin>
-You are in the somatic nervous system. It is familiar, like xx
+You are in the somatic nervous system
 
-You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the control room. Schematics and blueprints pinned to the walls show the local electrical grid. Mechanical tools, measurement instruments, and family photos lie on control panels beside dimmed monitors.
-
-Fans and machines whirl as they attempt to route power from the main solar arrays to this sector of the ship.
+You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the nervous system. Schematics pinned to the membranous walls show the skeletal structure of the ship. Small electrical pulses cause the muscles and machines lining the wall to twitch and react, sending nervous signals to the far corners of the ship.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -276,9 +259,10 @@ No one has left the ship, but if they had there is nowhere they could go. Only e
 <scene>
 <meta id='pharynx' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the pharynx.</leadin>
-You are in the pharyngeal pouch. It is familiar, like the central security office. xx
+You are in the pharyngeal pouch.
 
-Rows of monitors offline and unresponsive. Chairs overturned. A pile of furniture next to the door, as though it had been barricaded.
+Rows of monitors and tonsils remain offline and unresponsive. The beam from your flashlight glitters on the saliva. You walk along the soft palate. The vocal chords vibrate and sing as humid air blasts through the vents.
+
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, flesh' />
@@ -290,28 +274,9 @@ Rows of monitors offline and unresponsive. Chairs overturned. A pile of furnitur
 <scene>
 <meta id='gills' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the gills.</leadin>
-You are in the gills. It is familiar, like the hydroponic gardens. xx
+You are in the gills.
 
-Gray and brown plants like dried and desiccated in tubs that had once been full of nutrient-rich water. As the uneven power surges through the room and into the machinery, tubes light up with blue florescent chemicals and spray a fine mist from ceiling showerheads. 
-
-Any food left behind in the unattended gardens is inedible, now contaminated with the thick musk of mildew.
-
-<injectBlock tags="mdesc, $flesh_act" />
-
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-
-</scene>
-
-<scene>
-<meta id='cloaca' tags='mission, flesh_act5, style_mission'/>
-<leadin>Search the cloaca.</leadin>
-You are in the gills. It is familiar, like the shuttle bay. xx
-
-You peer into the bay from the main control tower. In the dim light you can barely tell the bay doors stand open to the vacuum of space, and any vehicles not tethered have long since ejected from the ship.
-
-Within the control room, various monitors beep with low power warnings. A coffee cup sits half-empty and cold.
+Beige and brown flecks of scabs, dried and desiccated, sit on the floor. As the shop breathes, cords of flesh light up with white florescent chemicals as the gils attempt to filter out the impurities. A fine sickly sweet mist sprays down upon you from pores in the ceiling. 
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -324,9 +289,9 @@ Within the control room, various monitors beep with low power warnings. A coffee
 <scene>
 <meta id='digestive system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the digestive system.</leadin>
-You are in the digestive system. It is familiar, like the unisex restrooms. xx
+You are in the digestive system.
 
-You step into the flooded room and shine your light among the dark stalls and the large empty shower room. Water trickles unstopped from a single faucet.
+You step into the flooded room and shine your light among the pools of intestinal fluid and the large empty drains. Gastric acid trickles unstopped from a single faucet.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -339,11 +304,11 @@ You step into the flooded room and shine your light among the dark stalls and th
 <scene>
 <meta id='endocrine system' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the endocrine system.</leadin>
-You are in the endocrine system. It is familiar, like life support control. xx
+You are in the endocrine system. 
 
-The only place where power seems to not fluctuate, except for the lights. It runs on an emergency generator, but you cannot dissemble it to use for the mainframe without sacrificing life support. Oxygen, carbon dioxide, nitrogen. Pressure. Thermal shows abnormally warm levels in various hotspots around the ship.
+The room is large but busy with the ship's metabolic processes. Giant tubes of flesh beat in regular rhythm as they pump precious hormones throughout the ship. The endocrine system feeds the massive transformation.
 
-You hesitate shortly before entering the room for salvage. You must tread lightly or risk the systems keeping you alive.
+The tubes of flesh are thick and sturdy, resisting any attempt at sabotage. You climb over them and duck beneath them as you explore the room for data to salvage.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -356,11 +321,11 @@ You hesitate shortly before entering the room for salvage. You must tread lightl
 <scene>
 <meta id='respiratory system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the respiratory system.</leadin>
-You are in the respiratory system. It is familiar, like the engineering deck. xx
+You are in the respiratory system.
 
-Scattered equipment and personal effects of the engineering crew lie littered around row after row of consoles. Scanners powered by an unknown backup generator still print out readouts from various parts of the ship, confirming structural integrity.
+You feel the hot sickly sweet air hit you as you enter the room. Scattered equipment and pustules lie littered around row after row of fluid-covered consoles.  Large valves on the wall open and close in regular rhythm as oxygen and nitrogen flow through the system.
 
-Another door leads to the maintenance bay. A plasma torch left deep scars in the metal where it was sealed shut manually from inside.
+Scanners powered by an unknown backup systems still print out readouts from various parts of the body, confirming structural integrity.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -373,11 +338,11 @@ Another door leads to the maintenance bay. A plasma torch left deep scars in the
 <scene>
 <meta id='lymphatic system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the lymphatic system.</leadin>
-You are in the lymphatic system. It is familiar, like a crew dormitory. xx
+You are in the lymphatic system.
 
-You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements.
+You enter one of several rooms lined with a strange fluid, like congealed broth. Web-like lymph nodes in the ceilings continue to secrete a sweet odor. The crew's beds lay unmade, blankets and membranes dispered across the room. The furniture appears to be made of cartilage.
 
-As the power surges, music suddenly interrupts the stillness... only to fade once again with the lights.
+As the power surges, music suddenly interrupts the slow labored breathing of the ship... only to fade once again with the lights.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -390,11 +355,11 @@ As the power surges, music suddenly interrupts the stillness... only to fade onc
 <scene>
 <meta id='fallopian tubes' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the fallopian tubes.</leadin>
-You are in the fallopian tubes. It is familiar, like the nearby storage rooms. xx
+You are in the fallopian tubes. 
 
-You step carefully over the items scattered across the floor, some leaking onto slick or sticky surfaces.
+You step carefully over unfertilized eggs scattered across the floor, some leaking a sticky substance.
 
-Objects lie haphazardly sticking out of plastic and metal containers. Unidentified machines lie parked in the corners of the small room. It seems mostly filled with cleaning supplies and tools.
+Small tumors grow haphazardly out of bone and cartilage. Unidentified pustules stand in the corners of the small room, occasionally twitching and squirting a pungent yellow fluid.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
