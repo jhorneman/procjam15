@@ -65,12 +65,11 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act1">Even the backup computer systems appear to be offline.</block>
 <block tags="mdesc, flesh_act1">The station is eerily silent except for the hum of its machinery.</block>
 
-<block tags="mdesc, flesh_act2">Announcement, "<t>UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED</t>".xx</block>
-<block tags="mdesc, flesh_act2">Announcement, "<t>PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL</t>."xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "<t>UNIDENTIFIED INFECTION DETECTED</t>."xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "<t>DELETING LOGS...</t>"xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
-<block tags="mdesc, flesh_act2">Terminal read-out, "<t>SECURITY CLEARANCE REQUIRED</t>".xx</block>
+<block tags="mdesc, flesh_act2">"<t>UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED</t>," a robotic voice announces to an empty room.</block>
+<block tags="mdesc, flesh_act2">An announcement over the loudspeaker punctuates the silence. "<t>PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL</t>."</block>
+<block tags="mdesc, flesh_act2">A terminal reads, "<t>UNIDENTIFIED INFECTION DETECTED</t>."</block>
+<block tags="mdesc, flesh_act2">The central console reads, "<t>DELETING LOGS...</t>"</block>
+<block tags="mdesc, flesh_act2">"<t>SECURITY CLEARANCE REQUIRED</t>." The message flashes on a security console. You ignore it.</block>
 <block tags="mdesc, flesh_act2">A viscous fluid leaks from a vent in the ceiling.</block>
 <block tags="mdesc, flesh_act2">A monitor salivates, the liquid pooling onto the keyboard and dropping onto the floor.</block>
 <block tags="mdesc, flesh_act2">As you enter the room, your feet kick up yellow pollen. The spores float up through the vents.</block>
@@ -103,27 +102,31 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act5">The beauty of it leaves you speechless.</block>
 
 <!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
-<block tags="odesc, flesh_act2"> It is covered in mucous.</block>
+<block tags="odesc, flesh_act2, flesh_act3"> It is covered in mucous.</block>
 <block tags="odesc, flesh_act2"> It is covered in a thick, opaque gel.</block>
 <block tags="odesc, flesh_act2"> It feels warm to the touch.</block>
 <block tags="odesc, flesh_act2"> It smells of rot.</block>
 <block tags="odesc, flesh_act2"> It exudes a sickly sweet decay.</block>
 <block tags="odesc, flesh_act2"> It leaves a sticky substance on your hand as you pack it away.</block>
-<block tags="odesc, flesh_act2"> It secretes a rancid odor.</block>
+<block tags="odesc, flesh_act2, flesh_act3"> It secretes a rancid odor.</block>
 <block tags="odesc, flesh_act2"> You peel it from a thin flesh-colored webbing and place it in your pack.</block>
 <block tags="odesc, flesh_act2"> You wipe the slime off of it and place it in your pack.</block>
-<block tags="odesc, flesh_act2"> You shake it to reduce the saliva covering it and pack it away.</block>
+<block tags="odesc, flesh_act2, flesh_act3"> You wipe off the saliva covering it and pack it away.</block>
 
 <block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, it attempts fasten itself to you with tiny suckers.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> As you pick it up, fine silica hairs tickly your skin.</block>
+<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up it hungrily sinks its teeth into your finger, drawing a single drop of blood.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> It is covered in skin filaments.</block>
 <block tags="odesc, flesh_act3, flesh_act4"> It seeks out the warmth of your hands.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> It purrs softly as you pick it up.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> It nuzzles your hand.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> It coos with contentment as you place it in your pack.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> As you pick it up it hungrily sinks its teeth into your finger, drawing a single drop of blood.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> You smile at it. It smiles back.</block>
-<block tags="odesc, flesh_act3, flesh_act4"> As you look at it, it looks back at you.</block>
+<block tags="odesc, flesh_act3, flesh_act4, flesh_act5"> It purrs softly as you pick it up.</block>
+<block tags="odesc, flesh_act3, flesh_act4, flesh_act5"> It nuzzles your hand.</block>
+<block tags="odesc, flesh_act3, flesh_act4, flesh_act5"> It coos with contentment as you place it in your pack.</block>
+<block tags="odesc, flesh_act3, flesh_act4, flesh_act5"> You smile at it. It smiles back.</block>
+<block tags="odesc, flesh_act3, flesh_act4, flesh_act5"> As you look at it, it looks back at you.</block>
+<block tags="odesc, flesh_act5"> The mainframe will be pleased.</block>
+<block tags="odesc, flesh_act5"> You are excited to bring this back to the mainframe.</block>
+<block tags="odesc, flesh_act5"> You look at it hungrily.</block>
+<block tags="odesc, flesh_act5"> Your stomach growls in anticipation.</block>
 
 
 
