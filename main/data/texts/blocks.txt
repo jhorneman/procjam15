@@ -4,8 +4,6 @@
 <action act="set $has_mcguffin 0" />
 <action act="set $is_fed 0" />
 <action act="gen_data" />
-<action act="set $pc_aware 0" /> <!-- how much pc knows? -->
-<action act="set $PC_gimmick none" />
 <action act="set $sacrifice 0" /> <!-- player has not sacrificed body parts for data -->
 <action act="set $injury none" /> <!-- player's current injury, in case we do others -->
 <action act="set $commands 0" /> <!-- used for PC to use computer 3x before needing more data -->
@@ -31,30 +29,15 @@ INSUFFICIENT DATA<br />
 </if>
 </block>
 
-<!-- BLOCKS: PLAYER GIMMICK -->
-
-<block tags="pc_start, flesh_act1">
-You hear a clicking sound. Or more like whirring?
-<action act="set $PC_gimmick pc_clicking" />
-</block>
-
-<!-- BLOCKS: PLAYER MUSING -->
-<block tags="muse, flesh_act1">
-You wonder why the computer doesn't know what happened to the ship.
-</block>
-<block tags="muse, flesh_act1">
-You wonder where everybody went.
-</block>
-<block tags="muse, flesh_act1">
-You wonder if you are alone here.
-</block>
-
 <!-- BLOCKS: MISSION DESCRIPTIONS -->
+<block tags="mdesc, flesh_act1">You wonder why the computer doesn't know what happened to the ship.</block>
 <block tags="mdesc, flesh_act1">"<t>QUARANTINE LEVEL ALPHA</t>," the intercom repeats in a calming voice.</block>
 <block tags="mdesc, flesh_act1">A robotic voice repeats over the crackling loudspeakers, "<t>PLEASE REPORT TO THE MEDBAY IF YOU DISPLAY ANY OF THE PRIOR SYMPT...</t>"</block>
 <block tags="mdesc, flesh_act1">The local computer console reads, "<t>ACCESS DENIED</t>".</block>
 <block tags="mdesc, flesh_act1">A terminal blinks with the message, "<t>WARNING: LOW POWER</t>".</block>
 <block tags="mdesc, flesh_act1">The monitors say, "<t>SYSTEMS OFFLINE. PLEASE REBOOT</t>"</block>
+<block tags="mdesc, flesh_act1">You wonder where everybody went.</block>
+<block tags="mdesc, flesh_act1">You wonder if you are alone on the ship.</block>
 <block tags="mdesc, flesh_act1">Caution tape sits limply on the floor.</block>
 <block tags="mdesc, flesh_act1">Biohazard tape hangs limply from the ceiling.</block>
 <block tags="mdesc, flesh_act1">One of the doors has been barred manually from the other side.</block>
@@ -79,29 +62,31 @@ You wonder if you are alone here.
 <block tags="mdesc, flesh_act2">You catch something scurry away in the corner of your eye, but when you shine your light toward it you see nothing.</block>
 <block tags="mdesc, flesh_act2">You see evidence of odd uneven footsteps in the mucosal lining on the floor.</block>
 <block tags="mdesc, flesh_act2">Something wet and sticky has been dragged across the floor earlier.</block>
+<block tags="mdesc, flesh_act1">You wonder if there are other people on the ship.</block>
 <block tags="mdesc, flesh_act2">The warm air from the vents carried with it a rancid smell.</block>
 <block tags="mdesc, flesh_act2">You can hear an odd suckling sound but cannot find the source.</block>
 <block tags="mdesc, flesh_act2">The ceiling exhales warm, moist air into the room as you enter.</block>
 
 <block tags="mdesc, flesh_act3">A robotic voice repeats over the cracking intercoms, "PLEASE REPORT TO THE MAINFRAME {$PC_first} {$PC_last} WITH SUFFICIENT DATA."</block>
-<block tags="mdesc, flesh_act3">All the monitors display the same message - "<t>WE ARE.</t>"</block>
+<block tags="mdesc, flesh_act4, flesh_act3">All the monitors display the same message - "<t>WE ARE.</t>"</block>
 <block tags="mdesc, flesh_act3">A console reads out, "<t>YES PLEASE YES MORE DATA YESSSSS</t>"</block>
-<block tags="mdesc, flesh_act3">A terminal contains a single message, "<t>FEED US.</t>"</block>
+<block tags="mdesc, flesh_act4, flesh_act3">A terminal contains a single message, "<t>FEED US.</t>"</block>
 <block tags="mdesc, flesh_act3">A message blinks on the nearby console, "<t>WE WILL BE WHOLE.</t>"</block>
 <block tags="mdesc, flesh_act3">A monitor reads, "<t>WE HUNGER.</t>"</block>
 <block tags="mdesc, flesh_act3">A vent in the ceiling salivates onto the floor.</block>
-<block tags="mdesc, flesh_act3">The walls pulse and shudder as the ships heart beats.</block>
+<block tags="mdesc, flesh_act4, flesh_act3">The walls pulse and shudder as the ships heart beats.</block>
+<block tags="mdesc, flesh_act1">You wonder if there is something else alive on the ship.</block>
 <block tags="mdesc, flesh_act3">Someone else has been here before you.</block>
-<block tags="mdesc, flesh_act3">You can hear an odd suckling sound but cannot find the source.</block>
-<block tags="mdesc, flesh_act3">The red emergency lights look pink underneath a new growth of skin.</block>
+<block tags="mdesc, flesh_act4, flesh_act3">You can hear an odd suckling sound but cannot find the source.</block>
+<block tags="mdesc, flesh_act4, flesh_act3">The red emergency lights look pink underneath a new growth of skin.</block>
 
-<block tags="mdesc, flesh_act5">It looks familiar.</block>
-<block tags="mdesc, flesh_act5">It is warm and comforting in here.</block>
+<block tags="mdesc, flesh_act4, flesh_act5">It looks familiar.</block>
+<block tags="mdesc, flesh_act4, flesh_act5">It is warm and comforting in here.</block>
 <block tags="mdesc, flesh_act5">You wish you could just stay here forever.</block>
 <block tags="mdesc, flesh_act5">This room feels so familiar to you.</block>
 <block tags="mdesc, flesh_act5">You don't want to leave.</block>
-<block tags="mdesc, flesh_act5">It is beautiful in here.</block>
-<block tags="mdesc, flesh_act5">The beauty of it leaves you speechless.</block>
+<block tags="mdesc, flesh_act4, flesh_act5">It is beautiful in here.</block>
+<block tags="mdesc, flesh_act4, flesh_act5">The beauty of it leaves you speechless.</block>
 
 <!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
 <block tags="odesc, flesh_act2, flesh_act3"> It is covered in mucous.</block>
