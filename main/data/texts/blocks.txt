@@ -48,7 +48,7 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act1">Despite the quarantine protocols, the doors on the ship do not appear sealed.</block>
 <block tags="mdesc, flesh_act1">A holographic projector repeats the last few seconds of film credits on a distant wall.</block>
 <block tags="mdesc, flesh_act1">Even the backup computer systems appear to be offline.</block>
-<block tags="mdesc, flesh_act1">The station is eerily silent except for the hum of its machinery.</block>
+<block tags="mdesc, flesh_act1">The ship is eerily silent except for the hum of its machinery.</block>
 
 <block tags="mdesc, flesh_act2">"<t>UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED</t>," a robotic voice announces to an empty room.</block>
 <block tags="mdesc, flesh_act2">An announcement over the loudspeaker punctuates the silence. "<t>PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL</t>."</block>
@@ -117,12 +117,6 @@ INSUFFICIENT DATA<br />
 <block tags="odesc, flesh_act5"> You look at it hungrily.</block>
 <block tags="odesc, flesh_act5"> Your stomach growls in anticipation.</block>
 
-<!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS re injuries -->
-<block tags="injury, none"></block>
-<!-- <block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
-<block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
-<block tags="injury, none"><br/><br/>YOU ARE UNINJURED.</block>
- -->
 <!-- trying out self-mutilation side goal -->
 <!-- work like injuries, called inside options after collecting data  -->
 <block tags="sacrifice1"><br /><br />(Player has sacrificed hair)</block>
