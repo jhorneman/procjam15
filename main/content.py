@@ -116,6 +116,8 @@ class InjectBlock(Content):
             return None
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
+            if len(tags) == 0:
+                return None
             injected_block = get_text_block_with_tag(tags, self.repeat)
             if injected_block:
                 return evaluate_content_blocks([injected_block], _state)
@@ -203,6 +205,8 @@ class InjectOption(Content):
             return None
         if self.is_condition_true(_state):
             tags = evaluate_tags(self.tags, _state)
+            if len(tags) == 0:
+                return None
             injected_option = get_tagged_option_to_inject(tags, _state, self.repeat)
             if injected_option:
                 return {
