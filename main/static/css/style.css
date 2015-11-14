@@ -90,6 +90,10 @@ body.style_terminal {
     background: #161f12;
 }
 
+.divLine:before {
+    content: '-----------';
+}
+
 @media (min-width: 550px) {
     body {
         background-size: cover;
@@ -109,6 +113,10 @@ body.style_terminal {
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('/static/img/wires3.png'), linear-gradient(to right bottom, rgb(20, 27, 7) 25%, rgb(7, 21, 4) 50%, rgb(1, 2, 0) 82%);
+    }
+
+    .divLine:before {
+        content: '--------------------------------';
     }
 }
 
