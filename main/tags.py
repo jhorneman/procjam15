@@ -23,7 +23,9 @@ def evaluate_tags(_tags, _state):
         if tag.startswith("$"):
             variable_name = tag[1:]
             if variable_name in _state:
-                tag = _state[variable_name]
+                tag = _state[variable_name].strip()
+                if not tag or len(tag) == 0:
+                    continue
             else:
                 logger.error("Could not find a state variable named '{0}'. Skipping.".format(variable_name))
                 continue
