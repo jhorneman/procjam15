@@ -69,7 +69,7 @@ Any food left behind in the unattended gardens is inedible, now contaminated wit
 <leadin>Search the crew deck.</leadin>
 You're on the crew deck.
 
-Tables overturned, half-eaten food, games, darts, long tables, benches, liquor, large screens normally displaying sports from back home on multi-month delay. You fiddle with the radio but only hear static. xx
+A huge  common living area with long tables, benches, couches, plastic plants, games, dartboards. Large screens normally show sport recordings from back home but are now all dead. Many of the tables are overturned or covered with half-eaten food. You fiddle with the multimedia controls but only hear static.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -81,12 +81,12 @@ Tables overturned, half-eaten food, games, darts, long tables, benches, liquor, 
 
 <scene>
 <meta id='life support control' tags='mission, flesh_act4, flesh_act3, style_mission'/>
-<leadin>Search the life support control.</leadin>
-You're in life support control.
+<leadin>Search the life support control room.</leadin>
+You briefly hesitate before entering the life support control coom. You must be careful looking for data here, or risk upsetting the systems that keep you alive.
 
-The only place where power seems to not fluctuate, except for the lights. It runs on an emergency generator, but you cannot dissemble it to use for the mainframe without sacrificing life support. Oxygen, carbon dioxide, nitrogen. Pressure. Thermal shows abnormally warm levels in various hotspots around the ship.
+It seems this is the only place where power does not fluctuate, except for the lights. Life support runs on an emergency generator, but scavenging or rerouting it for the mainframe means the ship becomes uninhabitable.
 
-You hesitate shortly before entering the room for salvage. You must tread lightly or risk the systems keeping you alive. xx
+Oxygen, carbon dioxide, and nitrogen are pumped through thrumming high pressure pipes to and from storage tanks and recycling plants. The systems seem to be working, working hard even. Thermal overview maps show abnormally warm levels in various hotspots around the ship.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -101,7 +101,7 @@ You hesitate shortly before entering the room for salvage. You must tread lightl
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
 
-Zero-g experiments, high gravity experiments, pressurized chamber experiments, all on organic tissue. Next to the hydroponics garden, but the main source of lab tests were the mice. Mice are now all dead. xx
+Multiple test chambers allow the scientists on board to perform experiments with zero gravity, high gravity, high pressure... whatever man can do to organic tissue, it can be done here. Machines stand ready to take what is left and to analyze it slice by slice, blood cell by blood cell, molecule by molecule. The main source of test subjects were the mice, but they are all dead.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -116,7 +116,7 @@ Zero-g experiments, high gravity experiments, pressurized chamber experiments, a
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
 
-Large machinery, requiring their own operators to run. Fabrication of new parts, now idle. Major maintenence work to keep the ship running. xx
+Huge machines can repair or fabricate anything the ship needs to keep running, from metamaterials to gears and pipes. Normally there is always something being built or repaired here, but without their operators, the machines are nothing but giant, dead blocks of metal.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -131,14 +131,29 @@ Large machinery, requiring their own operators to run. Fabrication of new parts,
 <leadin>Search the captain's quarters.</leadin>
 You're in the captain's quarters.
 
-Personal effects. Undisturbed. Captain's logs inaccessible. Sterile, minimal, but the drawers and cabinent all opened and emptied. Someone else has already searched through their stuff. Did they find what they were looking for? xx
+A few personal effects stop the comparatively large room from appearing completely sterile.
+
+The drawers and cabinet are opened and emptied. Someone else has already searched this place. Did they find what they were looking for?
 
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
-<injectOption tags='option, human' />
+<option nextScene="captains logs">Try to access the captain's logs.</option>
 <injectOption tags='option, human' />
 
+</scene>
+
+<scene>
+<meta id='captains logs'/>
+You try to use the computer terminal to access the captain's logs, but no matter what you do, you only see:
+<block><t>
+--------------------------------<br />
+CURRENT STATUS...<br />
+LOCAL LOGS CORRUPTED<br/>
+CHECK MAINFRAME COPIES<br/>
+--------------------------------<br />
+</t></block>
+<option nextScene="captains quarters">Search the captain's quarters.</option>
 </scene>
 
 <scene>
