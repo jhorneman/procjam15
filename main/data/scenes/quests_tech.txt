@@ -27,7 +27,7 @@ No one has left the ship, but if they had there is nowhere they could go. Only e
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 <injectOption tags='option, mechanical' />
 
 </scene>
@@ -43,7 +43,7 @@ Rows of hospital beds stand undisturbed among a collection of machinery. Centrif
 
 <injectOption tags='option, medical' />
 <injectOption tags='option, medical' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 
 </scene>
 
@@ -75,7 +75,7 @@ A huge  common living area with long tables, benches, couches, plastic plants, g
 
 <injectOption tags='option, human' />
 <injectOption tags='option, human' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 
 </scene>
 
@@ -105,7 +105,7 @@ Multiple test chambers allow the scientists on board to perform experiments with
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 <injectOption tags='option, medical' />
 <injectOption tags='option, computer' />
 
@@ -121,7 +121,7 @@ Huge machines can repair or fabricate anything the ship needs to keep running, f
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 <injectOption tags='option, mechanical' />
 
 </scene>
@@ -166,8 +166,8 @@ Rows of consoles, large screens left static or dark, computers useless with so l
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
-<injectOption tags='option, container' />
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
+<injectOption tags='option, containers' />
 
 </scene>
 
@@ -272,7 +272,7 @@ Rows of monitors offline and unresponsive. Chairs overturned. A pile of furnitur
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='option, container' />
+<injectOption tags='option, containers' />
 <injectOption tags='option, paper' />
 <injectOption tags='option, computer' />
 
