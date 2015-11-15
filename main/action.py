@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from parameters import set_parameter_value, get_rhs_parameter_value
+from parameters import get_parameter_value, set_parameter_value
 from game_state import generate_data_var
 
 
@@ -25,15 +25,15 @@ class Action(object):
             generate_data_var()
 
         elif self.action == "inc":
-            value = get_rhs_parameter_value(_state, self.variable_name)
+            value = get_parameter_value(_state, self.variable_name)
             set_parameter_value(_state, self.variable_name, value + 1)
 
         elif self.action == "dec":
-            value = get_rhs_parameter_value(_state, self.variable_name)
+            value = get_parameter_value(_state, self.variable_name)
             set_parameter_value(_state, self.variable_name, value - 1)
 
         elif self.action == "set":
-            value = get_rhs_parameter_value(_state, self.value)
+            value = get_parameter_value(_state, self.value)
             set_parameter_value(_state, self.variable_name, value)
 
 

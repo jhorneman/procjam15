@@ -2,7 +2,7 @@
 
 import logging
 import operator
-from parameters import get_lhs_parameter_value, get_rhs_parameter_value
+from parameters import get_parameter_value
 
 
 logger = logging.getLogger(__name__)
@@ -49,15 +49,15 @@ class Condition(object):
             return True
 
         if self.operator == Condition.ISTRUE:
-            return bool(get_lhs_parameter_value(_state, self.param1))
+            return bool(get_parameter_value(_state, self.param1))
 
         elif self.operator == Condition.NOT:
-            value1 = get_lhs_parameter_value(_state, self.param1)
+            value1 = get_parameter_value(_state, self.param1)
             return Condition.operators[self.operator](bool(value1))
 
         else:
-            value1 = get_lhs_parameter_value(_state, self.param1)
-            value2 = get_rhs_parameter_value(_state, self.param2)
+            value1 = get_parameter_value(_state, self.param1)
+            value2 = get_parameter_value(_state, self.param2)
             return Condition.operators[self.operator](value1, value2)
 
 
