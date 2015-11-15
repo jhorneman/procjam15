@@ -39,15 +39,6 @@ It occurs to you that you do not know where in space the ship is. Fear hits you 
 <option action="respawn">Your organs dissolve as you try to crawl away.</option>
 </scene>
 
-<!-- need to find places for these -->
-
-<scene>
-<meta id='hydrogen power' tags='death_hydrogen, style_death'/>
-<leadin>Jumpstart generator to power hydrogen collector.</leadin>
-You jumpstart the generator to power on the hydrogen collector.  It sparks. The explosion is massive and sudden. You die. xx
-<option action="respawn">...</option>
-</scene>
-
 <!-- GENERIC TAGGED DEATHS -->
 
 <!-- CONTAINER -->

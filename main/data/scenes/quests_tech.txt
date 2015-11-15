@@ -267,7 +267,7 @@ Various valves and small robotic equipment fill the room between the hydrogen co
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='death_hydrogen' />
+<injectOption tags='option, mechanical' />
 <injectOption tags='option, mechanical' />
 <injectOption tags='option, electrical' />
 
