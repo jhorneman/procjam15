@@ -44,13 +44,6 @@ It occurs to you that you do not know where in space the ship is. Fear hits you 
 <!-- CONTAINER -->
 
 <scene>
-<meta id='oxygen levels' tags='option, containers, style_death'/>
-<leadin>Modify oxygen levels.</leadin>
-You modify oxygen levels and accidentally seal the room. All oxygen leaves. You suffocate. You die. xx
-<option action="respawn">...</option>
-</scene>
-
-<scene>
 <meta id='locking mechanism' tags='option, containers, style_death'/>
 <leadin>Engage locking mechanism in door.</leadin>
 You engage the locking mechanism. The power then cuts out. It does not return. You are unable to reopen the door. It is your coffin now. You die. xx
