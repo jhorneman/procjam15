@@ -11,6 +11,8 @@ from text_blocks import get_text_block_with_tag
 logger = logging.getLogger(__name__)
 
 goto_action = "goto"
+respawn_action = "respawn"
+restart_action = "restart"
 
 
 class Content(object):

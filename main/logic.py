@@ -6,7 +6,7 @@ from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text_variables, break_text_into_paragraphs
 from game_state import prepare_game_state, generate_player_character, restart
-from content import evaluate_content_blocks, goto_action
+from content import evaluate_content_blocks, goto_action, respawn_action, restart_action
 
 
 logger = logging.getLogger(__name__)
@@ -36,9 +36,9 @@ def get_current_scene_data():
     # Provide a random number generator that produces the same numbers if the player reloaded the page.
     session["__rng"] = random.WichmannHill(url_nonce)
 
-    action = request.args.get("action", None)
+    action = request.args.get("action", restart_action)
 
-    if action is None:
+    if action == restart_action:
         restart()
         current_scene_id = first_scene_id
         session["previous_scene"] = ""
@@ -52,7 +52,7 @@ def get_current_scene_data():
             del session["__rng"]
             return None
 
-    elif action == "respawn":
+    elif action == respawn_action:
         session.update(generate_player_character())
 
         wake_up_tags = ["pc_start", session["flesh_act"]]

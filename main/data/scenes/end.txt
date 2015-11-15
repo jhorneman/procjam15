@@ -145,5 +145,5 @@ Sirens suddenly start. You hear an announcement over the loudspeakers. "CONTAINM
 
 xx
 
-<option nextScene="start">End it.</option>
+<option action="restart">End it.</option>
 </scene>
