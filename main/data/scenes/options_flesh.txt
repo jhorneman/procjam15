@@ -49,7 +49,7 @@ In one of the webs you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <scene>
 <meta id='fluid sac' tags='option, flesh, style_mission'/>
 <leadin>Squeeze fluid sacs.</leadin>
-You carefully squeeze the small fluid sacs growing onto a shelf of cartilege. Most of them contain a thick, yellow putty.
+You carefully squeeze the small fluid sacs growing onto a shelf of cartilage. Most of them contain a thick, yellow putty.
 
 Inside one of the sacs you discover {data}.<injectBlock tags="odesc, $flesh_act" />
 
@@ -84,8 +84,8 @@ The flesh opens up to reveal {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <scene>
 <meta id='cocoon' tags='option, flesh, style_mission'/>
-<leadin>Tear open coccoon.</leadin>
-You rip open a coccoon, its pink sinewy webbing snapping as you pull it apart with your fingers. 
+<leadin>Tear open cocoon.</leadin>
+You rip open a cocoon, its pink sinewy webbing snapping as you pull it apart with your fingers. 
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
@@ -293,7 +293,7 @@ Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <scene>
 <meta id='fuse box membrane' tags='option, flesh, electrical, style_mission'/>
 <leadin>Peel membrane from fuse box.</leadin>
-You peel the pink and veiny membrance off of the fuse box and let it drop to the floor, revealing a discolored metal panel. You flip open the box and investigate the sinewy contents.
+You peel the pink and veiny membrane off of the fuse box and let it drop to the floor, revealing a discolored metal panel. You flip open the box and investigate the sinewy contents.
 
 Inside the fuse box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 

@@ -4,35 +4,35 @@
 <if cond="$flesh_act eq flesh_act1">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room. 
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room. 
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act2">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell wafts toward you with the humid air.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle.
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act3">
 The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticking to a thick pink residue that covers the floor.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by arteries and umbilical cords criss-crossing the room.  They drip with fluids.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by arteries and umbilical cords crisscrossing the room.  They drip with fluids.
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act4">
 The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm, humid center.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the cellular walls connected by arteries and umbilical cords crisscrossing the room.  They drip with hormones.
 
 A single large terminal in the center of the room allows human access to the mainframe.
 </if>
 <if cond="$flesh_act eq flesh_act5">
 The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
 
-The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones.
+The entire room is the mainframe, a collection of nerves sorting and transferring data embedded into the cellular walls connected by arteries and umbilical cords crisscrossing the room.  They drip with hormones.
 
 A single large appendage in the center of the room allows human access to the mainframe.
 </if>
@@ -125,7 +125,7 @@ FEED ME<br />
 <if cond="$flesh_act eq flesh_act1">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room. A single large terminal in the center of the room allows human access to the mainframe.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe machinery whirls with fresh data.<br /></if>
@@ -134,7 +134,7 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 <if cond="$flesh_act eq flesh_act2">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter. A strange sickly sweet smell wafts toward you with the humid air.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by wires criss-crossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle. A single large terminal in the center of the room allows human access to the mainframe.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe appears satisfied by the fresh data you fed it.<br /></if>
@@ -143,7 +143,7 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 <if cond="$flesh_act eq flesh_act3">
 The door to the central mainframe slides open anticipating your approach. You feel the body heat of a trillion calculations as you end. Your shoes make smacking noises as you walk, the soles sticking to a thick pink residue that covers the floor.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the walls connected by arteries and umbilical cords criss-crossing the room.  They drip with fluids. A single large terminal in the center of the room allows human access to the mainframe.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by arteries and umbilical cords crisscrossing the room.  They drip with fluids. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe contentedly digests the data you have fed it.<br /></if>
@@ -152,7 +152,7 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 <if cond="$flesh_act eq flesh_act4">
 The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm, humid center.
 
-The entire room is the mainframe, with machines sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones. A single large terminal in the center of the room allows human access to the mainframe.
+The entire room is the mainframe, with machines sorting and transferring data embedded into the cellular walls connected by arteries and umbilical cords crisscrossing the room.  They drip with hormones. A single large terminal in the center of the room allows human access to the mainframe.
 
 
 
@@ -162,11 +162,11 @@ The entire room is the mainframe, with machines sorting and transfering data emb
 <if cond="$flesh_act eq flesh_act5">
 The door to the central mainframe unfolds before you, anticipating your approach and enveloping you inside of its warm flesh.
 
-The entire room is the mainframe, a collection of nerves sorting and transfering data embedded into the cellular walls connected by arteries and umbilical cords criss-crossing the room.  They drip with hormones. A single large appendage in the center of the room allows human access to the mainframe.
+The entire room is the mainframe, a collection of nerves sorting and transferring data embedded into the cellular walls connected by arteries and umbilical cords crisscrossing the room.  They drip with hormones. A single large appendage in the center of the room allows human access to the mainframe.
 
 
 <if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data.<br /></if>
-<if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from it's gaping pink mouth.<br /></if>
+<if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from its gaping pink mouth.<br /></if>
 </if>
 <br />
 <if cond="$has_mcguffin">You have {$data}.</if><if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>

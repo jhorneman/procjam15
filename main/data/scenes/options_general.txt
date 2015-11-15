@@ -242,7 +242,7 @@ You find {data}.<injectBlock tags="odesc, $flesh_act" />
 <scene>
 <meta id='solar cells' tags='option, electrical, style_mission'/>
 <leadin>Evaluate the solar cells.</leadin>
-You shine your flashlight onto the auxillary solar cells but they fail to react. You flip open the maintenance panel to see if you can salvage something.<br />
+You shine your flashlight onto the auxilary solar cells but they fail to react. You flip open the maintenance panel to see if you can salvage something.<br />
 
 Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
@@ -483,7 +483,7 @@ Among the leftovers you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <scene>
 <meta id='body' tags='option, human, biological, must_morgue, style_mission'/>
 <leadin>Check dead body. </leadin>
-A body lies facedown on the floor. You carefully avoid its face as you search it for anything salveable.<br />
+A body lies facedown on the floor. You carefully avoid its face as you search it for anything salvageable.<br />
 
 Beneath the body you find {data}.<injectBlock tags="odesc, $flesh_act" />
 

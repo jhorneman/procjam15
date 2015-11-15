@@ -37,7 +37,9 @@ No one has left the ship, but if they had there is nowhere they could go. Only e
 <leadin>Search the medbay.</leadin>
 You're in the lower medbay.
 
-Rows of hospital beds stand undisturbed among a collection of machinery. Centrifuges and blood analysis and urine analysis. UV lines hooked up to monitoring stations and robotic diagnostic stations but no one else nearby. xx
+Rows of hospital beds stand undisturbed among a collection of machinery. Various medical equipment line countertops - centrifuges and urine analysis and various scanners and diagnostic devices. 
+
+UV lines stand hooked up to a monitoring station, but the patient is absent.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -82,7 +84,7 @@ A huge  common living area with long tables, benches, couches, plastic plants, g
 <scene>
 <meta id='life support control' tags='mission, flesh_act4, flesh_act3, style_mission'/>
 <leadin>Search the life support control room.</leadin>
-You briefly hesitate before entering the life support control coom. You must be careful looking for data here, or risk upsetting the systems that keep you alive.
+You briefly hesitate before entering the life support control room. You must be careful looking for data here, or risk upsetting the systems that keep you alive.
 
 It seems this is the only place where power does not fluctuate, except for the lights. Life support runs on an emergency generator, but scavenging or rerouting it for the mainframe means the ship becomes uninhabitable.
 
@@ -116,7 +118,7 @@ Multiple test chambers allow the scientists on board to perform experiments with
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
 
-Huge machines can repair or fabricate anything the ship needs to keep running, from metamaterials to gears and pipes. Normally there is always something being built or repaired here, but without their operators, the machines are nothing but giant, dead blocks of metal.
+Huge machines can repair or fabricate anything the ship needs to keep running, from meta-materials to gears and pipes. Normally there is always something being built or repaired here, but without their operators, the machines are nothing but giant, dead blocks of metal.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -161,13 +163,13 @@ CHECK MAINFRAME COPIES<br/>
 <leadin>Search the command center.</leadin>
 You're in the command center.
 
-Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last? xx
+Rows of consoles fill the room, their large screen left static or dark. They all face a blank screen as large as an entire wall that stands as the focal point of the command deck. The computers, which once interfaced with the mainframe and controlled every part of the ship, stand completely useless to you.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, computer' />
 <injectOption tags='option, containers' />
-<injectOption tags='option, containers' />
+<injectOption tags='option, computer' />
 
 </scene>
 
@@ -176,7 +178,9 @@ Rows of consoles, large screens left static or dark, computers useless with so l
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
 
-The large door allows manual access, but has warnings posted over it. Hazard. Radiation warnings. No human access beyond this point. You can see through the layers of pipes and wire meshes steam coming off of a main metal cylinder. The reactor core has not overheated with the lack of power. The monitor shows it is nearing the danger zone. The ship will not survive much longer without a reboot to its systems. The access room/monitoring station has machinery to monitor its status. xx
+You can see through the layers of pipes and wire meshes steam coming off of a main metal cylinder. This is the only place on the ship with full power, the lights casting brightly upon all the instruments. The humming and machinery is deafening as they attempt to keep the core cooled.  
+
+A thermal scanner shows the temperature nearing the danger zone. The ship itself will not survive much longer unless you can reboot the mainframe and gain control over its systems again.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -191,12 +195,14 @@ The large door allows manual access, but has warnings posted over it. Hazard. Ra
 <leadin>Search navigation.</leadin>
 You are at the propulsion systems control in navigation.
 
-Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of space is the only thing that has kept this unmanned ship from breaking into debris. No sign of pilot. Dust has begun to settle on the flightsticks. xx
+The ship pilots itself on standby, keeping it safe and away from dangerous collisions with minimal calculations. You read the coordinates on one of the terminals but cannot understand them.
+
+There is no sign of the pilots, but their belongings remain scattered around the computer consoles.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
 <injectOption tags='option, mechanical' />
-<injectOption tags='option, electrical' />
+<injectOption tags='option, human' />
 <injectOption tags='option, computer' />
 
 </scene>
@@ -206,9 +212,9 @@ Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of spa
 <leadin>Search the solar arrays.</leadin>
 You are at the solar arrays.
 
-You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. xx
+You can see the arrays from the narrow window - giant dishes meant to always point towards the nearest source of solar energy. So far from any suns, you can only see them in the faint light of the red emergency alarms fanning out across the outer hull of the ship.
 
-The solar arrays are inoperational, but there's no sun to feed them anyway. They will not help direct power to the mainframe.
+Without a sun, the solar arrays lie dormant. You will not be able to reroute any to the mainframe from here.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -223,7 +229,9 @@ The solar arrays are inoperational, but there's no sun to feed them anyway. They
 <leadin>Search the morgue.</leadin>
 You are in the morgue.
 
-Hospital beds, cold and clinical. Medical equipment left unused. Metal drawers with thick handles mostly closed, though a few remain ajar. The room is warm when it should be cold. xx
+It is normally chilled, but the seals into the room have been ruptured and hot, sticky air pumps in from vents in the ceiling. You can smell the morgue before you even step foot in it.
+
+It is filled with empty hospital beds, cold and clinical to serve the dead rather than the living. Metal drawers with thick, heavy handles sit embedded in the wall, though a few stand ajar. You hesitate to peer inside them.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -238,7 +246,7 @@ Hospital beds, cold and clinical. Medical equipment left unused. Metal drawers w
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
 
-The wall is unusually warm to the touch. Scanners offline. System online, auxillary power only. You cannot cut off power to feed the mainframe without subjecting yourself to potentially lethal radiation exposure from space. xx
+The scanners and readings all appear to be offline, but the backup lights and radiation shields buzz with auxilary power. The wall is unusually warm to the touch and your skin prickles. There is no chance of rerouting this power to the mainframe without risking lethal doses of radiation exposure.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -253,7 +261,9 @@ The wall is unusually warm to the touch. Scanners offline. System online, auxill
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
 
-Offline. Large metal cylinders. Room is dry but should be moist. Separating hydrogen from oxygen. Various valves and mechanical readings. Terminals unresponsive. Liz doesn't actually know what hydrogen collectors are. xx
+A dozen large metal cylinders stand floor to ceiling in a small room adjacent to maintenance. The machinery used to separate hydrogen and oxygen is silent. The consoles appear to be offline and mechanical readings are nonresponsive.
+
+Various valves and small robotic equipment fill the room between the hydrogen collectors.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -266,9 +276,11 @@ Offline. Large metal cylinders. Room is dry but should be moist. Separating hydr
 <scene>
 <meta id='security office' tags='mission, flesh_act4, flesh_act3, style_mission'/>
 <leadin>Search the central security office.</leadin>
-You are in the central security office.
+You are outside the central security office.
 
-Rows of monitors offline and unresponsive. Chairs overturned. A pile of furniture next to the door, as though it had been barricaded. xx
+You use all of your weight to push open the door before it finally gives. You climb over the furniture used as a makeshift barricade. A second door on the opposite side of the office stands open, the halls beyond it receding into darkness. 
+
+Rows of monitors remain offline and unresponsive. Chairs lay overturned and papers toss across the room. A single red emergency light blinks.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -315,7 +327,9 @@ The labs are lined with busy rows and shelves of vials and containers with vario
 <leadin>Search the armory.</leadin>
 You are in the armory.
 
-The armory stands empty of weapons or clothing, looted hastily that the gate was left open. Nothing particularly useful looks left, but there are various boxes and containers still on the shelves among other debris left behind. xx
+The door stands open, the red emergency lights silent as the power surges have not reached the area. You shine your light into the highly secured room.
+
+Weapons appear to have all been looted hastily, the gate dividing them from the requisitions desk left open and abandoned. There are various boxes and containers still on the shelves, but others have already sifted through most of them.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -330,13 +344,15 @@ The armory stands empty of weapons or clothing, looted hastily that the gate was
 <leadin>Search the recycling center.</leadin>
 You are in the main recycling hub.
 
-A conveyor belt grinds loudly back and forth on broken gears, shortened by the electrical surges. Trash lines the belt and various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" and so on. Trash chutes lay open, their trash sitting in unmoving, unfiltered piles of the floor where they overflowed.xx
+A conveyor belt carrying trash grinds loudly back and forth on broken gears, shortened by the electrical surges coursing irregularly through the ship.  Various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" line the belt but there is no one around to sort them.
+
+The trash chutes lay closed, their contents sitting in unfiltered overflow piles on the floor.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
-<injectOption tags='option, computer' />
+<injectOption tags='option, biological' />
 <injectOption tags='option, mechanical' />
-<injectOption tags='option, electrical' />
+<injectOption tags='option, biological' />
 
 </scene>
 
@@ -345,9 +361,9 @@ A conveyor belt grinds loudly back and forth on broken gears, shortened by the e
 <leadin>Search the virology labs.</leadin>
 You are in the virology labs.
 
-Medical equipment might make it look like the medlab except for the ebola suits. You walk among a series of patient rooms with glass walls, peering into them from the safe area outside of them. 
+Sterile white suits stand in a crumbled pile, mottled with brown spores and dried blood. The medical equipment is similar to the main medbay, but more vials and tubes remain sealed behind thick barriers labeled "HAZARDOUS".
 
-One of the glass walls is broken, shattered. Dried blood on the glass shards on the ground. xx
+You walk along the access hall and peer into a series of patient rooms through large glass observation walls. They are empty except for beds and a few personal belongings.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -363,7 +379,9 @@ One of the glass walls is broken, shattered. Dried blood on the glass shards on 
 <leadin>Search the chapel.</leadin>
 You are in the chapel.
 
-One of the few places not in disrepair. Offerings to various religions piled high at the front of the chapel, and clothes and bags lines the pews, left behind by the congregation. Instead of stained glass, it's a large glass window into space. Stars twinkle. Ceiling is high with lights on long cables swinging in the room. xx
+The small room is very utilitarian, with rows of turned over wooden pews facing a main altar area. Offerings to various religions are piled high at the front of the chapel, and as you cross the room you spy various belongings left behind by its parishioners.
+
+Behind the altar is a large glass window stained only by the blackness of space. Many of the stars are hidden by the shadow of the ship's hull.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -378,7 +396,9 @@ One of the few places not in disrepair. Offerings to various religions piled hig
 <leadin>Search the brig.</leadin>
 You are in the brig.
 
-Metal mesh gates rather than bars. One of the cells gates has been dented, and another the metal is twisted and shredded by something unknown. Tufts of hair stuck on the sharp metal. xx
+The security office is already open, but the consoles fail to respond to your input. The secure hallway leads you past a row of cells, each separated from you with a thin but extremely strong metal mesh. They appear to be empty.
+
+The last gaol cell stands open, the metal netting twisted and shredded. Tufts of hair and bloodied flesh stick out from the sharp wiring.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -387,10 +407,3 @@ Metal mesh gates rather than bars. One of the cells gates has been dented, and a
 <injectOption tags='option, computer' />
 
 </scene>
-
-<!--
-
-TO DO
-Rewrite rough drafts
-
--->

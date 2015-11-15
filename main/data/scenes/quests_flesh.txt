@@ -3,9 +3,9 @@
 <leadin>Search the womb.</leadin>
 You're in the womb.
 
-The huge vaulted room stands largely vacant, the endometrius covering the inner hull dripping with thick fluid, waiting for the next shipment to arrive.
+The huge vaulted room stands largely vacant, the endometria covering the inner hull dripping with thick fluid, waiting for the next shipment to arrive.
 
-The other half of the room is filled with mishapen egg pouches and pustules, harnessed together with fascia and knotted strands of hair. A pile of broken egg pouches lie scattered across the soft, giving floor where the fascia failed them.
+The other half of the room is filled with misshapen egg pouches and pustules, harnessed together with fascia and knotted strands of hair. A pile of broken egg pouches lie scattered across the soft, giving floor where the fascia failed them.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -69,7 +69,9 @@ Cold sterile metal sheets lay in patchwork as exoskeletons for the fleshy globul
 <scene>
 <meta id='gland' tags='mission, flesh_act4, flesh_act5, style_mission'/>
 <leadin>Search the starboard glands</leadin>
-You're in a gland. It is familiar, like the solar arrays xx
+You're in one of the starboard glands.xx
+
+All around you thick pink tissues secrete 
 
 You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. 
 
@@ -102,6 +104,8 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 <meta id='ventricle' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the ventricle.</leadin>
 You in the left ventricle. It is familiar, like the upper maintenance shaft. xx
+
+The muscular tube contracts and tightens as you walk along its mucous membrane. 
 
 The shafts here are wide, but you stoop to prevent your head from grazing the low ceiling. Several panels lie on the floor, revealing tangled knots of colorful wires, a clump of neurons sending instructions between the various ship systems.
 
@@ -150,7 +154,7 @@ You are in the bronchial airways.
 
 You carefully remove the maintenance panel and climb into the lower airways, just large enough for you to crouch within. As you lift your hand over the opening of an alveolar duct, you feel hot, humid air flowing through the ship.
 
-The bronchi shafts criss-cross the entire ship like a respiratory system, feeding the port and starboard lungs fresh oxygen to be filtered throughout the rest of the ship's body. The walls are lined with flexible cartilage barely concealing various valves and and nobules.
+The bronchi shafts criss-cross the entire ship like a respiratory system, feeding the port and starboard lungs fresh oxygen to be filtered throughout the rest of the ship's body. The walls are lined with flexible cartilage barely concealing various valves and nodules.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -178,10 +182,11 @@ You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the ner
 <scene>
 <meta id='thorax' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the thorax.</leadin>
-You are in the thorax. It is familiar, like the propulsion systems control in navigation. xx
+You are in the thorax.
 
-Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of space is the only thing that has kept this unmanned ship from breaking into debris. No sign of pilot. Dust has begun to settle on the flightsticks. 
+The central cavity is mostly empty, with giant metal-plated ribs lining the inner hull. Thick metal and bone supports jut through the room irregularly, while wire mesh and cartilage hold together various machines and body parts suspended between them.
 
+This area is not meant for human exploration standing as it does between the other rooms and organs of the ship. You are careful as you walk along it's slick curved surface.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -194,27 +199,11 @@ Piloting on standby. Coordinates unknown. Scanners offline. The emptiness of spa
 <scene>
 <meta id='intestines' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the small intestines.</leadin>
-You are in the small intestines. It is familiar, like the main recycling hub. xx
+You are at the small intestines.
 
-A conveyor belt grinds loudly back and forth on broken gears, shortened by the electrical surges. Trash lines the belt and various bins labeled "ORGANIC WASTE" and "MECHANICAL WASTE" and so on. Trash chutes lay open, their trash sitting in unmoving, unfiltered piles of the floor where they overflowed.
+The coils of intestines, large enough in diameter that a full-bodied adult could stand within them, snake through the former recycling center. The flesh stretches as large, solid matter is pushed through via peristalsis, leeching it of useful nutrients. Fluids squirt out of its pores to help lubricate the process as it strains to move waste through its flexible tissue.
 
-<injectBlock tags="mdesc, $flesh_act" />
-
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-
-</scene>
-
-
-<scene>
-<meta id='esophagus' tags='mission, flesh_act5, style_mission'/>
-<leadin>Search the esophagus.</leadin>
-You are in the small intestines. It is familiar, like the research and development labs. xx
-
-You've never been allowed in here before. The door sputters on broken hinges, and a voice repeats, "<t>ACCESS RESTRICTED</t>". You walk into it anyway.
-
-The labs are lined with busy rows and shelves of vials and containers with various biological specimens floating in unidentified murky liquid.
+The ships bowels already overflow with trash, the organic solids piling high and poisoning the air with their putrid odors.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -223,11 +212,16 @@ The labs are lined with busy rows and shelves of vials and containers with vario
 <injectOption tags='option, flesh' />
 
 </scene>
+
 
 <scene>
 <meta id='placental pouch' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the placental pouch.</leadin>
-You are in the placental pouch. It is familiar, like the commissary. xx
+You are in the placental pouch.
+
+It stands inflated but not entirely vacant. Yellow and white embryos covered in a netting of red sinew grow from the inner lining of the room.  They throb as they absorb nutrients from throughout the ship.
+
+One of the embryonic clusters has burst open, revealing an empty cavity within it.
 
 Wire shelves stand empty and boxes overturned, their contents spilled across the floor of the ship. A refrigerator leaks blue coolant onto the white tiles. You step among the sticky sodas, processed meat products, digital magazines, souvenirs and other human artifacts as you peer through the commissary for something to salvage.
 
@@ -242,11 +236,11 @@ Wire shelves stand empty and boxes overturned, their contents spilled across the
 <scene>
 <meta id='ovaries' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the ovaries.</leadin>
-You are in the ovaries. It is familiar, like the hangar bay. xx
+You are in the ovaries.
 
-The huge structure curves with the hull of the ship. Shuttles stand silent, parked meticulously within their lines. Escape pod doors remain closed, undisturbed, all accounted for. Between the shuttles stand various mechanical equipment for vehicle repairs and servicing.
+You step carefully over unfertilized eggs scattered across the floor, some leaking a sticky substance.
 
-No one has left the ship, but if they had there is nowhere they could go. Only empty space.
+Small tumors grow haphazardly out of bone and cartilage. Unidentified pustules stand in the corners of the small room, occasionally twitching and squirting a pungent yellow fluid.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -276,7 +270,7 @@ Rows of monitors and tonsils remain offline and unresponsive. The beam from your
 <leadin>Search the gills.</leadin>
 You are in the gills.
 
-Beige and brown flecks of scabs, dried and desiccated, sit on the floor. As the shop breathes, cords of flesh light up with white florescent chemicals as the gils attempt to filter out the impurities. A fine sickly sweet mist sprays down upon you from pores in the ceiling. 
+Beige and brown flecks of scabs, dried and desiccated, sit on the floor. As the shop breathes, cords of flesh light up with white florescent chemicals as the gills attempt to filter out the impurities. A fine sickly sweet mist sprays down upon you from pores in the ceiling. 
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -340,26 +334,9 @@ Scanners powered by an unknown backup systems still print out readouts from vari
 <leadin>Search the lymphatic system.</leadin>
 You are in the lymphatic system.
 
-You enter one of several rooms lined with a strange fluid, like congealed broth. Web-like lymph nodes in the ceilings continue to secrete a sweet odor. The crew's beds lay unmade, blankets and membranes dispered across the room. The furniture appears to be made of cartilage.
+You enter one of several rooms lined with a strange fluid, like congealed broth. Web-like lymph nodes in the ceilings continue to secrete a sweet odor. The crew's beds lay unmade, blankets and membranes dispersed across the room. The furniture appears to be made of cartilage.
 
 As the power surges, music suddenly interrupts the slow labored breathing of the ship... only to fade once again with the lights.
-
-<injectBlock tags="mdesc, $flesh_act" />
-
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-<injectOption tags='option, flesh' />
-
-</scene>
-
-<scene>
-<meta id='fallopian tubes' tags='mission, flesh_act5, style_mission'/>
-<leadin>Search the fallopian tubes.</leadin>
-You are in the fallopian tubes. 
-
-You step carefully over unfertilized eggs scattered across the floor, some leaking a sticky substance.
-
-Small tumors grow haphazardly out of bone and cartilage. Unidentified pustules stand in the corners of the small room, occasionally twitching and squirting a pungent yellow fluid.
 
 <injectBlock tags="mdesc, $flesh_act" />
 

@@ -54,7 +54,7 @@ You're in the lower access vents.
 
 You carefully remove the maintenance panel and climb into the lower vents, just large enough for you to crouch within.
 
-The ventilation shafts criss-cross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship. <if cond="$player_died_upper_ventilation == 1">The air smells of rot, as if something died in those shafts.<br/><br/></if>
+The ventilation shafts crisscross the entire ship like a respiratory system. Pipes line the vents, barely concealing various valves and other mechanical instruments. As you lift your hand over the opening of a pipe, you feel hot, humid air flowing through the ship. <if cond="$player_died_upper_ventilation == 1">The air smells of rot, as if something died in those shafts.<br/><br/></if>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -86,7 +86,7 @@ The shafts here are wide, but you stoop to prevent your head from grazing the lo
 <leadin>Search one of the main hallways.</leadin>
 You're in one of the main hallways.
 
-Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signalling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.&lt;br&gt;
+Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signaling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.&lt;br&gt;
 
 Someone has left several doors ajar, their contents spilling out onto the hallway floor from dark offices and storage rooms.
 
@@ -103,7 +103,7 @@ Someone has left several doors ajar, their contents spilling out onto the hallwa
 <leadin>Search the administration office.</leadin>
 You're in an administration office.
 
-Papers are scattered everywhere between overturned desks, drawers open and spilling their contents across the floor. Charts and calenders outlining deadlines and projected earnings hang limply on the walls.
+Papers are scattered everywhere between overturned desks, drawers open and spilling their contents across the floor. Charts and calendars outlining deadlines and projected earnings hang limply on the walls.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -118,7 +118,7 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 <leadin>Search the starboard labs.</leadin>
 You're in the small laboratory on the starboard side.
 
-The room is full of various lab equipment, both familiar and foreign - centrifuges, microscopes, bioscanners. A set of test tubes contain the chemical analysis for biological compounds brought from the hydroponics gardens. Your feet crunch on broken glass leaking mysterious fluids. A single flourescent light swings slowly from the ceiling, animating the shadows.
+The room is full of various lab equipment, both familiar and foreign - centrifuges, microscopes, bioscanners. A set of test tubes contain the chemical analysis for biological compounds brought from the hydroponics gardens. Your feet crunch on broken glass leaking mysterious fluids. A single fluorescent light swings slowly from the ceiling, animating the shadows.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -156,7 +156,7 @@ The elevator shaft continues down into darkness.
 <leadin>Search the Sector 1 server room.</leadin>
 You're in the Sector 1 server room.
 
-Power still runs, if unevenly, through the servers. A web of colorful wires connect the rows of machines on metal racks. Red and yellow lights lining the shelves blink in unrecognizable patterns. A server stack sparks and hisses from overload.<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner, their hand still craddling a sparking wire in its death grip.</if><br/><br/>
+Power still runs, if unevenly, through the servers. A web of colorful wires connect the rows of machines on metal racks. Red and yellow lights lining the shelves blink in unrecognizable patterns. A server stack sparks and hisses from overload.<if cond="$wire_death_scene == $current_scene">A charred body lies in a corner, their hand still cradling a sparking wire in its death grip.</if><br/><br/>
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -258,7 +258,7 @@ You peer into the kitchens to find them equally abandoned, and the smell of deca
 <leadin>Search the dormitory.</leadin>
 You're in a crew dormitory.
 
-You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their encoutrements.
+You enter one of several dorm rooms lined with six bunk beds set into the wall. The beds lay unmade, blankets and clothes dispersed across the furniture. Various items adorn the handful of shelves - knick-knacks, objects of adoration, memories. Already a fine layer of dust has begun to settle on their accoutrements.
 
 As the power surges, music suddenly interrupts the stillness... only to fade once again with the lights.
 
