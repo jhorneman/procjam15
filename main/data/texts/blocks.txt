@@ -44,7 +44,7 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act1">You call out for survivors but hear nothing but the emergency alarms and your echo.</block>
 <block tags="mdesc, flesh_act1">Someone else has been here before.</block>
 <block tags="mdesc, flesh_act1">Red emergency lights blink and the phrase "<t>QUARANTINE IN EFFECT</t>" scrolls over the main doorway.</block>
-<block tags="mdesc, flesh_act1">Items appear to be abandoned suddenly.</block>
+<block tags="mdesc, flesh_act1">Items appear to have been abandoned suddenly.</block>
 <block tags="mdesc, flesh_act1">Despite the quarantine protocols, the doors on the ship do not appear sealed.</block>
 <block tags="mdesc, flesh_act1">A holographic projector repeats the last few seconds of film credits on a distant wall.</block>
 <block tags="mdesc, flesh_act1">Even the backup computer systems appear to be offline.</block>
