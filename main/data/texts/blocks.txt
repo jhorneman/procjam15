@@ -67,6 +67,7 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act2">You can hear an odd suckling sound but cannot find the source.</block>
 <block tags="mdesc, flesh_act2">The ceiling exhales warm, moist air into the room as you enter.</block>
 
+<block tags="mdesc, flesh_act3">You hear whispers through the vents, but see nothing.</block>
 <block tags="mdesc, flesh_act3">A robotic voice repeats over the cracking intercoms, "PLEASE REPORT TO THE MAINFRAME {$PC_first} {$PC_last} WITH SUFFICIENT DATA."</block>
 <block tags="mdesc, flesh_act4, flesh_act3">All the monitors display the same message - "<t>WE ARE.</t>"</block>
 <block tags="mdesc, flesh_act3">A console reads out, "<t>YES PLEASE YES MORE DATA YESSSSS</t>"</block>
@@ -80,13 +81,18 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act4, flesh_act3">You can hear an odd suckling sound but cannot find the source.</block>
 <block tags="mdesc, flesh_act4, flesh_act3">The red emergency lights look pink underneath a new growth of skin.</block>
 
-<block tags="mdesc, flesh_act4, flesh_act5">It looks familiar.</block>
+<block tags="mdesc, flesh_act5">It looks familiar.</block>
 <block tags="mdesc, flesh_act4, flesh_act5">It is warm and comforting in here.</block>
 <block tags="mdesc, flesh_act5">You wish you could just stay here forever.</block>
 <block tags="mdesc, flesh_act5">This room feels so familiar to you.</block>
 <block tags="mdesc, flesh_act5">You don't want to leave.</block>
 <block tags="mdesc, flesh_act4, flesh_act5">It is beautiful in here.</block>
 <block tags="mdesc, flesh_act4, flesh_act5">The beauty of it leaves you speechless.</block>
+<block tags="mdesc, flesh_act4">The heat and humity have started to affect you. You wipe the sweat off your brow with the back of your hand."</block>
+<block tags="mdesc, flesh_act2">You check the room's thermal readings. It is unusually warm.</block>
+<block tags="mdesc, flesh_act3">It is unusually warm and humid in here.</block>
+<block tags="mdesc, flesh_act4">Your clothes stick to your skin uncomfortably with the rising heat and oppressive humidity.</block>
+
 
 <!-- BLOCKS: DESCRIPTIONS ADDED TO OPTIONS/DATA -->
 <block tags="odesc, flesh_act1"></block>
