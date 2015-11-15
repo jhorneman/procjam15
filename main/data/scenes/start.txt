@@ -1,4 +1,6 @@
 <scene>
+<action act="set $flesh_act flesh_act1" />
+<action act="set $data_count 0" />
 <meta id="start" tags="style_splash" />
 &lt;h1&gt;MAINFRAME&lt;/h1&gt;
 
@@ -6,7 +8,5 @@ Please enjoy this game.
 
 Remember, death is not the end.
 
-<action act="set $flesh_act flesh_act1" />
-<action act="set $data_count 0" />
 <injectOption tags='pc_start, $flesh_act' />
 </scene>
