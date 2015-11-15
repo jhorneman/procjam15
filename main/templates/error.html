@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    <p>Something went wrong! The Computer tells us:<br/><br/><span class="style_terminal">{{ error_code }}</span></p>
+    <p>Something went wrong! The mainframe tells us:<br/><br/><span class="style_terminal">{{ error_code }}</span></p>
     <p>Make of that what you will. We humbly apologize.</p>
     <p>Either use your browser's back button to try again, or <a href="{{ url_for('restart_game') }}">restart the game</a>.</p>
 </section>
