@@ -83,15 +83,19 @@ investigate a weapon lying on the ground, but it backfires?
 <scene>
 <meta id='unidentified substance' tags='option, flesh, style_death'/>
 <leadin>Touch unidentified substance.</leadin>
-You die by touching a sticky substance and find yourself unable to detach yourself from it. xx
-<option action="respawn">...</option>
+You touch the unindentified substance. It's slick.... warm. Pleasant, almost.
+
+The viscosity seems to change the more you touch it. It goes from slick to oozing to sticky. You pull your hand away and long filaments drip off your fingers. A gentle tingling turns into a slight burning situation.
+
+You try to get the substance off your hand but only succeed in getting it on your other hand. The burning feeling intensifies. You become flushed, and woozy. Your increasingly frantic movements get more and more of the toxic substance over you. Clumsily, you slip, and fall face-forward into the noxious stuff. You turn and struggle, weaker and weaker, as the substance creeps over you, invading you through every orifice, burning.
+<option action="respawn">It takes you hours to die.</option>
 </scene>
 
 <scene>
 <meta id='undulating sphincter' tags='option, flesh, style_death'/>
 <leadin>Reach inside an undulating sphincter.</leadin>
-You reach into some fleshy object and it tightens around your hand. You struggle to pull yourself free but fail. xx
-<option action="respawn">...</option>
+You reach your hand past the sphincter, into the narrow canal behind it. You feel an object, but the increasingly rapid undulations move it out of reach. The movements speed up as you reach in deeper, panting, until you are in up to your shoulder. Then the flesh spasms, tightening around your arm, then slowly crushing it. You feel pain, hear bones snap. Your blood drips out of the orifice. The pressure keeps increasing.
+<option action="respawn">You scream and scream before you die of shock.</option>
 </scene>
 
 <scene>
