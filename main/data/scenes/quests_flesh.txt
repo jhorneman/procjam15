@@ -69,13 +69,11 @@ Cold sterile metal sheets lay in patchwork as exoskeletons for the fleshy globul
 <scene>
 <meta id='gland' tags='mission, flesh_act4, flesh_act5, style_mission'/>
 <leadin>Search the starboard glands</leadin>
-You're in one of the starboard glands.xx
+You're in one of the starboard glands.
 
-All around you thick pink tissues secrete 
+All around you thick pink tissues secrete hormones from their pores in a fine mist. The air around you tastes sweet, inviting.
 
-You can see them from the window, like giant satellite dishes meant to always point towards the nearest source of solar energy. You can only see them blinking in red emergency lights that fan across the outer hull of the ship. When the lights turn off, all you see is blackness against the stars. 
-
-The solar arrays are inoperational, but there's no sun to feed them anyway. They will not help direct power to the mainframe.
+A large transparent membrane covers one wall, allowing you to glimpse the outer hull of the ship. Giant ribs clutch the metal hull, covered in bone and cartilage growths where the solar arrays used to be.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -88,9 +86,11 @@ The solar arrays are inoperational, but there's no sun to feed them anyway. They
 <scene>
 <meta id='canal' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the portside canal.</leadin>
-You're in a canal lined with hair and wax, like an administration office. xx
+You're in the portside canal.
 
-Papers are scattered everywhere between overturned desks, drawers open and spilling their contents across the floor. Charts and calenders outlining deadlines and projected earnings hang limply on the walls.
+Tufts of fabric and paperwork are scattered everywhere, embedded in the thick waxy gunk lining the canal. You shine your light into the amber mucilage. Dark solid masses seem to float within it.
+
+Desks lay overturned, drawers open and spilling their contents across the floor. Little hairs tickle and investigate your feet as you walk further into the room.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -103,11 +103,11 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 <scene>
 <meta id='ventricle' tags='mission, flesh_act5, flesh_act4, style_mission'/>
 <leadin>Search the ventricle.</leadin>
-You in the left ventricle. It is familiar, like the upper maintenance shaft. xx
+You in the left ventricle.
 
-The muscular tube contracts and tightens as you walk along its mucous membrane. 
+The muscular tube contracts and tightens as you walk along its mucous membrane. You touch the wall and it leaves a red glistening residue on your hands.
 
-The shafts here are wide, but you stoop to prevent your head from grazing the low ceiling. Several panels lie on the floor, revealing tangled knots of colorful wires, a clump of neurons sending instructions between the various ship systems.
+The ventricle here is wide, but you stoop to prevent your head from grazing the low membrane ceiling. Several panels lie on the floor, revealing tangled knots of colorful capillaries, a clump of neurons sending instructions between the various ship systems.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -120,9 +120,11 @@ The shafts here are wide, but you stoop to prevent your head from grazing the lo
 <scene>
 <meta id='gallbladder' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the gallbladder.</leadin>
-You are in the gallbladder. It is familiar, like the small laboratory on the starboard side. xx
+You are in the gallbladder.
 
-The room is full of various lab equipment, both familiar and foreign - centrifuges, microscopes, bioscanners. A set of test tubes contain the chemical analysis for biological compounds brought from the hydroponics gardens. Your feet crunch on broken glass leaking mysterious fluids. A single flourescent light swings slowly from the ceiling, animating the shadows.
+The room is full of calcium rocks, some as big as a human adult, nested in the red, inflamed flesh covering the floor. A layer of bile covers everything and drips in thick yellow clumps from holes in the ceiling. 
+
+Various ducts lines the room. They make a suckling sound as they drink the mysterious fluid soup.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
@@ -135,9 +137,11 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 <scene>
 <meta id='hive' tags='mission, flesh_act5, style_mission'/>
 <leadin>Search the liver.</leadin>
-You are inside the liver. It is familiar, like the command center. xx
+You are inside the liver.
 
-Rows of consoles, large screens left static or dark, computers useless with so little power, largely controlled by the mainframe itself. Gravity online. How long will that last?
+You cough loudly and your eyes tear up with the toxic fumes. You cover your face and enter the giant gland. The taste of ammonia touches your tongue every time you breathe.
+
+The room is filled with knotted proteins suspended above you on sinewy strings. Wide, soft red blood cells float in liquified fats. The organic machinery hums with biochemical synthesis.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
