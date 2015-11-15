@@ -61,7 +61,9 @@ As you move in close to observe one of the growths, it vibrates, then suddenly d
 <scene>
 <meta id='tear wires' tags='option, electrical, style_death'/>
 <leadin>Cut electrical wiring.</leadin>
-You pry off the covering and yank out the heavy electrical cables. You laboriously cut through the thick protective shielding. Finally, you reach the live core. Sparks fly, and the last thing you sense is the smell of burning flesh.
+You pry off the covering and yank out the heavy electrical cables. The power in the ship surges slightly, showering you with sparks. You wait for it to recede and the room to go dark before continuing.
+
+You laboriously cut through the thick protective shielding, tossing it to reveal the live core. You reach for it as the power suddenly swells. Sparks fly, and the last thing you sense is the smell of burning flesh.
 
 <action act="set $wire_death_scene $previous_scene" />
 <option action="respawn">Your charred body falls to the ground.</option>
