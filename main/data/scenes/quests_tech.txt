@@ -39,7 +39,7 @@ You're in the lower medbay.
 
 Rows of hospital beds stand undisturbed among a collection of machinery. Various medical equipment line countertops - centrifuges and urine analysis and various scanners and diagnostic devices. 
 
-UV lines stand hooked up to a monitoring station, but the patient is absent.
+IV lines stand hooked up to a monitoring station, but the patient is absent.
 
 <injectBlock tags="mdesc, $flesh_act" />
 
