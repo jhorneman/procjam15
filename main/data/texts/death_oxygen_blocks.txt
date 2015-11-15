@@ -1,3 +1,0 @@
-<block tags="oxygen_1">Are the controls malfunctioning?</block>
-<block tags="oxygen_1">Has someone manipulated the control systems?</block>
-<block tags="oxygen_1">Is the mainframe behind this?</block>

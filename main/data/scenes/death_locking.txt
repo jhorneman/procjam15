@@ -1,0 +1,71 @@
+<scene>
+<meta id='locking mechanism' tags='option, containers, style_death'/>
+<leadin>Engage locking mechanism in door.</leadin>
+You engage the locking mechanism. The door closes, and you hear heavy bolts clunk into place.
+
+Then you hear a loud fizzing and the lights all go out at once. The habitual background hum of the ship goes away as systems suddenly power down.
+<option nextScene='locking 2'>Revert the locking mechanism.</option>
+</scene>
+
+<scene>
+<meta id='locking 2' />
+With the power out, it is impossible to budge the locking mechanism.
+<option nextScene='locking 3'>Use the room controls to override the locking mechanism.</option>
+</scene>
+
+<scene>
+<meta id='locking 3' />
+It takes you a while to find the room controls in the dark. No amount of pushing, pulling, manipulating, slamming, yanking, or yelling has any effect.
+<option nextScene='locking 4'>Try to find and repair the room's power.</option>
+</scene>
+
+<scene>
+<meta id='locking 4' />
+With the comforting sounds of the ship gone, your own body become distractingly loud. You become aware of every frantic breath, every dry swallow, every beat of your heart.
+
+You slowly walk around the walls, trying to find places where you can feel exposed wires to push together, panels to remove, hidden override controls to use. But you find nothing.
+<option nextScene='locking 5'>Search lower down the walls.</option>
+</scene>
+
+<scene>
+<meta id='locking 5' />
+Once you've gone around the room once, you do it again, this time on your knees. You break your nails trying to pry things off, but again you find nothing.
+<oneOf>
+<option nextScene='locking escape'>Search the floor. All of it.</option>
+<option nextScene='locking 6'>Search the floor. All of it.</option>
+</oneOf>
+</scene>
+
+<scene>
+<meta id='locking escape' />
+You curl up in a corner, to rest for a while.
+
+Then you force yourself to methodically explore every square centimeter of the floor of the room, trying to detect hidden panels, or floor plates you can pry up. <if cond="$injury == none">Your fingers are slick with blood.<action act="set $injury bleeding_hand" />
+</if>
+
+In the last corner, you find a small service panel. You open it with trembling hands. Underneath is a big round button. You push it down with all your might.
+
+You hear a crackling sound, and a calm voice from the intercom says: "<t>EMERGENCY POWER RESTORED</t>". The lights turn on, and the door opens again.
+
+<option nextScene='computer_room'>Return to the computer room.</option>
+</scene>
+
+<scene>
+<meta id='locking 6' />
+You curl up in a corner, to rest for a while.
+
+Then you force yourself to methodically explore every square centimeter of the floor of the room, trying to detect hidden panels, or floor plates you can pry up. Your fingers are slick with blood.
+
+In the last corner, you find a small service panel. You open it with trembling hands. Underneath is a big round button. You push it down with all your might.
+
+Nothing happens.
+
+<option nextScene='locking 7'>Yell for help.</option>
+</scene>
+
+<scene>
+<meta id='locking 7' />
+You yell. In the dark, the dark that seems to grow ever smaller, you yell. You scream until your voice goes away. You sob. You plead. You pray to any deity you've ever heard of. You pray to the mainframe.
+
+<option action="respawn">You never get out. You go mad, and die of thirst.</option>
+</scene>

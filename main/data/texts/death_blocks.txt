@@ -1,0 +1,3 @@
+<block tags="control_suspicion">Are the controls malfunctioning?</block>
+<block tags="control_suspicion">Has someone manipulated the control systems?</block>
+<block tags="control_suspicion">Is the mainframe behind this?</block>

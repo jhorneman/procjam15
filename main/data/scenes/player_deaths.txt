@@ -41,15 +41,6 @@ It occurs to you that you do not know where in space the ship is. Fear hits you 
 
 <!-- GENERIC TAGGED DEATHS -->
 
-<!-- CONTAINER -->
-
-<scene>
-<meta id='locking mechanism' tags='option, containers, style_death'/>
-<leadin>Engage locking mechanism in door.</leadin>
-You engage the locking mechanism. The power then cuts out. It does not return. You are unable to reopen the door. It is your coffin now. You die. xx
-<option action="respawn">...</option>
-</scene>
-
 <!-- BIO / MEDICAL -->
 
 <scene>

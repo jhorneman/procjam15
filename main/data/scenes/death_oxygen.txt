@@ -11,7 +11,7 @@ You use the room control panel to access the oxygen level controls.
 <leadin>Flip the switch with the cloud symbol.</leadin>
 You're not familiar with these controls, but this button should change the... the room door clangs shut. It looks like you're sealed in.
 
-That wasn't supposed to happen. <injectBlock tags="oxygen_1" />
+That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 <option nextScene='oxygen 2 revert'>Flip the switch back.</option>
 </scene>
 
@@ -20,7 +20,7 @@ That wasn't supposed to happen. <injectBlock tags="oxygen_1" />
 <leadin>Pull the lever marked 'oxygen'.</leadin>
 You're not familiar with these controls, but this lever should change the... the room door clangs shut. It looks like you're sealed in.
 
-That wasn't supposed to happen. <injectBlock tags="oxygen_1" />
+That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 <option nextScene='oxygen 2 revert'>Push the lever back to its original position.</option>
 </scene>
 
@@ -29,7 +29,7 @@ That wasn't supposed to happen. <injectBlock tags="oxygen_1" />
 <leadin>Rotate the blue knob.</leadin>
 You're not familiar with these controls, but this knob should change the... the room door clangs shut. It looks like you're sealed in.
 
-That wasn't supposed to happen. <injectBlock tags="oxygen_1" />
+That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 <option nextScene='oxygen 2 revert'>Rotate the knob back.</option>
 </scene>
 
