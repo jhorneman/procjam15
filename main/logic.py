@@ -47,6 +47,9 @@ def get_current_scene_data():
         current_scene_id = request.args.get("next_scene", None)
         if current_scene_id is None:
             logger.error("Couldn't find next_scene argument.")
+            # TODO: Find a cleaner way to deal with this.
+            del session["__canUpdateState"]
+            del session["__rng"]
             return None
 
     elif action == "respawn":
@@ -56,6 +59,9 @@ def get_current_scene_data():
         wake_up_scene = get_scene_description_with_tag(wake_up_tags)
         if not wake_up_scene:
             logger.error("Couldn't find a valid respawn scene.")
+            # TODO: Find a cleaner way to deal with this.
+            del session["__canUpdateState"]
+            del session["__rng"]
             return None
 
         current_scene_id = wake_up_scene.id
@@ -63,11 +69,17 @@ def get_current_scene_data():
 
     else:
         logger.error("'{0}' is an unknown action type.".format(action))
+        # TODO: Find a cleaner way to deal with this.
+        del session["__canUpdateState"]
+        del session["__rng"]
         return None
 
     scene_desc = get_scene_description(current_scene_id)
     if not scene_desc:
         logger.error("Couldn't find scene description for scene '{0}'.".format(current_scene_id))
+        # TODO: Find a cleaner way to deal with this.
+        del session["__canUpdateState"]
+        del session["__rng"]
         return None
 
     session["current_scene"] = current_scene_id
