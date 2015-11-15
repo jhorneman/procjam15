@@ -96,6 +96,12 @@ body.style_terminal {
     content: '--------------------';
 }
 
+@media (max-width: 549px) {
+    h1 {
+        font-size: 3.0rem;
+    }
+}
+
 @media (min-width: 550px) {
     body {
         background-color: #4c090c;
