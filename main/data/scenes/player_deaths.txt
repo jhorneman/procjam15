@@ -103,15 +103,27 @@ You reach your hand past the sphincter, into the narrow canal behind it. You fee
 <scene>
 <meta id='taste liquid' tags='option, flesh, style_death'/>
 <leadin>Taste liquid excretions.</leadin>
-You taste the extretion from the fleshy bits of the environment. It doesn't taste good. Your throat closes up. You die. xx
-<option action="respawn">...</option>
+You run your fingers along a bulbous tumor, dragging it through the viscous excretion.
+
+You can't seem to help yourself. It smells so sweet, so alluring. You taste it.
+
+At first it's like the sweetest nectar you've ever tasted. But as you lick your lips you find your tongue has sealed itself to the roof of your mouth. Your lips refuse to separate.
+
+Your throat, coated in the cloying glue, closes. You try to scream but no sound escapes.
+
+<option action="respawn">You suffocate, sweetly.</option>
 </scene>
 
 <scene>
 <meta id='gastric acid' tags='option, flesh, style_death'/>
 <leadin>Wade into gastric acid.</leadin>
-You wade into the gastic acid. Your clothes and then skin sizzle as the acid digests you. You die. xx
-<option action="respawn">...</option>
+You wade into a pool of gastic acid, hoping to salvage something of use beneath its surface.
+
+As you descend, the acid sizzles around your clothes and then your skin as it attempts to digest you. You feel your skin sting as it peels. You struggle as the pain becomes unbearable.
+
+You throw your weight onto your foot to spring yourself over the side of the pool, but the tendons dissolves. You hang on limply as each layer of your body digests. Your skin. Your tendons. Your organs. Your cartilage. Eventually, you lose your grip and fall beneath the surface of the acid.
+
+<option action="respawn">You die, your body digested and recycled as nutrient slush.</option>
 </scene>
 
 <!-- flesh5 -->
