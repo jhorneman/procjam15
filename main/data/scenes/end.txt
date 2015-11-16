@@ -86,7 +86,7 @@ The ship seizes. It holds its breath, the air flowing from its bronchial tubes g
 
 A hum wells up from deep within the ship, resonating with the flesh. You can feel the tremors through the soles of your feet. You hold onto the terminal to keep yourself steady. It shudders and then goes silent. You hear nothing but the unnatural breathing of the ship made flesh.
 
-<option nextScene="end4a">...the lights come back on.</option>
+<option nextScene="end_4a">...the lights come back on.</option>
 </scene>
 
 <scene>
