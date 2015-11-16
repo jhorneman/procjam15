@@ -50,7 +50,7 @@ INSUFFICIENT DATA<br />
 <block tags="mdesc, flesh_act1">Even the backup computer systems appear to be offline.</block>
 <block tags="mdesc, flesh_act1">The ship is eerily silent except for the hum of its machinery.</block>
 
-<block tags="mdesc, flesh_act2">"<t>UNIDENTIFIED BIOLOGICAL CONTANIMENT DETECTED</t>," a robotic voice announces to an empty room.</block>
+<block tags="mdesc, flesh_act2">"<t>UNIDENTIFIED BIOLOGICAL CONTAINMENT DETECTED</t>," a robotic voice announces to an empty room.</block>
 <block tags="mdesc, flesh_act2">An announcement over the loudspeaker punctuates the silence. "<t>PLEASE REMAIN CALM. THIS IS AN EMERGENCY. THIS IS NOT A DRILL</t>."</block>
 <block tags="mdesc, flesh_act2">A terminal reads, "<t>UNIDENTIFIED INFECTION DETECTED</t>."</block>
 <block tags="mdesc, flesh_act2">The central console reads, "<t>DELETING LOGS...</t>"</block>
