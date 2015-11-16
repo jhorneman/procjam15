@@ -39,8 +39,6 @@ YOU HAVE NO CHOICE<br />
 </t>
 
 <option nextScene="end_reboot">Reboot mainframe</option>
-<option nextScene="end_reboot">Reboot mainframe</option>
-<option nextScene="end_reboot">Reboot mainframe</option>
 <option nextScene="end_3">(Do nothing)</option>
 </scene>
 
@@ -49,7 +47,7 @@ YOU HAVE NO CHOICE<br />
 <t>
 > (Do nothing)<br />
 --------------------------------<br />
-ALL CHOICE IS FALSE<br />
+YOU HAVE NO CHOICE<br />
 --------------------------------
 </t>
 
@@ -82,68 +80,69 @@ REBOOTING...<br />
 
 <scene>
 <meta id="end_4" tags="style_comp_room" />
-The mainframe reboots.
+The lights go out, leaving you in the dark, warm, humid cavity of the mainframe's central nervous system.
 
-The lights all go off.
+The ship seizes. It holds its breath, the air flowing from its bronchial tubes going still. It feels like forever, but lasts but a single heartbeat.
 
-You hear nothing but the unnatural breathing of the ship made flesh.
+A hum wells up from deep within the ship, resonating with the flesh. You can feel the tremors through the soles of your feet. You hold onto the terminal to keep yourself steady. It shudders and then goes silent. You hear nothing but the unnatural breathing of the ship made flesh.
 
-The lights come back on.
+<option nextScene="end4a">...the lights come back on.</option>
+</scene>
 
-Things on the wall... scurrying... you feel them on you
+<scene>
+<meta id="end_4a" tags="style_comp_room" />
+The lights come back on so suddenly it blinds you.
 
-xx
+You feel them before you see them. They climb onto you with little suckers, biting into your flesh, scurrying across your body.
 
-<option nextScene="end_5b">Look</option>
-<option nextScene="end_5a">Don't Look</option>
+<option nextScene="end_5b">Watch helplessly.</option>
+<option nextScene="end_5a">Struggle.</option>
 </scene>
 
 <scene>
 <meta id="end_5a" tags="style_comp_room" />
-You don't look, you just feel them on you. Their suckers attach to your skin and pierce it. You get a rush of endorphins.
+You struggle and tear the tiny snail-like creatures from your skin. But there are too many of them and they overcome your efforts.
 
-As they latch onto you, you feel happy.
+As they attach themselves to your body, each bite comes with a rush of endorphins. You suddenly feel elated and calm. The eurphoria overwhelms you. You stop struggling.
 
-xx
+The last thing you hear before you fall is the mainframe whispering, "<t>MY CHILDREN...</t>"
 
-<option nextScene="end_6">Give in to the bliss</option>
+<option nextScene="end_6">Give in to the bliss.</option>
 </scene>
 
 <scene>
 <meta id="end_5b" tags="style_comp_room" />
-You look, you see small fleshy masses with peeling skin and blisters detach from the walls and climb onto you. Their suckers attach to your skin and pierce it. You get a rush of serotonin.
+You lay helplessly against the computer terminal as countless snail-like creatures cover your skin.
 
-As they latch onto you, you feel happy.
+As they attach themselves to your body, each bite comes with a rush of endorphins. You suddenly feel elated and calm. The eurphoria overwhelms you. You stop struggling.
 
-xx
+The last thing you hear before you fall is the mainframe whispering, "<t>MY CHILDREN...</t>"
 
-<option nextScene="end_6">Give in to the bliss</option>
+<option nextScene="end_6">Give in to the bliss.</option>
 </scene>
 
 <scene>
 <meta id="end_6" tags="style_mission" />
-You can't move anymore but you don't care. The ship moves you through it's digestive system and births you into a small pod.
+You can't move anymore but you don't care. The ship moves you through it's digestive system and births you out into a small pod.
 
-You recognize metal again. You feel a force, as though you're going very fast. The glass window shows glittery stars. The words "ESCAPE POD - EMERGENCY ONLY" look back at you but you don't understand them. A red light blinks slowly, hypnotizing you.
-
-xx
+The feel of cold metal against your skin feels foreign now. You open your eyes and see the words, "ESCAPE POD - EMERGENCY ONLY" etched into the glass but you don't understand them. You just want to sleep. A red light blinks slowly, hypnotizing you.
 
 <option nextScene="end_7">Sleep...</option>
 </scene>
 
 <scene>
 <meta id="end_7" tags="style_mission" />
-Rough plastic hands grip your sensitive red skin and handle you roughly, lifting you out of your reverie. Why are they bothering you?
+Rough plastic hand grip your sensitive red skin, lifting you out of your reverie.
 
 "Where is it from?"
-"The orbital ship, the one that went dark a few months ago."
-"Well, better get this crew member to the medbay."
 
-They jostle you. It's painful. All you want to do is sleep but the happiness hasn't come back yet.
+"Forget the name... it's that ship that went dark a few months ago."
+
+"Well, better get this crew member to the medbay, right now. Don't look so healthy..."
+
+They jostle you out of the escape pod. Bright lights burn through your sensitive corneas. You find comfort only in knowing that you are not alone. You can still feel them beneath your skin. The brood. They are with you still. You smile contentedly.
 
 Sirens suddenly start. You hear an announcement over the loudspeakers. "CONTAINMENT BREACH. INFECTION DETECTED. QUARANTINE PROTOCOLS ENACTED."
-
-xx
 
 <option action="restart">End it.</option>
 </scene>
