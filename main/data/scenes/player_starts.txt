@@ -53,6 +53,7 @@ You do not know how long you have been asleep. You do not recognize this room, b
 The computer terminal contains a single message. "<t>{^$PC_job} {$PC_last}, {$PC_first}. We need you in the mainframe. </t>"
 
 <option nextScene="computer_room_introduction1">Approach the central mainframe.</option>
+</scene>
 
 <scene>
 <meta id="pc_start_5_1" tags="pc_start, flesh_act5" />
