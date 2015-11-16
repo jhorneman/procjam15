@@ -115,4 +115,9 @@ def get_current_scene_data():
     # Set this for next time we evaluate.
     session["previous_scene"] = current_scene_id
 
+    # Check if we generated a valid scene.
+    if len(scene_data["options"]) == 0:
+        logger.error("Generated a scene with NO options. Session: {0}.".format(str(session)))
+        return None
+
     return scene_data
