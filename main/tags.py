@@ -74,7 +74,7 @@ class TaggedCollection(object):
 
             # Exit if we couldn't find any items.
             if len(indices_of_eligible_items) == 0:
-                logger.error("Couldn't find an item with tags {0}.".format(_desired_tags))
+                logger.error("Couldn't find a {0} with tags {1}.".format(self.name, _desired_tags))
                 return None
 
             # Shuffle, if needed.
@@ -120,6 +120,12 @@ class TaggedCollection(object):
             # Increase the index into the list of eligible items, and store it in the persistent game state.
             index_in_list_of_eligible_items += 1
             session[game_state_key] = index_in_list_of_eligible_items
+
+        # DOUBLE CHECK.
+        if not tags_are_matched(_desired_tags, self.tagged_items[item_index].tags):
+            logger.error("Tried to find a {0} with tags {1}. Found item with tags {2} instead."
+                         .format(self.name, _desired_tags, self.tagged_items[item_index].tags))
+            return None
 
         # Return the tagged item.
         return self.tagged_items[item_index].item
