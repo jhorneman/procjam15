@@ -62,14 +62,14 @@ It's getting hard to breathe.
 
 <scene>
 <meta id='oxygen 4 emergency'/>
-The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try slamming the emergency button, but it has no effect. Hyperventilating, you collapse in front of the control panel.
+The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try slamming the emergency button, but it has no effect. You collapse hyperventilating in front of the control panel.
 
 <option action="respawn">Everything goes dark, and you die.</option>
 </scene>
 
 <scene>
 <meta id='oxygen 4 abort'/>
-The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try pressing the abort switch, but it has no effect. Hyperventilating, you collapse in front of the control panel.
+The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try pressing the abort switch, but it has no effect. You collapse hyperventilating in front of the control panel.
 
 <option action="respawn">Everything goes dark, and you die.</option>
 </scene>
