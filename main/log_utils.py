@@ -25,7 +25,7 @@ def init_logging(_level=logging.DEBUG):
     global console_handler
     console_handler = logging.StreamHandler()
     console_handler.setLevel(_level)
-    console_handler.setFormatter(logging.Formatter('%(message)s',
+    console_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s',
                                                     datefmt="%H:%M:%S"))
 
     # Set up the root logger.
@@ -40,7 +40,7 @@ def init_stdout_handler(_level=logging.DEBUG):
     # Set up the stdout handler.
     stdout_handler = StdoutHandler()
     stdout_handler.setLevel(_level)
-    stdout_handler.setFormatter(logging.Formatter('%(message)s'))
+    stdout_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
 
     # Set up the root logger.
     set_up_logger(logging.getLogger(), _level)
