@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import types
 import random
 import logging
 from flask import request, session
@@ -7,7 +8,6 @@ from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text_variables, break_text_into_paragraphs
 from game_state import prepare_game_state, generate_player_character, restart
 from content import evaluate_content_blocks, goto_action, respawn_action, restart_action
-from tags import extract_tag_state, restore_tag_state
 
 
 logger = logging.getLogger(__name__)
@@ -36,12 +36,27 @@ def get_current_scene_data():
 
     # Did the player reload?
     if not player_reloaded:
-        # No -> Store the current state of tag counters, so we can rewind them if the player reloads.
-        session["__backup"] = extract_tag_state(session)
+        # No -> Store the current state, so we can restore it if the player reloads.
+        backup = {}
+        for k, v in session.items():
+            if k.startswith("__"):
+                continue
+            if isinstance(v, types.ListType):
+                backup[k] = v[:]
+            else:
+                backup[k] = v
+        session["__backup"] = backup
     else:
-        # Yes -> Restore the state of the tag counters from when this page was originally rendered,
-        # so that all elements from tagged collections will be the same again.
-        restore_tag_state(session, session.get("__backup", []))
+        # Yes -> Restore the state from when this page was originally rendered.
+        # We can only ever get here when there is already something in the session (the nonce).
+        backup = session.get("__backup", None)
+        if backup:
+            session.clear()
+            session.update(backup)
+            session["__backup"] = backup
+            # Nonce will be set at the end, no need to restore it.
+        else:
+            logger.error("Wanted to restore state but couldn't find backup.")
 
     # Provide a random number generator that produces the same numbers if the player reloaded the page.
     session["__rng"] = random.WichmannHill(url_nonce)
@@ -92,9 +107,8 @@ def get_current_scene_data():
 
     evaluated_scene = evaluate_content_blocks(scene_desc.blocks, session)
 
-    if not player_reloaded:
-        for action in evaluated_scene["actions"]:
-            action.execute(session)
+    for action in evaluated_scene["actions"]:
+        action.execute(session)
 
     tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
 
@@ -115,7 +129,7 @@ def get_current_scene_data():
         option["params"]["nonce"] = new_nonce
     session["__nonce"] = new_nonce
 
-    # We don't need these anymore.
+    # We don't need this anymore.
     del session["__rng"]
 
     # Set this for next time we evaluate.
@@ -124,7 +138,7 @@ def get_current_scene_data():
     # Flask will catch most modifications of the session automatically, but this way we are sure.
     session.modified = True
 
-    # Check if we generated a valid scene.
+    # Make sure we generated a valid scene.
     if len(scene_data["options"]) == 0:
         logger.error("Generated a scene with NO options. Session: {0}.".format(str(session)))
         return None

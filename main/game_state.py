@@ -65,7 +65,7 @@ def restart():
     non_game_state = extract_non_game_state_from_session()
 
     # Reset the session.
-    # (This will also automatically reset the tag caches, which is important, or else
+    # (This will also automatically reset the tag indices, which is important, or else
     # non-repeating queries will stop returning items.)
     session.clear()
 

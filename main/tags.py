@@ -43,25 +43,6 @@ def tags_are_matched(_desired_tags, _available_tags):
     return True
 
 
-def extract_tag_state(_state):
-    tag_state = []
-    for k, v in _state.items():
-        m = tag_index_re.match(k)
-        if m:
-            tag_state.append((m.group(1), v))
-    return tag_state
-
-
-def restore_tag_state(_state, _tag_state):
-    for k, v in _state.items():
-        m = tag_index_re.match(k)
-        if m:
-            del _state[k]
-
-    for k, v in _tag_state:
-        _state[k + "_index"] = v
-
-
 TaggedItem = namedtuple('TaggedItem', ['tags', 'item'])
 
 
