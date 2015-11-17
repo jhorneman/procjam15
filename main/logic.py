@@ -16,6 +16,7 @@ first_scene_id = "start"
 
 
 # From http://stackoverflow.com/a/28186447/1057708
+# TODO: Use better random so behavior is non-deterministic with a single player.
 def generate_nonce(length=8):
     return "".join([str(random.randint(0, 9)) for i in range(length)])
 
