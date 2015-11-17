@@ -27,9 +27,14 @@ def get_current_scene_data():
 
     prepare_game_state()
 
-    if not has_compatible_version():
-        logger.error("Incompatible session version number.")
-        return "We've updated the game and your save game data is no longer compatible. Please restart. Sorry!"
+    action = request.args.get("action", restart_action)
+
+    if action == restart_action:
+        restart()
+    else:
+        if not has_compatible_version():
+            logger.error("Incompatible session version number.")
+            return "We've updated the game and your save game data is no longer compatible. Please restart. Sorry!"
 
     # Get the nonce from the session and the one from the request parameter.
     session_nonce = session.get("__nonce", generate_nonce())
@@ -37,7 +42,7 @@ def get_current_scene_data():
 
     # If they are not the same, the player reloaded the page.
     # EXCEPT WITH A CLEAN URL. So this doesn't work in the first scene. I don't see a way around this.
-    player_reloaded = (session_nonce != url_nonce)
+    player_reloaded = (session_nonce != url_nonce) and action != restart_action
 
     # Did the player reload?
     if not player_reloaded:
@@ -66,10 +71,7 @@ def get_current_scene_data():
     # Provide a random number generator that produces the same numbers if the player reloaded the page.
     session["__rng"] = random.WichmannHill(url_nonce)
 
-    action = request.args.get("action", restart_action)
-
     if action == restart_action:
-        restart()
         current_scene_id = first_scene_id
         session["previous_scene"] = ""
 
