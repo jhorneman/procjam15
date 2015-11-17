@@ -7,9 +7,9 @@ from flask import session
 from text_blocks import get_data_name_with_tag
 from pc_names import first_names, last_names, job_titles, get_job_title, get_nr_job_titles
 
-# Remember that the Flask session does not pick up modifications on mutable structures automatically.
-# In that situation we have to explicitly set the modified attribute to True ourselves.
-# See http://flask.pocoo.org/docs/0.10/api/#sessions
+
+current_version_nr = 1
+last_compatible_version_nr = 1
 
 initial_game_state = {
     "flesh_act": "flesh_act1",
@@ -17,10 +17,6 @@ initial_game_state = {
     "amount_of_data": 0,
     "data": "data"
 }
-
-
-def extract_non_game_state_from_session():
-    return {k: v for k,v in session.items() if k.startswith("__")}
 
 
 def generate_player_character():
@@ -62,16 +58,21 @@ def generate_data_var():
 
 
 def restart():
-    non_game_state = extract_non_game_state_from_session()
+    non_game_state = {k: v for k, v in session.items() if k.startswith("__") and k != "__version"}
 
-    # Reset the session.
-    # (This will also automatically reset the tag indices, which is important, or else
-    # non-repeating queries will stop returning items.)
     session.clear()
 
     session.update(non_game_state)
+
+    # (Since we're starting from scratch we can just set the current version number.)
+    session["__version"] = current_version_nr
+
     session.update(initial_game_state)
     session.update(generate_player_character())
+
+
+def has_compatible_version():
+    return session.get("__version") >= last_compatible_version_nr
 
 
 def get_game_state_vars():
@@ -80,6 +81,7 @@ def get_game_state_vars():
 
 def prepare_game_state():
     if session.new:
+        session["__version"] = current_version_nr
         session.update(initial_game_state)
     else:
         for k, v in initial_game_state.items():

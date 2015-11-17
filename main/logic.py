@@ -6,7 +6,7 @@ import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text_variables, break_text_into_paragraphs
-from game_state import prepare_game_state, generate_player_character, restart
+from game_state import prepare_game_state, generate_player_character, restart, has_compatible_version
 from content import evaluate_content_blocks, goto_action, respawn_action, restart_action
 
 
@@ -25,6 +25,10 @@ def get_current_scene_data():
        to render the current scene."""
 
     prepare_game_state()
+
+    if not has_compatible_version():
+        logger.error("Incompatible session version number.")
+        return "We've updated the game and your save game data is no longer compatible. Please restart. Sorry!"
 
     # Get the nonce from the session and the one from the request parameter.
     session_nonce = session.get("__nonce", generate_nonce())
@@ -136,6 +140,7 @@ def get_current_scene_data():
     session["previous_scene"] = current_scene_id
 
     # Flask will catch most modifications of the session automatically, but this way we are sure.
+    # See http://flask.pocoo.org/docs/0.10/api/#sessions
     session.modified = True
 
     # Make sure we generated a valid scene.
