@@ -23,7 +23,7 @@ Then you discover you can go neither forward nor backwards. No amount of compres
 You slide into the gap under the cabin, lower your legs into the elevator shaft, and feel around with your feet. You can't find any kind of steps or service ladder. You slide down further, reaching down as far as you can. Your feel an opening with your toes, and you try to place your foot inside to see if it is big enough. 
 
 The power surges back on with a loud snap. The elevator cabin drops, severing your arms. Helplessly, you fall to the bottom of the shaft.
-<action act="set $player_died_elevators 1" />
+<action act="set $player_died_elevator 1" />
 <option action="respawn">You bleed out and die.</option>
 </scene>
 
