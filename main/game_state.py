@@ -58,21 +58,21 @@ def generate_data_var():
 
 
 def restart():
-    non_game_state = {k: v for k, v in session.items() if k.startswith("__") and k != "__version"}
+    non_game_state = {k: v for k, v in session.items() if k.startswith("__")}
 
     session.clear()
 
     session.update(non_game_state)
 
     # (Since we're starting from scratch we can just set the current version number.)
-    session["__version"] = current_version_nr
+    session["game_state_version"] = current_version_nr
 
     session.update(initial_game_state)
     session.update(generate_player_character())
 
 
 def has_compatible_version():
-    return session.get("__version") >= last_compatible_version_nr
+    return session.get("game_state_version") >= last_compatible_version_nr
 
 
 def get_game_state_vars():
@@ -81,7 +81,7 @@ def get_game_state_vars():
 
 def prepare_game_state():
     if session.new:
-        session["__version"] = current_version_nr
+        session["game_state_version"] = current_version_nr
         session.update(initial_game_state)
     else:
         for k, v in initial_game_state.items():
