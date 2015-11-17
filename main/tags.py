@@ -101,7 +101,7 @@ class TaggedCollection(object):
             # Yes -> Then we need to shuffle the list of eligible items, and we
             # need to make sure that shuffling is always done the same way.
             seed_key = key_base + "_seed"
-            seed = session.setdefault(seed_key, session["__rng"].random())
+            seed = session.setdefault(seed_key, session["__rng"].randint(0, 9999))
             rng = random.WichmannHill(seed)
             rng.shuffle(indices_of_eligible_items)
 
