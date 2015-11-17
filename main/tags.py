@@ -3,12 +3,15 @@
 import types
 import logging
 import random
+import re
 from collections import namedtuple
 # TODO: Make it so we don't directly access the Flask session here perhaps.
 from flask import session
 
 
 logger = logging.getLogger(__name__)
+
+tag_index_re = re.compile(r"(\w+:.*)_index$")
 
 
 def string_to_tags(_tags_as_string):
@@ -40,11 +43,30 @@ def tags_are_matched(_desired_tags, _available_tags):
     return True
 
 
+def extract_tag_state(_state):
+    tag_state = []
+    for k, v in _state.items():
+        m = tag_index_re.match(k)
+        if m:
+            tag_state.append((m.group(1), v))
+    return tag_state
+
+
+def restore_tag_state(_state, _tag_state):
+    for k, v in _state.items():
+        m = tag_index_re.match(k)
+        if m:
+            del _state[k]
+
+    for k, v in _tag_state:
+        _state[k + "_index"] = v
+
+
 TaggedItem = namedtuple('TaggedItem', ['tags', 'item'])
 
 
 class TaggedCollection(object):
-    def __init__(self, _name, _randomize=False):
+    def __init__(self, _name, _randomize=True):
         self.name = _name
         self.randomize = _randomize
         self.tagged_items = []
@@ -63,46 +85,27 @@ class TaggedCollection(object):
             logger.error("List of desired tags may not be empty.")
             return None
 
-        # Do we already have this stored in the session?
-        game_state_key = self.name + ":" + ".".join(_desired_tags)
-        if game_state_key not in session:
-            # No -> Find all items with the right tags.
-            indices_of_eligible_items = []
-            for item_index, tagged_item in enumerate(self.tagged_items):
-                if tags_are_matched(_desired_tags, tagged_item.tags):
-                    indices_of_eligible_items.append(item_index)
+        # Find all items with the right tags.
+        indices_of_eligible_items = []
+        for item_index, tagged_item in enumerate(self.tagged_items):
+            if tags_are_matched(_desired_tags, tagged_item.tags):
+                indices_of_eligible_items.append(item_index)
 
-            # Exit if we couldn't find any items.
-            if len(indices_of_eligible_items) == 0:
-                logger.error("Couldn't find a {0} with tags {1}.".format(self.name, _desired_tags))
-                return None
+        nr_eligible_items = len(indices_of_eligible_items)
 
-            # Shuffle, if needed.
-            # (This use of random is fine even if the player reloads the page. It gets stored in the session,
-            #  so it won't get executed twice.)
-            if self.randomize or _repeat:
-                random.shuffle(indices_of_eligible_items)
+        # Exit if we couldn't find any items.
+        if nr_eligible_items == 0:
+            logger.error("Couldn't find a {0} with tags {1}.".format(self.name, _desired_tags))
+            return None
 
-            # Store indices of items in the session.
-            session[game_state_key] = indices_of_eligible_items
-
-        else:
-            # Yes -> Retrieve indices of items from the session.
-            indices_of_eligible_items = session[game_state_key]
+        key_base = self.name + ":" + ".".join(_desired_tags)
 
         # Get current index for these tags from the persistent game state.
-        game_state_key += "_index"
-        index_in_list_of_eligible_items = session.setdefault(game_state_key, 0)
-
-        # Are we NOT allowed to update state or did the player reload the page?
-        if not session["__canUpdateState"]:
-            # Yes -> Then we need to get the previous index, because we've already updated it.
-            index_in_list_of_eligible_items -= 1
-            if index_in_list_of_eligible_items < 0:
-                index_in_list_of_eligible_items = len(indices_of_eligible_items)-1
+        index_key = key_base + "_index"
+        index_in_list_of_eligible_items = session.setdefault(index_key, 0)
 
         # (First check, then increase, or we'll never pick anything from collections with only one element.)
-        if index_in_list_of_eligible_items >= len(indices_of_eligible_items):
+        if index_in_list_of_eligible_items >= nr_eligible_items:
             # We've exhausted the list, can we repeat?
             if _repeat:
                 # Yes -> Go back to 0.
@@ -112,15 +115,23 @@ class TaggedCollection(object):
                 # logger.debug("{1} tagged {0}: exhausted".format(cache_key, self.name))
                 return None
 
-        # Get the index of the tagged item.
+        # Is this collection randomized?
+        if self.randomize:
+            # Yes -> Then we need to shuffle the list of eligible items, and we
+            # need to make sure that shuffling is always done the same way.
+            seed_key = key_base + "_seed"
+            seed = session.setdefault(seed_key, session["__rng"].random())
+            rng = random.WichmannHill(seed)
+            rng.shuffle(indices_of_eligible_items)
+
+        # Get the index of the item.
         item_index = indices_of_eligible_items[index_in_list_of_eligible_items]
 
-        # Are we allowed to update state or did the player reload the page?
-        if session["__canUpdateState"]:
-            # Increase the index into the list of eligible items, and store it in the persistent game state.
-            index_in_list_of_eligible_items += 1
-            session[game_state_key] = index_in_list_of_eligible_items
+        # Increase the index into the list of eligible items, and store it in the persistent game state.
+        index_in_list_of_eligible_items += 1
+        session[index_key] = index_in_list_of_eligible_items
 
+        # TODO: REMOVE after a while.
         # DOUBLE CHECK.
         if not tags_are_matched(_desired_tags, self.tagged_items[item_index].tags):
             logger.error("Tried to find a {0} with tags {1}. Found item with tags {2} instead."
