@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import logging
+from game_state import constants
 
 
 logger = logging.getLogger(__name__)
-
-constants = {
-    "mention_injury_chance": 50
-}
 
 
 def get_parameter_value(_state, _parameter_name):

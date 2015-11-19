@@ -18,6 +18,10 @@ initial_game_state = {
     "data": "data"
 }
 
+constants = {
+    "mention_injury_chance": 50
+}
+
 
 def generate_player_character():
     # (These uses of random are fine even if the player reloads the page. The results get stored in the session,
