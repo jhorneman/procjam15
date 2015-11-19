@@ -2,7 +2,7 @@
 
 import types
 import logging
-from condition import parse_condition_from_string
+from condition import make_empty_condition, parse_condition_from_string
 from action import parse_action_from_string
 from tags import string_to_tags, evaluate_tags
 from text_blocks import get_text_block_with_tag
@@ -15,22 +15,15 @@ respawn_action = "respawn"
 restart_action = "restart"
 
 
-class Content(object):
+class ContentNode(object):
     def __init__(self):
-        self.condition = None
+        self.condition = make_empty_condition()
 
     def check_for_condition(self, _el):
-        condition_string = _el.get("cond")
-        if condition_string:
-            condition = parse_condition_from_string(condition_string)
-            if condition:
-                self.condition = condition
+        self.condition = parse_condition_from_string(_el.get("cond"))
 
     def is_condition_true(self, _state):
-        if self.condition:
-            return self.condition.evaluate(_state)
-        else:
-            return True
+        return self.condition.evaluate(_state)
 
     @staticmethod
     def check_element_is_empty(_el, _el_name):
@@ -40,7 +33,7 @@ class Content(object):
             logger.warning("Encountered {0} element with text inside. This will be ignored!".format(_el_name))
 
 
-class Raw(Content):
+class Raw(ContentNode):
     def __init__(self, _text):
         super(Raw, self).__init__()
         self.raw_text = _text
@@ -51,7 +44,7 @@ class Raw(Content):
         return self.raw_text
 
 
-class StyledText(Content):
+class StyledText(ContentNode):
     def __init__(self, _el):
         super(StyledText, self).__init__()
         # Can check _el.tag here to select different styles, if need be.
@@ -64,7 +57,7 @@ class StyledText(Content):
         return content
 
 
-class If(Content):
+class If(ContentNode):
     def __init__(self, _el):
         super(If, self).__init__()
         self.check_for_condition(_el)
@@ -77,7 +70,7 @@ class If(Content):
             return None
 
 
-class OneOf(Content):
+class OneOf(ContentNode):
     def __init__(self, _el):
         super(OneOf, self).__init__()
         self.check_for_condition(_el)
@@ -91,7 +84,7 @@ class OneOf(Content):
             return None
 
 
-class Block(Content):
+class Block(ContentNode):
     def __init__(self, _el):
         super(Block, self).__init__()
         self.check_for_condition(_el)
@@ -105,29 +98,7 @@ class Block(Content):
             return None
 
 
-class InjectBlock(Content):
-    def __init__(self, _el):
-        super(InjectBlock, self).__init__()
-        self.check_for_condition(_el)
-        self.repeat = _el.get("norepeat", None) is None
-        self.tags = read_tags(_el, "injected block")
-        self.check_element_is_empty(_el, "injected block")
-
-    def evaluate(self, _state, _deep=True):
-        if not _deep:
-            return None
-        if self.is_condition_true(_state):
-            tags = evaluate_tags(self.tags, _state)
-            if len(tags) == 0:
-                return None
-            injected_block = get_text_block_with_tag(tags, self.repeat)
-            if injected_block:
-                return evaluate_content_blocks([injected_block], _state)
-        else:
-            return None
-
-
-class Br(Content):
+class Br(ContentNode):
     def __init__(self, _el):
         super(Br, self).__init__()
 
@@ -137,7 +108,7 @@ class Br(Content):
         return "<br/>"
 
 
-class LeadIn(Content):
+class LeadIn(ContentNode):
     def __init__(self, _el):
         super(LeadIn, self).__init__()
         self.check_for_condition(_el)
@@ -152,7 +123,7 @@ class LeadIn(Content):
             return None
 
 
-class Option(Content):
+class Option(ContentNode):
     def __init__(self, _el):
         super(Option, self).__init__()
         self.check_for_condition(_el)
@@ -194,7 +165,29 @@ class Option(Content):
             return None
 
 
-class InjectOption(Content):
+class InjectBlock(ContentNode):
+    def __init__(self, _el):
+        super(InjectBlock, self).__init__()
+        self.check_for_condition(_el)
+        self.repeat = _el.get("norepeat", None) is None
+        self.tags = read_tags(_el, "injected block")
+        self.check_element_is_empty(_el, "injected block")
+
+    def evaluate(self, _state, _deep=True):
+        if not _deep:
+            return None
+        if self.is_condition_true(_state):
+            tags = evaluate_tags(self.tags, _state)
+            if len(tags) == 0:
+                return None
+            injected_block = get_text_block_with_tag(tags, self.repeat)
+            if injected_block:
+                return evaluate_content_blocks([injected_block], _state)
+        else:
+            return None
+
+
+class InjectOption(ContentNode):
     def __init__(self, _el):
         super(InjectOption, self).__init__()
         self.check_for_condition(_el)
@@ -217,7 +210,7 @@ class InjectOption(Content):
         return None
 
 
-class Action(Content):
+class Action(ContentNode):
     def __init__(self, _el):
         super(Action, self).__init__()
         self.check_for_condition(_el)

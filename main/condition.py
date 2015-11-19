@@ -61,38 +61,40 @@ class Condition(object):
             return Condition.operators[self.operator](value1, value2)
 
 
+def make_empty_condition():
+    return Condition()
+
+
 def parse_condition_from_string(_string):
-    parsed_tokens = [token.strip() for token in _string.split()]
+    new_condition = Condition()
 
-    new_condition = None
+    if _string:
+        parsed_tokens = [token.strip() for token in _string.split()]
 
-    if len(parsed_tokens) == 1:
-        new_condition = Condition()
-        new_condition.param1 = parsed_tokens[0]
-        new_condition.operator = Condition.ISTRUE
+        if len(parsed_tokens) == 1:
+            new_condition.param1 = parsed_tokens[0]
+            new_condition.operator = Condition.ISTRUE
 
-    elif len(parsed_tokens) == 2:
-        if parsed_tokens[0].lower() in Condition.not_token:
-            new_condition = Condition()
-            new_condition.param1 = parsed_tokens[1]
-            new_condition.operator = Condition.NOT
+        elif len(parsed_tokens) == 2:
+            if parsed_tokens[0].lower() in Condition.not_token:
+                new_condition.param1 = parsed_tokens[1]
+                new_condition.operator = Condition.NOT
+            else:
+                logger.error("Couldn't parse condition '{0}' - it should be a NOT operator but isn't.".format(_string))
+
+        elif len(parsed_tokens) == 3:
+            parsed_operator = parsed_tokens[1].lower()
+            for op, tokens in Condition.binary_operator_tokens.items():
+                if parsed_operator in tokens:
+                    new_condition.param1 = parsed_tokens[0]
+                    new_condition.param2 = parsed_tokens[2]
+                    new_condition.operator = op
+                    break
+
+            if new_condition is None:
+                logger.error("Couldn't parse condition '{0}' - didn't recognize operator.".format(_string))
+
         else:
-            logger.error("Couldn't parse condition '{0}' - it should be a NOT operator but isn't.".format(_string))
-
-    elif len(parsed_tokens) == 3:
-        parsed_operator = parsed_tokens[1].lower()
-        for op, tokens in Condition.binary_operator_tokens.items():
-            if parsed_operator in tokens:
-                new_condition = Condition()
-                new_condition.param1 = parsed_tokens[0]
-                new_condition.param2 = parsed_tokens[2]
-                new_condition.operator = op
-                break
-
-        if new_condition is None:
-            logger.error("Couldn't parse condition '{0}' - didn't recognize operator.".format(_string))
-
-    else:
-        logger.error("Couldn't parse condition '{0}'.".format(_string))
+            logger.error("Couldn't parse condition '{0}'.".format(_string))
 
     return new_condition
