@@ -45,13 +45,8 @@ def read_scenes_from_text_file(_full_path):
         # Read the entire text file.
         data = f.read()
 
-        # Does this file start with a <scene> element?
-        if scene_tag_re.match(data):
-            # Yes -> Then wrap it in a <data> element.
-            data = "<data>" + data + "</data>"
-        else:
-            # No -> Then wrap it in a <data> and a <scene> element.
-            data = "<data><scene>" + data + "</scene></data>"
+        # Wrap it in a <data> element.
+        data = "<data>" + data + "</data>"
 
         try:
             root = ET.fromstring(data)
@@ -65,13 +60,11 @@ def read_scenes_from_text_file(_full_path):
             logger.error("No scene elements found.")
             return
 
-        scene_name = os.path.splitext(os.path.basename(_full_path))[0] if len(scene_els) == 1 else None
-
         for scene_index, scene_el in enumerate(scene_els):
-            parse_scene_from_xml(scene_el, scene_index, scene_name)
+            parse_scene_from_xml(scene_el, scene_index)
 
 
-def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
+def parse_scene_from_xml(_scene_el, _scene_index):
         new_scene = Scene()
 
         # Find meta element.
@@ -80,11 +73,8 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
             # Get scene ID, use scene name if not found and there's only one scene, otherwise skip.
             new_scene.id = meta_el.get("id")
             if new_scene.id is None:
-                if _scene_name:
-                    new_scene.id = _scene_name
-                else:
-                    logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(_scene_index+1))
-                    return
+                logger.error("Scene {0} has a meta element without an id attribute. Skipping.".format(_scene_index+1))
+                return
             else:
                 new_scene.id = new_scene.id.strip()
                 if not scene_id_re.match(new_scene.id):
@@ -96,11 +86,8 @@ def parse_scene_from_xml(_scene_el, _scene_index, _scene_name):
             if tags:
                 new_scene.tags = string_to_tags(tags)
         else:
-            if _scene_name:
-                new_scene.id = _scene_name
-            else:
-                logger.error("Scene {0} does not contain a meta element. Skipping.".format(_scene_index+1))
-                return
+            logger.error("Scene {0} does not contain a meta element. Skipping.".format(_scene_index+1))
+            return
 
         if new_scene.id in scenes:
             logger.error("Scene {0} has id {1} which already exists. Skipping.".format(_scene_index+1, new_scene.id))
