@@ -4,7 +4,7 @@ import types
 import logging
 from condition import make_empty_condition, parse_condition_from_string
 from action import parse_action_from_string
-from tags import string_to_tags, evaluate_tags
+from tags import string_to_tags, evaluate_desired_tags
 from text_blocks import get_text_block_with_tag
 
 
@@ -170,17 +170,17 @@ class InjectBlock(ContentNode):
         super(InjectBlock, self).__init__()
         self.check_for_condition(_el)
         self.repeat = _el.get("norepeat", None) is None
-        self.tags = read_tags(_el, "injected block")
+        self.desired_tags = read_tags(_el, "injected block")
         self.check_element_is_empty(_el, "injected block")
 
     def evaluate(self, _state, _deep=True):
         if not _deep:
             return None
         if self.is_condition_true(_state):
-            tags = evaluate_tags(self.tags, _state)
-            if len(tags) == 0:
+            desired_tags = evaluate_desired_tags(self.desired_tags, _state)
+            if len(desired_tags) == 0:
                 return None
-            injected_block = get_text_block_with_tag(tags, self.repeat)
+            injected_block = get_text_block_with_tag(desired_tags, self.repeat)
             if injected_block:
                 return evaluate_content_blocks([injected_block], _state)
         else:
@@ -192,17 +192,17 @@ class InjectOption(ContentNode):
         super(InjectOption, self).__init__()
         self.check_for_condition(_el)
         self.repeat = _el.get("norepeat", None) is None
-        self.tags = read_tags(_el, "injected option")
+        self.desired_tags = read_tags(_el, "injected option")
         self.check_element_is_empty(_el, "injected option")
 
     def evaluate(self, _state, _deep=True):
         if not _deep:
             return None
         if self.is_condition_true(_state):
-            tags = evaluate_tags(self.tags, _state)
-            if len(tags) == 0:
+            desired_tags = evaluate_desired_tags(self.desired_tags, _state)
+            if len(desired_tags) == 0:
                 return None
-            injected_option = get_tagged_option_to_inject(tags, _state, self.repeat)
+            injected_option = get_tagged_option_to_inject(desired_tags, _state, self.repeat)
             if injected_option:
                 return {
                     "options": injected_option
@@ -324,10 +324,10 @@ def read_tags(_el, _el_name):
     return tags
 
 
-def get_tagged_option_to_inject(_tags, _state, _repeat=True):
+def get_tagged_option_to_inject(_desired_tags, _state, _repeat=True):
     # TODO: Ponder circular import problem
     from scene import get_scene_description_with_tag
-    injected_scene_desc = get_scene_description_with_tag(_tags, _repeat)
+    injected_scene_desc = get_scene_description_with_tag(_desired_tags, _repeat)
     if injected_scene_desc:
         # DON'T evaluate this scene deeply - we only care about the lead-in.
         evaluated_injected_scene = evaluate_content_blocks(injected_scene_desc.blocks, _state, _deep=False)

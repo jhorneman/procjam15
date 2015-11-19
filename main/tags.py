@@ -20,7 +20,7 @@ def string_to_tags(_tags_as_string):
     return [tag.strip() for tag in _tags_as_string.split(",")]
 
 
-def evaluate_tags(_tags, _state):
+def evaluate_desired_tags(_tags, _state):
     tags = []
     for tag in _tags:
         if tag.startswith("$"):
