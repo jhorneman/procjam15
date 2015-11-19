@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 class Condition(object):
-    NOOP = "noop"
+    IDENT = "identity"
     ISTRUE = "istrue"
     NOT = "not"
     EQ = "eq"
@@ -42,10 +42,10 @@ class Condition(object):
     def __init__(self):
         self.param1 = None
         self.param2 = None
-        self.operator = Condition.NOOP
+        self.operator = Condition.IDENT
 
     def evaluate(self, _state):
-        if self.operator == Condition.NOOP:
+        if self.operator == Condition.IDENT:
             return True
 
         if self.operator == Condition.ISTRUE:
