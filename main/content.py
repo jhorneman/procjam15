@@ -18,12 +18,25 @@ restart_action = "restart"
 class ContentNode(object):
     def __init__(self):
         self.condition = make_empty_condition()
+        self.children = []
 
     def check_for_condition(self, _el):
         self.condition = parse_condition_from_string(_el.get("cond"))
 
     def is_condition_true(self, _state):
         return self.condition.evaluate(_state)
+
+    def get_nr_children(self):
+        return len(self.children)
+
+    # def test(self):
+    #     return {
+    #         "readVariables": [],
+    #         "mutatedVariables": []
+    #     }
+
+    def evaluate(self, _state, _deep=True):
+        return None
 
     @staticmethod
     def check_element_is_empty(_el, _el_name):
@@ -49,53 +62,12 @@ class StyledText(ContentNode):
         super(StyledText, self).__init__()
         # Can check _el.tag here to select different styles, if need be.
         # self.style_class = "style_terminal"
-        self.blocks = parse_content_of_xml_element(_el)
+        self.children = parse_content_of_xml_element(_el)
 
     def evaluate(self, _state, _deep=True):
-        content = evaluate_content_blocks(self.blocks, _state)
+        content = evaluate_content_blocks(self.children, _state)
         content["text"] = "<t>{0}</t>".format(content["text"])
         return content
-
-
-class If(ContentNode):
-    def __init__(self, _el):
-        super(If, self).__init__()
-        self.check_for_condition(_el)
-        self.blocks = parse_content_of_xml_element(_el)
-
-    def evaluate(self, _state, _deep=True):
-        if self.is_condition_true(_state):
-            return evaluate_content_blocks(self.blocks, _state)
-        else:
-            return None
-
-
-class OneOf(ContentNode):
-    def __init__(self, _el):
-        super(OneOf, self).__init__()
-        self.check_for_condition(_el)
-        self.blocks = parse_content_of_xml_element(_el)
-
-    def evaluate(self, _state, _deep=True):
-        if self.is_condition_true(_state):
-            index = _state["__rng"].randint(0, len(self.blocks)-1)
-            return evaluate_content_blocks([self.blocks[index]], _state)
-        else:
-            return None
-
-
-class Block(ContentNode):
-    def __init__(self, _el):
-        super(Block, self).__init__()
-        self.check_for_condition(_el)
-        self.tags = read_tags(_el, "block")
-        self.blocks = parse_content_of_xml_element(_el)
-
-    def evaluate(self, _state, _deep=True):
-        if self.is_condition_true(_state):
-            return evaluate_content_blocks(self.blocks, _state)
-        else:
-            return None
 
 
 class Br(ContentNode):
@@ -106,6 +78,58 @@ class Br(ContentNode):
         if not _deep:
             return None
         return "<br/>"
+
+
+class If(ContentNode):
+    def __init__(self, _el):
+        super(If, self).__init__()
+        self.check_for_condition(_el)
+        self.children = parse_content_of_xml_element(_el)
+
+    # def test(self):
+    #     result = {
+    #         "readVariables": self.condition.get_read_variables(),
+    #         "mutatedVariables": []
+    #     }
+    #     for block in self.blocks:
+    #         block_result = block.test()
+    #         result["readVariables"].append(block_result["readVariables"])
+    #         result["mutatedVariables"].append(block_result["mutatedVariables"])
+    #     return result
+
+    def evaluate(self, _state, _deep=True):
+        if self.is_condition_true(_state):
+            return evaluate_content_blocks(self.children, _state)
+        else:
+            return None
+
+
+class OneOf(ContentNode):
+    def __init__(self, _el):
+        super(OneOf, self).__init__()
+        self.check_for_condition(_el)
+        self.children = parse_content_of_xml_element(_el)
+
+    def evaluate(self, _state, _deep=True):
+        if self.is_condition_true(_state):
+            index = _state["__rng"].randint(0, self.get_nr_children()-1)
+            return evaluate_content_blocks([self.children[index]], _state)
+        else:
+            return None
+
+
+class Block(ContentNode):
+    def __init__(self, _el):
+        super(Block, self).__init__()
+        self.check_for_condition(_el)
+        self.tags = read_tags(_el, "block")
+        self.children = parse_content_of_xml_element(_el)
+
+    def evaluate(self, _state, _deep=True):
+        if self.is_condition_true(_state):
+            return evaluate_content_blocks(self.children, _state)
+        else:
+            return None
 
 
 class LeadIn(ContentNode):
