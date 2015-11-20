@@ -52,6 +52,9 @@ class TaggedCollection(object):
         self.randomize = _randomize
         self.tagged_items = []
 
+    def __iter__(self):
+        return self.tagged_items.__iter__()
+
     def add_item(self, _tags, _item):
         if len(_tags) > 0:
             self.tagged_items.append(TaggedItem(_tags, _item))

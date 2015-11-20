@@ -6,9 +6,9 @@ import logging
 import xml.etree.ElementTree as ET
 import xlrd
 from xlrd.sheet import ctype_text
-from scene import get_nr_scenes, read_scenes_from_text_file
-from text_blocks import register_text_blocks, register_data_names
-from content import parse_xml_element
+from scene import get_nr_scenes, read_scenes_from_text_file, analyze_all_scenes
+from text_blocks import register_text_blocks, register_data_names, analyze_all_text_blocks
+from content import parse_xml_element, StaticAnalysis
 
 
 # DON'T use sys.argv[0] because that makes the path dependent on how the program was started,
@@ -153,3 +153,22 @@ if __name__ == "__main__":
     from log_utils import init_logging
     init_logging(logging.DEBUG)
     load_data()
+
+    analysis = StaticAnalysis()
+    analyze_all_scenes(analysis)
+    analyze_all_text_blocks(analysis)
+
+    print "Variables that are read from:"
+    for variable_name in analysis.get_read_variables():
+        print variable_name
+    print
+
+    print "Variables that are written to:"
+    for variable_name in analysis.get_mutated_variables():
+        print variable_name
+    print
+
+    print "Variables that are read from but not written to:"
+    for variable_name in analysis.get_problematic_variables():
+        print variable_name
+    print

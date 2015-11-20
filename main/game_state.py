@@ -86,6 +86,10 @@ def get_game_state_vars():
     return {k: v for k, v in session.items() if ":" not in k and not k.startswith("__")}
 
 
+def get_initial_variable_names():
+    return initial_game_state.keys() + constants.keys() + ["previous_scene", "current_scene"]
+
+
 def get_variable_value(_state, _variable_name):
     if _variable_name.startswith("$"):
         _variable_name = _variable_name[1:]

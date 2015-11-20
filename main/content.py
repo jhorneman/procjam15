@@ -6,6 +6,7 @@ from condition import make_empty_condition, parse_condition_from_string
 from action import parse_action_from_string
 from tags import string_to_tags, evaluate_desired_tags
 from text_blocks import get_text_block_with_tag
+from game_state import get_initial_variable_names
 
 
 logger = logging.getLogger(__name__)
@@ -307,21 +308,27 @@ def evaluate_content_blocks(_blocks, _state, _deep=True):
     return content
 
 
-def test_content_blocks(_blocks):
-    read_variables = set()
-    mutated_variables = set()
+class StaticAnalysis(object):
+    def __init__(self):
+        self.read_variables = set()
+        self.mutated_variables = set(get_initial_variable_names())
 
-    for block in _blocks:
-        block_result = block.test()
-        for var in block_result.get("readVariables", []):
-            read_variables.add(var)
-        for var in block_result.get("mutatedVariables", []):
-            mutated_variables.add(var)
+    def analyze_blocks(self, _blocks):
+        for block in _blocks:
+            block_result = block.test()
+            for var in block_result.get("readVariables", []):
+                self.read_variables.add(var)
+            for var in block_result.get("mutatedVariables", []):
+                self.mutated_variables.add(var)
 
-    return {
-        "readVariables": list(read_variables),
-        "mutatedVariables": list(mutated_variables)
-    }
+    def get_read_variables(self):
+        return list(self.read_variables)
+
+    def get_mutated_variables(self):
+        return list(self.mutated_variables)
+
+    def get_problematic_variables(self):
+        return self.read_variables.difference(self.mutated_variables)
 
 
 def parse_content_of_xml_element(_parent_el):

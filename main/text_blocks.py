@@ -29,3 +29,8 @@ def get_text_block_with_tag(_desired_tags, _repeat=True):
 
 def get_data_name_with_tag(_desired_tags, _repeat=True):
     return data_names.get_item_by_tags(_desired_tags, _repeat)
+
+
+def analyze_all_text_blocks(_analysis):
+    for tagged_item in text_blocks:
+        _analysis.analyze_blocks([tagged_item.item])

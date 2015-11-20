@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os.path
 import re
 import logging
 import xml.etree.ElementTree as ET
@@ -99,3 +98,8 @@ def parse_scene_from_xml(_scene_el, _scene_index):
 
         scenes[new_scene.id] = new_scene
         tagged_scene_ids.add_item(new_scene.tags, new_scene.id)
+
+
+def analyze_all_scenes(_analysis):
+    for scene in scenes.values():
+        _analysis.analyze_blocks(scene.blocks)
