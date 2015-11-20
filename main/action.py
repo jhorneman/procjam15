@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from parameters import get_parameter_value, set_parameter_value
-from game_state import generate_data_var
+from parameters import get_parameter_value, get_parameter_variable_name
+from game_state import generate_data_var, get_variable_value, set_variable_value
 
 
 logger = logging.getLogger(__name__)
@@ -20,21 +20,37 @@ class Action(object):
         self.variable_name = None
         self.value = None
 
+    def get_read_variables(self):
+        if self.action == "set":
+            variable_name = get_parameter_variable_name(self.value)
+            if variable_name:
+                return [variable_name]
+        return []
+
+    def get_mutated_variables(self):
+        if self.action == "gen_data":
+            return ["data"]
+        else:
+            variable_name = get_parameter_variable_name(self.variable_name)
+            if variable_name:
+                return [variable_name]
+        return []
+
     def execute(self, _state):
         if self.action == "gen_data":
             generate_data_var()
 
         elif self.action == "inc":
-            value = get_parameter_value(_state, self.variable_name)
-            set_parameter_value(_state, self.variable_name, value + 1)
+            value = get_variable_value(_state, self.variable_name)
+            set_variable_value(_state, self.variable_name, value + 1)
 
         elif self.action == "dec":
-            value = get_parameter_value(_state, self.variable_name)
-            set_parameter_value(_state, self.variable_name, value - 1)
+            value = get_variable_value(_state, self.variable_name)
+            set_variable_value(_state, self.variable_name, value - 1)
 
         elif self.action == "set":
             value = get_parameter_value(_state, self.value)
-            set_parameter_value(_state, self.variable_name, value)
+            set_variable_value(_state, self.variable_name, value)
 
 
 def parse_action_from_string(_string):

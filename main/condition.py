@@ -2,7 +2,7 @@
 
 import logging
 import operator
-from parameters import get_parameter_value
+from parameters import get_parameter_value, get_parameter_variable_name
 
 
 logger = logging.getLogger(__name__)
@@ -29,6 +29,8 @@ class Condition(object):
         LTEQ: operator.le
     }
 
+    unary_operators = [ISTRUE, NOT]
+
     not_token = ["not"]
     binary_operator_tokens = {
         EQ: ["is", "eq", "=="],
@@ -43,6 +45,25 @@ class Condition(object):
         self.param1 = None
         self.param2 = None
         self.operator = Condition.IDENT
+
+    def is_unary(self):
+        return self.operator in Condition.unary_operators
+
+    def get_read_variables(self):
+        if self.operator == Condition.IDENT:
+            return []
+
+        used_variables = []
+        variable_name = get_parameter_variable_name(self.param1)
+        if variable_name:
+            used_variables.append(variable_name)
+
+        if not self.is_unary():
+            variable_name = get_parameter_variable_name(self.param2)
+            if variable_name:
+                used_variables.append(variable_name)
+
+        return used_variables
 
     def evaluate(self, _state):
         if self.operator == Condition.IDENT:

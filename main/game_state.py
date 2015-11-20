@@ -3,10 +3,13 @@
 # TODO: Consider implementing this: http://flask.pocoo.org/snippets/51/
 
 import random
+import logging
 from flask import session
 from text_blocks import get_data_name_with_tag
 from pc_names import first_names, last_names, job_titles, get_job_title, get_nr_job_titles
 
+
+logger = logging.getLogger(__name__)
 
 current_version_nr = 1
 last_compatible_version_nr = 1
@@ -81,6 +84,28 @@ def has_compatible_version():
 
 def get_game_state_vars():
     return {k: v for k, v in session.items() if ":" not in k and not k.startswith("__")}
+
+
+def get_variable_value(_state, _variable_name):
+    if _variable_name.startswith("$"):
+        _variable_name = _variable_name[1:]
+        if _variable_name in constants:
+            return constants[_variable_name]
+        else:
+            return _state[_variable_name]
+    else:
+        logger.error("'{0}' should start with a $.".format(_variable_name))
+
+
+def set_variable_value(_state, _variable_name, _value):
+    if _variable_name.startswith("$"):
+        _variable_name = _variable_name[1:]
+        if _variable_name in constants:
+            logger.error("'{0}' is a constant and can't be set.".format(_variable_name))
+        else:
+            _state[_variable_name] = _value
+    else:
+        logger.error("'{0}' should start with a $.".format(_variable_name))
 
 
 def prepare_game_state():

@@ -29,11 +29,11 @@ class ContentNode(object):
     def get_nr_children(self):
         return len(self.children)
 
-    # def test(self):
-    #     return {
-    #         "readVariables": [],
-    #         "mutatedVariables": []
-    #     }
+    def test(self):
+        return {
+            "readVariables": self.condition.get_read_variables(),
+            "mutatedVariables": []
+        }
 
     def evaluate(self, _state, _deep=True):
         return None
@@ -85,17 +85,6 @@ class If(ContentNode):
         super(If, self).__init__()
         self.check_for_condition(_el)
         self.children = parse_content_of_xml_element(_el)
-
-    # def test(self):
-    #     result = {
-    #         "readVariables": self.condition.get_read_variables(),
-    #         "mutatedVariables": []
-    #     }
-    #     for block in self.blocks:
-    #         block_result = block.test()
-    #         result["readVariables"].append(block_result["readVariables"])
-    #         result["mutatedVariables"].append(block_result["mutatedVariables"])
-    #     return result
 
     def evaluate(self, _state, _deep=True):
         if self.is_condition_true(_state):
@@ -246,6 +235,13 @@ class Action(ContentNode):
             if action:
                 self.action = action
 
+    def test(self):
+        base_results = super(Action, self).test()
+        if self.action:
+            base_results["readVariables"] += self.action.get_read_variables()
+            base_results["mutatedVariables"] += self.action.get_mutated_variables()
+        return base_results
+
     def evaluate(self, _state, _deep=True):
         if not _deep:
             return None
@@ -270,33 +266,33 @@ tags_to_content_classes = {
 }
 
 
-def merge_in_evaluated_content(_content, _new):
+def merge_in_evaluated_content(_existing, _new):
     if _new is None:
         return
 
     if isinstance(_new, types.StringTypes):
-        _content["text"] += _new
+        _existing["text"] += _new
     else:
         if _new.get("text", None):
-            _content["text"] += _new["text"]
+            _existing["text"] += _new["text"]
 
         if _new.get("leadin", None):
-            if _content["leadin"]:
+            if _existing["leadin"]:
                 logger.error("Encountered more than one lead-in - ignoring.")
             else:
-                _content["leadin"] = _new["leadin"]
+                _existing["leadin"] = _new["leadin"]
 
         if _new.get("options", None):
             if isinstance(_new["options"], types.ListType):
-                _content["options"] += _new["options"]
+                _existing["options"] += _new["options"]
             else:
-                _content["options"].append(_new["options"])
+                _existing["options"].append(_new["options"])
 
         if _new.get("actions", None):
             if isinstance(_new["actions"], types.ListType):
-                _content["actions"] += _new["actions"]
+                _existing["actions"] += _new["actions"]
             else:
-                _content["actions"].append(_new["actions"])
+                _existing["actions"].append(_new["actions"])
 
 
 def evaluate_content_blocks(_blocks, _state, _deep=True):
@@ -309,6 +305,23 @@ def evaluate_content_blocks(_blocks, _state, _deep=True):
     for block in _blocks:
         merge_in_evaluated_content(content, block.evaluate(_state, _deep))
     return content
+
+
+def test_content_blocks(_blocks):
+    read_variables = set()
+    mutated_variables = set()
+
+    for block in _blocks:
+        block_result = block.test()
+        for var in block_result.get("readVariables", []):
+            read_variables.add(var)
+        for var in block_result.get("mutatedVariables", []):
+            mutated_variables.add(var)
+
+    return {
+        "readVariables": list(read_variables),
+        "mutatedVariables": list(mutated_variables)
+    }
 
 
 def parse_content_of_xml_element(_parent_el):
