@@ -1,5 +1,5 @@
 <scene>
-<meta id='end_starts' tags='computer_talk, flesh_act6, style_terminal'/>
+<meta id='end_starts' tags='computer_talk, flesh_act6' styles='style_terminal'/>
 <leadin>Query: data status?</leadin><t>
 > Query: data status?<br />
 --------------------------------<br />

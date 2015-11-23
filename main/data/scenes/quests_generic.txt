@@ -1,5 +1,5 @@
 <scene>
-<meta id='storage room' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='storage room' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search nearby storage room.</leadin>
 You're in one of the nearby storage rooms.
 
@@ -16,7 +16,7 @@ Objects lie haphazardly sticking out of plastic and metal containers. Unidentifi
 
 
 <scene>
-<meta id='airlock' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='airlock' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search main utility airlocks.</leadin>
 You're in the main utility airlocks.
 
@@ -32,7 +32,7 @@ The airlock control room is filled with human detritus and mechanical instrument
 </scene>
 
 <scene>
-<meta id='cargo storage' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='cargo storage' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search cargo storage.</leadin>
 You're in cargo storage.
 
@@ -48,7 +48,7 @@ The other half of the room is filled with large and small crates, harnessed toge
 </scene>
 
 <scene>
-<meta id='vents' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='vents' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the ventilation shafts.</leadin>
 You're in the lower access vents.
 
@@ -65,7 +65,7 @@ The ventilation shafts crisscross the entire ship like a respiratory system. Pip
 
 
 <scene>
-<meta id='maintenance shaft' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='maintenance shaft' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the upper maintenance shaft</leadin>
 You're in the upper maintenance shaft.
 
@@ -82,7 +82,7 @@ The shafts here are wide, but you stoop to prevent your head from grazing the lo
 </scene>
 
 <scene>
-<meta id='hallway' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='hallway' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search one of the main hallways.</leadin>
 You're in one of the main hallways.
 
@@ -99,7 +99,7 @@ Someone has left several doors ajar, their contents spilling out onto the hallwa
 </scene>
 
 <scene>
-<meta id='office' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='office' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the administration office.</leadin>
 You're in an administration office.
 
@@ -114,7 +114,7 @@ Papers are scattered everywhere between overturned desks, drawers open and spill
 </scene>
 
 <scene>
-<meta id='laboratory small' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='laboratory small' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the starboard labs.</leadin>
 You're in the small laboratory on the starboard side.
 
@@ -129,7 +129,7 @@ The room is full of various lab equipment, both familiar and foreign - centrifug
 </scene>
 
 <scene>
-<meta id='elevator' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='elevator' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the elevators.</leadin>
 You're at the elevators.
 
@@ -152,7 +152,7 @@ In front of the elevator, you see two severed arms.<br/><br/></if>
 </scene>
 
 <scene>
-<meta id='server room' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='server room' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the Sector 1 server room.</leadin>
 You're in the Sector 1 server room.
 
@@ -167,7 +167,7 @@ Power still runs, if unevenly, through the servers. A web of colorful wires conn
 </scene>
 
 <scene>
-<meta id='shuttle bay' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='shuttle bay' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the shuttle bay.</leadin>
 You're in the shuttle bay.
 
@@ -184,7 +184,7 @@ Within the control room, various monitors beep with low power warnings. A coffee
 </scene>
 
 <scene>
-<meta id='observation room' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='observation room' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search one of the observation rooms.</leadin>
 You're in an observation room.
 
@@ -201,7 +201,7 @@ Cold, sterile benches and tables remain upright and bolted to the floor but thei
 </scene>
 
 <scene>
-<meta id='commissary' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='commissary' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the commissary.</leadin>
 You're in the commissary.
 
@@ -218,7 +218,7 @@ Wire shelves stand empty and boxes overturned, their contents spilled across the
 </scene>
 
 <scene>
-<meta id='substation' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='substation' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the substation.</leadin>
 You're in the sector 2 substation.
 
@@ -235,7 +235,7 @@ Fans and machines whirl as they attempt to route power from the main solar array
 </scene>
 
 <scene>
-<meta id='mess hall' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='mess hall' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the mess hall.</leadin>
 You're in the mess hall.
 
@@ -254,7 +254,7 @@ You peer into the kitchens to find them equally abandoned, and the smell of deca
 </scene>
 
 <scene>
-<meta id='dormitory' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='dormitory' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the dormitory.</leadin>
 You're in a crew dormitory.
 
@@ -271,7 +271,7 @@ As the power surges, music suddenly interrupts the stillness... only to fade onc
 </scene>
 
 <scene>
-<meta id='restroom' tags='mission, flesh_act1, flesh_act2, style_mission'/>
+<meta id='restroom' tags='mission, flesh_act1, flesh_act2' styles='style_mission'/>
 <leadin>Search the restrooms.</leadin>
 You're in one of the unisex restrooms.
 

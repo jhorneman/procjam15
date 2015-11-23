@@ -1,5 +1,5 @@
 <scene>
-<meta id='proboscis' tags='option, flesh, style_mission'/>
+<meta id='proboscis' tags='option, flesh' styles='style_mission'/>
 <leadin>Stroke proboscis.</leadin>
 You stroke a yellow proboscis growing from a computer terminal. It secretes a putrescent odor.
 
@@ -11,7 +11,7 @@ The fleshy petals at its base open up to reveal {data}.<injectBlock tags="odesc,
 </scene>
 
 <scene>
-<meta id='tumor' tags='option, flesh, style_mission'/>
+<meta id='tumor' tags='option, flesh' styles='style_mission'/>
 <leadin>Cut open quivering tumor.</leadin>
 You slice into a quivering tumor. It appears to recoil from your utility knife.
 
@@ -23,7 +23,7 @@ Among the gunk and foul fluids, you find {data}.<injectBlock tags="odesc, $flesh
 </scene>
 
 <scene>
-<meta id='membrane top' tags='option, flesh, style_mission'/>
+<meta id='membrane top' tags='option, flesh' styles='style_mission'/>
 <leadin>Cut back ceiling membrane.</leadin>
 You climb up onto a shelf of thick cartilage and cut back the ceiling membrane. Sheets of skin drop to the floor like red-veined blankets.
 
@@ -35,7 +35,7 @@ Behind it you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='sticky web' tags='option, flesh, style_mission'/>
+<meta id='sticky web' tags='option, flesh' styles='style_mission'/>
 <leadin>Reveal items covered in sticky webbing.</leadin>
 You pull apart the sticky webbing. It glues itself to your skin and clothes as you try to reveal the items suspended among them. The webbing feels hot on your hands.
 
@@ -47,7 +47,7 @@ In one of the webs you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='fluid sac' tags='option, flesh, style_mission'/>
+<meta id='fluid sac' tags='option, flesh' styles='style_mission'/>
 <leadin>Squeeze fluid sacs.</leadin>
 You carefully squeeze the small fluid sacs growing onto a shelf of cartilage. Most of them contain a thick, yellow putty.
 
@@ -59,7 +59,7 @@ Inside one of the sacs you discover {data}.<injectBlock tags="odesc, $flesh_act"
 </scene>
 
 <scene>
-<meta id='skin rug' tags='option, flesh, style_mission'/>
+<meta id='skin rug' tags='option, flesh' styles='style_mission'/>
 <leadin>Lift skin rug.</leadin>
 You lift the skin rug and check its massive, warm folds for anything you might be able to salvage.
 
@@ -71,7 +71,7 @@ In one of the folds you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='wall growth' tags='option, flesh, style_mission'/>
+<meta id='wall growth' tags='option, flesh' styles='style_mission'/>
 <leadin>Investigate growth on the wall.</leadin>
 You shine your light on a bulbous flesh-colored growth covering a sizeable portion of the wall. It retracts from the light. You touch the mound softly.
 
@@ -83,7 +83,7 @@ The flesh opens up to reveal {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cocoon' tags='option, flesh, style_mission'/>
+<meta id='cocoon' tags='option, flesh' styles='style_mission'/>
 <leadin>Tear open cocoon.</leadin>
 You rip open a cocoon, its pink sinewy webbing snapping as you pull it apart with your fingers. 
 
@@ -95,7 +95,7 @@ Inside you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='egg cluster' tags='option, flesh, style_mission'/>
+<meta id='egg cluster' tags='option, flesh' styles='style_mission'/>
 <leadin>Break egg cluster.</leadin>
 You stomp on a cluster of eggs. Yellow and opaque yolk leaks out from the cracked mottled shell.
 
@@ -107,7 +107,7 @@ Inside the yolk you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='adrenal gland' tags='option, flesh, style_mission'/>
+<meta id='adrenal gland' tags='option, flesh' styles='style_mission'/>
 <leadin>Look inside adrenal gland.</leadin>
 You pull apart the folds of the adrenal gland, its plasma covering your hands and dripping onto the floor.
 
@@ -119,7 +119,7 @@ Inside the gland you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='hair growth' tags='option, flesh, style_mission'/>
+<meta id='hair growth' tags='option, flesh' styles='style_mission'/>
 <leadin>Cut back tangle of hair growth.</leadin>
 You pull out a utility knife and cut back thick tangles of gnarled hair growth.
 
@@ -131,7 +131,7 @@ Within the tangle you discover {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='gizzard' tags='option, flesh, style_mission'/>
+<meta id='gizzard' tags='option, flesh' styles='style_mission'/>
 <leadin>Open gizzard.</leadin>
 You rip the thick, mottled gizzard from the floor and squeeze it to expel its contents. 
 
@@ -143,7 +143,7 @@ Inside the gizzard you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='carapace' tags='option, flesh, style_mission'/>
+<meta id='carapace' tags='option, flesh' styles='style_mission'/>
 <leadin>Break open carapace.</leadin>
 You stomp on a small, round carapace and the chitinous shell breaks into sharp fragments.
 
@@ -155,7 +155,7 @@ Beneath the carapace you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='placenta' tags='option, flesh, style_mission'/>
+<meta id='placenta' tags='option, flesh' styles='style_mission'/>
 <leadin>Reach inside placenta.</leadin>
 You reach inside a sputtering, deflated placenta. It squirts a foul, brown liquid.
 
@@ -167,7 +167,7 @@ Inside the placenta you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='amniotic sac' tags='option, flesh, style_mission'/>
+<meta id='amniotic sac' tags='option, flesh' styles='style_mission'/>
 <leadin>Investigate amniotic sac.</leadin>
 You investigate an amniotic sac, the fluid just barely contained within a thin membrane. You can see a dark shape floating within it.
 
@@ -179,7 +179,7 @@ You pop the sac and inside you find {data}.<injectBlock tags="odesc, $flesh_act"
 </scene>
 
 <scene>
-<meta id='spongy tissue' tags='option, flesh, style_mission'/>
+<meta id='spongy tissue' tags='option, flesh' styles='style_mission'/>
 <leadin>Dig through spongy tissue.</leadin>
 You dig through some spongy pink tissues, soft and pliable with new growth. 
 
@@ -191,7 +191,7 @@ In between the folds you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cuticle' tags='option, flesh, style_mission'/>
+<meta id='cuticle' tags='option, flesh' styles='style_mission'/>
 <leadin>Peel back cuticle.</leadin>
 You dig your fingers into the semi-transparent cuticle skin and peel it back from the keratin surface of the walls.
 
@@ -203,7 +203,7 @@ In the nail bed, you uncover {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='warm cavity' tags='option, flesh, style_mission'/>
+<meta id='warm cavity' tags='option, flesh' styles='style_mission'/>
 <leadin>Search warm cavity.</leadin>
 You get onto your knees and reach into a small warm cavity in the wall.
 
@@ -215,7 +215,7 @@ In between the sweat and hair, you grasp ahold of {data}.<injectBlock tags="odes
 </scene>
 
 <scene>
-<meta id='lymphatic fluid' tags='option, flesh, style_mission'/>
+<meta id='lymphatic fluid' tags='option, flesh' styles='style_mission'/>
 <leadin>Sift through lymphatic fluid.</leadin>
 You dip your fingers into the opaque lymphatic fluid and sift through the floating organic refuse.
 
@@ -227,7 +227,7 @@ At the bottom of the fluid you find {data}.<injectBlock tags="odesc, $flesh_act"
 </scene>
 
 <scene>
-<meta id='vein tapestry' tags='option, flesh, style_mission'/>
+<meta id='vein tapestry' tags='option, flesh' styles='style_mission'/>
 <leadin>Pull aside tapestry of veins.</leadin>
 You pull aside the thick tapestry of blue and red veins to reveal more metal and flesh. The capillaries spark and secrete a clear, slippery fluid.
 
@@ -239,7 +239,7 @@ Hidden behind them you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='gut flora' tags='option, flesh, style_mission'/>
+<meta id='gut flora' tags='option, flesh' styles='style_mission'/>
 <leadin>Sift through gut flora.</leadin>
 You sift through the gut flora, pushing aside patches of semisolid foul-smelling masses to salvage anything within the bacterial soup.
 
@@ -253,7 +253,7 @@ Beneath the flora you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- CONTAINER TAGS -->
 
 <scene>
-<meta id='cabinet mucus' tags='option, flesh, containers, style_mission'/>
+<meta id='cabinet mucus' tags='option, flesh, containers' styles='style_mission'/>
 <leadin>Open mucus-covered cabinet.</leadin>
 You strip the dried gunk off the cabinet handle and open it, separating the door from its thick mucosal lining.
 
@@ -265,7 +265,7 @@ Inside the cabinet you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='shelves growth' tags='option, flesh, containers, style_mission'/>
+<meta id='shelves growth' tags='option, flesh, containers' styles='style_mission'/>
 <leadin>Search shelves covered in growths.</leadin>
 You sift through the items on the shelves in search of something to salvage, being careful to avoid touching the strange pink growths.
 
@@ -277,7 +277,7 @@ On the lowest shelf you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='cystic box' tags='option, flesh, containers, style_mission'/>
+<meta id='cystic box' tags='option, flesh, containers' styles='style_mission'/>
 <leadin>Search cystic box.</leadin>
 You lift open the lid of the box, being careful not to rupture the dark purple cyst growing on it.
 
@@ -291,7 +291,7 @@ Inside the box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- ELECTRICAL TAGS -->
 
 <scene>
-<meta id='fuse box membrane' tags='option, flesh, electrical, style_mission'/>
+<meta id='fuse box membrane' tags='option, flesh, electrical' styles='style_mission'/>
 <leadin>Peel membrane from fuse box.</leadin>
 You peel the pink and veiny membrane off of the fuse box and let it drop to the floor, revealing a discolored metal panel. You flip open the box and investigate the sinewy contents.
 
@@ -303,7 +303,7 @@ Inside the fuse box you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='sparking capillaries' tags='option, flesh, electrical, style_mission'/>
+<meta id='sparking capillaries' tags='option, flesh, electrical' styles='style_mission'/>
 <leadin>Investigate sparking capillaries.</leadin>
 You investigate the sparking capillaries dripping a slick clear fluid.
 
@@ -317,7 +317,7 @@ Behind the wires you find {data}.<injectBlock tags="odesc, $flesh_act" />
 <!-- COMPUTER TAGS -->
 
 <scene>
-<meta id='computer orifice' tags='option, flesh, computer, style_mission'/>
+<meta id='computer orifice' tags='option, flesh, computer' styles='style_mission'/>
 <leadin>Reach inside computer's orifice.</leadin>
 You reach inside the computer's dark, warm orifice. Your fingers catch on something.
 
@@ -329,7 +329,7 @@ Inside the computer you find {data}.<injectBlock tags="odesc, $flesh_act" />
 </scene>
 
 <scene>
-<meta id='computer olfactory' tags='option, flesh, computer, style_mission'/>
+<meta id='computer olfactory' tags='option, flesh, computer' styles='style_mission'/>
 <leadin>Stroke computer's olfactory senses.</leadin>
 You stroke the computer's olfactory senses. The console's data tray ejects.
 
@@ -346,7 +346,7 @@ In the tray you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
 <!-- HUMAN TAGS -->
 <scene>
-<meta id='second skins' tags='option, flesh, human, style_mission'/>
+<meta id='second skins' tags='option, flesh, human' styles='style_mission'/>
 <leadin>Rifle through shedded skins.</leadin>
 You rifle through a pile of discarded shedded skins, checking each one thoroughly before tossing the dried husk aside.
 

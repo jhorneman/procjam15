@@ -1,5 +1,5 @@
 <scene>
-<meta id='engineering' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='engineering' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the engineering deck.</leadin>
 You're on the engineering deck.
 
@@ -16,7 +16,7 @@ Another door leads to the maintenance bay. A plasma torch left deep scars in the
 </scene>
 
 <scene>
-<meta id='hangar bay' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='hangar bay' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the hangar bay.</leadin>
 You're in the hangar bay.
 
@@ -33,7 +33,7 @@ No one has left the ship, but if they had there is nowhere they could go. Only e
 </scene>
 
 <scene>
-<meta id='medbay' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='medbay' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the medbay.</leadin>
 You're in the lower medbay.
 
@@ -50,7 +50,7 @@ IV lines stand hooked up to a monitoring station, but the patient is absent.
 </scene>
 
 <scene>
-<meta id='hydroponic gardens' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='hydroponic gardens' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the hydroponic gardens.</leadin>
 You're in the hydroponic gardens.
 
@@ -67,7 +67,7 @@ Any food left behind in the unattended gardens is inedible, now contaminated wit
 </scene>
 
 <scene>
-<meta id='crew deck' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='crew deck' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the crew deck.</leadin>
 You're on the crew deck.
 
@@ -82,7 +82,7 @@ A huge  common living area with long tables, benches, couches, plastic plants, g
 </scene>
 
 <scene>
-<meta id='life support control' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='life support control' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the life support control room.</leadin>
 You briefly hesitate before entering the life support control room. You must be careful looking for data here, or risk upsetting the systems that keep you alive.
 
@@ -99,7 +99,7 @@ Oxygen, carbon dioxide, and nitrogen are pumped through thrumming high pressure 
 </scene>
 
 <scene>
-<meta id='laboratory big' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='laboratory big' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the main laboratory.</leadin>
 You're in the main laboratory.
 
@@ -114,7 +114,7 @@ Multiple test chambers allow the scientists on board to perform experiments with
 </scene>
 
 <scene>
-<meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='maintenance bay' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the maintenance bay.</leadin>
 You're in the maintenance bay.
 
@@ -129,7 +129,7 @@ Huge machines can repair or fabricate anything the ship needs to keep running, f
 </scene>
 
 <scene>
-<meta id='captains quarters' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='captains quarters' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the captain's quarters.</leadin>
 You're in the captain's quarters.
 
@@ -159,7 +159,7 @@ CHECK MAINFRAME COPIES<br/>
 </scene>
 
 <scene>
-<meta id='command center' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='command center' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the command center.</leadin>
 You're in the command center.
 
@@ -174,7 +174,7 @@ Rows of consoles fill the room, their large screen left static or dark. They all
 </scene>
 
 <scene>
-<meta id='reactor core' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='reactor core' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the reactor core.</leadin>
 You are outside the reactor core.
 
@@ -191,7 +191,7 @@ A thermal scanner shows the temperature nearing the danger zone. The ship itself
 </scene>
 
 <scene>
-<meta id='navigation' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='navigation' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search navigation.</leadin>
 You are at the propulsion systems control in navigation.
 
@@ -208,7 +208,7 @@ There is no sign of the pilots, but their belongings remain scattered around the
 </scene>
 
 <scene>
-<meta id='solar arrays' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='solar arrays' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the solar arrays.</leadin>
 You are at the solar arrays.
 
@@ -225,7 +225,7 @@ Without a sun, the solar arrays lie dormant. You will not be able to reroute any
 </scene>
 
 <scene>
-<meta id='morgue' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='morgue' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the morgue.</leadin>
 You are in the morgue.
 
@@ -242,7 +242,7 @@ It is filled with empty hospital beds, cold and clinical to serve the dead rathe
 </scene>
 
 <scene>
-<meta id='radiation shielding' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='radiation shielding' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the radiation shielding control room.</leadin>
 You are in the radiation shielding control room.
 
@@ -257,7 +257,7 @@ The scanners and readings all appear to be offline, but the backup lights and ra
 </scene>
 
 <scene>
-<meta id='hydrogen collector' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='hydrogen collector' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the hydrogen collectors.</leadin>
 You are at the hydrogen collectors.
 
@@ -274,7 +274,7 @@ Various valves and small robotic equipment fill the room between the hydrogen co
 </scene>
 
 <scene>
-<meta id='security office' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='security office' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the central security office.</leadin>
 You are outside the central security office.
 
@@ -291,7 +291,7 @@ Rows of monitors remain offline and unresponsive. Chairs lay overturned and pape
 </scene>
 
 <scene>
-<meta id='holodeck' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='holodeck' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the recreational holodeck.</leadin>
 You are in the holodeck.
 
@@ -306,7 +306,7 @@ Emergency lights bathe the empty room with soft red and white lights. A panel on
 </scene>
 
 <scene>
-<meta id='research and dev' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='research and dev' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search research and development labs.</leadin>
 You are in the research and development labs.
 
@@ -323,7 +323,7 @@ The labs are lined with busy rows and shelves of vials and containers with vario
 </scene>
 
 <scene>
-<meta id='armory' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='armory' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the armory.</leadin>
 You are in the armory.
 
@@ -340,7 +340,7 @@ Weapons appear to have all been looted hastily, the gate dividing them from the 
 </scene>
 
 <scene>
-<meta id='recycling center' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='recycling center' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the recycling center.</leadin>
 You are in the main recycling hub.
 
@@ -357,7 +357,7 @@ The trash chutes lay closed, their contents sitting in unfiltered overflow piles
 </scene>
 
 <scene>
-<meta id='virology' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='virology' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the virology labs.</leadin>
 You are in the virology labs.
 
@@ -375,7 +375,7 @@ You walk along the access hall and peer into a series of patient rooms through l
 
 
 <scene>
-<meta id='chapel' tags='mission, flesh_act2, flesh_act3, style_mission'/>
+<meta id='chapel' tags='mission, flesh_act2, flesh_act3' styles='style_mission'/>
 <leadin>Search the chapel.</leadin>
 You are in the chapel.
 
@@ -392,7 +392,7 @@ Behind the altar is a large glass window stained only by the blackness of space.
 </scene>
 
 <scene>
-<meta id='brig' tags='mission, flesh_act4, flesh_act3, style_mission'/>
+<meta id='brig' tags='mission, flesh_act4, flesh_act3' styles='style_mission'/>
 <leadin>Search the brig.</leadin>
 You are in the brig.
 

@@ -1,5 +1,5 @@
 <scene>
-<meta id='death airlock' tags='death_airlock, style_death'/>
+<meta id='death airlock' tags='death_airlock' styles='style_death'/>
 <leadin>Use the airlock controls.</leadin>
 Servo motors whine and gears grind as you manipulate the airlock controls. The mechanism seems stuck. You jiggle the levers and smash the button until finally something gives.
 
@@ -8,7 +8,7 @@ Panic hits you as you feel the air being sucked away. The airlock is open on bot
 </scene>
 
 <scene>
-<meta id='upper vents' tags='death_claustrophobia, style_death'/>
+<meta id='upper vents' tags='death_claustrophobia' styles='style_death'/>
 <leadin>Climb into the upper ventilation system.</leadin>
 You pull yourself up into the shafts of the upper ventilation system. At first you can squeeze through. Then you have to wiggle to fit.
 
@@ -18,7 +18,7 @@ Then you discover you can go neither forward nor backwards. No amount of compres
 </scene>
 
 <scene>
-<meta id='elevator shaft' tags='death_elevator, style_death'/>
+<meta id='elevator shaft' tags='death_elevator' styles='style_death'/>
 <leadin>Descend elevator shaft.</leadin>
 You slide into the gap under the cabin, lower your legs into the elevator shaft, and feel around with your feet. You can't find any kind of steps or service ladder. You slide down further, reaching down as far as you can. Your feel an opening with your toes, and you try to place your foot inside to see if it is big enough. 
 
@@ -28,7 +28,7 @@ The power surges back on with a loud snap. The elevator cabin drops, severing yo
 </scene>
 
 <scene>
-<meta id='radiation shield gen' tags='death_radiation, style_death'/>
+<meta id='radiation shield gen' tags='death_radiation' styles='style_death'/>
 <leadin>Lower radiation shielding.</leadin>
 You go over your training. Gamma radiation can be harmful, but only in strong doses.
 
@@ -44,7 +44,7 @@ It occurs to you that you do not know where in space the ship is. Fear hits you 
 <!-- BIO / MEDICAL -->
 
 <scene>
-<meta id='inspect fungus' tags='option, biological, medical, style_death'/>
+<meta id='inspect fungus' tags='option, biological, medical' styles='style_death'/>
 <leadin>Investigate mysterious fungal mass.</leadin>
 The body of the fungal mass looks soft and powdery, with little hairs. You're not an expert but it seems a strange thing to find in a place like this.
 
@@ -59,7 +59,7 @@ As you move in close to observe one of the growths, it vibrates, then suddenly d
 <!-- ELECTRICAL -->
 
 <scene>
-<meta id='tear wires' tags='option, electrical, style_death'/>
+<meta id='tear wires' tags='option, electrical' styles='style_death'/>
 <leadin>Cut electrical wiring.</leadin>
 You pry off the covering and yank out the heavy electrical cables. The power in the ship surges slightly, showering you with sparks. You wait for it to recede and the room to go dark before continuing.
 
@@ -83,7 +83,7 @@ investigate a weapon lying on the ground, but it backfires?
 
 <!-- late-game deaths -->
 <scene>
-<meta id='unidentified substance' tags='option, flesh, style_death'/>
+<meta id='unidentified substance' tags='option, flesh' styles='style_death'/>
 <leadin>Touch unidentified substance.</leadin>
 You touch the unindentified substance. It's slick.... warm. Pleasant, almost.
 
@@ -94,14 +94,14 @@ You try to get the substance off your hand but only succeed in getting it on you
 </scene>
 
 <scene>
-<meta id='undulating sphincter' tags='option, flesh, style_death'/>
+<meta id='undulating sphincter' tags='option, flesh' styles='style_death'/>
 <leadin>Reach inside an undulating sphincter.</leadin>
 You reach your hand past the sphincter, into the narrow canal behind it. You feel an object, but the increasingly rapid undulations move it out of reach. The movements speed up as you reach in deeper, panting, until you are in up to your shoulder. Then the flesh spasms, tightening around your arm, then slowly crushing it. You feel pain, hear bones snap. Your blood drips out of the orifice. The pressure keeps increasing.
 <option action="respawn">You scream and scream before you die of shock.</option>
 </scene>
 
 <scene>
-<meta id='taste liquid' tags='option, flesh, style_death'/>
+<meta id='taste liquid' tags='option, flesh' styles='style_death'/>
 <leadin>Taste liquid excretions.</leadin>
 You run your fingers along a bulbous tumor, dragging it through the viscous excretion.
 
@@ -115,7 +115,7 @@ Your throat, coated in the cloying glue, closes. You try to scream but no sound 
 </scene>
 
 <scene>
-<meta id='gastric acid' tags='option, flesh, style_death'/>
+<meta id='gastric acid' tags='option, flesh' styles='style_death'/>
 <leadin>Wade into gastric acid.</leadin>
 You wade into a pool of gastic acid, hoping to salvage something of use beneath its surface.
 

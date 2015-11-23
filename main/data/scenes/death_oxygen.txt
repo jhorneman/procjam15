@@ -1,5 +1,5 @@
 <scene>
-<meta id='oxygen levels' tags='option, containers, style_death'/>
+<meta id='oxygen levels' tags='option, containers' styles='style_death'/>
 <leadin>Modify oxygen levels.</leadin>
 You use the room control panel to access the oxygen level controls.
 <injectOption tags='oxygen_1' />
@@ -7,7 +7,7 @@ You use the room control panel to access the oxygen level controls.
 </scene>
 
 <scene>
-<meta id='oxygen 1 a' tags='oxygen_1'/>
+<meta id='oxygen 1 a' tags='oxygen_1' styles='style_death'/>
 <leadin>Flip the switch with the cloud symbol.</leadin>
 You're not familiar with these controls, but this button should change the... the room door clangs shut. It looks like you're sealed in.
 
@@ -16,7 +16,7 @@ That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 </scene>
 
 <scene>
-<meta id='oxygen 1 b' tags='oxygen_1'/>
+<meta id='oxygen 1 b' tags='oxygen_1' styles='style_death'/>
 <leadin>Pull the lever marked 'oxygen'.</leadin>
 You're not familiar with these controls, but this lever should change the... the room door clangs shut. It looks like you're sealed in.
 
@@ -25,7 +25,7 @@ That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 </scene>
 
 <scene>
-<meta id='oxygen 1 c' tags='oxygen_1'/>
+<meta id='oxygen 1 c' tags='oxygen_1' styles='style_death'/>
 <leadin>Rotate the blue knob.</leadin>
 You're not familiar with these controls, but this knob should change the... the room door clangs shut. It looks like you're sealed in.
 
@@ -34,7 +34,7 @@ That wasn't supposed to happen. <injectBlock tags="control_suspicion" />
 </scene>
 
 <scene>
-<meta id='oxygen 2 revert'/>
+<meta id='oxygen 2 revert' styles='style_death'/>
 You put the controls back the way they were. You hear a beep, a fizzing sound, then the words "RAPID OXYGEN DUMP INITIATED" appear on the control panel and a counter starts counting down from 100%.
 
 A loud hissing sound comes from the ceiling.
@@ -43,7 +43,7 @@ A loud hissing sound comes from the ceiling.
 </scene>
 
 <scene>
-<meta id='oxygen 2 a' tags='oxygen_3'/>
+<meta id='oxygen 2 a' tags='oxygen_3' styles='style_death'/>
 <leadin>Press the abort switch.</leadin>
 The counter is at 50%. Your ears pop due to the low pressure. You press the abort switch, but the only consequence is a low oxygen warning signal.
 
@@ -52,7 +52,7 @@ It's getting hard to breathe.
 </scene>
 
 <scene>
-<meta id='oxygen 2 b' tags='oxygen_3'/>
+<meta id='oxygen 2 b' tags='oxygen_3' styles='style_death'/>
 <leadin>Slam the emergency button.</leadin>
 The counter is at 50%. Your ears pop due to the low pressure. You slam the emergency button, but the only consequence is a low oxygen warning signal.
 
@@ -61,14 +61,14 @@ It's getting hard to breathe.
 </scene>
 
 <scene>
-<meta id='oxygen 4 emergency'/>
+<meta id='oxygen 4 emergency' styles='style_death'/>
 The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try slamming the emergency button, but it has no effect. You collapse hyperventilating in front of the control panel.
 
 <option action="respawn">Everything goes dark, and you die.</option>
 </scene>
 
 <scene>
-<meta id='oxygen 4 abort'/>
+<meta id='oxygen 4 abort' styles='style_death'/>
 The warning signal becomes quieter and quieter as there is no more air to carry sound. Panicked and weak, you try pressing the abort switch, but it has no effect. You collapse hyperventilating in front of the control panel.
 
 <option action="respawn">Everything goes dark, and you die.</option>

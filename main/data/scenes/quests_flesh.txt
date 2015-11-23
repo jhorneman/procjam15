@@ -1,5 +1,5 @@
 <scene>
-<meta id='womb' tags='mission, flesh_act5, style_mission'/>
+<meta id='womb' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the womb.</leadin>
 You're in the womb.
 
@@ -16,7 +16,7 @@ The other half of the room is filled with misshapen egg pouches and pustules, ha
 </scene>
 
 <scene>
-<meta id='umbilical cord' tags='mission, flesh_act5, style_mission'/>
+<meta id='umbilical cord' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the umbilical cord.</leadin>
 You're in one of the main umbilical cords.
 
@@ -33,7 +33,7 @@ One of the sphincters stands partly open, its muscles too weak to keep its conte
 </scene>
 
 <scene>
-<meta id='stomach' tags='mission, flesh_act5, style_mission'/>
+<meta id='stomach' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the stomach.</leadin>
 You're in the stomach.
 
@@ -50,7 +50,7 @@ Alternate sucking and bubbling noises come from the direction of the duodenum as
 </scene>
 
 <scene>
-<meta id='carapace_space' tags='mission, flesh_act5, style_mission'/>
+<meta id='carapace_space' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search within the carapace.</leadin>
 You're within a carapace.
 
@@ -67,7 +67,7 @@ Cold sterile metal sheets lay in patchwork as exoskeletons for the fleshy globul
 </scene>
 
 <scene>
-<meta id='gland' tags='mission, flesh_act4, flesh_act5, style_mission'/>
+<meta id='gland' tags='mission, flesh_act4, flesh_act5' styles='style_mission'/>
 <leadin>Search the starboard glands</leadin>
 You're in one of the starboard glands.
 
@@ -84,7 +84,7 @@ A large transparent membrane covers one wall, allowing you to glimpse the outer 
 </scene>
 
 <scene>
-<meta id='canal' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='canal' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the portside canal.</leadin>
 You're in the portside canal.
 
@@ -101,7 +101,7 @@ Desks lay overturned, drawers open and spilling their contents across the floor.
 </scene>
 
 <scene>
-<meta id='ventricle' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='ventricle' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the ventricle.</leadin>
 You in the left ventricle.
 
@@ -118,7 +118,7 @@ The ventricle here is wide, but you stoop to prevent your head from grazing the 
 </scene>
 
 <scene>
-<meta id='gallbladder' tags='mission, flesh_act5, style_mission'/>
+<meta id='gallbladder' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the gallbladder.</leadin>
 You are in the gallbladder.
 
@@ -135,7 +135,7 @@ Various ducts lines the room. They make a suckling sound as they drink the myste
 </scene>
 
 <scene>
-<meta id='hive' tags='mission, flesh_act5, style_mission'/>
+<meta id='hive' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the liver.</leadin>
 You are inside the liver.
 
@@ -152,7 +152,7 @@ The room is filled with knotted proteins suspended above you on sinewy strings. 
 </scene>
 
 <scene>
-<meta id='airways' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='airways' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the bronchial airways.</leadin>
 You are in the bronchial airways.
 
@@ -169,7 +169,7 @@ The bronchi shafts criss-cross the entire ship like a respiratory system, feedin
 </scene>
 
 <scene>
-<meta id='nervous system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='nervous system' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the somatic nervous system.</leadin>
 You are in the somatic nervous system
 
@@ -184,7 +184,7 @@ You ignore the large sign declaring "AUTHORIZED PERSONNEL ONLY" to enter the ner
 </scene>
 
 <scene>
-<meta id='thorax' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='thorax' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the thorax.</leadin>
 You are in the thorax.
 
@@ -201,7 +201,7 @@ This area is not meant for human exploration standing as it does between the oth
 </scene>
 
 <scene>
-<meta id='intestines' tags='mission, flesh_act5, style_mission'/>
+<meta id='intestines' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the small intestines.</leadin>
 You are at the small intestines.
 
@@ -219,7 +219,7 @@ The ships bowels already overflow with trash, the organic solids piling high and
 
 
 <scene>
-<meta id='placental pouch' tags='mission, flesh_act5, style_mission'/>
+<meta id='placental pouch' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the placental pouch.</leadin>
 You are in the placental pouch.
 
@@ -238,7 +238,7 @@ Wire shelves stand empty and boxes overturned, their contents spilled across the
 </scene>
 
 <scene>
-<meta id='ovaries' tags='mission, flesh_act5, style_mission'/>
+<meta id='ovaries' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the ovaries.</leadin>
 You are in the ovaries.
 
@@ -255,7 +255,7 @@ Small tumors grow haphazardly out of bone and cartilage. Unidentified pustules s
 </scene>
 
 <scene>
-<meta id='pharynx' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='pharynx' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the pharynx.</leadin>
 You are in the pharyngeal pouch.
 
@@ -270,7 +270,7 @@ Rows of monitors and tonsils remain offline and unresponsive. The beam from your
 </scene>
 
 <scene>
-<meta id='gills' tags='mission, flesh_act5, style_mission'/>
+<meta id='gills' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the gills.</leadin>
 You are in the gills.
 
@@ -285,7 +285,7 @@ Beige and brown flecks of scabs, dried and desiccated, sit on the floor. As the 
 </scene>
 
 <scene>
-<meta id='digestive system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='digestive system' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the digestive system.</leadin>
 You are in the digestive system.
 
@@ -300,7 +300,7 @@ You step into the flooded room and shine your light among the pools of intestina
 </scene>
 
 <scene>
-<meta id='endocrine system' tags='mission, flesh_act5, style_mission'/>
+<meta id='endocrine system' tags='mission, flesh_act5' styles='style_mission'/>
 <leadin>Search the endocrine system.</leadin>
 You are in the endocrine system. 
 
@@ -317,7 +317,7 @@ The tubes of flesh are thick and sturdy, resisting any attempt at sabotage. You 
 </scene>
 
 <scene>
-<meta id='respiratory system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='respiratory system' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the respiratory system.</leadin>
 You are in the respiratory system.
 
@@ -334,7 +334,7 @@ Scanners powered by an unknown backup systems still print out readouts from vari
 </scene>
 
 <scene>
-<meta id='lymphatic system' tags='mission, flesh_act5, flesh_act4, style_mission'/>
+<meta id='lymphatic system' tags='mission, flesh_act5, flesh_act4' styles='style_mission'/>
 <leadin>Search the lymphatic system.</leadin>
 You are in the lymphatic system.
 

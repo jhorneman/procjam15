@@ -1,6 +1,6 @@
 <scene>
 <!-- SCENES for the first time a new PC arrives at the computer room -->
-<meta id="computer_room_introduction1" tags="style_comp_room" />
+<meta id="computer_room_introduction1" styles="style_comp_room" />
 <if cond="$flesh_act eq flesh_act1">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
 
@@ -41,7 +41,7 @@ A single large appendage in the center of the room allows human access to the ma
 </scene>
 
 <scene>
-<meta id="computer_room_introduction2" tags="style_terminal" />
+<meta id="computer_room_introduction2" styles="style_terminal" />
 <if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
 
 You touch the cold screen and type in your commands.</if>
@@ -60,7 +60,7 @@ Enter command:
 </scene>
 
 <scene>
-<meta id="computer_room_introduction3" tags="style_terminal" /><t>
+<meta id="computer_room_introduction3" styles="style_terminal" /><t>
 > Query: status?<br />
 --------------------------------<br />
 <if cond="$flesh_act eq flesh_act1">
@@ -121,7 +121,7 @@ FEED ME<br />
 
 <!-- SCENE for all subsequent times PC arrives at the computer room -->
 <scene>
-<meta id='computer_room' tags="style_comp_room"/>
+<meta id='computer_room' styles="style_comp_room"/>
 <if cond="$flesh_act eq flesh_act1">
 The door to the central mainframe slides open anticipating your approach. You feel the heat of a trillion calculations as you enter.
 
@@ -179,7 +179,7 @@ The entire room is the mainframe, a collection of nerves sorting and transferrin
 
 <!-- INSUFFICIENT DATA -->
 <scene>
-<meta id='feed_me' tags="style_terminal" />
+<meta id='feed_me' styles="style_terminal" />
 <if cond="$flesh_act eq flesh_act1">The access terminal for the mainframe stands in the center of the room. Its metal covering glints under the emergency lights. It is unremarkable.
 
 You touch the cold screen and type in your commands.</if>
@@ -205,7 +205,7 @@ You touch the cold screen and type in your commands.</if>
 
 <!--- FEED COMPUTER DATA -->
 <scene>
-<meta id='feed_computer' tags="style_comp_room" />
+<meta id='feed_computer' styles="style_comp_room" />
 
 <action act="set $is_fed 1" />
 <action act="set $has_mcguffin 0" />
@@ -270,7 +270,7 @@ It whispers, "<t>DELICIOUS</t>."
 
 <!-- FIND PLACES TO SCAVENGE -->
 <scene>
-<meta id='mission_hub' tags="style_comp_room" />
+<meta id='mission_hub' styles="style_comp_room" />
 As the power fluctuates in the room you use the touch screen panel beside the mainframe to determine which rooms on the spaceship are accessible:
 <injectOption tags='mission, $flesh_act' />
 <injectOption tags='mission, $flesh_act' />
