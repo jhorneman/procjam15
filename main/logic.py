@@ -5,7 +5,7 @@ import random
 import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
-from text_utils import substitute_text_variables, break_text_into_paragraphs
+from text_utils import substitute_text_variables, prepare_scene_text_for_rendering
 from game_state import prepare_game_state, generate_player_character, restart, has_compatible_version
 from content import evaluate_content_blocks, goto_action, respawn_action, restart_action
 
@@ -120,7 +120,7 @@ def get_current_scene_data():
     tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
 
     scene_data = {
-        "text": break_text_into_paragraphs(substitute_text_variables(evaluated_scene["text"], session)),
+        "text": prepare_scene_text_for_rendering(substitute_text_variables(evaluated_scene["text"], session)),
         "options": [{
             "action": option["action"],
             "text": substitute_text_variables(option["text"], session),

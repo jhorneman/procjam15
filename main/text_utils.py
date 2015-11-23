@@ -103,12 +103,11 @@ def generate_style_tags(_text):
     return u"<span class=\"{0}\">{1}</span>".format(terminal_style_class_name, _text)
 
 
-def break_text_into_paragraphs(_text):
+def prepare_scene_text_for_rendering(_text):
     if _text is None:
-        logger.error("Text to be broken up is None.")
+        logger.error("Text to be prepared is None.")
         return ""
 
-    # TODO: This has nothing to do with breaking text into paragraphs, rename or refactor accordingly.
     # Replace terminal lines with spans so they can be styled in CSS.
     _text = string.replace(_text, "--------------------------------", "<span class=\"divLine\"></span>")
 
