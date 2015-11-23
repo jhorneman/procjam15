@@ -18,7 +18,7 @@ class StaticAnalysis(object):
 
     def analyze_blocks(self, _blocks):
         for block in _blocks:
-            block_result = block.test()
+            block_result = block.analyze()
             for var in block_result.get("readVariables", []):
                 self.read_variables.add(var)
             for var in block_result.get("mutatedVariables", []):

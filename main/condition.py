@@ -53,17 +53,17 @@ class Condition(object):
         if self.operator == Condition.IDENT:
             return []
 
-        used_variables = []
+        read_variables = []
         variable_name = get_parameter_variable_name(self.param1)
         if variable_name:
-            used_variables.append(variable_name)
+            read_variables.append(variable_name)
 
         if not self.is_unary():
             variable_name = get_parameter_variable_name(self.param2)
             if variable_name:
-                used_variables.append(variable_name)
+                read_variables.append(variable_name)
 
-        return used_variables
+        return read_variables
 
     def evaluate(self, _state):
         if self.operator == Condition.IDENT:

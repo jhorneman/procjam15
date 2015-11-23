@@ -6,6 +6,7 @@ from condition import make_empty_condition, parse_condition_from_string
 from action import parse_action_from_string
 from tags import string_to_tags, evaluate_desired_tags
 from text_blocks import get_text_block_with_tag
+from text_utils import analyze_text_variables
 
 
 logger = logging.getLogger(__name__)
@@ -29,11 +30,16 @@ class ContentNode(object):
     def get_nr_children(self):
         return len(self.children)
 
-    def test(self):
-        return {
+    def analyze(self):
+        results = {
             "readVariables": self.condition.get_read_variables(),
             "mutatedVariables": []
         }
+        for child in self.children:
+            child_results = child.analyze()
+            results["readVariables"] += child_results["readVariables"]
+            results["mutatedVariables"] += child_results["mutatedVariables"]
+        return results
 
     def evaluate(self, _state, _deep=True):
         return None
@@ -50,6 +56,12 @@ class Raw(ContentNode):
     def __init__(self, _text):
         super(Raw, self).__init__()
         self.raw_text = _text
+
+    def analyze(self):
+        return {
+            "readVariables": analyze_text_variables(self.raw_text),
+            "mutatedVariables": []
+        }
 
     def evaluate(self, _state, _deep=True):
         if not _deep:
@@ -235,8 +247,8 @@ class Action(ContentNode):
             if action:
                 self.action = action
 
-    def test(self):
-        base_results = super(Action, self).test()
+    def analyze(self):
+        base_results = super(Action, self).analyze()
         if self.action:
             base_results["readVariables"] += self.action.get_read_variables()
             base_results["mutatedVariables"] += self.action.get_mutated_variables()

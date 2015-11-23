@@ -17,7 +17,7 @@ last_compatible_version_nr = 1
 initial_game_state = {
     "flesh_act": "flesh_act1",
     "has_mcguffin": False,
-    "amount_of_data": 0,
+    "data_count": 0,
     "data": "data"
 }
 
@@ -87,7 +87,7 @@ def get_game_state_vars():
 
 
 def get_initial_variable_names():
-    return initial_game_state.keys() + constants.keys() + ["previous_scene", "current_scene"]
+    return initial_game_state.keys() + constants.keys() + ["previous_scene", "current_scene", "PC_first", "PC_last", "PC_job"]
 
 
 def get_variable_value(_state, _variable_name):

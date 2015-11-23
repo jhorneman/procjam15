@@ -18,7 +18,7 @@ t_re = re.compile("</?t>")
 terminal_style_class_name = "style_terminal"
 
 
-class CustomFormatter(string.Formatter):
+class VariableSubstitutionFormatter(string.Formatter):
     def get_value(self, key, args, kwargs):
         # Original code from /lib/python2.7/string.py.
         # If the key is a number, it's a positional argument, which we don't actually support,
@@ -84,14 +84,52 @@ class CustomFormatter(string.Formatter):
                 logger.error("Text substitution key '{0}' was not found.".format(key))
                 return escape("<'{0}' NOT FOUND>".format(key))
 
-formatter = CustomFormatter()
+text_substitution_formatter = VariableSubstitutionFormatter()
 
 
 def substitute_text_variables(_text, _substitution_data):
     if _text is None:
         logger.error("Text to be processed is None.")
         return ""
-    return formatter.vformat(_text, [], _substitution_data).strip()
+    return text_substitution_formatter.vformat(_text, [], _substitution_data).strip()
+
+
+class AnalysisFormatter(string.Formatter):
+    def __init__(self):
+        super(AnalysisFormatter, self).__init__()
+        self.read_variables = set()
+
+    def get_value(self, key, args, kwargs):
+        if not isinstance(key, (int, long)):
+            # Split into modifiers and the actual variable name.
+            m = indefinite_pronoun_re.match(key)
+            if not m:
+                logger.error("Could not parse '{0}'.".format(key))
+                return ""
+
+            key = m.group(2)
+
+            # Remove command codes.
+            if key.startswith("^^"):
+                key = key[2:]
+            elif key.startswith("^"):
+                key = key[1:]
+
+            # Remove the optional $ sign, if it's there.
+            if key.startswith("$"):
+                key = key[1:]
+
+            self.read_variables.add(key)
+        return ""
+
+
+def analyze_text_variables(_text):
+    if _text is not None:
+        formatter = AnalysisFormatter()
+        formatter.format(_text)
+        return list(formatter.read_variables)
+    else:
+        return []
 
 
 def generate_p_tags(_text):
