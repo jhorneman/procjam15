@@ -35,6 +35,7 @@ class Scene(object):
         self.tags = []
         self.blocks = []
         self.leadin = None
+        self.styles = []
 
 
 def read_scenes_from_text_file(_full_path):
@@ -82,6 +83,11 @@ def parse_scene_from_xml(_scene_el, _scene_index):
             tags = meta_el.get("tags", None)
             if tags:
                 new_scene.tags = string_to_tags(tags)
+
+            # Get scene styles, if any.
+            styles = meta_el.get("styles", None)
+            if styles:
+                new_scene.styles = [style.strip() for style in styles.split(",")]
         else:
             logger.error("Scene {0} does not contain a meta element. Skipping.".format(_scene_index+1))
             return

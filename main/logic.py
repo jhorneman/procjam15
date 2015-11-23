@@ -117,7 +117,7 @@ def get_current_scene_data():
     for action in evaluated_scene["actions"]:
         action.execute(session)
 
-    tags_for_body_classes = list(set(scene_desc.tags + [session["flesh_act"]]))
+    tags_for_body_classes = list(set(scene_desc.styles + [session["flesh_act"]]))
 
     scene_data = {
         "text": prepare_scene_text_for_rendering(substitute_text_variables(evaluated_scene["text"], session)),
