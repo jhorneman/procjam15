@@ -6,6 +6,7 @@ from data_loader import load_data
 from game_state import get_initial_variable_names
 from scene import analyze_all_scenes
 from text_blocks import analyze_all_text_blocks
+from text_utils import analyze_text_variables
 
 
 logger = logging.getLogger(__name__)
@@ -23,6 +24,12 @@ class StaticAnalysis(object):
                 self.read_variables.add(var)
             for var in block_result.get("mutatedVariables", []):
                 self.mutated_variables.add(var)
+
+    def analyze_text(self, _text):
+        if _text:
+            read_variables = analyze_text_variables(_text)
+            for var in read_variables:
+                self.read_variables.add(var)
 
     def get_read_variables(self):
         return list(self.read_variables)

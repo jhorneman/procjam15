@@ -175,6 +175,12 @@ class Option(ContentNode):
         self.params = {"next_scene": next_scene}
         self.text = text
 
+    def analyze(self):
+        return {
+            "readVariables": analyze_text_variables(self.text),
+            "mutatedVariables": []
+        }
+
     def evaluate(self, _state, _deep=True):
         if not _deep:
             return None

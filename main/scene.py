@@ -34,9 +34,7 @@ class Scene(object):
         self.id = None
         self.tags = []
         self.blocks = []
-        self.options = []
         self.leadin = None
-        self.injected_options = []
 
 
 def read_scenes_from_text_file(_full_path):
@@ -103,3 +101,5 @@ def parse_scene_from_xml(_scene_el, _scene_index):
 def analyze_all_scenes(_analysis):
     for scene in scenes.values():
         _analysis.analyze_blocks(scene.blocks)
+        if scene.leadin:
+            _analysis.analyze_text(scene.leadin)
