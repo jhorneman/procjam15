@@ -1,16 +1,33 @@
 import types
-from flask import render_template, abort, redirect, url_for, session
+import urllib
+from flask import render_template, abort, redirect, url_for
 from main.logic import get_current_scene_data
 from game_state import restart, get_game_state_vars
 from main import app
+
+
+def mailto(_address, _subject=None, _body=None):
+    result = "mailto:" + _address
+
+    params = {}
+    if _subject:
+        params["subject"] = _subject
+    if _body:
+        params["body"] = _body
+
+    if len(params):
+        result += "?" + "&".join(["%s=%s" % (k, urllib.quote(v)) for k,v in params.items()])
+
+    return result
 
 
 @app.context_processor
 def inject_common_values():
     return {
         "game_state": get_game_state_vars(),
-        "debug": app.config["DEBUG"]
-    }
+        "debug": app.config["DEBUG"],
+        "mailto": mailto
+     }
 
 
 @app.route("/")
