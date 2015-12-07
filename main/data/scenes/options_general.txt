@@ -3,7 +3,7 @@
 <leadin>Rifle through pile of clothing.</leadin>
 You pick through a pile of clothing, shaking and tossing aside each piece to ensure it's not hiding anything.<br />
 
-In a pocket you find {$data}.<injectBlock tags='odesc, $flesh_act' styles='style_mission' />
+In a pocket you find {$data}.<injectBlock tags="odesc, $flesh_act" />
 
 <injectBlock tags="injury, $injury" cond="$mention_injury_chance gt random"/>
 <action act="set $has_mcguffin 1" />
