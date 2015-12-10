@@ -1,12 +1,18 @@
 <scene>
-<action act="set $flesh_act flesh_act1" />
-<action act="set $data_count 0" />
+<action act="set $this_subject none" /> <!-- no current subject -->
+<action act="set $this_country none" /> <!-- no current country -->
+
 <meta id="start" styles="style_splash" />
-&lt;h1&gt;MAINFRAME&lt;/h1&gt;
+<!--&lt;h1&gt;DIALOGUE TEST&lt;/h1&gt;-->
 
-Please enjoy this game.
+This game is a dialogue test for our tagging system using short vignettes from traveling.
 
-Remember, death is not the end.
+<option nextScene="begin_convo">...traveling?</option>
+</scene>
 
-<injectOption tags='pc_start, $flesh_act' />
+<scene>
+<meta id="begin_convo" />
+This is the beginning of the conversation. What do you want to talk about?
+
+<option nextScene="start">[start over]</option>
 </scene>

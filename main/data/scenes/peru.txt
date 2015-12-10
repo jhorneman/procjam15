@@ -1,0 +1,12 @@
+<scene>
+<meta id="scene_title" />
+<leadin>lead_in_text</leadin>
+scene_text
+
+<option nextScene="start">link_text</option>
+<injectOption tags='$this_subject, $this_country' />
+
+<action act="set $this_var none" />
+
+</scene>
+
