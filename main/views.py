@@ -1,6 +1,7 @@
+import os
 import types
 import urllib
-from flask import render_template, abort, redirect, url_for
+from flask import render_template, abort, redirect, url_for, send_from_directory
 from main.logic import get_current_scene_data
 from game_state import restart, get_game_state_vars
 from main import app
@@ -50,6 +51,12 @@ def restart_game():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'robots.txt', mimetype='text/plain')
 
 
 @app.errorhandler(500)
