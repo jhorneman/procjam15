@@ -23,7 +23,7 @@ def create_app(_run_mode=None):
         app.config["DEBUG"] = True
         app.config["SECRET_KEY"] = "WeDontCareAboutSecretsInDev"
 
-    # Production run mode.
+    # Heroku run mode.
     elif _run_mode == "heroku":
         # Get port number and secret key from Heroku environment variable.
         app.config["PORT_NR"] = int(os.environ["PORT"])
@@ -33,9 +33,18 @@ def create_app(_run_mode=None):
         init_stdout_handler()
         set_up_logger(app.logger)
 
+    # Dreamhost run mode.
+    elif _run_mode == "dreamhost":
+        # Get port number and secret key from Heroku environment variable.
+        app.config["SECRET_KEY"] = os.environ["FLASK_SECRET_KEY"]
+        app.config["DEBUG"] = False
+
+        init_stdout_handler()
+        set_up_logger(app.logger)
+
     # Unrecognized run mode.
     else:
-        logging.error("Did not recognize run mode '%s'" % _run_mode)
+        logging.error("Did not recognize run mode '%s'." % _run_mode)
         return None
 
     app.debug = app.config["DEBUG"]
