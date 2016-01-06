@@ -29,3 +29,6 @@ nosetests.xml
 .env
 *.dump
 node_modules
+
+# (For virtual environment on Dreamhost)
+env
