@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# This file is called by Heroku, see Procfile.
+
 import logging
 from main.log_utils import init_logging
 from main.data_loader import load_data
