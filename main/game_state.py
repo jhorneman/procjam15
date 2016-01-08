@@ -79,11 +79,7 @@ def get_game_state_vars():
     return {k: v for k, v in session.items() if ":" not in k and not k.startswith("__")}
 
 
-def prepare_game_state():
-    if session.new:
-        session["game_state_version"] = current_version_nr
-        session.update(initial_game_state)
-    else:
-        for k, v in initial_game_state.items():
-            if k not in session:
-                session[k] = v
+def fill_in_missing_values():
+    for k, v in initial_game_state.items():
+        if k not in session:
+            session[k] = v

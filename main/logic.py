@@ -6,7 +6,7 @@ import logging
 from flask import request, session
 from scene import get_scene_description, get_scene_description_with_tag
 from text_utils import substitute_text_variables, break_text_into_paragraphs
-from game_state import prepare_game_state, generate_player_character, restart, has_compatible_version
+from game_state import fill_in_missing_values, generate_player_character, restart, has_compatible_version
 from content import evaluate_content_blocks, goto_action, respawn_action, restart_action
 
 
@@ -25,16 +25,24 @@ def get_current_scene_data():
     """Takes the request and the session and returns a dictionary with all the variables needed
        to render the current scene."""
 
-    prepare_game_state()
+    if session.new or "game_state_version" not in session:
+        if "nonce" in request.args:
+            logger.info("Nonce in request but no session - probably a bot.")
+            return "You've either set your browser to not accept cookies, or you're a bot. This game won't work for you."
 
-    action = request.args.get("action", restart_action)
+        logger.info("No nonce in request and no session - restarting.")
+        action = restart_action
+    else:
+        action = request.args.get("action", restart_action)
 
     if action == restart_action:
         restart()
     else:
         if not has_compatible_version():
             logger.error("Incompatible session version number.")
-            return "We've updated the game and your save game data is no longer compatible. Please restart. Sorry!"
+            return "We've updated the game and your save game data is no longer compatible. Please restart."
+
+        fill_in_missing_values()
 
     # Get the nonce from the session and the one from the request parameter.
     session_nonce = session.get("__nonce", generate_nonce())
