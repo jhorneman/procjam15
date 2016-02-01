@@ -55,6 +55,9 @@ class TaggedCollection(object):
     def __iter__(self):
         return self.tagged_items.__iter__()
 
+    def __len__(self):
+        return len(self.tagged_items)
+
     def add_item(self, _tags, _item):
         if len(_tags) > 0:
             self.tagged_items.append(TaggedItem(_tags, _item))
