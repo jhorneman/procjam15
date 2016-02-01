@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import types
 import os
 import logging
 import re
@@ -61,6 +62,28 @@ def desired_tags_to_JSON(_tags):
     return ', '.join(tags)
 
 
+def value_to_type_and_string(_value):
+    if isinstance(_value, type(True)):
+        var_type = 'boolean'
+        var = str(_value).lower()
+    elif isinstance(_value, type(1)):
+        var_type = 'integer'
+        var = str(_value)
+    else:
+        var_type = 'string'
+        var = '"' + _value + '"'
+
+    return var_type, var
+
+
+def literal_or_var_to_JSON(_value):
+    if isinstance(_value, types.StringTypes) and _value.startswith("$"):
+        return '["var", "{0}"]'.format(_value[1:])
+    else:
+        value_type, value = value_to_type_and_string(_value)
+        return '["literal", {{"type": "{0}", value: {1}}}]'.format(value_type, value)
+
+
 def block_to_type_name(_block):
     type_name = str(type(_block))
     match = block_type_regex.match(type_name)
@@ -83,6 +106,25 @@ def escape_text(_text):
     # text = text.replace("\\", "\\\\")
     # text = text.replace('"', '\\"')
     # return text
+
+
+supported_condition_operators = ["eq", "gt", "lt", "gteq", "lteq"]
+
+def condition_to_JSON(_condition):
+    if _condition.operator in supported_condition_operators:
+        return '["{2}", {0}, {1}]'.format(
+            literal_or_var_to_JSON(_condition.param1),
+            literal_or_var_to_JSON(_condition.param2),
+            _condition.operator
+        )
+    elif _condition.operator == 'istrue':
+        return '["eq", {0}, {1}]'.format(
+            literal_or_var_to_JSON(_condition.param1),
+            literal_or_var_to_JSON(True)
+        )
+    else:
+        print "Operator", _condition.operator, "not supported"
+        return ""
 
 
 def write_block_as_JSON(_output, _block_type, _block):
@@ -119,7 +161,12 @@ def write_block_as_JSON(_output, _block_type, _block):
             pass
 
         elif _block_type == "If":
-            pass
+            condition = condition_to_JSON(_block.condition)
+            _output.write('\t\t\t["if", {0}, ["seq",\n'.format(condition))
+            for child in _block.children:
+                child_type = block_to_type_name(child)
+                write_block_as_JSON(_output, child_type, child)
+            _output.write('\t\t\t]],\n')
 
         elif _block_type == "Block":
             pass
@@ -151,16 +198,7 @@ def export_vars(_output):
     combined_vars.update(constants)
 
     for var_name, var in write_dict_as_JSON_object(_output, "initialVars", combined_vars):
-        if isinstance(var, type(True)):
-            var_type = 'boolean'
-            var = str(var).lower()
-        elif isinstance(var, type(1)):
-            var_type = 'integer'
-            var = str(var)
-        else:
-            var_type = 'string'
-            var = '"' + var + '"'
-
+        var_type, var = value_to_type_and_string(var)
         _output.write('\t\t"type": "{0}",\n'.format(var_type))
         _output.write('\t\t"value": {0}\n'.format(var))
 
