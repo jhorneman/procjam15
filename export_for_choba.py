@@ -133,6 +133,32 @@ def write_text_block(_output, _text):
                 _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(part)))
 
 
+def build_text_block_for_option(_text):
+    parts = re.split('[{}]', _text)
+
+    if len(parts) == 0:
+        return ''
+
+    if len(parts) == 1:
+        return '["text", `{0}`]'.format(escape_text(parts[0]))
+    else:
+        result = '["seq", '
+        for index, part in enumerate(parts):
+            if index % 2:
+                if part.startswith('^'):
+                    part = part[1:]
+                if part.startswith('$'):
+                    part = part[1:]
+                result += '["var", "{0}"]'.format(part)
+            else:
+                if len(part) > 0:
+                    result += '["text", `{0}`]'.format(escape_text(part))
+            if index < len(parts) - 1:
+                result += ', '
+        result += ']'
+        return result
+
+
 supported_condition_operators = ["eq", "gt", "lt", "gteq", "lteq"]
 
 def condition_to_JSON(_condition):
@@ -228,32 +254,11 @@ def write_block_as_JSON(_output, _block_type, _block):
         _output.write('\t\t\t{0},\n'.format(expression))
 
     elif _block_type == "Option":
-        if _block.action == goto_action:
-            if "{" in _block.text:
-                print "Option uses text substitution"
-            expression = '["gotoOption", {{"text": "{0}", "nextScene": "{1}"}}]'\
-                .format(_block.text, _block.params["next_scene"])
-            expression = wrap_expression_in_if(_block.condition, expression)
-            _output.write('\t\t\t{0},\n'.format(expression))
-
-        elif _block.action == restart_action:
-            if "{" in _block.text:
-                print "Option uses text substitution"
-            expression = '["restartOption", {{"text": "{0}"}}]'\
-                .format(_block.text, _block.params["next_scene"])
-            expression = wrap_expression_in_if(_block.condition, expression)
-            _output.write('\t\t\t{0},\n'.format(expression))
-
-        elif _block.action == respawn_action:
-            if "{" in _block.text:
-                print "Option uses text substitution"
-            expression = '["respawnOption", {{"text": "{0}"}}]'\
-                .format(_block.text, _block.params["next_scene"])
-            expression = wrap_expression_in_if(_block.condition, expression)
-            _output.write('\t\t\t{0},\n'.format(expression))
-
-        else:
-            unsupported_option_types.add(_block.action)
+        text_expression = build_text_block_for_option(_block.text)
+        expression = '["addOption", {0}, "{1}", "{2}"]'\
+            .format(text_expression, _block.action, _block.params["next_scene"])
+        expression = wrap_expression_in_if(_block.condition, expression)
+        _output.write('\t\t\t{0},\n'.format(expression))
 
     elif _block_type == "StyledText":
         for child in _block.children:
@@ -328,6 +333,7 @@ def export_vars(_output):
         'player_died_elevator': 0,
         'player_died_upper_ventilation': 0,
         'current_scene': '',
+        'previous_scene': '',
         'PC_first': '',
         'PC_last': '',
         'PC_job': ''
