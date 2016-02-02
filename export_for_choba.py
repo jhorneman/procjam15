@@ -17,6 +17,10 @@ SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 
 block_type_regex = re.compile(r"<class 'main\.content\.(\w+)'>")
 
+unsupported_condition_operators = set()
+unsupported_option_types = set()
+unsupported_action_types = set()
+
 
 def write_dict_as_JSON_object(_output, _name, _dict):
     _output.write('export let {0} = {{\n'.format(_name))
@@ -62,25 +66,26 @@ def desired_tags_to_JSON(_tags):
     return ', '.join(tags)
 
 
-def value_to_type_and_string(_value):
-    if isinstance(_value, type(True)):
-        var_type = 'boolean'
-        var = str(_value).lower()
-    elif isinstance(_value, type(1)):
-        var_type = 'integer'
-        var = str(_value)
-    else:
-        var_type = 'string'
-        var = '"' + _value + '"'
-
-    return var_type, var
+# def value_to_type_and_string(_value):
+#     if isinstance(_value, type(True)):
+#         var_type = 'boolean'
+#         var = str(_value).lower()
+#     elif isinstance(_value, type(1)):
+#         var_type = 'integer'
+#         var = str(_value)
+#     else:
+#         var_type = 'string'
+#         var = '"' + _value + '"'
+#
+#     return var_type, var
 
 
 def literal_or_var_to_JSON(_value):
     if isinstance(_value, types.StringTypes) and _value.startswith("$"):
         return '["var", "{0}"]'.format(_value[1:])
     else:
-        value_type, value = value_to_type_and_string(_value)
+        value_type, value = parameter_to_type_and_value(_value)
+        # value_type, value = value_to_type_and_string(_value)
         return '["literal", {{"type": "{0}", value: {1}}}]'.format(value_type, value)
 
 
@@ -120,31 +125,89 @@ def condition_to_JSON(_condition):
     elif _condition.operator == 'istrue':
         return '["eq", {0}, {1}]'.format(
             literal_or_var_to_JSON(_condition.param1),
-            literal_or_var_to_JSON(True)
+            literal_or_var_to_JSON("true")
         )
     else:
-        print "Operator", _condition.operator, "not supported"
+        unsupported_condition_operators.add(_condition.operator)
+        return ""
+
+
+def parameter_to_type_and_value(_value):
+    if isinstance(_value, type(True)):
+        return 'boolean', str(_value).lower()
+
+    if isinstance(_value, type(1)):
+        return 'integer', str(_value)
+
+    if _value.lower() == "true":
+        return 'boolean', 'true'
+
+    if _value.lower() == "false":
+        return 'boolean', 'false'
+
+    value_type = 'integer'
+    try:
+        value = int(_value)
+    except ValueError:
+        value = '"' + str(_value) + '"'
+        value_type = 'string'
+
+    return value_type, value
+
+
+def action_to_JSON(_action):
+    if _action.action == 'set':
+        if _action.value.startswith("$"):
+            return '["set", "{0}", ["var", "{1}"]]'\
+                .format(_action.variable_name[1:], _action.value[1:])
+        else:
+            parameter_type, value = parameter_to_type_and_value(_action.value)
+            return '["set", "{0}", ["literal", {{"type": "{1}", "value": {2}}}]]'\
+                .format(_action.variable_name[1:], parameter_type, value)
+
+    elif _action.action == 'inc':
+        return '["set", "{0}", ["add", ["var", "{1}"], ["literal", {{"type": "integer", "value": 1}}]]]'\
+            .format(_action.variable_name[1:], _action.variable_name[1:])
+
+    elif _action.action == 'dec':
+        return '["set", "{0}", ["subtract", ["var", "{1}"], ["literal", {{"type": "integer", "value": 1}}]]]'\
+            .format(_action.variable_name[1:], _action.variable_name[1:])
+
+    else:
+        unsupported_action_types.add(_action.action)
         return ""
 
 
 def write_block_as_JSON(_output, _block_type, _block):
         if _block_type == "InjectBlock":
-            tags = desired_tags_to_JSON(_block.desired_tags)
-            _output.write('\t\t\t["injectBlock", {0}],\n'.format(tags))
+            if is_empty_condition(_block.condition):
+                tags = desired_tags_to_JSON(_block.desired_tags)
+                _output.write('\t\t\t["injectBlock", {0}],\n'.format(tags))
+            else:
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "OneOf":
-            pass
+            if is_empty_condition(_block.condition):
+                pass
+            else:
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "InjectOption":
-            tags = desired_tags_to_JSON(_block.desired_tags)
-            _output.write('\t\t\t["injectOption", {0}],\n'.format(tags))
+            if is_empty_condition(_block.condition):
+                tags = desired_tags_to_JSON(_block.desired_tags)
+                _output.write('\t\t\t["injectOption", {0}],\n'.format(tags))
+            else:
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "Option":
-            if _block.action == goto_action:
-                _output.write('\t\t\t["goto", {{"text": "{0}", "nextScene": "{1}"}}],\n'
-                              .format(_block.text, _block.params["next_scene"]))
+            if is_empty_condition(_block.condition):
+                if _block.action == goto_action:
+                    _output.write('\t\t\t["goto", {{"text": "{0}", "nextScene": "{1}"}}],\n'
+                                  .format(_block.text, _block.params["next_scene"]))
+                else:
+                    unsupported_option_types.add(_block.action)
             else:
-                print "Option action {0} not supported".format(_block.action)
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "StyledText":
             for child in _block.children:
@@ -158,7 +221,12 @@ def write_block_as_JSON(_output, _block_type, _block):
             _output.write('\t\t\t["text", "\\n"],\n')
 
         elif _block_type == "Action":
-            pass
+            if is_empty_condition(_block.condition):
+                json = action_to_JSON(_block.action)
+                if json:
+                    _output.write('\t\t\t{0},\n'.format(json))
+            else:
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "If":
             condition = condition_to_JSON(_block.condition)
@@ -169,7 +237,10 @@ def write_block_as_JSON(_output, _block_type, _block):
             _output.write('\t\t\t]],\n')
 
         elif _block_type == "Block":
-            pass
+            if is_empty_condition(_block.condition):
+                pass
+            else:
+                print _block_type, "has non-empty condition"
 
         elif _block_type == "LeadIn":
             pass
@@ -193,12 +264,18 @@ def find_leadin(_scene):
 
 
 def export_vars(_output):
-    combined_vars = {}
+    # These are variables that are used but not declared in initial_game_state.
+    combined_vars = {
+        'is_fed': 0,
+        'sacrifice': 0,
+        'injury': '',
+        'commands': 0
+    }
     combined_vars.update(initial_game_state)
     combined_vars.update(constants)
 
     for var_name, var in write_dict_as_JSON_object(_output, "initialVars", combined_vars):
-        var_type, var = value_to_type_and_string(var)
+        var_type, var = parameter_to_type_and_value(var)
         _output.write('\t\t"type": "{0}",\n'.format(var_type))
         _output.write('\t\t"value": {0}\n'.format(var))
 
@@ -256,3 +333,20 @@ if data_loaded:
 
         # PC names
         export_PC_names(output)
+
+    print
+
+    if unsupported_condition_operators:
+        print "Unsupported condition operator:"
+        print ",".join(unsupported_condition_operators)
+        print
+
+    if unsupported_option_types:
+        print "Unsupported option types:"
+        print ",".join(unsupported_option_types)
+        print
+
+    if unsupported_action_types:
+        print "Unsupported action types:"
+        print ",".join(unsupported_action_types)
+        print
