@@ -81,12 +81,15 @@ def desired_tags_to_JSON(_tags):
 
 
 def literal_or_var_to_JSON(_value):
-    if isinstance(_value, types.StringTypes) and _value.startswith("$"):
-        return '["var", "{0}"]'.format(_value[1:])
-    else:
-        value_type, value = parameter_to_type_and_value(_value)
-        # value_type, value = value_to_type_and_string(_value)
-        return '["literal", {{"type": "{0}", value: {1}}}]'.format(value_type, value)
+    if isinstance(_value, types.StringTypes):
+        if _value.startswith("$"):
+            return '["var", "{0}"]'.format(_value[1:])
+        if _value == 'random':
+            return '["random", "100"]'
+
+    value_type, value = parameter_to_type_and_value(_value)
+    # value_type, value = value_to_type_and_string(_value)
+    return '["literal", {{"type": "{0}", value: {1}}}]'.format(value_type, value)
 
 
 def block_to_type_name(_block):
@@ -178,75 +181,77 @@ def action_to_JSON(_action):
         return ""
 
 
+def wrap_expression_in_if(_condition, _expression_as_json):
+    if is_empty_condition(_condition):
+        return _expression_as_json
+    else:
+        return '["if", {0}, {1}]'.format(condition_to_JSON(_condition), _expression_as_json)
+
+
 def write_block_as_JSON(_output, _block_type, _block):
-        if _block_type == "InjectBlock":
-            if is_empty_condition(_block.condition):
-                tags = desired_tags_to_JSON(_block.desired_tags)
-                _output.write('\t\t\t["injectBlock", {0}],\n'.format(tags))
-            else:
-                print _block_type, "has non-empty condition"
+    if _block_type == "InjectBlock":
+        tags = desired_tags_to_JSON(_block.desired_tags)
+        expression = '["injectBlock", {0}]'.format(tags)
+        expression = wrap_expression_in_if(_block.condition, expression)
+        _output.write('\t\t\t{0},\n'.format(expression))
 
-        elif _block_type == "OneOf":
-            if is_empty_condition(_block.condition):
-                pass
-            else:
-                print _block_type, "has non-empty condition"
-
-        elif _block_type == "InjectOption":
-            if is_empty_condition(_block.condition):
-                tags = desired_tags_to_JSON(_block.desired_tags)
-                _output.write('\t\t\t["injectOption", {0}],\n'.format(tags))
-            else:
-                print _block_type, "has non-empty condition"
-
-        elif _block_type == "Option":
-            if is_empty_condition(_block.condition):
-                if _block.action == goto_action:
-                    _output.write('\t\t\t["goto", {{"text": "{0}", "nextScene": "{1}"}}],\n'
-                                  .format(_block.text, _block.params["next_scene"]))
-                else:
-                    unsupported_option_types.add(_block.action)
-            else:
-                print _block_type, "has non-empty condition"
-
-        elif _block_type == "StyledText":
-            for child in _block.children:
-                child_type = block_to_type_name(child)
-                write_block_as_JSON(_output, child_type, child)
-
-        elif _block_type == "Raw":
-            _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(_block.raw_text)))
-
-        elif _block_type == "Br":
-            _output.write('\t\t\t["text", "\\n"],\n')
-
-        elif _block_type == "Action":
-            if is_empty_condition(_block.condition):
-                json = action_to_JSON(_block.action)
-                if json:
-                    _output.write('\t\t\t{0},\n'.format(json))
-            else:
-                print _block_type, "has non-empty condition"
-
-        elif _block_type == "If":
-            condition = condition_to_JSON(_block.condition)
-            _output.write('\t\t\t["if", {0}, ["seq",\n'.format(condition))
-            for child in _block.children:
-                child_type = block_to_type_name(child)
-                write_block_as_JSON(_output, child_type, child)
-            _output.write('\t\t\t]],\n')
-
-        elif _block_type == "Block":
-            if is_empty_condition(_block.condition):
-                pass
-            else:
-                print _block_type, "has non-empty condition"
-
-        elif _block_type == "LeadIn":
+    elif _block_type == "OneOf":
+        if is_empty_condition(_block.condition):
             pass
-
         else:
-            print "Didn't understand", _block_type
+            print _block_type, "has non-empty condition"
+
+    elif _block_type == "InjectOption":
+        tags = desired_tags_to_JSON(_block.desired_tags)
+        expression = '["injectOption", {0}]'.format(tags)
+        expression = wrap_expression_in_if(_block.condition, expression)
+        _output.write('\t\t\t{0},\n'.format(expression))
+
+    elif _block_type == "Option":
+        if _block.action == goto_action:
+            expression = '["goto", {{"text": "{0}", "nextScene": "{1}"}}]'\
+                .format(_block.text, _block.params["next_scene"])
+            expression = wrap_expression_in_if(_block.condition, expression)
+            _output.write('\t\t\t{0},\n'.format(expression))
+        else:
+            unsupported_option_types.add(_block.action)
+
+    elif _block_type == "StyledText":
+        for child in _block.children:
+            child_type = block_to_type_name(child)
+            write_block_as_JSON(_output, child_type, child)
+
+    elif _block_type == "Raw":
+        _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(_block.raw_text)))
+
+    elif _block_type == "Br":
+        _output.write('\t\t\t["text", "\\n"],\n')
+
+    elif _block_type == "Action":
+        expression = action_to_JSON(_block.action)
+        if expression:
+            expression = wrap_expression_in_if(_block.condition, expression)
+            _output.write('\t\t\t{0},\n'.format(expression))
+
+    elif _block_type == "If":
+        condition = condition_to_JSON(_block.condition)
+        _output.write('\t\t\t["if", {0}, ["seq",\n'.format(condition))
+        for child in _block.children:
+            child_type = block_to_type_name(child)
+            write_block_as_JSON(_output, child_type, child)
+        _output.write('\t\t\t]],\n')
+
+    elif _block_type == "Block":
+        if is_empty_condition(_block.condition):
+            pass
+        else:
+            print _block_type, "has non-empty condition"
+
+    elif _block_type == "LeadIn":
+        pass
+
+    else:
+        print "Didn't understand", _block_type
 
 
 def is_empty_condition(_condition):
@@ -269,7 +274,9 @@ def export_vars(_output):
         'is_fed': 0,
         'sacrifice': 0,
         'injury': '',
-        'commands': 0
+        'commands': 0,
+        'spore_death_scene': '',
+        'current_scene': ''
     }
     combined_vars.update(initial_game_state)
     combined_vars.update(constants)
