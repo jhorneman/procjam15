@@ -304,7 +304,7 @@ def export_vars(_output):
         'commands': 0,
         'spore_death_scene': '',
         'wire_death_scene': '',
-        'player_died_elevator': '',
+        'player_died_elevator': 0,
         'current_scene': '',
         'PC_first': '',
         'PC_last': '',
