@@ -9,8 +9,9 @@ from main.data_loader import load_data
 from main.scene import scenes
 from main.game_state import initial_game_state, constants
 from main.condition import Condition
-from main.content import goto_action
-from main.text_blocks import text_blocks
+from main.content import goto_action, restart_action, respawn_action
+from main.text_blocks import text_blocks, data_names
+from main.pc_names import first_names, last_names, job_titles
 
 
 SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
@@ -192,6 +193,9 @@ def action_to_JSON(_action):
         return '["set", "{0}", ["subtract", ["var", "{1}"], ["literal", {{"type": "integer", "value": 1}}]]]'\
             .format(_action.variable_name[1:], _action.variable_name[1:])
 
+    elif _action.action == 'gen_data':
+        return '["set", "data", ["genData"]]'
+
     else:
         unsupported_action_types.add(_action.action)
         return ""
@@ -227,10 +231,27 @@ def write_block_as_JSON(_output, _block_type, _block):
         if _block.action == goto_action:
             if "{" in _block.text:
                 print "Option uses text substitution"
-            expression = '["goto", {{"text": "{0}", "nextScene": "{1}"}}]'\
+            expression = '["gotoOption", {{"text": "{0}", "nextScene": "{1}"}}]'\
                 .format(_block.text, _block.params["next_scene"])
             expression = wrap_expression_in_if(_block.condition, expression)
             _output.write('\t\t\t{0},\n'.format(expression))
+
+        elif _block.action == restart_action:
+            if "{" in _block.text:
+                print "Option uses text substitution"
+            expression = '["restartOption", {{"text": "{0}"}}]'\
+                .format(_block.text, _block.params["next_scene"])
+            expression = wrap_expression_in_if(_block.condition, expression)
+            _output.write('\t\t\t{0},\n'.format(expression))
+
+        elif _block.action == respawn_action:
+            if "{" in _block.text:
+                print "Option uses text substitution"
+            expression = '["respawnOption", {{"text": "{0}"}}]'\
+                .format(_block.text, _block.params["next_scene"])
+            expression = wrap_expression_in_if(_block.condition, expression)
+            _output.write('\t\t\t{0},\n'.format(expression))
+
         else:
             unsupported_option_types.add(_block.action)
 
@@ -305,6 +326,7 @@ def export_vars(_output):
         'spore_death_scene': '',
         'wire_death_scene': '',
         'player_died_elevator': 0,
+        'player_died_upper_ventilation': 0,
         'current_scene': '',
         'PC_first': '',
         'PC_last': '',
@@ -361,8 +383,30 @@ def export_blocks(_output):
         _output.write('\t\t]\n')
 
 
+def export_data_names(_output):
+    for block_index, block in write_array_as_JSON_object(_output, "dataNames", data_names):
+        if block.tags is not None and len(block.tags) > 0:
+            _output.write('\t\t"tags": {0},\n'.format(string_list_to_JSON(block.tags)))
+        _output.write('\t\t"content": `{0}`,\n'.format(block.item))
+
+
 def export_PC_names(_output):
-    _output.write('export let pcNames = {\n')
+    _output.write('export let firstNames = [\n')
+    for name in first_names:
+        _output.write('\t"{0}",\n'.format(name))
+    _output.write('];\n\n')
+
+    _output.write('export let lastNames = [\n')
+    for name in last_names:
+        _output.write('\t"{0}",\n'.format(name))
+    _output.write('];\n\n')
+
+    _output.write('export let jobTitles = {\n')
+    for group_name in job_titles.keys():
+        _output.write('\t"{0}": [\n'.format(group_name))
+        for name in job_titles[group_name]:
+            _output.write('\t\t"{0}",\n'.format(name))
+        _output.write('\t],\n'.format(group_name))
     _output.write('};\n\n')
 
 
@@ -383,6 +427,9 @@ if data_loaded:
 
         # Blocks
         export_blocks(output)
+
+        # Data names
+        export_data_names(output)
 
         # PC names
         export_PC_names(output)
