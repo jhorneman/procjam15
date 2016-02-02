@@ -49,7 +49,7 @@ At the bottom of the container you find {data}.<injectBlock tags="odesc, $flesh_
 <scene>
 <meta id='trash' tags='option, containers, human' styles='style_mission'/>
 <leadin>Search the wastebin.</leadin>
-You reach into the wastebin and toss aside bits of useless rubish.<br />
+You reach into the wastebin and toss aside bits of useless rubbish.<br />
 
 At the bottom of the bin you find {data}.<injectBlock tags="odesc, $flesh_act" />
 
