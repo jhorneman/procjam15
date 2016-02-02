@@ -16,7 +16,7 @@ last_compatible_version_nr = 1
 
 initial_game_state = {
     "flesh_act": "flesh_act1",
-    "has_mcguffin": False,
+    "has_mcguffin": 0,
     "data_count": 0,
     "data": "data"
 }
