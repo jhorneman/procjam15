@@ -118,6 +118,20 @@ def escape_text(_text):
     # return text
 
 
+def write_text_block(_output, _text):
+    parts = re.split('[{}]', _text)
+    for index, part in enumerate(parts):
+        if index % 2:
+            if part.startswith('^'):
+                part = part[1:]
+            if part.startswith('$'):
+                part = part[1:]
+            _output.write('\t\t\t["var", "{0}"],\n'.format(part))
+        else:
+            if len(part) > 0:
+                _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(part)))
+
+
 supported_condition_operators = ["eq", "gt", "lt", "gteq", "lteq"]
 
 def condition_to_JSON(_condition):
@@ -211,6 +225,8 @@ def write_block_as_JSON(_output, _block_type, _block):
 
     elif _block_type == "Option":
         if _block.action == goto_action:
+            if "{" in _block.text:
+                print "Option uses text substitution"
             expression = '["goto", {{"text": "{0}", "nextScene": "{1}"}}]'\
                 .format(_block.text, _block.params["next_scene"])
             expression = wrap_expression_in_if(_block.condition, expression)
@@ -226,7 +242,7 @@ def write_block_as_JSON(_output, _block_type, _block):
             write_block_as_JSON(_output, child_type, child)
 
     elif _block_type == "Raw":
-        _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(_block.raw_text)))
+        write_text_block(_output, _block.raw_text)
 
     elif _block_type == "Br":
         _output.write('\t\t\t["text", "\\n"],\n')
@@ -289,7 +305,10 @@ def export_vars(_output):
         'spore_death_scene': '',
         'wire_death_scene': '',
         'player_died_elevator': '',
-        'current_scene': ''
+        'current_scene': '',
+        'PC_first': '',
+        'PC_last': '',
+        'PC_job': ''
     }
     combined_vars.update(initial_game_state)
     combined_vars.update(constants)
