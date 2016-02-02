@@ -128,7 +128,7 @@ The door to the central mainframe slides open anticipating your approach. You fe
 The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room. A single large terminal in the center of the room allows human access to the mainframe.
 
 
-<if cond="$is_fed">The mainframe machinery whirls with fresh data.<br /></if>
+<if cond="$is_fed eq 1">The mainframe machinery whirls with fresh data.<br /></if>
 <if cond="$is_fed eq 0">The computer terminal only reads, <t>"INSUFFICIENT DATA."</t><br /></if>
 </if>
 <if cond="$flesh_act eq flesh_act2">
@@ -137,7 +137,7 @@ The door to the central mainframe slides open anticipating your approach. You fe
 The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by wires crisscrossing the room.  Some of the connectors drip with a viscous, colorless liquid. The wires twitch and wiggle. A single large terminal in the center of the room allows human access to the mainframe.
 
 
-<if cond="$is_fed">The mainframe appears satisfied by the fresh data you fed it.<br /></if>
+<if cond="$is_fed eq 1">The mainframe appears satisfied by the fresh data you fed it.<br /></if>
 <if cond="$is_fed eq 0">The computer terminal only reads, <t>"INSUFFICIENT DATA."</t><br /></if>
 </if>
 <if cond="$flesh_act eq flesh_act3">
@@ -146,7 +146,7 @@ The door to the central mainframe slides open anticipating your approach. You fe
 The entire room is the mainframe, with machines sorting and transferring data embedded into the walls connected by arteries and umbilical cords crisscrossing the room.  They drip with fluids. A single large terminal in the center of the room allows human access to the mainframe.
 
 
-<if cond="$is_fed">The mainframe contentedly digests the data you have fed it.<br /></if>
+<if cond="$is_fed eq 1">The mainframe contentedly digests the data you have fed it.<br /></if>
 <if cond="$is_fed eq 0">The computer terminal reads, <t>"FEED ME."</t> It salivates from its main drives.<br /></if>
 </if>
 <if cond="$flesh_act eq flesh_act4">
@@ -156,7 +156,7 @@ The entire room is the mainframe, with machines sorting and transferring data em
 
 
 
-<if cond="$is_fed">The mainframe contentedly digests the data you have fed it.<br /></if>
+<if cond="$is_fed eq 1">The mainframe contentedly digests the data you have fed it.<br /></if>
 <if cond="$is_fed eq 0">The computer terminal reads, <t>"FEED ME."</t> It salivates from its main drives.<br /></if>
 </if>
 <if cond="$flesh_act eq flesh_act5">
@@ -165,14 +165,14 @@ The door to the central mainframe unfolds before you, anticipating your approach
 The entire room is the mainframe, a collection of nerves sorting and transferring data embedded into the cellular walls connected by arteries and umbilical cords crisscrossing the room.  They drip with hormones. A single large appendage in the center of the room allows human access to the mainframe.
 
 
-<if cond="$is_fed">The mainframe licks its lips in satisfaction as it digests the data.<br /></if>
+<if cond="$is_fed eq 1">The mainframe licks its lips in satisfaction as it digests the data.<br /></if>
 <if cond="$is_fed eq 0"><t>"FEED ME..."</t> the terminal whispers to you seductively from its gaping pink mouth.<br /></if>
 </if>
 <br />
-<if cond="$has_mcguffin">You have {$data}.</if><if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
-<option nextScene="feed_computer" cond="$has_mcguffin"> Feed the computer {$data}.</option>
+<if cond="$has_mcguffin eq 1">You have {$data}.</if><if cond="$has_mcguffin eq 0">You have no data to feed to the mainframe.</if>
+<option nextScene="feed_computer" cond="$has_mcguffin eq 1"> Feed the computer {$data}.</option>
 <option nextScene="mission_hub" cond="$has_mcguffin eq 0">Attempt to salvage data from the ship.</option>
-<option nextScene ="computer_talk" cond="$is_fed">Communicate with the mainframe.</option>
+<option nextScene ="computer_talk" cond="$is_fed eq 1">Communicate with the mainframe.</option>
 <option nextScene = "feed_me" cond="$is_fed eq 0">Communicate with the mainframe.</option>
 
 </scene>
@@ -197,7 +197,7 @@ You touch the cold screen and type in your commands.</if>
 <t> > Access terminal</t><br />
 <injectBlock tags="computer_commands_check" />
 
-<option nextScene="feed_computer" cond="$has_mcguffin">Feed the computer {$data}.</option>
+<option nextScene="feed_computer" cond="$has_mcguffin eq 1">Feed the computer {$data}.</option>
 <!-- <if cond="$flesh_act neq flesh_act1"><option nextScene="feed_sacrifice_hub" cond="$has_mcguffin eq 0">Harvest data from your body.</option></if> could not get this to work correctly -->
 
 </scene>
