@@ -21,6 +21,8 @@ unsupported_condition_operators = set()
 unsupported_option_types = set()
 unsupported_action_types = set()
 
+deferred_actions = []
+
 
 def write_dict_as_JSON_object(_output, _name, _dict):
     _output.write('export let {0} = {{\n'.format(_name))
@@ -85,7 +87,7 @@ def literal_or_var_to_JSON(_value):
         if _value.startswith("$"):
             return '["var", "{0}"]'.format(_value[1:])
         if _value == 'random':
-            return '["random", "100"]'
+            return '["randomPercentage"]'
 
     value_type, value = parameter_to_type_and_value(_value)
     # value_type, value = value_to_type_and_string(_value)
@@ -219,6 +221,8 @@ def write_block_as_JSON(_output, _block_type, _block):
     elif _block_type == "StyledText":
         for child in _block.children:
             child_type = block_to_type_name(child)
+            if child_type == "Action":
+                print "There's an action inside a StyledText."
             write_block_as_JSON(_output, child_type, child)
 
     elif _block_type == "Raw":
@@ -228,16 +232,16 @@ def write_block_as_JSON(_output, _block_type, _block):
         _output.write('\t\t\t["text", "\\n"],\n')
 
     elif _block_type == "Action":
-        expression = action_to_JSON(_block.action)
-        if expression:
-            expression = wrap_expression_in_if(_block.condition, expression)
-            _output.write('\t\t\t{0},\n'.format(expression))
+        global deferred_actions
+        deferred_actions.append(_block)
 
     elif _block_type == "If":
         condition = condition_to_JSON(_block.condition)
         _output.write('\t\t\t["if", {0}, ["seq",\n'.format(condition))
         for child in _block.children:
             child_type = block_to_type_name(child)
+            if child_type == "Action":
+                print "There's an action inside an If, it will not be moved to the end."
             write_block_as_JSON(_output, child_type, child)
         _output.write('\t\t\t]],\n')
 
@@ -252,6 +256,13 @@ def write_block_as_JSON(_output, _block_type, _block):
 
     else:
         print "Didn't understand", _block_type
+
+
+def write_deferred_action_as_JSON(_output, _block):
+    expression = action_to_JSON(_block.action)
+    if expression:
+        expression = wrap_expression_in_if(_block.condition, expression)
+        _output.write('\t\t\t{0},\n'.format(expression))
 
 
 def is_empty_condition(_condition):
@@ -276,6 +287,8 @@ def export_vars(_output):
         'injury': '',
         'commands': 0,
         'spore_death_scene': '',
+        'wire_death_scene': '',
+        'player_died_elevator': '',
         'current_scene': ''
     }
     combined_vars.update(initial_game_state)
@@ -298,8 +311,15 @@ def export_scenes(_output):
 
         _output.write('\t\t"content": ["seq",\n')
 
+        global deferred_actions
+        deferred_actions = []
+
         for block_type, block in traverse_blocks(scene.blocks):
             write_block_as_JSON(_output, block_type, block)
+
+        for action in deferred_actions:
+            write_deferred_action_as_JSON(_output, action)
+
         _output.write('\t\t]\n')
 
 
@@ -310,8 +330,15 @@ def export_blocks(_output):
 
         _output.write('\t\t"content": ["seq",\n')
 
+        global deferred_actions
+        deferred_actions = []
+
         for block_type, block in traverse_blocks(block.item.children):
             write_block_as_JSON(_output, block_type, block)
+
+        for action in deferred_actions:
+            write_deferred_action_as_JSON(_output, action)
+
         _output.write('\t\t]\n')
 
 
