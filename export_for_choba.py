@@ -18,6 +18,11 @@ SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 
 block_type_regex = re.compile(r"<class 'main\.content\.(\w+)'>")
 
+var_replacements = {
+    "current_scene": "currentSceneId",
+    "previous_scene": "previousSceneId"
+}
+
 unsupported_condition_operators = set()
 unsupported_option_types = set()
 unsupported_action_types = set()
@@ -63,7 +68,7 @@ def desired_tags_to_JSON(_tags):
     tags = []
     for tag in _tags:
         if tag.startswith("$"):
-            tags.append('["var", "{0}"]'.format(tag[1:]))
+            tags.append('["var", "{0}"]'.format(var_name(tag[1:])))
         else:
             tags.append('"{0}"'.format(tag))
     return ', '.join(tags)
@@ -82,11 +87,14 @@ def desired_tags_to_JSON(_tags):
 #
 #     return var_type, var
 
+def var_name(_name):
+    return var_replacements.get(_name, _name)
+
 
 def literal_or_var_to_JSON(_value):
     if isinstance(_value, types.StringTypes):
         if _value.startswith("$"):
-            return '["var", "{0}"]'.format(_value[1:])
+            return '["var", "{0}"]'.format(var_name(_value[1:]))
         if _value == 'random':
             return '["randomPercentage"]'
 
@@ -119,15 +127,26 @@ def escape_text(_text):
     # return text
 
 
+def get_var_name(_var_name):
+    if _var_name.startswith('^^'):
+        print "Text uses all caps code, this will be ignored"
+        _var_name = _var_name[2:]
+    elif _var_name.startswith('^'):
+        print "Text uses capitalization code, this will be ignored"
+        _var_name = _var_name[1:]
+
+    if _var_name.startswith('$'):
+        _var_name = _var_name[1:]
+
+    return _var_name
+
+
 def write_text_block(_output, _text):
     parts = re.split('[{}]', _text)
     for index, part in enumerate(parts):
         if index % 2:
-            if part.startswith('^'):
-                part = part[1:]
-            if part.startswith('$'):
-                part = part[1:]
-            _output.write('\t\t\t["var", "{0}"],\n'.format(part))
+            part = get_var_name(part)
+            _output.write('\t\t\t["var", "{0}"],\n'.format(var_name(part)))
         else:
             if len(part) > 0:
                 _output.write('\t\t\t["text", `{0}`],\n'.format(escape_text(part)))
@@ -145,11 +164,8 @@ def build_text_block_for_option(_text):
         result = '["seq", '
         for index, part in enumerate(parts):
             if index % 2:
-                if part.startswith('^'):
-                    part = part[1:]
-                if part.startswith('$'):
-                    part = part[1:]
-                result += '["var", "{0}"]'.format(part)
+                part = get_var_name(part)
+                result += '["var", "{0}"]'.format(var_name(part))
             else:
                 if len(part) > 0:
                     result += '["text", `{0}`]'.format(escape_text(part))
@@ -205,7 +221,7 @@ def action_to_JSON(_action):
     if _action.action == 'set':
         if _action.value.startswith("$"):
             return '["set", "{0}", ["var", "{1}"]]'\
-                .format(_action.variable_name[1:], _action.value[1:])
+                .format(_action.variable_name[1:], var_name(_action.value[1:]))
         else:
             parameter_type, value = parameter_to_type_and_value(_action.value)
             return '["set", "{0}", ["literal", {{"type": "{1}", "value": {2}}}]]'\
@@ -213,11 +229,11 @@ def action_to_JSON(_action):
 
     elif _action.action == 'inc':
         return '["set", "{0}", ["add", ["var", "{1}"], ["literal", {{"type": "integer", "value": 1}}]]]'\
-            .format(_action.variable_name[1:], _action.variable_name[1:])
+            .format(_action.variable_name[1:], var_name(_action.variable_name[1:]))
 
     elif _action.action == 'dec':
         return '["set", "{0}", ["subtract", ["var", "{1}"], ["literal", {{"type": "integer", "value": 1}}]]]'\
-            .format(_action.variable_name[1:], _action.variable_name[1:])
+            .format(_action.variable_name[1:], var_name(_action.variable_name[1:]))
 
     elif _action.action == 'gen_data':
         return '["set", "data", ["genData"]]'
@@ -242,10 +258,17 @@ def write_block_as_JSON(_output, _block_type, _block):
         _output.write('\t\t\t{0},\n'.format(expression))
 
     elif _block_type == "OneOf":
-        if is_empty_condition(_block.condition):
-            pass
-        else:
-            print _block_type, "has non-empty condition"
+        if not is_empty_condition(_block.condition):
+            print "OneOf blocks with conditions are not supported"
+            return
+
+        _output.write('\t\t\t["oneOf",\n')
+        for child in _block.children:
+            child_type = block_to_type_name(child)
+            if child_type == "Action":
+                print "There's an action inside a OneOf, it will not be moved to the end."
+            write_block_as_JSON(_output, child_type, child)
+        _output.write('\t\t\t],\n')
 
     elif _block_type == "InjectOption":
         tags = desired_tags_to_JSON(_block.desired_tags)
@@ -261,17 +284,19 @@ def write_block_as_JSON(_output, _block_type, _block):
         _output.write('\t\t\t{0},\n'.format(expression))
 
     elif _block_type == "StyledText":
+        _output.write('\t\t\t["text", "<t>"],\n')
         for child in _block.children:
             child_type = block_to_type_name(child)
             if child_type == "Action":
                 print "There's an action inside a StyledText."
             write_block_as_JSON(_output, child_type, child)
+        _output.write('\t\t\t["text", "</t>"],\n')
 
     elif _block_type == "Raw":
         write_text_block(_output, _block.raw_text)
 
     elif _block_type == "Br":
-        _output.write('\t\t\t["text", "\\n"],\n')
+        _output.write('\t\t\t["text", "<br/>"],\n')
 
     elif _block_type == "Action":
         global deferred_actions
@@ -287,17 +312,12 @@ def write_block_as_JSON(_output, _block_type, _block):
             write_block_as_JSON(_output, child_type, child)
         _output.write('\t\t\t]],\n')
 
-    elif _block_type == "Block":
-        if is_empty_condition(_block.condition):
-            pass
-        else:
-            print _block_type, "has non-empty condition"
-
     elif _block_type == "LeadIn":
+        # LeadIn is exported while exporting blocks.
         pass
 
     else:
-        print "Didn't understand", _block_type
+        print _block_type, "is not supported"
 
 
 def write_deferred_action_as_JSON(_output, _block):
@@ -332,8 +352,6 @@ def export_vars(_output):
         'wire_death_scene': '',
         'player_died_elevator': 0,
         'player_died_upper_ventilation': 0,
-        'current_scene': '',
-        'previous_scene': '',
         'PC_first': '',
         'PC_last': '',
         'PC_job': ''
@@ -377,6 +395,10 @@ def export_blocks(_output):
 
         _output.write('\t\t"content": ["seq",\n')
 
+        # Hack in generate player command.
+        if block.tags == ['pc_init']:
+            _output.write('\t\t\t["genPlayer"],\n')
+
         global deferred_actions
         deferred_actions = []
 
@@ -411,6 +433,7 @@ def export_PC_names(_output):
     for group_name in job_titles.keys():
         _output.write('\t"{0}": [\n'.format(group_name))
         for name in job_titles[group_name]:
+            name = name[0].capitalize() + name[1:]
             _output.write('\t\t"{0}",\n'.format(name))
         _output.write('\t],\n'.format(group_name))
     _output.write('};\n\n')
