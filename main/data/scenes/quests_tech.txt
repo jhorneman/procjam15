@@ -148,13 +148,13 @@ The drawers and cabinet are opened and emptied. Someone else has already searche
 <scene>
 <meta id='captains logs'/>
 You try to use the computer terminal to access the captain's logs, but no matter what you do, you only see:
-<block><t>
+<t>
 --------------------------------<br />
 CURRENT STATUS...<br />
 LOCAL LOGS CORRUPTED<br/>
 CHECK MAINFRAME COPIES<br/>
 --------------------------------
-</t></block>
+</t>
 <option nextScene="captains quarters">Search the captain's quarters.</option>
 </scene>
 
