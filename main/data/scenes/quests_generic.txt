@@ -86,7 +86,7 @@ The shafts here are wide, but you stoop to prevent your head from grazing the lo
 <leadin>Search one of the main hallways.</leadin>
 You're in one of the main hallways.
 
-Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signaling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.&lt;br&gt;
+Posters extolling safety look back at you as you shine your light along the walls. You walk slowly past identical locked doors with red emergency lights signaling lack of power. A few bags and boxes lie on the ground as though abandoned in haste.
 
 Someone has left several doors ajar, their contents spilling out onto the hallway floor from dark offices and storage rooms.
 
