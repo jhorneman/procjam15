@@ -374,6 +374,9 @@ def export_scenes(_output):
         if scene.tags is not None and len(scene.tags) > 0:
             _output.write('\t\t"tags": {0},\n'.format(string_list_to_JSON(scene.tags)))
 
+        if scene.styles is not None and len(scene.styles) > 0:
+            _output.write('\t\t"styles": {0},\n'.format(string_list_to_JSON(scene.styles)))
+
         _output.write('\t\t"content": ["seq",\n')
 
         global deferred_actions
