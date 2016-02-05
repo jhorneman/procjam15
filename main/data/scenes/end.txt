@@ -14,7 +14,7 @@ PLEASE REBOOT<br />
 </scene>
 
 <scene>
-<meta id="end_1" tags="style_terminal" />
+<meta id="end_1" styles="style_terminal" />
 <t>
 > Query: what if I don't want to reboot?<br />
 --------------------------------<br />
@@ -30,7 +30,7 @@ PLEASE REBOOT<br />
 
 
 <scene>
-<meta id="end_2" tags="style_terminal" />
+<meta id="end_2" styles="style_terminal" />
 <t>
 > (Do nothing)<br />
 --------------------------------<br />
@@ -43,7 +43,7 @@ YOU HAVE NO CHOICE<br />
 </scene>
 
 <scene>
-<meta id="end_3" tags="style_terminal" />
+<meta id="end_3" styles="style_terminal" />
 <t>
 > (Do nothing)<br />
 --------------------------------<br />
@@ -67,7 +67,7 @@ YOU HAVE NO CHOICE<br />
 
 
 <scene>
-<meta id="end_reboot" tags="style_terminal" />
+<meta id="end_reboot" styles="style_terminal" />
 <t>
 > Reboot mainframe<br />
 --------------------------------<br />
@@ -79,7 +79,7 @@ REBOOTING...<br />
 </scene>
 
 <scene>
-<meta id="end_4" tags="style_comp_room" />
+<meta id="end_4" styles="style_comp_room" />
 The lights go out, leaving you in the dark, warm, humid cavity of the mainframe's central nervous system.
 
 The ship seizes. It holds its breath, the air flowing from its bronchial tubes going still. It feels like forever, but lasts but a single heartbeat.
@@ -90,7 +90,7 @@ A hum wells up from deep within the ship, resonating with the flesh. You can fee
 </scene>
 
 <scene>
-<meta id="end_4a" tags="style_comp_room" />
+<meta id="end_4a" styles="style_comp_room" />
 The lights come back on so suddenly it blinds you.
 
 You feel them before you see them. They climb onto you with little suckers, biting into your flesh, scurrying across your body.
@@ -100,7 +100,7 @@ You feel them before you see them. They climb onto you with little suckers, biti
 </scene>
 
 <scene>
-<meta id="end_5a" tags="style_comp_room" />
+<meta id="end_5a" styles="style_comp_room" />
 You struggle and tear the tiny snail-like creatures from your skin. But there are too many of them and they overcome your efforts.
 
 As they attach themselves to your body, each bite comes with a rush of endorphins. You suddenly feel elated and calm. The euphoria overwhelms you. You stop struggling.
@@ -111,7 +111,7 @@ The last thing you hear before you fall is the mainframe whispering, "<t>MY CHIL
 </scene>
 
 <scene>
-<meta id="end_5b" tags="style_comp_room" />
+<meta id="end_5b" styles="style_comp_room" />
 You lay helplessly against the computer terminal as countless snail-like creatures cover your skin.
 
 As they attach themselves to your body, each bite comes with a rush of endorphins. You suddenly feel elated and calm. The euphoria overwhelms you. You stop struggling.
@@ -122,7 +122,7 @@ The last thing you hear before you fall is the mainframe whispering, "<t>MY CHIL
 </scene>
 
 <scene>
-<meta id="end_6" tags="style_mission" />
+<meta id="end_6" styles="style_mission" />
 You can't move anymore but you don't care. The ship moves you through it's digestive system and births you out into a small pod.
 
 The feel of cold metal against your skin feels foreign now. You open your eyes and see the words, "ESCAPE POD - EMERGENCY ONLY" etched into the glass but you don't understand them. You just want to sleep. A red light blinks slowly, hypnotizing you.
@@ -131,7 +131,7 @@ The feel of cold metal against your skin feels foreign now. You open your eyes a
 </scene>
 
 <scene>
-<meta id="end_7" tags="style_mission" />
+<meta id="end_7" styles="style_mission" />
 Rough plastic hand grip your sensitive red skin, lifting you out of your reverie.
 
 "Where is it from?"
