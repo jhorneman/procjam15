@@ -447,7 +447,7 @@ init_logging(logging.INFO)
 
 data_loaded = load_data()
 if data_loaded:
-    with open(os.path.normpath(os.path.join(SCRIPT_DIR, '..', 'choba', 'data.js')), 'w') as output:
+    with open(os.path.normpath(os.path.join(SCRIPT_DIR, '..', 'js', 'data.js')), 'w') as output:
         # Start scene
         output.write('export let firstSceneId = "{0}";\n\n'.format('start'))
 
