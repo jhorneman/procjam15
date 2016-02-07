@@ -1,0 +1,181 @@
+/* Background */
+
+html, body {
+    color: lightgoldenrodyellow;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 1.1em;
+	line-height: 1.35em;
+    height: 100%;
+    background: no-repeat center center fixed;
+    background-color: #4c090c;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+/* Scene */
+
+.scene {
+    margin-top: 2em;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
+
+ul#options {
+    margin-top: 1em;
+    margin-bottom: 3em; /* This creates space between options and footer. */
+    list-style: disc inside;
+	color: #d09672;
+}
+
+ul#options li a {
+    color: #d09672;
+    text-decoration: none;
+	text-transform: none;
+}
+
+ul#options li a:hover{
+    color: #DEDB65;
+    text-decoration: none;
+	text-transform: none;
+}
+
+.data-name {
+    font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 1em;
+    margin-bottom: 1em;
+	color: #616161;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+
+footer li {
+    list-style-type: none;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+    border-right: 1px solid #616161;
+    display: inline;
+}
+
+footer li:last-child {
+    border-right: none;
+}
+
+footer a {
+	color: #616161;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+footer a:hover {
+	color: #AAA;
+}
+
+/* Backgrounds for different scene types. Images only on tablet or beyond. */
+
+body.style_comp_room {
+    background-color: #26211e;
+}
+
+body.style_terminal {
+    background-color: #161f12;
+}
+
+.divLine:before {
+    content: '--------------------';
+}
+
+@media (max-width: 549px) {
+    h1 {
+        font-size: 3.0rem;
+    }
+}
+
+@media (min-width: 550px) {
+    body {
+        background-color: #4c090c;
+        background-image: url('/img/wires1.png'), linear-gradient(to right bottom, rgb(68, 13, 15) 25%, rgb(31,6,14) 50%, rgb(16,9,2) 82%);
+        background-size: cover;
+    }
+
+    body.style_comp_room {
+        background-color: #26211e;
+        background-image: url('/img/wires2.png'), linear-gradient(to right bottom, rgb(47, 37, 27) 25%, rgb(35, 30, 33) 50%, rgb(10, 10, 10) 82%);
+        background-size: cover;
+    }
+
+    body.style_terminal {
+        background-color: #161f12;
+        background-image: url('/img/wires3.png'), linear-gradient(to right bottom, rgb(20, 27, 7) 25%, rgb(7, 21, 4) 50%, rgb(1, 2, 0) 82%);
+        background-size: cover;
+    }
+
+    .divLine:before {
+        content: '-------------------------------';
+    }
+}
+
+/* Game title */
+.game_title {
+    font-size: 88px;
+    letter-spacing: -1.7599999904632568px;
+    line-height: 105px;
+    margin-bottom: 35.20000076293945px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+
+/* Terminal text */
+
+body.style_terminal #options {
+    font-family: 'Cutive Mono', monospace;
+	line-height: 1em;
+	font-size: larger;
+}
+
+span.style_terminal {
+    font-family: 'Cutive Mono', monospace;
+	line-height: 1em;
+	font-size: larger;
+}
+
+body.style_terminal ul#options {
+	list-style-type: None;
+}
+
+body.style_terminal ul#options li a:before {
+	content: '> ';
+}
+
+body.style_terminal {
+	/*line-height: 1.2;*/
+}
+
+/* Debugging view */
+
+table#game-state caption {
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+table#game-state th {
+    padding: 0 15px;
+}
+
+table#game-state td {
+    padding: 0 15px;
+    border-bottom: none;
+}
