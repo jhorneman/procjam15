@@ -24,11 +24,12 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "choba-engine": "0.0.1",
+    "choba-engine": "^0.0.4",
     "lodash": "^4.0.0",
     "ls-cache": "^0.2.3",
     "random-js": "^1.0.8",
     "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react-dom": "^0.14.6",
+    "stable-sha1": "^1.0.1"
   }
 }

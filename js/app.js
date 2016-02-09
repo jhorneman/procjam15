@@ -1,8 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import lscache from 'ls-cache';
+import sha1 from 'stable-sha1';
 
-import { initializeGame,
+import { buildContext,
+         restartGame,
          getRandomInt,
          expressionEvaluators,
          actionHandlers,
@@ -87,7 +89,7 @@ export function handleRespawnAction(_parameters, _dynamicState, _context) {
 }
 
 
-let { newScene, dynamicState, context } = initializeGame({
+let context = buildContext({
     firstSceneId: firstSceneId,
     initialVars: Object.assign(
         {},
@@ -108,12 +110,30 @@ let { newScene, dynamicState, context } = initializeGame({
     })
 });
 
-let cachedScene = lscache.get('scene'),
-    cachedGameState = lscache.get('gameState')
+let newScene, dynamicState;
 
-if (cachedScene && cachedGameState) {
-    newScene = cachedScene;
-    dynamicState = cachedGameState;
+const dataHash = sha1(context);
+const cachedDataHash = lscache.get('dataHash');
+
+if (cachedDataHash === dataHash) {
+    console.log('Cached data has right hash.')
+
+    let cachedScene = lscache.get('scene'),
+        cachedGameState = lscache.get('gameState');
+
+    if (cachedScene && cachedGameState) {
+        console.log('Using cached scene and game state.')
+
+        newScene = cachedScene;
+        dynamicState = cachedGameState;
+    }
+} else {
+    console.log('Cached data does not have right hash.')
+    lscache.set('dataHash', dataHash);
+}
+
+if (!newScene || !dynamicState) {
+    ({ newScene, dynamicState } = restartGame(context));
 }
 
 let container = document.getElementById('root');
